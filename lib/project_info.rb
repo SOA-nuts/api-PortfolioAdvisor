@@ -5,30 +5,20 @@ require 'yaml'
 config = YAML.safe_load(File.read('../config/secrets.yml'))
 @newsapi = News.new(config['GOOGLENEWS_TOKEN'])
 
-def gn_api_topic(topic)
-  @newsapi.get_everything(q: topic,
-                          sources: 'bbc-news,the-verge',
-                          domains: 'bbc.co.uk,techcrunch.com',
-                          language: 'en',
-                          sortBy: 'relevancy',
-                          pageSize: 2)
+def gn_api_topic(topic, result_num)
+  @newsapi.get_top_headlines(q: topic,
+                             category: topic,
+                             from: '2021-10-01',
+                             to: '2021-10-12',
+                             language: 'en',
+                             sortBy: 'relevancy',
+                             pageSize: result_num)
 end
 
 # GOOD project request
-all_articles = gn_api_topic('business')
+all_articles = gn_api_topic('business', 15)
 
 # BAD project request- leave the topic blank
-gn_api_topic('')
+gn_api_topic('', 15)
 
 File.write('../spec/fixtures/business_results.yml', all_articles.to_yaml)
-
-# try other googleNews_api
-
-# # /v2/top-headlines
-# top_headlines = newsapi.get_top_headlines(q: 'business',
-#                                           sources: 'bbc-news,the-verge',
-#                                           language: 'en',
-#                                           )
-
-# # /v2/top-headlines/sources
-# sources = newsapi.get_sources(country: 'us', language: 'en')
