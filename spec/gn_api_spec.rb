@@ -17,7 +17,7 @@ describe 'Tests Google News API library' do
   describe 'News title' do
     it 'HAPPY: should provide correct news article attributes' do
       article = NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
-                                     .article(TOPIC, RESULT_NUM)
+                                          .article(TOPIC, RESULT_NUM)
       puts article
       _(article.url[0]).must_equal CORRECT['articles'][0]['url']
       _(article.title[0]).must_equal CORRECT['articles'][0]['title']
@@ -29,10 +29,10 @@ describe 'Tests Google News API library' do
     #   end).must_raise NewsArticle::GoogleNewsApi::Errors::BadRequest
     # end
 
-    # it 'SAD: should raise exception when unauthorized' do
-    #   _(proc do
-    #     NewsArticle::GoogleNewsApi.new('BAD_TOKEN').article(TOPIC, 1)
-    #   end).must_raise NewsArticle::GoogleNewsApi::Errors::Unauthorized
-    # end
+    it 'SAD: should raise exception when unauthorized' do
+      _(proc do
+        NewsArticle::GoogleNewsApi.new('BAD_TOKEN').article(TOPIC, 1)
+      end).must_raise NewsArticle::GoogleNewsApi::Errors::Unauthorized
+    end
   end
 end

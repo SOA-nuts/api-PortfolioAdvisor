@@ -1,11 +1,13 @@
 ---
-# Apply latest style guide and new cops
-  AllCops:
+# Apply latest Ruby style guide and newly introduced cops
+AllCops:
   TargetRubyVersion: 3.0
   NewCops: enable
+  Exclude:
+    - '_snippets/*'
 
 # ignore block length in test code only
-  Metrics/BlockLength:
+Metrics/BlockLength:
   Enabled: true
   Exclude:
-    - spec/**/*
+    - 'spec/**/*'

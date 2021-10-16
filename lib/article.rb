@@ -11,30 +11,31 @@ module NewsArticle
     end
 
     def title
-      #@article['title']
-      @article.map{|h| h['title']}
+      # @article['title']
+      @article.map { |h| h['title'] }
     end
 
     def url
-      #@article['url']
-      @article.map{|h| h['url']}
+      # @article['url']
+      @article.map { |h| h['url'] }
     end
 
     def date
-      #@date ||= @data_source.publish(@article['publishedAt'])
-    end
-#this is for testing
-    def test
-      @article.map{|h| h['url']}
+      # @date ||= @data_source.publish(@article['publishedAt'])
     end
 
-    def show_type
-      puts @article[0].class
-    end
+    # this is for testing
+    # def test
+    #   @article.map { |h| h['url'] }
+    # end
 
-    def show_all
-      puts @article[0]
-    end
-# end testing
+    # def show_type
+    #   puts @article[0].class
+    # end
+
+    # def show_all
+    #   puts @article[0]
+    # end
+    # end testing
   end
 end
