@@ -1,33 +1,39 @@
-# frozen_string_literal: true
-# require 'http'
-require 'news-api'
+require 'http'
 require 'yaml'
 config = YAML.safe_load(File.read('../config/secrets.yml'))
-# API_GOOGLE_NEWS_ROOT = 'https://newsapi.org/v2/top-headlines?'
-@newsapi = News.new(config['GOOGLENEWS_TOKEN'])
-@gn_token = config['GOOGLENEWS_TOKEN']
-def gn_api_topic(topic, result_num)
-  @newsapi.get_top_headlines(q: topic,
-                             category: topic,
-                             from: '2021-10-01',
-                             to: '2021-10-12',
-                             language: 'en',
-                             sortBy: 'relevancy',
-                             pageSize: result_num)
-
-  # path = "category=" + topic+'&from=2021-10-01'+"&to=2021-10-12"+"&language=en&sortBy=relevancy&pageSize="+result_num.to_s
-  # url = "#{API_GOOGLE_NEWS_ROOT}#{path}"
-  # result =
-  # HTTP.headers('Accept' => 'json',
-  #             'Authorization' => "token #{@gn_token}")
-  #     .get(url)
+# search for specific topic e.g: business, BBC ...
+def gn_api_topic(topic)
+    "https://newsapi.org/v2/everything?q=#{topic}&from=2021-10-1&to=2021-10-15"
+end
+def call_gn_url(config, url)
+    pageSize = 10;
+    url = url + "&pageSize=#{pageSize}";
+    HTTP.headers(
+    'x-api-key' => config['GOOGLENEWS_TOKEN'],
+    ).get(url)
 end
 
-# GOOD news article request
-all_articles = gn_api_topic('business', 15)
-puts all_articles.parse
+gn_response = {}
+gn_results = {}
+articles = []
 
-# BAD news article request- leave the topic blank
-gn_api_topic('', 15)
+#try some business request
+project_url = gn_api_topic('business')
+gn_response[project_url] = call_gn_url(config, project_url)
+project = gn_response[project_url].parse
 
-File.write('../spec/fixtures/business_results.yml', all_articles.to_yaml)
+
+project['articles'].each do |article|
+    articles << article
+end
+gn_results['articles'] = project['articles']
+File.write('../spec/fixtures/business_results.yml', gn_results.to_yaml)
+
+#test
+#puts YAML.safe_load(File.read('../spec/fixtures/business_results.yml'))['articles'][0]['url']
+
+## BAD project request- leave the topic blank
+# bad_project_url = gn_api_topic('')
+# gn_results[bad_project_url] = call_gn_url(config, bad_project_url)
+# gn_results[bad_project_url].parse
+
