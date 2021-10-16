@@ -15,10 +15,10 @@ def gn_api_topic(topic, result_num)
                              pageSize: result_num)
 end
 
-# GOOD project request
+# GOOD news article request
 all_articles = gn_api_topic('business', 15)
 
-# BAD project request- leave the topic blank
+# BAD news article request- leave the topic blank
 gn_api_topic('', 15)
 
 File.write('../spec/fixtures/business_results.yml', all_articles.to_yaml)
