@@ -2,17 +2,16 @@
 
 require 'http'
 require 'yaml'
-require 'news-api'
 require_relative 'article'
 require_relative 'publish'
 
-API_GOOGLE_NEWS_ROOT = 'https://newsapi.org/v2/top-headlines?'
+API_GOOGLE_NEWS_ROOT = 'https://newsapi.org/v2/everything?'
 
 #need to remove
-# TOPIC = 'business'
+TOPIC = 'business'
 # START_DATE = '2021-10-01'
 # END_DATE = '2021-10-12'
-# RESULT_NUM = 15
+RESULT_NUM = 15
 ##
 
 module NewsArticle
@@ -24,6 +23,7 @@ module NewsArticle
         end
 
         HTTP_ERROR = {
+        #400 => Errors:: BadRequest,
         401 => Errors::Unauthorized,
         404 => Errors::NotFound
         }.freeze
@@ -32,25 +32,25 @@ module NewsArticle
             @gn_token = token
         end
 
-        def article(topic, start_date, end_date ,result_num)
-            article_req_url = gn_api_path(topic, start_date, end_date ,result_num)
+        def article(topic, result_num)
+            article_req_url = gn_api_path(topic, result_num)
             article_data = call_gn_url(article_req_url).parse
             Article.new(article_data['articles'], self)
         end
 
-        def testing(topic, start_date, end_date ,result_num)
+        def testing(topic, result_num)
             # url = gn_api_path(topic, start_date, end_date ,result_num)
             # ans = call_gn_url(url).parse
             # puts ans['articles']
 
-            article = article(topic, start_date, end_date ,result_num)
-            puts article.test
+            article = article(topic, result_num)
+            puts article.test[0]
         end
 
         private
 
-        def gn_api_path(topic, start_date, end_date ,result_num)
-            path = "category=" + topic+'&from='+start_date+"&to="+end_date+"&language=en&sortBy=relevancy&pageSize="+result_num.to_s
+        def gn_api_path(topic, result_num)
+            path = "q=" + topic+"&from=2021-10-1&to=2021-10-15&pageSize="+result_num.to_s
             "#{API_GOOGLE_NEWS_ROOT}#{path}"
         end
 
@@ -71,5 +71,5 @@ end
 #this is for testing
 # config = YAML.safe_load(File.read('../config/secrets.yml'))
 # GOOGLENEWS_TOKEN = config['GOOGLENEWS_TOKEN']
-# NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
-#                                      .testing(TOPIC, START_DATE, END_DATE, RESULT_NUM)
+# NewsArticle::GoogleNewsApi.new("GOOGLENEWS_TOKEN")
+#                                      .testing(TOPIC, RESULT_NUM)
