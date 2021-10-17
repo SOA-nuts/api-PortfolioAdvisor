@@ -3,11 +3,10 @@
 require 'minitest/autorun'
 require 'minitest/rg'
 require 'yaml'
+require 'date'
 require_relative '../lib/google_news_api'
 
 TOPIC = 'business'
-# START_DATE = '2021-10-01'
-# END_DATE = '2021-10-15'
 RESULT_NUM = 15
 CONFIG = YAML.safe_load(File.read('../config/secrets.yml'))
 GOOGLENEWS_TOKEN = CONFIG['GOOGLENEWS_TOKEN']
@@ -36,18 +35,6 @@ describe 'Tests Google News API library' do
     end
   end
 
-  describe 'Test Published Date of News' do
-    before do
-      @time = NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
-                                         .article(TOPIC, RESULT_NUM).time
-      @date = NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
-                                          .article(TOPIC, RESULT_NUM).date  
-    end
 
-    it 'HAPPY: should provide correct publishing dates' do
-      _(@time).wont_be_nil
-      _(@time[0]).must_equal CORRECT['articles'][0]['publishedAt'][-9...-1]
-    end
- end
 
 end

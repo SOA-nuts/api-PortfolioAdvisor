@@ -1,16 +1,8 @@
 # frozen_string_literal: true
 
 require 'http'
-require 'yaml'
 require_relative 'article'
 require_relative 'publish'
-
-# need to remove
-TOPIC = 'business'
-#START_DATE = '2021-10-01'
-# END_DATE = '2021-10-12'
-RESULT_NUM = 15
-##
 
 module NewsArticle
   # Library for Github Web API
@@ -38,18 +30,15 @@ module NewsArticle
       article_data = call_gn_url(article_req_url).parse
       Article.new(article_data['articles'], self)
     end
+    
     def publish(publish)
       Publish.new(publish)
     end 
 
-    def testing(topic, result_num)
-    # url = gn_api_path(topic, start_date, end_date ,result_num)
-    # ans = call_gn_url(url).parse
-    #  puts ans['articles']
-
-        article = article(topic, result_num)
-         puts article.time[0]
-     end
+    # def testing(topic, result_num)
+    #   article = article(topic, result_num)
+    #   puts article.time[0]
+    # end
 
     private
 
