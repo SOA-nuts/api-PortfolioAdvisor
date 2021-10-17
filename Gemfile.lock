@@ -23,6 +23,8 @@ GEM
       ffi-compiler (~> 1.0)
       rake (~> 13.0)
     minitest (5.14.4)
+    minitest-rg (5.2.0)
+      minitest (~> 5.0)
     news-api (0.2.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
@@ -43,6 +45,7 @@ PLATFORMS
 DEPENDENCIES
   http (~> 5.0)
   minitest (~> 5.0)
+  minitest-rg (~> 5.0)
   news-api
   reek
 
