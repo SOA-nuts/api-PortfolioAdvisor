@@ -23,11 +23,11 @@ describe 'Tests Google News API library' do
       _(article.title[0]).must_equal CORRECT['articles'][0]['title']
     end
 
-    # it 'SAD: should raise exception on incorrect project' do
-    #   _(proc do
-    #     NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN).article('', 1)
-    #   end).must_raise NewsArticle::GoogleNewsApi::Errors::BadRequest
-    # end
+    it 'SAD: should raise exception on incorrect project' do
+      _(proc do
+        NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN).article('', 1)
+      end).must_raise NewsArticle::GoogleNewsApi::Errors::BadRequest
+    end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
@@ -35,4 +35,19 @@ describe 'Tests Google News API library' do
       end).must_raise NewsArticle::GoogleNewsApi::Errors::Unauthorized
     end
   end
+
+  describe 'Test Published Date of News' do
+    before do
+      @time = NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
+                                         .article(TOPIC, RESULT_NUM).time
+      @date = NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
+                                          .article(TOPIC, RESULT_NUM).date  
+    end
+
+    it 'HAPPY: should provide correct publishing dates' do
+      _(@time).wont_be_nil
+      _(@time[0]).must_equal CORRECT['articles'][0]['publishedAt'][-9...-1]
+    end
+ end
+
 end
