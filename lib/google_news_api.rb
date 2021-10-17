@@ -5,25 +5,26 @@ require 'yaml'
 require_relative 'article'
 require_relative 'publish'
 
-API_GOOGLE_NEWS_ROOT = 'https://newsapi.org/v2/everything?'
-
 # need to remove
 TOPIC = 'business'
 #START_DATE = '2021-10-01'
 # END_DATE = '2021-10-12'
- RESULT_NUM = 15
+RESULT_NUM = 15
 ##
 
 module NewsArticle
   # Library for Github Web API
   class GoogleNewsApi
+    API_GOOGLE_NEWS_ROOT = 'https://newsapi.org/v2/everything?'
+
     module Errors
+      class BadRequest < StandardError; end
       class NotFound < StandardError; end
       class Unauthorized < StandardError; end # rubocop:disable Layout/EmptyLineBetweenDefs
     end
 
     HTTP_ERROR = {
-      # 400 => Errors::BadRequest,
+      400 => Errors::BadRequest,
       401 => Errors::Unauthorized,
       404 => Errors::NotFound
     }.freeze
@@ -37,17 +38,18 @@ module NewsArticle
       article_data = call_gn_url(article_req_url).parse
       Article.new(article_data['articles'], self)
     end
-   def publish(publish)
-    Publish.new(publish)
+    def publish(publish)
+      Publish.new(publish)
     end 
-    # def testing(topic, result_num)
-    #url = gn_api_path(topic, start_date, end_date ,result_num)
-    #ans = call_gn_url(url).parse
-     #puts ans['articles']
 
-        # article = article(topic, result_num)
-         #puts article.test[0]
-     #end
+    def testing(topic, result_num)
+    # url = gn_api_path(topic, start_date, end_date ,result_num)
+    # ans = call_gn_url(url).parse
+    #  puts ans['articles']
+
+        article = article(topic, result_num)
+         puts article.time[0]
+     end
 
     private
 
@@ -71,7 +73,7 @@ module NewsArticle
 end
 
 # this is for testing
-#config = YAML.safe_load(File.read('../config/secrets.yml'))
- #GOOGLENEWS_TOKEN = config['GOOGLENEWS_TOKEN']
-#NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
-                                      #.testing(TOPIC, RESULT_NUM)
+# config = YAML.safe_load(File.read('../config/secrets.yml'))
+#  GOOGLENEWS_TOKEN = config['GOOGLENEWS_TOKEN']
+# NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
+#                                       .testing(TOPIC, RESULT_NUM)
