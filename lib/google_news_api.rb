@@ -11,6 +11,7 @@ module NewsArticle
 
     module Errors
       class BadRequest < StandardError; end
+
       class NotFound < StandardError; end
       class Unauthorized < StandardError; end # rubocop:disable Layout/EmptyLineBetweenDefs
     end
@@ -30,10 +31,10 @@ module NewsArticle
       article_data = call_gn_url(article_req_url).parse
       Article.new(article_data['articles'], self)
     end
-    
+
     def publish(publish)
       Publish.new(publish)
-    end 
+    end
 
     # def testing(topic, result_num)
     #   article = article(topic, result_num)
