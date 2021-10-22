@@ -4,12 +4,15 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
+    crack (0.4.5)
+      rexml
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     ffi (1.15.4)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    hashdiff (1.0.1)
     http (5.0.4)
       addressable (~> 2.8)
       http-cookie (~> 1.0)
@@ -35,9 +38,15 @@ GEM
       kwalify (~> 0.7.0)
       parser (~> 3.0.0)
       rainbow (>= 2.0, < 4.0)
+    rexml (3.2.5)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
+    vcr (6.0.0)
+    webmock (3.14.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   x86_64-linux
@@ -48,6 +57,8 @@ DEPENDENCIES
   minitest-rg (~> 5.0)
   news-api
   reek
+  vcr (~> 6.0)
+  webmock (~> 3.0)
 
 BUNDLED WITH
    2.2.29

@@ -1,18 +1,25 @@
-# frozen_string_literal: true
+# frozen_string_literal:true
 
-require 'minitest/autorun'
-require 'minitest/rg'
-require 'yaml'
-require 'date'
-require_relative '../lib/google_news_api'
-
-TOPIC = 'business'
-RESULT_NUM = 15
-CONFIG = YAML.safe_load(File.read('../config/secrets.yml'))
-GOOGLENEWS_TOKEN = CONFIG['GOOGLENEWS_TOKEN']
-CORRECT = YAML.safe_load(File.read('../spec/fixtures/business_results.yml'))
+require_relative 'spec_helper'
 
 describe 'Tests Google News API library' do
+  VCR.configure do |c|
+    c.cassette_library_dir = CASSETTES_FOLDER
+    c.hook_into :webmock
+
+    c.filter_sensitive_data('<SAFE_STRINGS>') { GOOGLENEWS_TOKEN }
+    c.filter_sensitive_data('<SAFE_STRINGS_ESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
+  end
+
+  before do
+    VCR.insert_cassette CASSETTE_FILE,
+                        record: :new_episodes,
+                        match_requests_on: %i[method uri headers]
+  end
+
+  after do
+    VCR.eject_cassette
+  end
   describe 'News title' do
     it 'HAPPY: should provide correct news article attributes' do
       article = NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
