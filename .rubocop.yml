@@ -5,6 +5,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - '_snippets/*'
+  
 
 # ignore block length in test code only
 Metrics/BlockLength:

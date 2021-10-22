@@ -1,0 +1,6 @@
+quality:all
+quality:flog
+quality:reek
+quality:rubocop
+spec
+vcr:wipe
