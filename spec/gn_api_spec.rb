@@ -31,13 +31,13 @@ describe 'Tests Google News API library' do
     it 'SAD: should raise exception on incorrect project' do
       _(proc do
         NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN).article('', 1)
-      end).must_raise NewsArticle::GoogleNewsApi::Errors::BadRequest
+      end).must_raise NewsArticle::GoogleNewsApi::Response::BadRequest
     end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
         NewsArticle::GoogleNewsApi.new('BAD_TOKEN').article(TOPIC, 1)
-      end).must_raise NewsArticle::GoogleNewsApi::Errors::Unauthorized
+      end).must_raise NewsArticle::GoogleNewsApi::Response::Unauthorized
     end
   end
   describe 'Test Published Date of News' do

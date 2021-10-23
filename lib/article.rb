@@ -11,15 +11,16 @@ module NewsArticle
     end
 
     def title
-      @article.map { |h| h['title'] }
+      @article.map { |hash| hash['title'] }
     end
 
     def url
-      @article.map { |h| h['url'] }
+      @article.map { |hash| hash['url'] }
     end
 
     def publish
-      @publish ||= @data_source.publish(@article.map { |h| h['publishedAt'] })
+      publish_time = @article.map { |hash| hash['publishedAt'] }
+      Publish.new(publish_time)
     end
   end
 end
