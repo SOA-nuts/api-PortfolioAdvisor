@@ -11,11 +11,11 @@ module NewsArticle
     end
 
     def date
-      @publish.map { |x| x.strftime('%Y-%m-%d') }
+      @publish.map { |info| info.strftime('%Y-%m-%d') }
     end
 
     def time
-      @publish.map { |x| x.strftime('%H:%M:%S') }
+      @publish.map { |info| info.strftime('%H:%M:%S') }
     end
   end
 end

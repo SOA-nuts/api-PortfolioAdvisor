@@ -1,0 +1,11 @@
+---
+  detectors:
+    IrresponsibleModule:
+      enabled: false
+    UtilityFunction:
+      enabled: false
+    UncommunicativeVariableName:
+      enabled: false
+  exclude_paths:
+    - _snippets
+    - lib/project_info.rb # one-time test fixture creator

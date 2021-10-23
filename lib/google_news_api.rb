@@ -1,69 +1,70 @@
 # frozen_string_literal: true
 
 require 'http'
+require 'delegate'
 require_relative 'article'
-require_relative 'publish'
 
 module NewsArticle
   # Library for Github Web API
   class GoogleNewsApi
     API_GOOGLE_NEWS_ROOT = 'https://newsapi.org/v2/everything?'
 
-    module Errors
-      class BadRequest < StandardError; end
-
-      class NotFound < StandardError; end
-      class Unauthorized < StandardError; end # rubocop:disable Layout/EmptyLineBetweenDefs
-    end
-
-    HTTP_ERROR = {
-      400 => Errors::BadRequest,
-      401 => Errors::Unauthorized,
-      404 => Errors::NotFound
-    }.freeze
-
     def initialize(token)
-      @gn_token = token
+      @gh_token = token
     end
 
     def article(topic, result_num)
-      article_req_url = gn_api_path(topic, result_num)
-      article_data = call_gn_url(article_req_url).parse
+      article_data = Request.new(API_GOOGLE_NEWS_ROOT, @gh_token)
+                            .news(topic, result_num).parse
       Article.new(article_data['articles'], self)
     end
 
-    def publish(publish)
-      Publish.new(publish)
+    # Sends out HTTP requests to Github
+    class Request
+      def initialize(resource_root, token)
+        @resource_root = resource_root
+        @token = token
+      end
+
+      def news(topic, result_num)
+        path = "q=#{topic}&from=2021-10-1&to=2021-10-15&pageSize=#{result_num}"
+        get(@resource_root + path)
+      end
+
+      def get(url)
+        http_response = HTTP.headers(
+          'Accept' => 'application/vnd.github.v3+json',
+          'Authorization' => "token #{@token}"
+        ).get(url)
+
+        Response.new(http_response).tap do |response|
+          raise(response.error) unless response.successful?
+        end
+      end
     end
 
-    # def testing(topic, result_num)
-    #   article = article(topic, result_num)
-    #   puts article.time[0]
-    # end
+    # Decorates HTTP responses from Github with success/error reporting
+    class Response < SimpleDelegator
+      # :reek:IrresponsibleModule
+      BadRequest = Class.new(StandardError)
+      # :reek:IrresponsibleModule
+      Unauthorized = Class.new(StandardError)
+      # :reek:IrresponsibleModule~
+      NotFound = Class.new(StandardError)
 
-    private
+      HTTP_ERROR = {
+        400 => BadRequest,
+        401 => Unauthorized,
+        404 => NotFound
+      }.freeze
 
-    def gn_api_path(topic, result_num)
-      path = "q=#{topic}&from=2021-10-1&to=2021-10-15&pageSize=#{result_num}"
-      "#{API_GOOGLE_NEWS_ROOT}#{path}"
-    end
+      def successful?
+        !HTTP_ERROR.keys.include?(code)
+      end
 
-    def call_gn_url(url)
-      result =
-        HTTP.headers('Accept' => 'json',
-                     'Authorization' => "token #{@gn_token}")
-            .get(url)
-      successful?(result) ? result : raise(HTTP_ERROR[result.code])
-    end
-
-    def successful?(result)
-      !HTTP_ERROR.keys.include?(result.status)
+      def error
+        HTTP_ERROR[code]
+      end
     end
   end
 end
-
-# this is for testing
-# config = YAML.safe_load(File.read('../config/secrets.yml'))
-#  GOOGLENEWS_TOKEN = config['GOOGLENEWS_TOKEN']
-# NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)
-#                                       .testing(TOPIC, RESULT_NUM)
