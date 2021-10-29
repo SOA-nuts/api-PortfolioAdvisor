@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
+
+# Web Application
+gem 'puma', '~> 5.5'
+gem 'roda', '~> 3.49'
+gem 'slim', '~> 4.1'
+
 # Networking
 gem 'http', '~> 5.0'
 
