@@ -14,7 +14,6 @@ module PortfolioAdvisor
       def find(company)
           data = @gateway.article(company)
           build_entity(data['articles'])
-        end
       end
 
       def build_entity(articles)

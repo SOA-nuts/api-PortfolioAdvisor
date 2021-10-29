@@ -30,6 +30,7 @@ module PortfolioAdvisor
 
           Response.new(http_response).tap do |response|
             raise(response.error)unless response.successful?
+          end
         end
       end
 

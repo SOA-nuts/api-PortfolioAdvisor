@@ -40,7 +40,7 @@ module PortfolioAdvisor
               .new(GOOGLENEWS_TOKEN)
               .find(cmp_name)
 
-            view 'target', locals: { target: articles, cmp_name : COMPANY_LIST[cmp_name] }
+            view 'target', locals: { target => articles, cmp_name => COMPANY_LIST[cmp_name] }
           end
         end
       end
