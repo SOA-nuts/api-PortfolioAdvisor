@@ -12,20 +12,16 @@ h1 {
     font-size: 1.2em;
   }
   
-  .project.attribute {
+  .article.attribute {
     font-weight: bold;
   }
   
-  .project.detail {
+  .article.detail {
     color: grey;
   }
   
-  .project.owner {
+  .target.name {
     font-weight: bold
-  }
-  
-  .project.name {
-    
   }
   
   .vcenter {
