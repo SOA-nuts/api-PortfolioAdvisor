@@ -5,15 +5,15 @@ require 'dry-struct'
 
 require_relative 'publish'
 
-module NewsArticle
+module PortfolioAdvisor
   module Entity
     # Domain entity for any article
-    class ArticleContent < Dry::Struct
+    class Articles < Dry::Struct
       include Dry.Types
 
-      attribute :topic, Strict::String
-      attribute :website_address, Strict::String
-      attribute :publication_date, Publish
+      attribute :titles,             Strict::Array.of(String)
+      attribute :urls,               Strict::Array.of(String)
+      attribute :published_ats,     Strict::Array.of(Publish)
     end
   end
 end

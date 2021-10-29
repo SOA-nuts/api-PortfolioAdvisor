@@ -5,13 +5,14 @@ require 'dry-struct'
 require 'date'
 require_relative 'article'
 
-module NewsArticle
+module PortfolioAdvisor
   module Entity
     # Domain entity for publishing date
-    class Member < Dry::Struct
+    class Publish < Dry::Struct
       include Dry.Types
 
-      attribute :publication_date, Strict::String
+      attribute :dates, Strict::Array.of(String)
+      attribute :times, Strict::Array.of(String)
     end
   end
 end

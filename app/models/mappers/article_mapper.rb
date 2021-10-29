@@ -1,6 +1,6 @@
 # frozen_string_literal: false
 
-module NewsArticle
+module PortfolioAdvisor
   # Access article data
   module GoogleNews
     # Maps NewsAPI data to Article Entity
@@ -11,14 +11,14 @@ module NewsArticle
         @gateway = @gateway_class.new(@token)
       end
 
-      def find(article_data['articles'])
-        @gateway.article(article_data['articles']).map do |data|
-          ArticleMapper.build_entity(data)
+      def find(company)
+          data = @gateway.article(company)
+          build_entity(data['articles'])
         end
       end
 
-      def self.build_entity(data)
-        ArticleMapper.new(data).build_entity
+      def build_entity(articles)
+        DataMapper.new(articles).build_entity
       end
 
       # Extracts specific parameters from data
@@ -29,24 +29,25 @@ module NewsArticle
 
         def build_entity
           Entity::Article.new(
-            website_address: website_address,
-            piblication_date: publication_date,
-            title:title
+            urls: urls,
+            published_ats: published_ats,
+            titles:titles
           )
         end
 
         private
 
-        def website_address
-          @data['url']
+        def urls
+          @data.map { |hash| hash['url'] }
         end
 
-        def publication_date
-          @data['publishedAt']
+        def published_ats
+          publish_time = @data.map { |hash| hash['publishedAt'] }
+          Publish.new(publish_time)
         end
 
-        def topic
-          @data['title']
+        def titles
+          @data.map { |hash| hash['title'] }
         end
       end
     end
