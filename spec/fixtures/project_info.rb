@@ -2,10 +2,14 @@
 
 require 'http'
 require 'yaml'
-config = YAML.safe_load(File.read('../config/secrets.yml'))
+require 'date'
+
+config = YAML.safe_load(File.read('../../config/secrets.yml'))
 # search for specific topic e.g: business, BBC ...
 def gn_api_topic(topic)
-  "https://newsapi.org/v2/everything?q=#{topic}&from=2021-10-1&to=2021-10-15"
+  to = Date.today.strftime("%Y-%m-%d")
+  from = (Date.today - 10).strftime("%Y-%m-%d")
+  "https://newsapi.org/v2/everything?q=#{topic}&from=#{from}&to=#{to}&pageSize=15"
 end
 
 def call_gn_url(config, url)
@@ -21,7 +25,7 @@ gn_results = {}
 articles = []
 
 # try some business request
-project_url = gn_api_topic('business')
+project_url = gn_api_topic('apple')
 gn_response[project_url] = call_gn_url(config, project_url)
 project = gn_response[project_url].parse
 
@@ -29,12 +33,5 @@ project['articles'].each do |article|
   articles << article
 end
 gn_results['articles'] = project['articles']
-File.write('../spec/fixtures/business_results.yml', gn_results.to_yaml)
+File.write('apple_results.yml', gn_results.to_yaml)
 
-# test
-# puts YAML.safe_load(File.read('../spec/fixtures/business_results.yml'))['articles'][0]['url']
-
-## BAD project request- leave the topic blank
-# bad_project_url = gn_api_topic('')
-# gn_results[bad_project_url] = call_gn_url(config, bad_project_url)
-# gn_results[bad_project_url].parse
