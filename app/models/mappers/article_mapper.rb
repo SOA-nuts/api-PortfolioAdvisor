@@ -1,5 +1,7 @@
 # frozen_string_literal: false
 
+
+
 module PortfolioAdvisor
   # Access article data
   module GoogleNews
@@ -7,7 +9,7 @@ module PortfolioAdvisor
     class ArticleMapper
       def initialize(articles)
         articles.map do |article|
-          ArticleMapper.build_entity(article)
+          build_entity(article)
         end
       end
 
@@ -21,14 +23,14 @@ module PortfolioAdvisor
       class DataMapper
         def initialize(data)
           @data = data
-          @publish_mapper = PublishMapper.new(@data['publishedAt'])
+          @publish_mapper
         end
 
         def build_entity
-          Entity::Article.new(
+          PortfolioAdvisor::Entity::Article.new(
             url: url,
             published_at: published_at,
-            title:title
+            title: title
           )
         end
 
@@ -43,7 +45,8 @@ module PortfolioAdvisor
           # publish_time = @data.map { |hash| hash['publishedAt'] }
           # Publish.new(publish_time)
           # PublishMapper.new(@data['publishedAt'])
-          @publish_mapper
+          @publish_mapper  = PublishMapper.new(@data['publishedAt'])
+          
         end
 
         def title
