@@ -14,24 +14,30 @@ module PortfolioAdvisor
 
       def find(company)
         data = @gateway.article(company)
-        build_entity(data['articles'])
+        build_entity(company, data['articles'])
       end
 
-      def build_entity(data)
-        DataMapper.new(data, @token, @gateway_class).build_entity
+      def build_entity(company, data)
+        DataMapper.new(company, data, @token, @gateway_class).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(data, token, gateway_class)
+        def initialize(company, data, token, gateway_class)
+          @company_name = company
           @data = data
           @article_mapper = ArticleMapper.new()
         end
 
         def build_entity
           PortfolioAdvisor::Entity::Target.new(
+            company_name: company_name,
             articles: articles
           )
+        end
+
+        def company_name
+          @company_name
         end
 
         def articles

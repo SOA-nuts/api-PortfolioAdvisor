@@ -11,6 +11,7 @@ module PortfolioAdvisor
     class Target < Dry::Struct
         include Dry.Types
 
+        attribute :company_name,      Strict::String
         attribute :articles,          Strict::Array.of(Article)
     end
   end

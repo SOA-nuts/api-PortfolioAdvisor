@@ -39,9 +39,9 @@ module PortfolioAdvisor
           routing.get do
             target = GoogleNews::TargetMapper
               .new(GOOGLENEWS_TOKEN)
-              .find( COMPANY_LIST[0][company])
+              .find(company)
 
-            view 'target', locals: { target => target }
+            view 'target', locals: { target: target }
           end
         end
       end
