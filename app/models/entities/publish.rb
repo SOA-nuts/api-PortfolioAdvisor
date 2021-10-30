@@ -3,7 +3,6 @@
 require 'dry-types'
 require 'dry-struct'
 require 'date'
-require_relative 'article'
 
 module PortfolioAdvisor
   module Entity
@@ -11,8 +10,8 @@ module PortfolioAdvisor
     class Publish < Dry::Struct
       include Dry.Types
 
-      attribute :dates, Strict::Array.of(String)
-      attribute :times, Strict::Array.of(String)
+      attribute :date, Strict::String
+      attribute :time, Strict::String
     end
   end
 end

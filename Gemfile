@@ -12,6 +12,7 @@ gem 'http', '~> 5.0'
 
 # main api
 gem 'news-api'
+gem 'nokogiri'
 
 # Testing
 gem 'minitest', '~> 5.0'

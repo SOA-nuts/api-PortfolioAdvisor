@@ -6,7 +6,8 @@ module PortfolioAdvisor
       # Data Mapper: Github contributor -> Member entity
       class PublishMapper
         def initialize(publish)
-            @publish = publish.map { |date| DateTime.strptime(date, '%Y-%m-%dT%H:%M:%S%z') }
+            # @publish = publish.map { |date| DateTime.strptime(date, '%Y-%m-%dT%H:%M:%S%z') }
+            @publish = DateTime.strptime(publish, '%Y-%m-%dT%H:%M:%S%z')
             self.build_entity(@publish)
         end
   
@@ -22,19 +23,21 @@ module PortfolioAdvisor
   
           def build_entity
             Entity::Publish.new(
-              dates: dates,
-              times: times
+              date: date,
+              time: time
             )
           end
   
           private
   
-          def dates
-            @data.map { |info| info.strftime('%Y-%m-%d') }
+          def date
+            # @data.map { |info| info.strftime('%Y-%m-%d') }
+            @data.strftime('%Y-%m-%d')
           end
   
-          def times
-            @data.map { |info| info.strftime('%H:%M:%S') }
+          def time
+            # @data.map { |info| info.strftime('%H:%M:%S') }
+            @data.strftime('%H:%M:%S')
           end
         end
       end

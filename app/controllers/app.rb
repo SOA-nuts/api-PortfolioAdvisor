@@ -36,11 +36,11 @@ module PortfolioAdvisor
         routing.on String do |company|
           # GET /target/company
           routing.get do
-            articles = GoogleNews::ArticleMapper
+            target = GoogleNews::TargetMapper
               .new(GOOGLENEWS_TOKEN)
               .find(cmp_name)
 
-            view 'target', locals: { target => articles, cmp_name => COMPANY_LIST[cmp_name] }
+            view 'target', locals: { target => target, cmp_name => COMPANY_LIST[cmp_name] }
           end
         end
       end
