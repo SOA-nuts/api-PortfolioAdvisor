@@ -1,0 +1,269 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://newsapi.org/v2/everything?from=2021-10-1&pageSize=1&q=business&to=2021-10-15
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - json
+      Authorization:
+      - token BAD_TOKEN
+      Connection:
+      - close
+      Host:
+      - newsapi.org
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 22 Oct 2021 16:53:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '162'
+      Connection:
+      - close
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Cached-Result:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=nFAQ3iYOFazV4CIdLe2f%2Beot5fGk9sxHMPrzE9fkUU%2B3AWCLA%2F3RiYOS8CMctSIzzFLPlkGpD6M39JXnA2XvBAgrYN6HWT4fPMFL%2FYGHuARnOXNHJ0xZw6QekwxJ"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6a243e348f22eef6-LAX
+    body:
+      encoding: UTF-8
+      string: '{"status":"error","code":"apiKeyInvalid","message":"Your API key is
+        invalid or incorrect. Check your key, or go to https://newsapi.org to create
+        a free API key."}'
+  recorded_at: Fri, 22 Oct 2021 16:53:38 GMT
+- request:
+    method: get
+    uri: https://newsapi.org/v2/everything?from=2021-10-1&pageSize=15&q=business&to=2021-10-15
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - json
+      Authorization:
+      - token <SAFE_STRINGS>
+      Connection:
+      - close
+      Host:
+      - newsapi.org
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 22 Oct 2021 16:53:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '11444'
+      Connection:
+      - close
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Cached-Result:
+      - 'true'
+      X-Cache-Remaining:
+      - '99'
+      X-Cache-Expires:
+      - Fri, 22 Oct 2021 16:58:18 GMT
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=l27M6PlxMr4ezv86b9N3HHdwF%2FGdmrPH4C3h0JlHUTUNPPmohLmGd6CVAm%2BSPygB27bHhBKbUBXknRyJwyWmzFvc4OCvRGswFGsnn9M29mcjssCEqFMNEcE86vXI"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6a243e7b6ec752c5-LAX
+    body:
+      encoding: UTF-8
+      string: '{"status":"ok","totalResults":81187,"articles":[{"source":{"id":null,"name":"New
+        York Times"},"author":"Stacy Cowley","title":"S.B.A. Overpaid $4.5 Billion
+        on ‘Illogical’ Small Business Grant Claims","description":"A program gave
+        money to 700,000 self-employed people who improperly claimed to have as many
+        as a million employees, according to an inspector general’s report.","url":"https://www.nytimes.com/2021/10/07/business/fraud-small-business-administration.html","urlToImage":"https://static01.nyt.com/images/2021/10/07/business/07sbaloans/07sbaloans-facebookJumbo.jpg","publishedAt":"2021-10-07T21:32:47Z","content":"In
+        a written response included in the report, James E. Rivera, the head of the
+        unit that ran the program, said the agency was required by the CARES Act to
+        accept applicants self-certifications that t… [+1651 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"Katie Robertson","title":"Carlos Watson, Co-founder
+        of Ozy Media, Resigns From NPR Board","description":"The development is latest
+        following reports in The New York Times questioning Ozy’s business practices.","url":"https://www.nytimes.com/2021/10/01/business/carlos-watson-npr.html","urlToImage":"https://static01.nyt.com/images/2021/09/27/business/26JPbensmith2-print-copy/26bensmith-2-facebookJumbo.jpg","publishedAt":"2021-10-01T19:30:30Z","content":"On
+        Thursday, The Times published another report from Mr. Smith that, last year,
+        Ozy hired a team to make a talk show for the cable network A&amp;E The Carlos
+        Watson Show, hosted by Mr. Watson. Guests… [+1607 chars]"},{"source":{"id":"bbc-news","name":"BBC
+        News"},"author":"https://www.facebook.com/bbcnews","title":"Rape case sparks
+        fury over China''s work drinking","description":"As public scrutiny of corporate
+        misbehaviour grows, can business drinking be dropped forever?","url":"https://www.bbc.co.uk/news/world-asia-china-58313387","urlToImage":"https://ichef.bbci.co.uk/news/1024/branded_news/14F48/production/_120223858_gettyimages-186475202.jpg","publishedAt":"2021-10-02T23:09:29Z","content":"By
+        Waiyee YipBBC News\r\nImage source, Getty Images\r\nImage caption, Drinks
+        with colleagues are often a drawn-out affair involving formal toasting etiquette\r\nA
+        high-profile rape allegation at Chinese te… [+7562 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"Glenn Rifkin","title":"John J. Rigas, Cable TV Magnate
+        Who Pillaged His Company, Dies at 96","description":"He built Adelphia Communications
+        into a business with 5.5 million customers, then was convicted of stealing
+        hundreds of millions of dollars from it.","url":"https://www.nytimes.com/2021/09/30/obituaries/john-j-rigas-dead.html","urlToImage":"https://static01.nyt.com/images/2021/09/30/obituaries/30Rigas2/30Rigas2-facebookJumbo.jpg","publishedAt":"2021-10-01T00:21:08Z","content":"John
+        was quiet, but he was hard-working and a builder, Mr. Malone said. He was
+        definitely good for the growth of the industry.\r\nAdelphia was made up of
+        a lot of little systems stitched together and r… [+1671 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"Scott Miller","title":"Dodgers Will Face Rival Giants
+        in Division Series","description":"The 106-win Los Angeles Dodgers took care
+        of business in a do-or-die game against St. Louis. Their next opponent? The
+        107-win San Francisco Giants.","url":"https://www.nytimes.com/2021/10/07/sports/baseball/dodgers-giants-division-series.html","urlToImage":"https://static01.nyt.com/images/2021/11/06/sports/06mlb-nl-wild-card1/06mlb-nl-wild-card1-facebookJumbo.jpg","publishedAt":"2021-10-07T09:00:21Z","content":"It
+        stayed 1-1 over the course of five innings, through nine combined relief pitchers,
+        several pinch-hitters and two starting pitchers Scherzer (four and a third
+        innings, one run, three hits, three wa… [+1160 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"Ruhullah Khapalwak and David Zucchino","title":"U.S.
+        Weapons, Now for Sale in Afghan Gun Shops","description":"The Taliban seized
+        troves of American weapons and vehicles from surrendering Afghan soldiers.
+        Now, gun dealers are doing a brisk business.","url":"https://www.nytimes.com/2021/10/05/world/asia/us-weapons-afghanistan.html","urlToImage":"https://static01.nyt.com/images/2021/10/05/world/05afghan-weapons-001/merlin_194288733_9256e59c-bf82-4118-8d11-99845afd02cf-facebookJumbo.jpg","publishedAt":"2021-10-05T17:07:02Z","content":"Some
+        soldiers and police sold their weapons and ammunition before they negotiated
+        their surrenders. Weapons dealers would pay about $1,200 for a single U.S.-service
+        Beretta M9 handgun, the gun mercha… [+1238 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"Ben Smith","title":"Ozy Media Will Shut Down","description":"The
+        digital media start-up, led by Carlos Watson, had come under scrutiny for
+        its business practices following articles in The Times.","url":"https://www.nytimes.com/2021/10/01/business/media/ozy-media-carlos-watson.html","urlToImage":"https://static01.nyt.com/images/2021/10/01/business/01Ozy/01Ozy-facebookJumbo.jpg","publishedAt":"2021-10-01T21:27:43Z","content":"Ozy
+        Media, the digital media company that came under scrutiny for its business
+        practices in recent days, announced on Friday that it was shutting down.\r\nAt
+        Ozy, we have been blessed with a remarkable… [+1155 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"The New York Times","title":"Thousands of Workers at
+        John Deere Strike Over Contract","description":"Unionized workers at the agriculture
+        equipment maker went on strike after rejecting a contract proposal. Here’s
+        the latest in business news.","url":"https://www.nytimes.com/live/2021/10/14/business/news-business-stock-market","urlToImage":"https://static01.nyt.com/images/2021/11/13/business/13economy-briefing-deere/13economy-briefing-deere-facebookJumbo.jpg","publishedAt":"2021-10-14T05:17:33Z","content":"By
+        Noam Scheiber\r\nSome 10,000 unionized workers at the agriculture equipment
+        maker Deere &amp; Company went on strike early Thursday after overwhelmingly
+        rejecting a contract proposal worked out with… [+9509 chars]"},{"source":{"id":null,"name":"New
+        York Times"},"author":"John Leland, Daniel Axelrod and Jutharat Pinyodoonyachet","title":"Legoland
+        Is Now Open. Can Residents of Goshen, N.Y. Learn To Live With It?","description":"When
+        Legoland arrived in Goshen, N.Y., it divided residents into first-time environmental
+        activists or business boosters. Now that the park is open, can neighbors piece
+        together a way to move ahead?","url":"https://www.nytimes.com/2021/10/01/nyregion/legoland-goshen-new-york.html","urlToImage":"https://static01.nyt.com/images/2021/09/29/nyregion/00legoland-promo/00legoland-promo-facebookJumbo.jpg","publishedAt":"2021-10-01T19:28:12Z","content":"I
+        want to bring to your attention the division that this project has given our
+        town, Ms. Tzouganatos said. We have had neighbor versus neighbor, we have
+        had people on social media destroying each oth… [+1463 chars]"},{"source":{"id":"reuters","name":"Reuters"},"author":null,"title":"Gulfstream
+        introduces two new business aircraft - Reuters","description":"General Dynamics
+        Corp''s <a href=\"https://www.reuters.com/companies/GD.N\" target=\"_blank\">(GD.N)</a>
+        Gulfstream Aerospace introduced two new aircraft, Gulfstream G800 and Gulfstream
+        G400, on Monday, the aircraft company said in a statement.","url":"https://www.reuters.com/business/aerospace-defense/gulfstream-introduces-two-new-business-aircraft-2021-10-05/","urlToImage":"https://www.reuters.com/resizer/1pa14hy49lL8jKR3V2OIgot_m8Y=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/MZ3DAIG4FJOMRNYYAKVPYVKAXI.jpg","publishedAt":"2021-10-05T08:17:00Z","content":"The
+        Gulfstream logo is seen during the Latin American Business Aviation Conference
+        &amp; Exhibition fair (LABACE) at Congonhas Airport in Sao Paulo, Brazil August
+        14, 2018. REUTERS/Paulo WhitakerOct … [+841 chars]"},{"source":{"id":"bbc-news","name":"BBC
+        News"},"author":null,"title":"Raducanu says it has been ''pretty cool'' to
+        receive congratulations as she prepares for return","description":"Emma Radcuanu
+        says it has been \"pretty cool\" to receive the congratulations of other players
+        at Indian Wells, but now is the time to get back to business.","url":"https://www.bbc.co.uk/sport/tennis/58797409","urlToImage":"https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/7F69/production/_120871623_gettyimages-1345001227.jpg","publishedAt":"2021-10-05T20:17:12Z","content":"Raducanu
+        attended the James Bond premiere last week\r\nEmma Radcuanu says it has been
+        \"pretty cool\" to receive the congratulations of other players at Indian
+        Wells, but now is the time to get back to b… [+1591 chars]"},{"source":{"id":null,"name":"The
+        Economist"},"author":"The Economist","title":"Business","description":"","url":"https://www.economist.com/the-world-this-week/2021/10/16/business","urlToImage":"https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/10/articles/main/20211016_wwp501.jpg","publishedAt":"2021-10-14T15:20:33Z","content":"Americas
+        annual inflation rate climbed again in September, to 5.4%, having dipped slightly
+        in August. In its latest outlook on the world economy the IMF said that rising
+        inflation reflected pandemic-… [+4566 chars]"},{"source":{"id":null,"name":"The
+        Economist"},"author":"The Economist","title":"Business","description":"","url":"https://www.economist.com/the-world-this-week/2021/10/14/business","urlToImage":"https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/10/articles/main/20211016_wwp501.jpg","publishedAt":"2021-10-14T14:57:41Z","content":"Americas
+        annual inflation rate climbed again in September, to 5.4%, having dipped slightly
+        in August. In its latest outlook on the world economy the IMF said that rising
+        inflation reflected pandemic-… [+4566 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jessica
+        Conditt","title":"Microsoft Office 2021 starts at $150 and arrives on October
+        5th","description":"Microsoft''s software suite is getting an upgrade on October
+        5th with the rollout of Windows 11, and this includes Office Home and Student
+        2021, and Office Home and Business 2021. Office Home and Student, which unlocks
+        Word, Excel, PowerPoint, OneNote and Micr…","url":"https://www.engadget.com/microsoft-office-2021-price-164633781.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/a29847b0-22d5-11ec-9fdd-e26903dba09c","publishedAt":"2021-10-01T16:46:33Z","content":"Microsoft''s
+        software suite is getting an upgrade on October 5th with the rollout of Windows
+        11, and this includes Office Home and Student 2021, and Office Home and Business
+        2021. Office Home and Stud… [+1275 chars]"},{"source":{"id":null,"name":"Entrepreneur"},"author":"Kartik
+        Anand","title":"How Technology Has Changed Business Communication","description":"Technology
+        has forever changed the business communication landscape.","url":"https://www.entrepreneur.com/article/383498","urlToImage":"https://assets.entrepreneur.com/content/3x2/2000/1633464089-shutterstock-1187255977.jpg","publishedAt":"2021-10-08T18:30:00Z","content":"Technology
+        has completely changed how we communicate, from our daily personal lives to
+        the workplace. We can communicate faster, more efficiently and more conveniently.\r\nThere
+        are new devices, tools … [+4125 chars]"}]}'
+  recorded_at: Fri, 22 Oct 2021 16:53:50 GMT
+- request:
+    method: get
+    uri: https://newsapi.org/v2/everything?from=2021-10-1&pageSize=1&q=&to=2021-10-15
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - json
+      Authorization:
+      - token <SAFE_STRINGS>
+      Connection:
+      - close
+      Host:
+      - newsapi.org
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Fri, 22 Oct 2021 16:53:51 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '227'
+      Connection:
+      - close
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Cached-Result:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=39%2BlxVvkxMG3RPSnFfM3r%2BnAJNdXHE2vofSMZjqyNmv5BXl%2BTVEcCmlfwh5C3y6LjenkspjV%2BM%2BW0TdvR22jPUnAt%2FedDOQPliiw1WMvxXotrr8Yl6NP8VMVekch"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6a243e821c19529b-LAX
+    body:
+      encoding: UTF-8
+      string: '{"status":"error","code":"parametersMissing","message":"Required parameters
+        are missing, the scope of your search is too broad. Please set any of the
+        following required parameters and try again: q, qInTitle, sources, domains."}'
+  recorded_at: Fri, 22 Oct 2021 16:53:51 GMT
+recorded_with: VCR 6.0.0

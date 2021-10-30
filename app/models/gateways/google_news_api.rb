@@ -15,10 +15,15 @@ module PortfolioAdvisor
       end
 
       class Request       
-        API_GOOGLE_NEWS_EVERYTHING = 'https://newsapi.org/v2/everything?'
+        API_GOOGLE_NEWS_EVERYTHING = 'https://newsapi.org/v2/everything?'.freeze
+
+        def initialize(token)
+          @api_key = token
+        end
 
         def gn_api_path(topic, result_num)
           path = "q=#{topic}&from=2021-10-1&to=2021-10-15&pageSize=#{result_num}"
+          #puts path
           "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
         end
 

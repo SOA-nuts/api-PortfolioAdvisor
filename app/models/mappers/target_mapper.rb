@@ -12,7 +12,7 @@ module PortfolioAdvisor
         @gateway = @gateway_class.new(@token)
       end
 
-      def find(owner_name, project_name)
+      def find(company)
         data = @gateway.article(company)
         build_entity(data['articles'])
       end
@@ -28,7 +28,7 @@ module PortfolioAdvisor
         end
 
         def build_entity
-          CodePraise::Entity::Project.new(
+          PortfolioAdvisor::Entity::Target.new(
             articles: articles
           )
         end

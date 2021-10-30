@@ -1,17 +1,17 @@
+/ .container
+/   .row
+/     h2
+/       span.target.name
+/         = cmp_name
 .container
   .row
-    h2
-      span.target.name
-        = cmp_name
-  / .container
-  /   .row
-  /     .col-md-12.col-sm-6
-  /       .row.top-buffer
-  /         - target.articles.each do |article|
-  /           .row
-  /             .col-sm-12
-  /               span.article.attribute
-  /                 = article.title
-  /           .row
-  /             .col-sm-12
-  /               a.project.detail href="#{article.url}" #{article.url}
+    .col-md-12.col-sm-6
+      .row.top-buffer
+        - target.articles.each do |article|
+          .row
+            .col-sm-12
+              span.article.attribute
+                = article.title
+          .row
+            .col-sm-12
+              a.project.detail href="#{article.url}" #{article.url}

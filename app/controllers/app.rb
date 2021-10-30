@@ -14,6 +14,8 @@ module PortfolioAdvisor
     plugin :assets, css: 'style.css', path: 'app/views/assets'
     plugin :halt
 
+    @cmp_name
+
     route do |routing|
       routing.assets # load CSS
 
@@ -26,21 +28,21 @@ module PortfolioAdvisor
         routing.is do
           # POST /target/
           routing.post do
-            cmp_name = routing.params['company_name'].downcase
-            routing.halt 400 if COMPANY_LIST[cmp_name].nil?
-
-            routing.redirect "target/#{cmp_name}"
+            @cmp_name = routing.params['company_name'].downcase
+            routing.halt 400 if COMPANY_LIST[0][@cmp_name].nil?
+            routing.redirect "target/#{@cmp_name}"
           end
         end
 
         routing.on String do |company|
           # GET /target/company
           routing.get do
+            puts @cmp_name
             target = GoogleNews::TargetMapper
               .new(GOOGLENEWS_TOKEN)
-              .find(cmp_name)
+              .find(@cmp_name)
 
-            view 'target', locals: { target => target, cmp_name => COMPANY_LIST[cmp_name] }
+            view 'target', locals: { target => target }
           end
         end
       end

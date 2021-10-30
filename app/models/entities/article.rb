@@ -12,7 +12,7 @@ module PortfolioAdvisor
 
       attribute :title,             Strict::String
       attribute :url,               Strict::String
-      # attribute :published_at,      Strict::Publish
+      attribute :published_at,      Publish
     end
   end
 end
