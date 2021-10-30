@@ -25,7 +25,7 @@ module PortfolioAdvisor
       class DataMapper
         def initialize(data, token, gateway_class)
           @data = data
-          @article_mapper
+          @article_mapper = ArticleMapper.new()
         end
 
         def build_entity
@@ -35,7 +35,7 @@ module PortfolioAdvisor
         end
 
         def articles
-          @article_mapper = ArticleMapper.new(@data)
+          @article_mapper.load_several(@data)
         end
       end
     end

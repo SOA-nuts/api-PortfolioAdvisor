@@ -1,5 +1,7 @@
 # frozen_string_literal: false
 
+require 'date'
+
 module PortfolioAdvisor
     # Provides access to contributor data
     module GoogleNews
@@ -8,11 +10,11 @@ module PortfolioAdvisor
         def initialize(publish)
             # @publish = publish.map { |date| DateTime.strptime(date, '%Y-%m-%dT%H:%M:%S%z') }
             @publish = DateTime.strptime(publish, '%Y-%m-%dT%H:%M:%S%z')
-            self.build_entity(@publish)
+            # self.build_entity(@publish)
         end
   
-        def build_entity(data)
-          DataMapper.new(data).build_entity
+        def build_entity()
+          DataMapper.new(@publish).build_entity
         end
   
         # Extracts entity specific elements from data structure
