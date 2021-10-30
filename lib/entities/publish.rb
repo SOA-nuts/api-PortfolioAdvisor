@@ -3,15 +3,15 @@
 require 'dry-types'
 require 'dry-struct'
 require 'date'
-require_relative 'article'
 
 module NewsArticle
   module Entity
     # Domain entity for publishing date
-    class Member < Dry::Struct
+    class Publish < Dry::Struct
       include Dry.Types
 
-      attribute :publication_date, Strict::String
+      attribute :date, Strict::String
+      attribute :time, Strict::String
     end
   end
 end

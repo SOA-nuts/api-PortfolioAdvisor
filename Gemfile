@@ -10,3 +10,7 @@ gem 'reek'
 # Testing
 gem 'minitest', '~> 5.0'
 gem 'minitest-rg', '~> 5.0'
+
+#Validation
+gem 'dry-struct'
+gem 'dry-types'

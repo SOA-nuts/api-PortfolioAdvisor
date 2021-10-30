@@ -5,20 +5,16 @@ module NewsArticle
   module GoogleNews
     # Maps NewsAPI data to Article Entity
     class ArticleMapper
-      def initialize(gn_token, gateway_class = GoogleNews::Api)
-        @token = gn_token
-        @gateway_class = gateway_class
-        @gateway = @gateway_class.new(@token)
-      end
+      def initialize; end
 
-      def find(article_data['articles'])
-        @gateway.article(article_data['articles']).map do |data|
-          ArticleMapper.build_entity(data)
+      def load_several(articles)
+        articles.map do |article|
+          ArticleMapper.build_entity(article)
         end
       end
 
-      def self.build_entity(data)
-        ArticleMapper.new(data).build_entity
+      def self.build_entity(article)
+        DataMapper.new(article).build_entity
       end
 
       # Extracts specific parameters from data
@@ -28,24 +24,24 @@ module NewsArticle
         end
 
         def build_entity
-          Entity::Article.new(
-            website_address: website_address,
-            piblication_date: publication_date,
-            title:title
+          NewsArticle::Entity::Article.new(
+            url: url,
+            published_at: published_at,
+            title: title
           )
         end
 
         private
 
-        def website_address
+        def url
           @data['url']
         end
 
-        def publication_date
+        def published_at
           @data['publishedAt']
         end
 
-        def topic
+        def title
           @data['title']
         end
       end

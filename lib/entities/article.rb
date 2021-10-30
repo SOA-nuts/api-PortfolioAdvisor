@@ -8,12 +8,12 @@ require_relative 'publish'
 module NewsArticle
   module Entity
     # Domain entity for any article
-    class ArticleContent < Dry::Struct
+    class Article < Dry::Struct
       include Dry.Types
 
-      attribute :topic, Strict::String
-      attribute :website_address, Strict::String
-      attribute :publication_date, Publish
+      attribute :title, Strict::String
+      attribute :url, Strict::String
+      attribute :published_at, Publish
     end
   end
 end
