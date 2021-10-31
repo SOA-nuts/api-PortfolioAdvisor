@@ -7,7 +7,7 @@ module PortfolioAdvisor
   module GoogleNews
     # Maps NewsAPI data to Article Entity
     class ArticleMapper
-      def initialize()
+      def initialize
         # articles.map do |article|
         #   build_entity(article)
         # end
@@ -23,8 +23,6 @@ module PortfolioAdvisor
         DataMapper.new(article).build_entity
       end
 
-
-
       # Extracts specific parameters from data
       class DataMapper
         def initialize(data)
@@ -36,7 +34,7 @@ module PortfolioAdvisor
           PortfolioAdvisor::Entity::Article.new(
             url: url,
             published_at: published_at,
-            title: title,
+            title: title
             # publish_date: publish_date,
             # publish_time: publish_time
           )
@@ -48,14 +46,12 @@ module PortfolioAdvisor
           # @data.map { |hash| hash['url'] }
           @data['url']
         end
-        
 
         def published_at
           # publish_time = @data.map { |hash| hash['publishedAt'] }
           # Publish.new(publish_time)
           # PublishMapper.new(@data['publishedAt'])
-          @publish_mapper.build_entity()
-          
+          @publish_mapper.build_entity
         end
 
         def title

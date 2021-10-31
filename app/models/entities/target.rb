@@ -9,10 +9,10 @@ module PortfolioAdvisor
   module Entity
     # Domain entity for any article
     class Target < Dry::Struct
-        include Dry.Types
+      include Dry.Types
 
-        attribute :company_name,      Strict::String
-        attribute :articles,          Strict::Array.of(Article)
+      attribute :company_name,      Strict::String
+      attribute :articles,          Strict::Array.of(Article)
     end
   end
 end

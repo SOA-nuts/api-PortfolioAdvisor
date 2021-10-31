@@ -23,10 +23,10 @@ module PortfolioAdvisor
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(company, data, token, gateway_class)
+        def initialize(company, data, _token, _gateway_class)
           @company_name = company
           @data = data
-          @article_mapper = ArticleMapper.new()
+          @article_mapper = ArticleMapper.new
         end
 
         def build_entity
@@ -36,9 +36,7 @@ module PortfolioAdvisor
           )
         end
 
-        def company_name
-          @company_name
-        end
+        attr_reader :company_name
 
         def articles
           @article_mapper.load_several(@data)

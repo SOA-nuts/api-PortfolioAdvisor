@@ -7,8 +7,9 @@ require 'date'
 config = YAML.safe_load(File.read('../../config/secrets.yml'))
 # search for specific topic e.g: business, BBC ...
 def gn_api_topic(topic)
-  to = Date.today.strftime("%Y-%m-%d")
-  from = (Date.today - 10).strftime("%Y-%m-%d")
+  today = Date.today
+  to = today.strftime('%Y-%m-%d')
+  from = (today - 10).strftime('%Y-%m-%d')
   "https://newsapi.org/v2/everything?q=#{topic}&from=#{from}&to=#{to}&pageSize=15"
 end
 
@@ -34,4 +35,3 @@ project['articles'].each do |article|
 end
 gn_results['articles'] = project['articles']
 File.write('apple_results.yml', gn_results.to_yaml)
-

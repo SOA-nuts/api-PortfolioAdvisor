@@ -1,20 +1,23 @@
 # frozen_string_literal: false
 
+require 'date'
 require 'http'
+
 module PortfolioAdvisor
-  # Library for GoogleNews API
   module  GoogleNews
+    # Library for Google News Web API
     class Api
       def initialize(token)
         @gn_token = token
       end
 
-      def article(topic, result_num=15)
+      def article(topic, result_num = 15)
         article_req_url = Request.new(@gn_token).gn_api_path(topic, result_num)
-        article_data = Request.new(@gn_token).get(article_req_url).parse
+        Request.new(@gn_token).get(article_req_url).parse
       end
 
-      class Request       
+      # Sends out HTTP requests to Google News Api
+      class Request
         API_GOOGLE_NEWS_EVERYTHING = 'https://newsapi.org/v2/everything?'.freeze
 
         def initialize(token)
@@ -22,19 +25,23 @@ module PortfolioAdvisor
         end
 
         def gn_api_path(topic, result_num)
-          path = "q=#{topic}&from=2021-10-1&to=2021-10-15&pageSize=#{result_num}"
-          #puts path
+          today = Date.today
+          to = today.strftime('%Y-%m-%d')
+          from = (today - 10).strftime('%Y-%m-%d')
+
+          path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
+          # puts path
           "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
         end
 
         def get(url)
-          http_response=
+          http_response =
             HTTP.headers('Accept' => 'json',
-                          'Authorization' => "token #{@api_key}")
+                         'Authorization' => "token #{@api_key}")
                 .get(url)
 
           Response.new(http_response).tap do |response|
-            raise(response.error)unless response.successful?
+            raise(response.error) unless response.successful?
           end
         end
       end
@@ -45,20 +52,19 @@ module PortfolioAdvisor
         NotFound = Class.new(StandardError)
         BadRequest = Class.new(StandardError)
         HTTP_ERROR = {
-          400=> BadRequest,
+          400 => BadRequest,
           401 => Unauthorized,
           404 => NotFound
         }.freeze
 
         def successful?
-          HTTP_ERROR.keys.include?(code) ? false : true
+          !HTTP_ERROR.keys.include?(code)
         end
 
         def error
           HTTP_ERROR[code]
         end
-      end      
+      end
     end
   end
 end
-
