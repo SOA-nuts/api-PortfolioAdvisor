@@ -1,8 +1,9 @@
 .container
   .row
     h2
+      - company = "Company: #{target.company_name}"
       span.target.name
-        = target.company_name
+        = company
   .container
     .row
       .col-md-12.col-sm-6
