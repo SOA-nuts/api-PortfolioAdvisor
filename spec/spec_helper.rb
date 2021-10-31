@@ -9,7 +9,7 @@ require 'yaml'
 require 'vcr'
 require 'webmock'
 require 'date'
-require_relative '../app/models/mappers/target_mapper'
+require_relative '../init'
 
 TOPIC = 'apple'
 RESULT_NUM = 15

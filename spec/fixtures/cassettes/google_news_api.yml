@@ -266,4 +266,282 @@ http_interactions:
         are missing, the scope of your search is too broad. Please set any of the
         following required parameters and try again: q, qInTitle, sources, domains."}'
   recorded_at: Fri, 22 Oct 2021 16:53:51 GMT
+- request:
+    method: get
+    uri: https://newsapi.org/v2/everything?from=2021-10-21&pageSize=15&q=apple&to=2021-10-31
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - json
+      Authorization:
+      - token <SAFE_STRINGS>
+      Connection:
+      - close
+      Host:
+      - newsapi.org
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 31 Oct 2021 03:11:36 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '13042'
+      Connection:
+      - close
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Cached-Result:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=OhEDgEQ%2FPtebGFY1HUPjdnFzRbhKefTf1mHe7t5aSNxH7pIJ0QeGJVDD7G6GtvUay5Xf8d0Q5gK%2FhoK%2BFubO6s5joPaTmFCC2uSVac6R%2FIyGGacLweCdaIwxnDeR"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6a69b2658db956fa-TPE
+    body:
+      encoding: UTF-8
+      string: '{"status":"ok","totalResults":23688,"articles":[{"source":{"id":"engadget","name":"Engadget"},"author":"Kris
+        Holt","title":"Apple Music is now available on PS5","description":"Spotify\r\n
+        isn''t the only service PlayStation 5 owners can stream music from while they''re
+        playing Deathloop, Returnal or other games. Starting today, you can fire up
+        tracks from Apple Music\r\n as well.The PS5 is the first console with Apple
+        Music integration\r\n…","url":"https://www.engadget.com/apple-music-ps5-app-153625438.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/01fea820-373a-11ec-bbd5-5a0423729e54","publishedAt":"2021-10-27T15:36:25Z","content":"Spotify\r\n
+        isn''t the only service PlayStation 5 owners can stream music from while they''re
+        playing Deathloop, Returnal or other games. Starting today, you can fire up
+        tracks from Apple Music\r\n as well… [+1040 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jon
+        Fingas","title":"Apple TV+ is coming to Comcast devices","description":"The
+        Apple TV app has reached its final frontier: your cable provider''s set-top
+        box. According to Variety, Comcast used its latest earnings call to reveal
+        that the Apple TV app will be available on Comcast''s platforms in the \"coming
+        months.\" Viewers with Xfini…","url":"https://www.engadget.com/apple-tv-app-comcast-xfinity-sky-150136639.html","urlToImage":"https://s.yimg.com/os/creatr-images/2019-11/91d794e0-0562-11ea-a775-dc1a5fce91dd","publishedAt":"2021-10-28T15:01:36Z","content":"The
+        Apple TV app has reached its final frontier: your cable provider''s set-top
+        box. According to Variety, Comcast used its latest earnings call to reveal
+        that the Apple TV app will be available on Co… [+939 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jon
+        Fingas","title":"Apple quietly discontinues the 21.5-inch iMac","description":"You''ll
+        have to go large if you want an Intel-powered Mac desktop. 9to5Macreports
+        Apple has quietly discontinued the 21.5-inch iMac about half a year after
+        introducing the M1 model. The company had been selling a lone dual-core model
+        for $1,099 through a relat…","url":"https://www.engadget.com/apple-discontinues-21-5-inch-imac-195036632.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/c8aeb780-39b5-11ec-b817-931ad9f643a9","publishedAt":"2021-10-30T19:50:36Z","content":"You''ll
+        have to go large if you want an Intel-powered Mac desktop. 9to5Macreports
+        Apple has quietly discontinued the 21.5-inch iMac about half a year after
+        introducing the M1 model. The company had be… [+854 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Cherlynn
+        Low","title":"iOS 15.1 turns on SharePlay for Apple Fitness+","description":"Apple
+        said in September that it was launching a feature called Group Workouts on
+        Fitness+ that would use iOS 15''s SharePlay tool for exercise sessions over
+        FaceTime. The company just announced that Group Workouts is available starting
+        today, so you can get up…","url":"https://www.engadget.com/apple-fitness-group-workout-shareplay-available-now-170031703.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/2bc8f830-35b0-11ec-bfdf-e9e5a2ffc7dd","publishedAt":"2021-10-25T17:00:31Z","content":"Apple
+        said in September that it was launching a feature called Group Workouts on
+        Fitness+ that would use iOS 15''s SharePlay tool for exercise sessions over
+        FaceTime. The company just announced that G… [+1654 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Mariella
+        Moon","title":"iFixit''s Apple Watch Series 7 teardown shows the same display
+        tech as iPhone 13","description":"iFixit has taken apart the Apple Watch Series
+        7 and showed that despite having minimal changes on the outside, it does feature
+        some big upgrades underneath. As we mentioned in our review, the main difference
+        between this device and the Series 6 is its slightl…","url":"https://www.engadget.com/apple-watch-series-7-teardown-ifixit-055346543.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/4d0e1b40-32f1-11ec-99eb-57977b25e4bd","publishedAt":"2021-10-22T05:53:46Z","content":"iFixit
+        has taken apart the Apple Watch Series 7 and showed that despite having minimal
+        changes on the outside, it does feature some big upgrades underneath. As we
+        mentioned in our review, the main di… [+1535 chars]"},{"source":{"id":"the-verge","name":"The
+        Verge"},"author":"Chris Welch","title":"Apple AirPods (third-gen) review:
+        new design, same appeal","description":"There are many reasons to like them
+        besides gimmicky spatial audio.","url":"https://www.theverge.com/22744686/apple-airpods-third-gen-review","urlToImage":"https://cdn.vox-cdn.com/thumbor/0DeNrQoeiPvUO1g1JGEFYCWHFps=/0x226:2040x1294/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22953788/IMG_0040.jpg","publishedAt":"2021-10-25T16:00:00Z","content":"If
+        you buy something from a Verge link, Vox Media may earn a commission. See
+        our ethics statement.For the first time since their introduction in 2016,
+        Apples AirPods have a completely new design. The… [+14127 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Devindra
+        Hardawar","title":"Apple lets devs promote in-app events on the App Store","description":"As
+        promised at WWDC earlier this year, Apple today will start letting developers
+        highlight their in-app events on the App Store. You''ll need iOS 15 and iPadOS
+        15 to see the event listings, and they work as you''d expect, allowing you
+        to see seasonal competitio…","url":"https://www.engadget.com/apple-in-app-events-app-store-194526022.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/45e9a8f0-375d-11ec-aed6-6a847d138de2","publishedAt":"2021-10-27T19:45:26Z","content":"As
+        promised at WWDC earlier this year, Apple today will start letting developers
+        highlight their in-app events on the App Store. You''ll need iOS 15 and iPadOS
+        15 to see the event listings, and they w… [+598 chars]"},{"source":{"id":null,"name":"Lifehacker.com"},"author":"Khamosh
+        Pathak","title":"You''re Not Making the Most of Your iPhone Camera","description":"The
+        iPhone used to have one of the simplest camera layouts of any smartphone.
+        Over the past couple of years, however, as the iPhone’s camera grew bigger
+        and better, Apple added more and more features, buttons, and settings until
+        it became a bit...bogged down.…","url":"https://lifehacker.com/youre-not-making-the-most-of-your-iphone-camera-1847917519","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/70fa660821ac0ab4db99008739707acd.jpg","publishedAt":"2021-10-25T16:00:00Z","content":"The
+        iPhone used to have one of the simplest camera layouts of any smartphone.
+        Over the past couple of years, however, as the iPhones camera grew bigger
+        and better, Apple added more and more features,… [+5362 chars]"},{"source":{"id":null,"name":"Lifehacker.com"},"author":"Khamosh
+        Pathak","title":"13 Pro Tips For Setting Up Your New MacBook Pro","description":"The
+        MacBook Pros are finally pro machines again. Now that the ports are back,
+        and Apple has upgraded the power and the design, it’s your turn to upgrade
+        the software experience. After unboxing your MacBook Pro, take some time to
+        make some essential productivi…","url":"https://lifehacker.com/13-pro-tips-for-setting-up-your-new-macbook-pro-1847953860","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/ee0942568eb9f188797e4baee17de4b2.png","publishedAt":"2021-10-28T17:30:00Z","content":"Dont
+        judge the MacBook Pro by the notch. Give it some time, and, in a week, youll
+        probably forget all about it. But if you cant get used to it, there are two
+        ways to hide the notch.\r\nYou can use a fr… [+703 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Devindra
+        Hardawar","title":"MacBook Pro 14-inch and 16-inch review (2021): Apple’s
+        mighty Macs","description":"Apple is finally restoring balance to its portable
+        lineup with the new 14-inch and 16-inch MacBook Pros. If you wanted a big-screen
+        Mac notebook for video editing over the past year, you were stuck paying a
+        premium for outdated Intel and AMD hardware. So, we''…","url":"https://www.engadget.com/mac-book-pro-14-16-inch-review-2021-apple-mighty-macs-130011975.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/fc27e1e0-350a-11ec-8d7e-26deaf2f6d2b","publishedAt":"2021-10-25T13:00:11Z","content":"Our
+        14-inch review model was equipped with an M1 Pro sporting 16 GPU cores, 32GB
+        of RAM and a 1TB SSD. The 16-inch had the 32 GPU core M1 Max, a 2TB SSD and
+        a whopping 64GB of RAM. (This, by the way,… [+6428 chars]"},{"source":{"id":"wired","name":"Wired"},"author":"Adrienne
+        So","title":"The Apple Watch Series 7 Isn’t a Huge Upgrade, but That’s OK","description":"This
+        new iterative smartwatch focuses on biking, and the battery life still stinks.","url":"https://www.wired.com/review/apple-watch-series-7/","urlToImage":"https://media.wired.com/photos/617b269f61ff71e763a1cb4f/191:100/w_1280,c_limit/Gear-Apple-Watch-Series-7-Review-top.jpg","publishedAt":"2021-10-29T11:00:00Z","content":"Under
+        the guise of working very, very hard to test Apples latest smartwatch, the
+        Series 7, Ive spent a lot of time biking over the past two weeks. Nearly all
+        the new additions revolve around making i… [+2862 chars]"},{"source":{"id":null,"name":"Gizmodo.com"},"author":"David
+        Nield","title":"Everything You Need to Know to Decide Which MacBook is the
+        Best MacBook for You","description":"The MacBook lineup has just expanded
+        with brand new 14-inch and 16-inch MacBook Pros available to buy. But there’s
+        also the existing MacBook Air and 13-inch MacBook Pro, and they all run on
+        custom-made Apple Silicon chips, all with various configurations avai…","url":"https://gizmodo.com/everything-you-need-to-know-to-decide-which-macbook-is-1847926191","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/fd7bcaff679ae3ba72a4895bbc143d1a.jpg","publishedAt":"2021-10-27T12:00:00Z","content":"The
+        MacBook lineup has just expanded with brand new 14-inch and 16-inch MacBook
+        Pros available to buy. But theres also the existing MacBook Air and 13-inch
+        MacBook Pro, and they all run on custom-mad… [+10706 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Kris
+        Holt","title":"macOS Monterey is out now without SharePlay","description":"Apple
+        has at long last released the latest major version of its Mac operating system,
+        macOS Monterey\r\n. While it''s perhaps a more modest update than in previous
+        years, there are some significant changes\r\n in some areas of the OS.The
+        redesigned Safari might be…","url":"https://www.engadget.com/apple-macos-monterey-release-facetime-safari-shareplay-171102479.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-07/3d437b60-da9f-11eb-b6d2-c27c02f86e65","publishedAt":"2021-10-25T17:11:02Z","content":"Apple
+        has at long last released the latest major version of its Mac operating system,
+        macOS Monterey\r\n. While it''s perhaps a more modest update than in previous
+        years, there are some significant chan… [+1317 chars]"},{"source":{"id":"the-verge","name":"The
+        Verge"},"author":"Mitchell Clark","title":"Apple tests its new App Privacy
+        report in iOS 15.2 beta","description":"Apple’s App Privacy Report has appeared
+        in the latest iOS 15 beta. The feature is meant to show users what permissions
+        apps have, how often they use them, and where they could be sending that data.","url":"https://www.theverge.com/2021/10/27/22749352/apple-app-privacy-report-ios-15-2-beta-feature","urlToImage":"https://cdn.vox-cdn.com/thumbor/oiw6PEtM__CvKNHUYUhFPZNY7aM=/0x0:2416x1265/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22960601/Screen_Shot_2021_10_27_at_12.46.16.png","publishedAt":"2021-10-27T20:31:00Z","content":"The
+        feature was announced at WWDC 2021\r\nImage: Apple\r\nApples App Privacy Report,
+        announced at WWDC 2021, has made its way onto iPhones with the first release
+        of the iOS 15.2 beta, according to MacRum… [+1522 chars]"},{"source":{"id":null,"name":"Gizmodo.com"},"author":"Victoria
+        Song","title":"The Apple Polishing Cloth Is Everything Wrong With Society","description":"I
+        regret to inform you all that we have reached peak Polishing Cloth. I take
+        full responsibility for my small part in getting us to this point. Read more...","url":"https://gizmodo.com/the-apple-polishing-cloth-is-everything-wrong-with-soci-1847965156","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/ee61fb7b8463fe2ab97b7946019fc1d5.png","publishedAt":"2021-10-29T21:40:00Z","content":"I
+        regret to inform you all that we have reached peak Polishing Cloth. I take
+        full responsibility for my small part in getting us to this point. \r\nThe
+        gag was simple: Looketh over here and gawp with m… [+3327 chars]"}]}'
+  recorded_at: Sun, 31 Oct 2021 03:11:36 GMT
+- request:
+    method: get
+    uri: https://newsapi.org/v2/everything?from=2021-10-21&pageSize=15&q=&to=2021-10-31
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - json
+      Authorization:
+      - token <SAFE_STRINGS>
+      Connection:
+      - close
+      Host:
+      - newsapi.org
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Sun, 31 Oct 2021 03:19:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '227'
+      Connection:
+      - close
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Cached-Result:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=jA0mUPeWX1R68A8%2FXWlgPM7h0KTFwWys8JxfGuIV%2FMoUZRS2R0t5fXJpaHgu%2FprDMK7c%2FXKp%2FiuwGTOrnoXIKyM5mbLsgQ5nkq9KqCbpmD%2FNIB%2Bl6ACf9OgTDoE6"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6a69bd756fe90730-TPE
+    body:
+      encoding: UTF-8
+      string: '{"status":"error","code":"parametersMissing","message":"Required parameters
+        are missing, the scope of your search is too broad. Please set any of the
+        following required parameters and try again: q, qInTitle, sources, domains."}'
+  recorded_at: Sun, 31 Oct 2021 03:19:09 GMT
+- request:
+    method: get
+    uri: https://newsapi.org/v2/everything?from=2021-10-21&pageSize=15&q=apple&to=2021-10-31
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Accept:
+      - json
+      Authorization:
+      - token BAD_TOKEN
+      Connection:
+      - close
+      Host:
+      - newsapi.org
+      User-Agent:
+      - http.rb/5.0.4
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Sun, 31 Oct 2021 03:19:10 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '162'
+      Connection:
+      - close
+      Cache-Control:
+      - no-cache
+      Pragma:
+      - no-cache
+      Expires:
+      - "-1"
+      X-Cached-Result:
+      - 'false'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=o875vfUYFjEzYfGeO1igENmc4XSlmOcdh0ZPdpf19hwtA%2BPqnN3eh9NhcthoOUasaKiitACI3LT1wH2YuOypgPJT4kXZ6N3KbaB5evGNQMxapISADtHjrMVuNKLu"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 6a69bd7d6ec06a80-TPE
+    body:
+      encoding: UTF-8
+      string: '{"status":"error","code":"apiKeyInvalid","message":"Your API key is
+        invalid or incorrect. Check your key, or go to https://newsapi.org to create
+        a free API key."}'
+  recorded_at: Sun, 31 Oct 2021 03:19:11 GMT
 recorded_with: VCR 6.0.0

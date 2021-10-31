@@ -33,15 +33,17 @@ describe 'Tests Google News API library' do
     it 'SAD: should raise exception on incorrect project' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
-          .new(GOOGLENEWS_TOKEN).article('', 1)
-      end).must_raise PortfolioAdvisor::GoogleNews::Response::BadRequest
+        .new(GOOGLENEWS_TOKEN)
+        .find('')
+      end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::BadRequest
     end
 
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
-          .new('BAD_TOKEN').article(TOPIC, 1)
-      end).must_raise PortfolioAdvisor::GoogleNews::Response::Unauthorized
+        .new('BAD_TOKEN')
+        .find(TOPIC)
+      end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::Unauthorized
     end
   end
   describe 'Test Published Date of News' do
