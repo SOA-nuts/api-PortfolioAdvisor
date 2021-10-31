@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/c/SOA/GoogleNews/init.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/init.rb": {
         "lines": [
           null,
           null,
@@ -10,14 +10,14 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/config/init.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/config/init.rb": {
         "lines": [
           null,
           null,
           1
         ]
       },
-      "/mnt/c/SOA/GoogleNews/config/environment.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -32,7 +32,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/init.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/init.rb": {
         "lines": [
           null,
           null,
@@ -41,7 +41,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/init.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/init.rb": {
         "lines": [
           null,
           null,
@@ -52,7 +52,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/entities/article.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/entities/article.rb": {
         "lines": [
           null,
           null,
@@ -74,7 +74,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/entities/publish.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/entities/publish.rb": {
         "lines": [
           null,
           null,
@@ -95,7 +95,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/entities/target.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/entities/target.rb": {
         "lines": [
           null,
           null,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/mappers/article_mapper.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/mappers/article_mapper.rb": {
         "lines": [
           null,
           null,
@@ -185,7 +185,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/mappers/publish_mapper.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/mappers/publish_mapper.rb": {
         "lines": [
           null,
           null,
@@ -236,7 +236,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/mappers/target_mapper.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/mappers/target_mapper.rb": {
         "lines": [
           null,
           null,
@@ -287,7 +287,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/models/gateways/google_news_api.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/models/gateways/google_news_api.rb": {
         "lines": [
           null,
           null,
@@ -322,6 +322,7 @@
           null,
           5,
           null,
+          null,
           5,
           null,
           null,
@@ -361,7 +362,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/controllers/init.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/controllers/init.rb": {
         "lines": [
           null,
           null,
@@ -370,7 +371,7 @@
           null
         ]
       },
-      "/mnt/c/SOA/GoogleNews/app/controllers/app.rb": {
+      "/mnt/c/Users/Hung/Desktop/GoogleNewsAPI/app/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -423,6 +424,6 @@
         ]
       }
     },
-    "timestamp": 1635661055
+    "timestamp": 1635687319
   }
 }

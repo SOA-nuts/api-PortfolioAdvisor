@@ -14,7 +14,10 @@ describe 'Tests Google News API library' do
   before do
     VCR.insert_cassette CASSETTE_FILE,
                         record: :new_episodes,
-                        match_requests_on: %i[method uri headers]
+                        match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to)]
+
+    #                     match_requests_on: %i[method uri headers]
+    # VCR.request_matchers.uri_without_param(:from, :to)
   end
 
   after do

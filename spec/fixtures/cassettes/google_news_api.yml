@@ -2,217 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://newsapi.org/v2/everything?from=2021-10-1&pageSize=1&q=business&to=2021-10-15
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - json
-      Authorization:
-      - token BAD_TOKEN
-      Connection:
-      - close
-      Host:
-      - newsapi.org
-      User-Agent:
-      - http.rb/5.0.4
-  response:
-    status:
-      code: 401
-      message: Unauthorized
-    headers:
-      Date:
-      - Fri, 22 Oct 2021 16:53:38 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '162'
-      Connection:
-      - close
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Cached-Result:
-      - 'false'
-      Cf-Cache-Status:
-      - DYNAMIC
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=nFAQ3iYOFazV4CIdLe2f%2Beot5fGk9sxHMPrzE9fkUU%2B3AWCLA%2F3RiYOS8CMctSIzzFLPlkGpD6M39JXnA2XvBAgrYN6HWT4fPMFL%2FYGHuARnOXNHJ0xZw6QekwxJ"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 6a243e348f22eef6-LAX
-    body:
-      encoding: UTF-8
-      string: '{"status":"error","code":"apiKeyInvalid","message":"Your API key is
-        invalid or incorrect. Check your key, or go to https://newsapi.org to create
-        a free API key."}'
-  recorded_at: Fri, 22 Oct 2021 16:53:38 GMT
-- request:
-    method: get
-    uri: https://newsapi.org/v2/everything?from=2021-10-1&pageSize=15&q=business&to=2021-10-15
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - json
-      Authorization:
-      - token <SAFE_STRINGS>
-      Connection:
-      - close
-      Host:
-      - newsapi.org
-      User-Agent:
-      - http.rb/5.0.4
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Fri, 22 Oct 2021 16:53:50 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '11444'
-      Connection:
-      - close
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Cached-Result:
-      - 'true'
-      X-Cache-Remaining:
-      - '99'
-      X-Cache-Expires:
-      - Fri, 22 Oct 2021 16:58:18 GMT
-      Cf-Cache-Status:
-      - DYNAMIC
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=l27M6PlxMr4ezv86b9N3HHdwF%2FGdmrPH4C3h0JlHUTUNPPmohLmGd6CVAm%2BSPygB27bHhBKbUBXknRyJwyWmzFvc4OCvRGswFGsnn9M29mcjssCEqFMNEcE86vXI"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 6a243e7b6ec752c5-LAX
-    body:
-      encoding: UTF-8
-      string: '{"status":"ok","totalResults":81187,"articles":[{"source":{"id":null,"name":"New
-        York Times"},"author":"Stacy Cowley","title":"S.B.A. Overpaid $4.5 Billion
-        on ‘Illogical’ Small Business Grant Claims","description":"A program gave
-        money to 700,000 self-employed people who improperly claimed to have as many
-        as a million employees, according to an inspector general’s report.","url":"https://www.nytimes.com/2021/10/07/business/fraud-small-business-administration.html","urlToImage":"https://static01.nyt.com/images/2021/10/07/business/07sbaloans/07sbaloans-facebookJumbo.jpg","publishedAt":"2021-10-07T21:32:47Z","content":"In
-        a written response included in the report, James E. Rivera, the head of the
-        unit that ran the program, said the agency was required by the CARES Act to
-        accept applicants self-certifications that t… [+1651 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"Katie Robertson","title":"Carlos Watson, Co-founder
-        of Ozy Media, Resigns From NPR Board","description":"The development is latest
-        following reports in The New York Times questioning Ozy’s business practices.","url":"https://www.nytimes.com/2021/10/01/business/carlos-watson-npr.html","urlToImage":"https://static01.nyt.com/images/2021/09/27/business/26JPbensmith2-print-copy/26bensmith-2-facebookJumbo.jpg","publishedAt":"2021-10-01T19:30:30Z","content":"On
-        Thursday, The Times published another report from Mr. Smith that, last year,
-        Ozy hired a team to make a talk show for the cable network A&amp;E The Carlos
-        Watson Show, hosted by Mr. Watson. Guests… [+1607 chars]"},{"source":{"id":"bbc-news","name":"BBC
-        News"},"author":"https://www.facebook.com/bbcnews","title":"Rape case sparks
-        fury over China''s work drinking","description":"As public scrutiny of corporate
-        misbehaviour grows, can business drinking be dropped forever?","url":"https://www.bbc.co.uk/news/world-asia-china-58313387","urlToImage":"https://ichef.bbci.co.uk/news/1024/branded_news/14F48/production/_120223858_gettyimages-186475202.jpg","publishedAt":"2021-10-02T23:09:29Z","content":"By
-        Waiyee YipBBC News\r\nImage source, Getty Images\r\nImage caption, Drinks
-        with colleagues are often a drawn-out affair involving formal toasting etiquette\r\nA
-        high-profile rape allegation at Chinese te… [+7562 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"Glenn Rifkin","title":"John J. Rigas, Cable TV Magnate
-        Who Pillaged His Company, Dies at 96","description":"He built Adelphia Communications
-        into a business with 5.5 million customers, then was convicted of stealing
-        hundreds of millions of dollars from it.","url":"https://www.nytimes.com/2021/09/30/obituaries/john-j-rigas-dead.html","urlToImage":"https://static01.nyt.com/images/2021/09/30/obituaries/30Rigas2/30Rigas2-facebookJumbo.jpg","publishedAt":"2021-10-01T00:21:08Z","content":"John
-        was quiet, but he was hard-working and a builder, Mr. Malone said. He was
-        definitely good for the growth of the industry.\r\nAdelphia was made up of
-        a lot of little systems stitched together and r… [+1671 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"Scott Miller","title":"Dodgers Will Face Rival Giants
-        in Division Series","description":"The 106-win Los Angeles Dodgers took care
-        of business in a do-or-die game against St. Louis. Their next opponent? The
-        107-win San Francisco Giants.","url":"https://www.nytimes.com/2021/10/07/sports/baseball/dodgers-giants-division-series.html","urlToImage":"https://static01.nyt.com/images/2021/11/06/sports/06mlb-nl-wild-card1/06mlb-nl-wild-card1-facebookJumbo.jpg","publishedAt":"2021-10-07T09:00:21Z","content":"It
-        stayed 1-1 over the course of five innings, through nine combined relief pitchers,
-        several pinch-hitters and two starting pitchers Scherzer (four and a third
-        innings, one run, three hits, three wa… [+1160 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"Ruhullah Khapalwak and David Zucchino","title":"U.S.
-        Weapons, Now for Sale in Afghan Gun Shops","description":"The Taliban seized
-        troves of American weapons and vehicles from surrendering Afghan soldiers.
-        Now, gun dealers are doing a brisk business.","url":"https://www.nytimes.com/2021/10/05/world/asia/us-weapons-afghanistan.html","urlToImage":"https://static01.nyt.com/images/2021/10/05/world/05afghan-weapons-001/merlin_194288733_9256e59c-bf82-4118-8d11-99845afd02cf-facebookJumbo.jpg","publishedAt":"2021-10-05T17:07:02Z","content":"Some
-        soldiers and police sold their weapons and ammunition before they negotiated
-        their surrenders. Weapons dealers would pay about $1,200 for a single U.S.-service
-        Beretta M9 handgun, the gun mercha… [+1238 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"Ben Smith","title":"Ozy Media Will Shut Down","description":"The
-        digital media start-up, led by Carlos Watson, had come under scrutiny for
-        its business practices following articles in The Times.","url":"https://www.nytimes.com/2021/10/01/business/media/ozy-media-carlos-watson.html","urlToImage":"https://static01.nyt.com/images/2021/10/01/business/01Ozy/01Ozy-facebookJumbo.jpg","publishedAt":"2021-10-01T21:27:43Z","content":"Ozy
-        Media, the digital media company that came under scrutiny for its business
-        practices in recent days, announced on Friday that it was shutting down.\r\nAt
-        Ozy, we have been blessed with a remarkable… [+1155 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"The New York Times","title":"Thousands of Workers at
-        John Deere Strike Over Contract","description":"Unionized workers at the agriculture
-        equipment maker went on strike after rejecting a contract proposal. Here’s
-        the latest in business news.","url":"https://www.nytimes.com/live/2021/10/14/business/news-business-stock-market","urlToImage":"https://static01.nyt.com/images/2021/11/13/business/13economy-briefing-deere/13economy-briefing-deere-facebookJumbo.jpg","publishedAt":"2021-10-14T05:17:33Z","content":"By
-        Noam Scheiber\r\nSome 10,000 unionized workers at the agriculture equipment
-        maker Deere &amp; Company went on strike early Thursday after overwhelmingly
-        rejecting a contract proposal worked out with… [+9509 chars]"},{"source":{"id":null,"name":"New
-        York Times"},"author":"John Leland, Daniel Axelrod and Jutharat Pinyodoonyachet","title":"Legoland
-        Is Now Open. Can Residents of Goshen, N.Y. Learn To Live With It?","description":"When
-        Legoland arrived in Goshen, N.Y., it divided residents into first-time environmental
-        activists or business boosters. Now that the park is open, can neighbors piece
-        together a way to move ahead?","url":"https://www.nytimes.com/2021/10/01/nyregion/legoland-goshen-new-york.html","urlToImage":"https://static01.nyt.com/images/2021/09/29/nyregion/00legoland-promo/00legoland-promo-facebookJumbo.jpg","publishedAt":"2021-10-01T19:28:12Z","content":"I
-        want to bring to your attention the division that this project has given our
-        town, Ms. Tzouganatos said. We have had neighbor versus neighbor, we have
-        had people on social media destroying each oth… [+1463 chars]"},{"source":{"id":"reuters","name":"Reuters"},"author":null,"title":"Gulfstream
-        introduces two new business aircraft - Reuters","description":"General Dynamics
-        Corp''s <a href=\"https://www.reuters.com/companies/GD.N\" target=\"_blank\">(GD.N)</a>
-        Gulfstream Aerospace introduced two new aircraft, Gulfstream G800 and Gulfstream
-        G400, on Monday, the aircraft company said in a statement.","url":"https://www.reuters.com/business/aerospace-defense/gulfstream-introduces-two-new-business-aircraft-2021-10-05/","urlToImage":"https://www.reuters.com/resizer/1pa14hy49lL8jKR3V2OIgot_m8Y=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/MZ3DAIG4FJOMRNYYAKVPYVKAXI.jpg","publishedAt":"2021-10-05T08:17:00Z","content":"The
-        Gulfstream logo is seen during the Latin American Business Aviation Conference
-        &amp; Exhibition fair (LABACE) at Congonhas Airport in Sao Paulo, Brazil August
-        14, 2018. REUTERS/Paulo WhitakerOct … [+841 chars]"},{"source":{"id":"bbc-news","name":"BBC
-        News"},"author":null,"title":"Raducanu says it has been ''pretty cool'' to
-        receive congratulations as she prepares for return","description":"Emma Radcuanu
-        says it has been \"pretty cool\" to receive the congratulations of other players
-        at Indian Wells, but now is the time to get back to business.","url":"https://www.bbc.co.uk/sport/tennis/58797409","urlToImage":"https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/7F69/production/_120871623_gettyimages-1345001227.jpg","publishedAt":"2021-10-05T20:17:12Z","content":"Raducanu
-        attended the James Bond premiere last week\r\nEmma Radcuanu says it has been
-        \"pretty cool\" to receive the congratulations of other players at Indian
-        Wells, but now is the time to get back to b… [+1591 chars]"},{"source":{"id":null,"name":"The
-        Economist"},"author":"The Economist","title":"Business","description":"","url":"https://www.economist.com/the-world-this-week/2021/10/16/business","urlToImage":"https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/10/articles/main/20211016_wwp501.jpg","publishedAt":"2021-10-14T15:20:33Z","content":"Americas
-        annual inflation rate climbed again in September, to 5.4%, having dipped slightly
-        in August. In its latest outlook on the world economy the IMF said that rising
-        inflation reflected pandemic-… [+4566 chars]"},{"source":{"id":null,"name":"The
-        Economist"},"author":"The Economist","title":"Business","description":"","url":"https://www.economist.com/the-world-this-week/2021/10/14/business","urlToImage":"https://www.economist.com/img/b/1280/720/90/sites/default/files/images/2021/10/articles/main/20211016_wwp501.jpg","publishedAt":"2021-10-14T14:57:41Z","content":"Americas
-        annual inflation rate climbed again in September, to 5.4%, having dipped slightly
-        in August. In its latest outlook on the world economy the IMF said that rising
-        inflation reflected pandemic-… [+4566 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jessica
-        Conditt","title":"Microsoft Office 2021 starts at $150 and arrives on October
-        5th","description":"Microsoft''s software suite is getting an upgrade on October
-        5th with the rollout of Windows 11, and this includes Office Home and Student
-        2021, and Office Home and Business 2021. Office Home and Student, which unlocks
-        Word, Excel, PowerPoint, OneNote and Micr…","url":"https://www.engadget.com/microsoft-office-2021-price-164633781.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/a29847b0-22d5-11ec-9fdd-e26903dba09c","publishedAt":"2021-10-01T16:46:33Z","content":"Microsoft''s
-        software suite is getting an upgrade on October 5th with the rollout of Windows
-        11, and this includes Office Home and Student 2021, and Office Home and Business
-        2021. Office Home and Stud… [+1275 chars]"},{"source":{"id":null,"name":"Entrepreneur"},"author":"Kartik
-        Anand","title":"How Technology Has Changed Business Communication","description":"Technology
-        has forever changed the business communication landscape.","url":"https://www.entrepreneur.com/article/383498","urlToImage":"https://assets.entrepreneur.com/content/3x2/2000/1633464089-shutterstock-1187255977.jpg","publishedAt":"2021-10-08T18:30:00Z","content":"Technology
-        has completely changed how we communicate, from our daily personal lives to
-        the workplace. We can communicate faster, more efficiently and more conveniently.\r\nThere
-        are new devices, tools … [+4125 chars]"}]}'
-  recorded_at: Fri, 22 Oct 2021 16:53:50 GMT
-- request:
-    method: get
-    uri: https://newsapi.org/v2/everything?from=2021-10-1&pageSize=1&q=&to=2021-10-15
+    uri: https://newsapi.org/v2/everything?from=2021-10-10&pageSize=15&q=&to=2021-10-20
     body:
       encoding: UTF-8
       string: ''
@@ -233,7 +23,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Fri, 22 Oct 2021 16:53:51 GMT
+      - Sun, 31 Oct 2021 13:14:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -253,22 +43,22 @@ http_interactions:
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=39%2BlxVvkxMG3RPSnFfM3r%2BnAJNdXHE2vofSMZjqyNmv5BXl%2BTVEcCmlfwh5C3y6LjenkspjV%2BM%2BW0TdvR22jPUnAt%2FedDOQPliiw1WMvxXotrr8Yl6NP8VMVekch"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=Ho%2BzQ8cWfnbwx7ynuMxiyFhczPM7m5Ccc6oC0ZQJ3sSowFQhR4jQfhFrusPiIsBcScIHTmr5woszqH79KUfM3BLodlBgj5rXKvSUneOq%2FYOcTL0fXiCmuGiNp4Hq"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 6a243e821c19529b-LAX
+      - 6a6d253998716b66-TPE
     body:
       encoding: UTF-8
       string: '{"status":"error","code":"parametersMissing","message":"Required parameters
         are missing, the scope of your search is too broad. Please set any of the
         following required parameters and try again: q, qInTitle, sources, domains."}'
-  recorded_at: Fri, 22 Oct 2021 16:53:51 GMT
+  recorded_at: Sun, 31 Oct 2021 13:14:17 GMT
 - request:
     method: get
-    uri: https://newsapi.org/v2/everything?from=2021-10-21&pageSize=15&q=apple&to=2021-10-31
+    uri: https://newsapi.org/v2/everything?from=2021-10-10&pageSize=15&q=apple&to=2021-10-20
     body:
       encoding: UTF-8
       string: ''
@@ -289,11 +79,11 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 31 Oct 2021 03:11:36 GMT
+      - Sun, 31 Oct 2021 13:14:18 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '13042'
+      - '14165'
       Connection:
       - close
       Cache-Control:
@@ -309,188 +99,135 @@ http_interactions:
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=OhEDgEQ%2FPtebGFY1HUPjdnFzRbhKefTf1mHe7t5aSNxH7pIJ0QeGJVDD7G6GtvUay5Xf8d0Q5gK%2FhoK%2BFubO6s5joPaTmFCC2uSVac6R%2FIyGGacLweCdaIwxnDeR"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=vzQdfsA4Eo293FDTuAphfezY1ZsXLWCCenGXJ2pxQBph411zahchETNCle510UUp62aU1HDpH2yVLs%2B2CmBmUlODLQXPuf0XQA7M5hP1Pl7WhL6In0H3aU0kpA87"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 6a69b2658db956fa-TPE
+      - 6a6d25414e8c6a96-TPE
     body:
       encoding: UTF-8
-      string: '{"status":"ok","totalResults":23688,"articles":[{"source":{"id":"engadget","name":"Engadget"},"author":"Kris
-        Holt","title":"Apple Music is now available on PS5","description":"Spotify\r\n
-        isn''t the only service PlayStation 5 owners can stream music from while they''re
-        playing Deathloop, Returnal or other games. Starting today, you can fire up
-        tracks from Apple Music\r\n as well.The PS5 is the first console with Apple
-        Music integration\r\n…","url":"https://www.engadget.com/apple-music-ps5-app-153625438.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/01fea820-373a-11ec-bbd5-5a0423729e54","publishedAt":"2021-10-27T15:36:25Z","content":"Spotify\r\n
-        isn''t the only service PlayStation 5 owners can stream music from while they''re
-        playing Deathloop, Returnal or other games. Starting today, you can fire up
-        tracks from Apple Music\r\n as well… [+1040 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jon
-        Fingas","title":"Apple TV+ is coming to Comcast devices","description":"The
-        Apple TV app has reached its final frontier: your cable provider''s set-top
-        box. According to Variety, Comcast used its latest earnings call to reveal
-        that the Apple TV app will be available on Comcast''s platforms in the \"coming
-        months.\" Viewers with Xfini…","url":"https://www.engadget.com/apple-tv-app-comcast-xfinity-sky-150136639.html","urlToImage":"https://s.yimg.com/os/creatr-images/2019-11/91d794e0-0562-11ea-a775-dc1a5fce91dd","publishedAt":"2021-10-28T15:01:36Z","content":"The
-        Apple TV app has reached its final frontier: your cable provider''s set-top
-        box. According to Variety, Comcast used its latest earnings call to reveal
-        that the Apple TV app will be available on Co… [+939 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jon
-        Fingas","title":"Apple quietly discontinues the 21.5-inch iMac","description":"You''ll
-        have to go large if you want an Intel-powered Mac desktop. 9to5Macreports
-        Apple has quietly discontinued the 21.5-inch iMac about half a year after
-        introducing the M1 model. The company had been selling a lone dual-core model
-        for $1,099 through a relat…","url":"https://www.engadget.com/apple-discontinues-21-5-inch-imac-195036632.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/c8aeb780-39b5-11ec-b817-931ad9f643a9","publishedAt":"2021-10-30T19:50:36Z","content":"You''ll
-        have to go large if you want an Intel-powered Mac desktop. 9to5Macreports
-        Apple has quietly discontinued the 21.5-inch iMac about half a year after
-        introducing the M1 model. The company had be… [+854 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Cherlynn
-        Low","title":"iOS 15.1 turns on SharePlay for Apple Fitness+","description":"Apple
-        said in September that it was launching a feature called Group Workouts on
-        Fitness+ that would use iOS 15''s SharePlay tool for exercise sessions over
-        FaceTime. The company just announced that Group Workouts is available starting
-        today, so you can get up…","url":"https://www.engadget.com/apple-fitness-group-workout-shareplay-available-now-170031703.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/2bc8f830-35b0-11ec-bfdf-e9e5a2ffc7dd","publishedAt":"2021-10-25T17:00:31Z","content":"Apple
-        said in September that it was launching a feature called Group Workouts on
-        Fitness+ that would use iOS 15''s SharePlay tool for exercise sessions over
-        FaceTime. The company just announced that G… [+1654 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Mariella
-        Moon","title":"iFixit''s Apple Watch Series 7 teardown shows the same display
-        tech as iPhone 13","description":"iFixit has taken apart the Apple Watch Series
-        7 and showed that despite having minimal changes on the outside, it does feature
-        some big upgrades underneath. As we mentioned in our review, the main difference
-        between this device and the Series 6 is its slightl…","url":"https://www.engadget.com/apple-watch-series-7-teardown-ifixit-055346543.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/4d0e1b40-32f1-11ec-99eb-57977b25e4bd","publishedAt":"2021-10-22T05:53:46Z","content":"iFixit
-        has taken apart the Apple Watch Series 7 and showed that despite having minimal
-        changes on the outside, it does feature some big upgrades underneath. As we
-        mentioned in our review, the main di… [+1535 chars]"},{"source":{"id":"the-verge","name":"The
-        Verge"},"author":"Chris Welch","title":"Apple AirPods (third-gen) review:
-        new design, same appeal","description":"There are many reasons to like them
-        besides gimmicky spatial audio.","url":"https://www.theverge.com/22744686/apple-airpods-third-gen-review","urlToImage":"https://cdn.vox-cdn.com/thumbor/0DeNrQoeiPvUO1g1JGEFYCWHFps=/0x226:2040x1294/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22953788/IMG_0040.jpg","publishedAt":"2021-10-25T16:00:00Z","content":"If
+      string: '{"status":"ok","totalResults":26613,"articles":[{"source":{"id":"wired","name":"Wired"},"author":"Lauren
+        Goode","title":"Apple Finally Remembered What Makes Laptops Great","description":"To
+        build a MacBook Pro for the future, the company has gone back to what worked
+        in the past.","url":"https://www.wired.com/story/macbook-pro-ports-magsafe-design/","urlToImage":"https://media.wired.com/photos/616dcf0aebb034bbe8bec69f/191:100/w_1280,c_limit/Gear-What-Makes-Laptops-Great.jpg","publishedAt":"2021-10-18T22:04:54Z","content":"The
+        reintroduction of a MagSafe magnetic charging port, a staple in older Macs,
+        is especially welcome if you tend to be clumsy and trip over your charging
+        cables; MagSafe mostly ensures the cable rel… [+3279 chars]"},{"source":{"id":"the-verge","name":"The
+        Verge"},"author":"Chaim Gartenberg","title":"Listen to the sick Mac sound
+        effect song that Apple opened its keynote with","description":"Apple kicked
+        off its MacBook Pro keynote with an original track by musician A. G. Cook
+        called “Start Up,” which features remixed sound effects from classic and current
+        Apple hardware.","url":"https://www.theverge.com/tldr/2021/10/18/22733238/start-up-ag-cook-apple-event-song-sound-effects-mac-ipod-hardware","urlToImage":"https://cdn.vox-cdn.com/thumbor/dLrBEYwKtLsh7olD-b2m-wB9Ue8=/34x0:2364x1220/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22936837/Screen_Shot_2021_10_18_at_5.41.07_PM.png","publishedAt":"2021-10-18T22:07:00Z","content":"Apple
+        kicked off its MacBook Pro keynote a little differently today: with a sweet
+        remix of classic Apple sound effects from the past 45 years of the company’s
+        history, created by artist A. G. Cook — … [+1422 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Igor
+        Bonifacic","title":"Here''s everything Apple announced at its fall Mac event","description":"On
+        Monday, Apple held its second and likely last hardware event of the fall.
+        “Unleashed” saw the company spend about an hour talking about updates to its
+        Mac and Music product lineups. After the by-the-numbers affair that was the
+        iPhone 13 event\r\n, Monday’s p…","url":"https://www.engadget.com/apple-mac-event-2021-highlights-194601228.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/1a161250-304a-11ec-b45b-58ad2b13e5bc","publishedAt":"2021-10-18T19:46:01Z","content":"On
+        Monday, Apple held its second and likely last hardware event of the fall.
+        Unleashed saw the company spend about an hour talking about updates to its
+        Mac and Music product lineups. After the by-the… [+3326 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Kris
+        Holt","title":"''NBA 2K22 Arcade Edition'' hits Apple Arcade on October 19th","description":"NBA
+        2K22 Arcade Edition is one of several games that''s bound for Apple Arcade\r\n
+        in the coming weeks. The follow-up to NBA 2K21, which is also available on
+        Apple''s game subscription service, includes a new mode called The Association.
+        You can become the genera…","url":"https://www.engadget.com/apple-arcade-nba-2-k-22-arcade-edition-tiny-wings-141053090.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/8ccde650-2c2c-11ec-bbfb-cd4d34b6f843","publishedAt":"2021-10-13T14:10:53Z","content":"NBA
+        2K22 Arcade Edition is one of several games that''s bound for Apple Arcade\r\n
+        in the coming weeks. The follow-up to NBA 2K21, which is also available on
+        Apple''s game subscription service, includes … [+1338 chars]"},{"source":{"id":null,"name":"Blogspot.com"},"author":"noreply@blogger.com
+        (Unknown)","title":"Watch Apple’s ‘Unleashed’ event live right here","description":"Apple
+        is set to announce new hardware today. The company is holding a (virtual)
+        keynote at 10 AM PT (1 PM in New York, 6 PM in London, 7 PM in Paris). And
+        you’ll be able to watch the event right here as the company is streaming it
+        live.Rumor has it that the c…","url":"https://techncruncher.blogspot.com/2021/10/watch-apples-unleashed-event-live-right.html","urlToImage":"https://blogger.googleusercontent.com/img/a/AVvXsEjS-w1clUYu9ViLllYkQ78XEK8McbryI5iCuI33EkH4XfgL6SYRSNKZwLYZxDykSK7G2v0d2K3ocoQN1JQRlvDD7oiZGgB8jecHMa1abPt1Z0SsRylLy_mGdniYM9Rn_mQChfYlEiZTcf03wyC5YQtREP2v3bQE1HeGZT0_H87qzHp758RPWoa89Zj8sQ=w1200-h630-p-k-no-nu","publishedAt":"2021-10-18T10:26:00Z","content":"Apple
+        is set to announce new hardware today. The company is holding a (virtual)
+        keynote at 10 AM PT (1 PM in New York, 6 PM in London, 7 PM in Paris). And
+        you’ll be able to watch the event right here… [+1153 chars]"},{"source":{"id":null,"name":"Blogspot.com"},"author":"noreply@blogger.com
+        (Unknown)","title":"The Apple Watch Series 7 officially ditches the hidden
+        diagnostic port","description":"The Apple Watch’s diagnostic port has been
+        a mysterious part of the wearable lineup since its first model, but the new
+        Series 7 officially ditches the six-pin port entirely.First noted by MacRumors,
+        the lack of a port can be seen when you remove the bottom st…","url":"https://techncruncher.blogspot.com/2021/10/the-apple-watch-series-7-officially.html","urlToImage":"https://blogger.googleusercontent.com/img/a/AVvXsEjTsjJYNnOUU4Bq6966EhD0uAcFF0qinm0VR_EURGxpMrG7J4vWZ4KQc1Tv7bTTiMjDy91_q-VQ_3Wa2gsCdxSQkwmCkiinsxCFX4hsxTlg-3kkjBKyLeeJLfhkpgvWS34jMsxw2vnpnSqs4qa-C44UjTrhrpSa7tBYdVuEPb74GDa8stUuA1Bk9i8k9g=w1200-h630-p-k-no-nu","publishedAt":"2021-10-14T11:30:00Z","content":"The
+        Apple Watch’s diagnostic port has been a mysterious part of the wearable lineup
+        since its first model, but the new Series 7 officially ditches the six-pin
+        port entirely.\r\nFirst noted by MacRumors… [+1634 chars]"},{"source":{"id":"the-verge","name":"The
+        Verge"},"author":"Dieter Bohn","title":"Apple Watch Series 7 review: time
+        and time again","description":"It’s good, but if your Apple Watch is fine,
+        you’re good, too.","url":"https://www.theverge.com/22722533/apple-watch-series-7-review-screen-watchos-features","urlToImage":"https://cdn.vox-cdn.com/thumbor/jO3XOGtd6YX1iE7O4Z0j_4njDKo=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22908906/vpavic_211006_4796_0061.jpg","publishedAt":"2021-10-13T13:00:00Z","content":"If
         you buy something from a Verge link, Vox Media may earn a commission. See
-        our ethics statement.For the first time since their introduction in 2016,
-        Apples AirPods have a completely new design. The… [+14127 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Devindra
-        Hardawar","title":"Apple lets devs promote in-app events on the App Store","description":"As
-        promised at WWDC earlier this year, Apple today will start letting developers
-        highlight their in-app events on the App Store. You''ll need iOS 15 and iPadOS
-        15 to see the event listings, and they work as you''d expect, allowing you
-        to see seasonal competitio…","url":"https://www.engadget.com/apple-in-app-events-app-store-194526022.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/45e9a8f0-375d-11ec-aed6-6a847d138de2","publishedAt":"2021-10-27T19:45:26Z","content":"As
-        promised at WWDC earlier this year, Apple today will start letting developers
-        highlight their in-app events on the App Store. You''ll need iOS 15 and iPadOS
-        15 to see the event listings, and they w… [+598 chars]"},{"source":{"id":null,"name":"Lifehacker.com"},"author":"Khamosh
-        Pathak","title":"You''re Not Making the Most of Your iPhone Camera","description":"The
-        iPhone used to have one of the simplest camera layouts of any smartphone.
-        Over the past couple of years, however, as the iPhone’s camera grew bigger
-        and better, Apple added more and more features, buttons, and settings until
-        it became a bit...bogged down.…","url":"https://lifehacker.com/youre-not-making-the-most-of-your-iphone-camera-1847917519","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/70fa660821ac0ab4db99008739707acd.jpg","publishedAt":"2021-10-25T16:00:00Z","content":"The
-        iPhone used to have one of the simplest camera layouts of any smartphone.
-        Over the past couple of years, however, as the iPhones camera grew bigger
-        and better, Apple added more and more features,… [+5362 chars]"},{"source":{"id":null,"name":"Lifehacker.com"},"author":"Khamosh
-        Pathak","title":"13 Pro Tips For Setting Up Your New MacBook Pro","description":"The
-        MacBook Pros are finally pro machines again. Now that the ports are back,
-        and Apple has upgraded the power and the design, it’s your turn to upgrade
-        the software experience. After unboxing your MacBook Pro, take some time to
-        make some essential productivi…","url":"https://lifehacker.com/13-pro-tips-for-setting-up-your-new-macbook-pro-1847953860","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/ee0942568eb9f188797e4baee17de4b2.png","publishedAt":"2021-10-28T17:30:00Z","content":"Dont
-        judge the MacBook Pro by the notch. Give it some time, and, in a week, youll
-        probably forget all about it. But if you cant get used to it, there are two
-        ways to hide the notch.\r\nYou can use a fr… [+703 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Devindra
-        Hardawar","title":"MacBook Pro 14-inch and 16-inch review (2021): Apple’s
-        mighty Macs","description":"Apple is finally restoring balance to its portable
-        lineup with the new 14-inch and 16-inch MacBook Pros. If you wanted a big-screen
-        Mac notebook for video editing over the past year, you were stuck paying a
-        premium for outdated Intel and AMD hardware. So, we''…","url":"https://www.engadget.com/mac-book-pro-14-16-inch-review-2021-apple-mighty-macs-130011975.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/fc27e1e0-350a-11ec-8d7e-26deaf2f6d2b","publishedAt":"2021-10-25T13:00:11Z","content":"Our
-        14-inch review model was equipped with an M1 Pro sporting 16 GPU cores, 32GB
-        of RAM and a 1TB SSD. The 16-inch had the 32 GPU core M1 Max, a 2TB SSD and
-        a whopping 64GB of RAM. (This, by the way,… [+6428 chars]"},{"source":{"id":"wired","name":"Wired"},"author":"Adrienne
-        So","title":"The Apple Watch Series 7 Isn’t a Huge Upgrade, but That’s OK","description":"This
-        new iterative smartwatch focuses on biking, and the battery life still stinks.","url":"https://www.wired.com/review/apple-watch-series-7/","urlToImage":"https://media.wired.com/photos/617b269f61ff71e763a1cb4f/191:100/w_1280,c_limit/Gear-Apple-Watch-Series-7-Review-top.jpg","publishedAt":"2021-10-29T11:00:00Z","content":"Under
-        the guise of working very, very hard to test Apples latest smartwatch, the
-        Series 7, Ive spent a lot of time biking over the past two weeks. Nearly all
-        the new additions revolve around making i… [+2862 chars]"},{"source":{"id":null,"name":"Gizmodo.com"},"author":"David
-        Nield","title":"Everything You Need to Know to Decide Which MacBook is the
-        Best MacBook for You","description":"The MacBook lineup has just expanded
-        with brand new 14-inch and 16-inch MacBook Pros available to buy. But there’s
-        also the existing MacBook Air and 13-inch MacBook Pro, and they all run on
-        custom-made Apple Silicon chips, all with various configurations avai…","url":"https://gizmodo.com/everything-you-need-to-know-to-decide-which-macbook-is-1847926191","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/fd7bcaff679ae3ba72a4895bbc143d1a.jpg","publishedAt":"2021-10-27T12:00:00Z","content":"The
-        MacBook lineup has just expanded with brand new 14-inch and 16-inch MacBook
-        Pros available to buy. But theres also the existing MacBook Air and 13-inch
-        MacBook Pro, and they all run on custom-mad… [+10706 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Kris
-        Holt","title":"macOS Monterey is out now without SharePlay","description":"Apple
-        has at long last released the latest major version of its Mac operating system,
-        macOS Monterey\r\n. While it''s perhaps a more modest update than in previous
-        years, there are some significant changes\r\n in some areas of the OS.The
-        redesigned Safari might be…","url":"https://www.engadget.com/apple-macos-monterey-release-facetime-safari-shareplay-171102479.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-07/3d437b60-da9f-11eb-b6d2-c27c02f86e65","publishedAt":"2021-10-25T17:11:02Z","content":"Apple
-        has at long last released the latest major version of its Mac operating system,
-        macOS Monterey\r\n. While it''s perhaps a more modest update than in previous
-        years, there are some significant chan… [+1317 chars]"},{"source":{"id":"the-verge","name":"The
-        Verge"},"author":"Mitchell Clark","title":"Apple tests its new App Privacy
-        report in iOS 15.2 beta","description":"Apple’s App Privacy Report has appeared
-        in the latest iOS 15 beta. The feature is meant to show users what permissions
-        apps have, how often they use them, and where they could be sending that data.","url":"https://www.theverge.com/2021/10/27/22749352/apple-app-privacy-report-ios-15-2-beta-feature","urlToImage":"https://cdn.vox-cdn.com/thumbor/oiw6PEtM__CvKNHUYUhFPZNY7aM=/0x0:2416x1265/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22960601/Screen_Shot_2021_10_27_at_12.46.16.png","publishedAt":"2021-10-27T20:31:00Z","content":"The
-        feature was announced at WWDC 2021\r\nImage: Apple\r\nApples App Privacy Report,
-        announced at WWDC 2021, has made its way onto iPhones with the first release
-        of the iOS 15.2 beta, according to MacRum… [+1522 chars]"},{"source":{"id":null,"name":"Gizmodo.com"},"author":"Victoria
-        Song","title":"The Apple Polishing Cloth Is Everything Wrong With Society","description":"I
-        regret to inform you all that we have reached peak Polishing Cloth. I take
-        full responsibility for my small part in getting us to this point. Read more...","url":"https://gizmodo.com/the-apple-polishing-cloth-is-everything-wrong-with-soci-1847965156","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/ee61fb7b8463fe2ab97b7946019fc1d5.png","publishedAt":"2021-10-29T21:40:00Z","content":"I
-        regret to inform you all that we have reached peak Polishing Cloth. I take
-        full responsibility for my small part in getting us to this point. \r\nThe
-        gag was simple: Looketh over here and gawp with m… [+3327 chars]"}]}'
-  recorded_at: Sun, 31 Oct 2021 03:11:36 GMT
+        our ethics statement.The most important questions to ask about the new Apple
+        Watch Series 7 arent about the Apple Watch Se… [+10699 chars]"},{"source":{"id":null,"name":"Blogspot.com"},"author":"noreply@blogger.com
+        (Unknown)","title":"Apple activist reportedly fired after deleting files on
+        work device","description":"Janneke Parrish, an Austin-based employee who
+        worked on Apple Maps, is a leader of #AppleToo.\r\nAn Apple program manager
+        who posted anonymous stories of discrimination against employees at the tech
+        giant has reportedly been canned. Janneke Parrish, an Austin-b…","url":"https://techncruncher.blogspot.com/2021/10/apple-activist-reportedly-fired-after.html","urlToImage":"https://blogger.googleusercontent.com/img/a/AVvXsEgky37UIB4c3WmmeKe-ACVU6NAyZ_29ioSIXVO9fqOt4Ko7NC_Lam0c8hdJs12oiHmijNmM7eFZcHS3verB3-K_8dBSaQuLZdite4OEkQ0gG4MNf1S8ThUEj6MLZqbeg6g_UW_C4zP5svQ1cwoi6p7jvwF26IAW2r04A3zZzVow8GvCVWyoKarTdaRP6Q=w1200-h630-p-k-no-nu","publishedAt":"2021-10-17T09:12:00Z","content":"Janneke
+        Parrish, an Austin-based employee who worked on Apple Maps, is a leader of
+        #AppleToo.\r\nAn Apple program manager who posted anonymous stories of discrimination
+        against employees at the tech gi… [+792 chars]"},{"source":{"id":null,"name":"Blogspot.com"},"author":"noreply@blogger.com
+        (Unknown)","title":"Apple releases iOS 15.0.2 with some Find My fixes","description":"Apple
+        released iOS 15.0.2 on Monday, and it has some important bug fixes, including
+        a couple specific to Find My. For the iPad and iPhone, it also fixes a security
+        flaw that Apple says may already be under attack, so update ASAP. Credited
+        to an anonymous rese…","url":"https://techncruncher.blogspot.com/2021/10/apple-releases-ios-1502-with-some-find.html","urlToImage":"https://blogger.googleusercontent.com/img/a/AVvXsEiAl2P-xRgdjp9ZAqqrOnmE_YVNTfyp3Dn2cUg5BdmfFXdbqsvKtv6EnUIi4_YRJbU299LopV7SoDzGlbH3rZW97ygzVAeTwqp0Ih-NLY6mMzoDsaA4mcgMBE5vkjh6uPP8l8EUJq3qGm53zwwrKkZ_ks2j5XsTpm5IgkXuHhNCpdykJCN3kioKk3KmCg=w1200-h630-p-k-no-nu","publishedAt":"2021-10-11T19:27:00Z","content":"Apple
+        released iOS 15.0.2 on Monday, and it has some important bug fixes, including
+        a couple specific to Find My. For the iPad and iPhone, it also fixes a security
+        flaw that Apple says may already be… [+1740 chars]"},{"source":{"id":"the-verge","name":"The
+        Verge"},"author":"Jay Peters","title":"Apple releases iOS 15.0.2 with some
+        Find My fixes","description":"Apple released iOS 15.0.2 on Monday, and it
+        has some important bug fixes, including a couple specific to Find My. The
+        company released iPadOS 15.0.2 and watchOS 8.0.1 as well.","url":"https://www.theverge.com/2021/10/11/22721014/apple-ios-ipados-15-0-2-find-my-fixes-watchos-8-0-1","urlToImage":"https://cdn.vox-cdn.com/thumbor/1MHeGlyH2FIzzg7btOeiSTuOxBA=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22864032/cgartenberg_210917_4762_0003.jpg","publishedAt":"2021-10-11T17:32:39Z","content":"watchOS
+        8.0.1 is out, too\r\nPhoto by Chaim Gartenberg / The Verge\r\nApple released
+        iOS 15.0.2 on Monday, and it has some important bug fixes, including a couple
+        specific to Find My. On my iPhone 12 Min… [+1477 chars]"},{"source":{"id":"the-verge","name":"The
+        Verge"},"author":"Jon Porter","title":"Apple announces October 18th event
+        after months of Mac rumors","description":"Apple’s next big event will take
+        place on October 18th, according to invites it sent out today. The company
+        is widely expected to launch a pair of new MacBooks, a Mac Mini, and a pair
+        of third-generation AirPods.","url":"https://www.theverge.com/2021/10/12/22722112/apple-october-2021-event-rumors-macbook-mac-mini-airpods-m1x","urlToImage":"https://cdn.vox-cdn.com/thumbor/iE5kHD496F7anPwRiwX43Ol6tD4=/0x78:1424x824/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22920858/image__7_.jpg","publishedAt":"2021-10-12T16:10:44Z","content":"New
+        MacBooks, a Mac Mini, and AirPods are anticipated\r\nApple October 18th event
+        invitation\r\nImage: Apple\r\nApples next hardware event will take place on
+        October 18th, according to invites it sent out … [+1708 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Devindra
+        Hardawar","title":"Engadget Podcast: Diving into the Apple Watch Series 7
+        and Twitch''s big hack","description":"This week, Cherlynn and Devindra chat
+        about what to expect from Apple’s upcoming event (new MacBooks, baby!), as
+        well as all of the other launch shindigs from Google, Samsung and Sony. Cherlynn
+        also tells all about her Apple Watch Series 7 review, and why she…","url":"https://www.engadget.com/engadget-podcast-apple-watch-series-7-macbook-twitch-hack-123000091.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2020-05/f43b53b0-909f-11ea-87fd-d8d721459924","publishedAt":"2021-10-15T12:30:00Z","content":"This
+        week, Cherlynn and Devindra chat about what to expect from Apples upcoming
+        event (new MacBooks, baby!), as well as all of the other launch shindigs from
+        Google, Samsung and Sony. Cherlynn also t… [+743 chars]"},{"source":{"id":"engadget","name":"Engadget"},"author":"Jon
+        Fingas","title":"Ecobee’s smart thermostat now supports Siri voice control","description":"Apple
+        promised that Siri would reach third-party devices back at WWDC, and now it''s
+        clear just what that will look like. Ecobee has started rolling out an update
+        that brings Siri to the SmartThermostat. You''ll need a HomePod mini to serve
+        as a hub, but you''ll…","url":"https://www.engadget.com/ecobee-smartthermostat-siri-support-130028757.html","urlToImage":"https://s.yimg.com/os/creatr-uploaded-images/2021-10/18e829e0-27a8-11ec-bff8-34b4722f1adc","publishedAt":"2021-10-12T13:00:28Z","content":"Apple
+        promised that Siri would reach third-party devices back at WWDC, and now it''s
+        clear just what that will look like. Ecobee has started rolling out an update
+        that brings Siri to the SmartThermost… [+763 chars]"},{"source":{"id":null,"name":"Lifehacker.com"},"author":"Jake
+        Peterson","title":"Download Your iPhone''s Latest Security Update ASAP","description":"When
+        you know there aren’t many new features to be found, ignoring software update
+        notifications in favor of doing literally anything else can be all too easy.
+        We’re here to implore you to update this latest one, however, since Apple’s
+        latest software is esse…","url":"https://lifehacker.com/download-your-iphones-latest-security-update-asap-1847845362","urlToImage":"https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/10e1a87a87d6d21619d7d5f240a1ef09.jpg","publishedAt":"2021-10-12T14:00:00Z","content":"When
+        you know there arent many new features to be found, ignoring software update
+        notifications in favor of doing literally anything else can be all too easy.
+        Were here to implore you to update this … [+2688 chars]"},{"source":{"id":null,"name":"Blogspot.com"},"author":"noreply@blogger.com
+        (Unknown)","title":"Apple announces October 18th event after months of Mac
+        rumors","description":"Apple’s next hardware event will take place on October
+        18th, according to invites it sent out today. The company is widely expected
+        to use its second fall event to launch a pair of new MacBooks, a redesigned
+        higher-end Mac Mini, and possibly a pair of third-g…","url":"https://techncruncher.blogspot.com/2021/10/apple-announces-october-18th-event.html","urlToImage":"https://blogger.googleusercontent.com/img/a/AVvXsEgQkrogAqPOJ-kztZUANLXe5T4yrUX2oUexnWa4FTHwjrdLwB_DTsMhitjc1JTD59z0z3djD6o9YggTyRviw6io8nHeCzHDQRyZ0W7lnktOlrSU0U3M8sDc67T7jxGJiZD9CQwsjQIKHkS7aMH7oGWC9nQ58xYS0RvgJsEpIAPwlB5f7z7KdI-z1hdGNA=w1200-h630-p-k-no-nu","publishedAt":"2021-10-12T18:45:00Z","content":"Apple’s
+        next hardware event will take place on October 18th, according to invites
+        it sent out today. The company is widely expected to use its second fall event
+        to launch a pair of new MacBooks, a re… [+1933 chars]"}]}'
+  recorded_at: Sun, 31 Oct 2021 13:14:19 GMT
 - request:
     method: get
-    uri: https://newsapi.org/v2/everything?from=2021-10-21&pageSize=15&q=&to=2021-10-31
-    body:
-      encoding: UTF-8
-      string: ''
-    headers:
-      Accept:
-      - json
-      Authorization:
-      - token <SAFE_STRINGS>
-      Connection:
-      - close
-      Host:
-      - newsapi.org
-      User-Agent:
-      - http.rb/5.0.4
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Date:
-      - Sun, 31 Oct 2021 03:19:09 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Content-Length:
-      - '227'
-      Connection:
-      - close
-      Cache-Control:
-      - no-cache
-      Pragma:
-      - no-cache
-      Expires:
-      - "-1"
-      X-Cached-Result:
-      - 'false'
-      Cf-Cache-Status:
-      - DYNAMIC
-      Expect-Ct:
-      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
-      Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=jA0mUPeWX1R68A8%2FXWlgPM7h0KTFwWys8JxfGuIV%2FMoUZRS2R0t5fXJpaHgu%2FprDMK7c%2FXKp%2FiuwGTOrnoXIKyM5mbLsgQ5nkq9KqCbpmD%2FNIB%2Bl6ACf9OgTDoE6"}],"group":"cf-nel","max_age":604800}'
-      Nel:
-      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 6a69bd756fe90730-TPE
-    body:
-      encoding: UTF-8
-      string: '{"status":"error","code":"parametersMissing","message":"Required parameters
-        are missing, the scope of your search is too broad. Please set any of the
-        following required parameters and try again: q, qInTitle, sources, domains."}'
-  recorded_at: Sun, 31 Oct 2021 03:19:09 GMT
-- request:
-    method: get
-    uri: https://newsapi.org/v2/everything?from=2021-10-21&pageSize=15&q=apple&to=2021-10-31
+    uri: https://newsapi.org/v2/everything?from=2021-10-10&pageSize=15&q=apple&to=2021-10-20
     body:
       encoding: UTF-8
       string: ''
@@ -511,7 +248,7 @@ http_interactions:
       message: Unauthorized
     headers:
       Date:
-      - Sun, 31 Oct 2021 03:19:10 GMT
+      - Sun, 31 Oct 2021 13:14:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -531,17 +268,16 @@ http_interactions:
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=o875vfUYFjEzYfGeO1igENmc4XSlmOcdh0ZPdpf19hwtA%2BPqnN3eh9NhcthoOUasaKiitACI3LT1wH2YuOypgPJT4kXZ6N3KbaB5evGNQMxapISADtHjrMVuNKLu"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=m4iPn182KAksbDsk2a7HC6APrzeGTUi0141YpbkU1HP8KaNTpQ15GOJnSm2efJlOtZsa1ginUFGQZGiv8TSyX%2B0c2wZLMnisoShZfuLb3Tadl3o5PPz6hLfXiHDc"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 6a69bd7d6ec06a80-TPE
+      - 6a6d254f5fe83138-TPE
     body:
       encoding: UTF-8
       string: '{"status":"error","code":"apiKeyInvalid","message":"Your API key is
         invalid or incorrect. Check your key, or go to https://newsapi.org to create
         a free API key."}'
-  recorded_at: Sun, 31 Oct 2021 03:19:11 GMT
-recorded_with: VCR 6.0.0
+  recorded_at: Sun, 31 Oct 2021 13:14:20 GMT
