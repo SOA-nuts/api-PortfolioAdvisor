@@ -1,25 +1,18 @@
-# GoogleNews API Client
+# PortfolioAdvisor
 
-Project to gather from GoogleNews API (v2)
+Application that give investors advices on  their portfolio
 
-## Resources
+## Overview
 
-- Content
-- publishTime
+PortfolioAdvisor will get business news article from Google News API.
 
-## Elements
+It will then analyze the content to see if the article is positive or negative.
+We will advice whether it is a good time to sold or invest even more.
 
-- Content
-  - title
-  - description
-  - url
-- publishTime
-  - day 
-  - time
+## Short-term goal
 
-## Entities
+using data mining to anaylyze the article
 
-These are objects that are important to the project, following my own naming conventions:
+## Long-term goal
 
-- Content (article's content)
-- publishTime (article's publishTime)
+using more data source, for example, trading records
