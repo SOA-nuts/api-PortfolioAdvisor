@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>Code coverage for Googlenewsapi</title>
+    <title>Code coverage for Googlenews</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.12.3/application.js' type='text/javascript'></script>
     <link href='./assets/0.12.3/application.css' media='screen, projection, print' rel='stylesheet' type='text/css' />
-    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_red.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.12.3/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.12.3/favicon.png" />
   </head>
 
@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-23T11:06:09+08:00">2021-10-23T11:06:09+08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-10-31T14:07:29+08:00">2021-10-31T14:07:29+08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -22,15 +22,15 @@
   <h2>
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
-      <span class="red">
-  57.41%
+      <span class="green">
+  92.12%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="red">
-         0.57
+       <span class="green">
+         5.27
        </span>
     </span> hits/line
     )
@@ -39,15 +39,15 @@
   <a name="AllFiles"></a>
 
   <div>
-    <b>3</b> files in total.
+    <b>14</b> files in total.
   </div>
 
   <div class="t-line-summary">
-    <b>54</b> relevant lines,
-    <span class="green"><b>31</b> lines covered</span> and
-    <span class="red"><b>23</b> lines missed. </span>
-    (<span class="red">
-  57.41%
+    <b>165</b> relevant lines,
+    <span class="green"><b>152</b> lines covered</span> and
+    <span class="red"><b>13</b> lines missed. </span>
+    (<span class="green">
+  92.12%
 </span>
 )
   </div>
@@ -71,35 +71,156 @@
       <tbody>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#fc51ec54dcd1d6db44e423d50b3b2331deaf357b" class="src_link" title="lib/article.rb">lib/article.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">53.85 %</td>
-            <td class="cell--number">30</td>
+            <td class="strong t-file__name"><a href="#5b72fb09c2642912e34d06c28833f665f4f53999" class="src_link" title="app/controllers/app.rb">app/controllers/app.rb</a></td>
+            <td class="red strong cell--number t-file__coverage">45.83 %</td>
+            <td class="cell--number">48</td>
+            <td class="cell--number">24</td>
+            <td class="cell--number">11</td>
             <td class="cell--number">13</td>
-            <td class="cell--number">7</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">0.54</td>
+            <td class="cell--number">0.46</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#9fdc9fb4f14c0ddad37c42700c4a21890b9e3430" class="src_link" title="lib/google_news_api.rb">lib/google_news_api.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">54.84 %</td>
-            <td class="cell--number">106</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">0.55</td>
+            <td class="strong t-file__name"><a href="#b46f42be1d8643b99499ffcd1d1c94e2c3c8b361" class="src_link" title="app/controllers/init.rb">app/controllers/init.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.50</td>
             
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#f7c138b886468774a2ff8046840f13eb63a7ce56" class="src_link" title="lib/publish.rb">lib/publish.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">70.00 %</td>
-            <td class="cell--number">21</td>
+            <td class="strong t-file__name"><a href="#f47126a3bc0b142ba2a2d44f99cbb1e8b6b6a734" class="src_link" title="app/init.rb">app/init.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.50</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#890faadd038153e4b83df7403fce8f7d24d63206" class="src_link" title="app/models/entities/article.rb">app/models/entities/article.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">10</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#04de48f83873841d64058257ff9a0c5ff1580e10" class="src_link" title="app/models/entities/publish.rb">app/models/entities/publish.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#350c53355842733d25cb041ce4acffa8cc04a813" class="src_link" title="app/models/entities/target.rb">app/models/entities/target.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">9</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#df8f4c897b771dc53be590f8cd2287eb39d89b26" class="src_link" title="app/models/gateways/google_news_api.rb">app/models/gateways/google_news_api.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">70</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">33</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">2.76</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#7ce533ff8a8bb0e903385262de03b7ad6a829099" class="src_link" title="app/models/init.rb">app/models/init.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">7</td>
             <td class="cell--number">3</td>
-            <td class="cell--number">0.70</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">3.67</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#eac5ad2010c3c5f49f3993a26afee9e114450169" class="src_link" title="app/models/mappers/article_mapper.rb">app/models/mappers/article_mapper.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">64</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">16.39</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#379333b4c12ccb3adb0682611ca8aa3eb1f1928b" class="src_link" title="app/models/mappers/publish_mapper.rb">app/models/mappers/publish_mapper.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">47</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">15.67</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#372a59643fb6426ca67063982273e8aa2211ba07" class="src_link" title="app/models/mappers/target_mapper.rb">app/models/mappers/target_mapper.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">47</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">2.30</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#713ebcc5e9eba59f6aa73eab08d90aa252205b80" class="src_link" title="config/environment.rb">config/environment.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#39faa1a3dcfd4cc0eacdaa9c8c7d8269b5d33c4c" class="src_link" title="config/init.rb">config/init.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">1</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.00</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#f71bdbd817f686ef819457e4eb1041d4e857ad63" class="src_link" title="init.rb">init.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.50</td>
             
           </tr>
         
@@ -120,12 +241,12 @@
 
       <div class="source_files">
       
-        <div class="source_table" id="fc51ec54dcd1d6db44e423d50b3b2331deaf357b">
+        <div class="source_table" id="5b72fb09c2642912e34d06c28833f665f4f53999">
   <div class="header">
-    <h3>lib/article.rb</h3>
+    <h3>app/controllers/app.rb</h3>
     <h4>
       <span class="red">
-  53.85%
+  45.83%
 </span>
 
       lines covered
@@ -134,9 +255,9 @@
     
 
     <div class="t-line-summary">
-      <b>13</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <b>24</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>13</b> lines missed.</span>
     </div>
 
     
@@ -175,18 +296,18 @@
 
             
 
-            <code class="ruby">require_relative &#39;publish&#39;</code>
+            <code class="ruby">require &#39;roda&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">require &#39;slim&#39;</code>
           </li>
         </div>
       
@@ -197,7 +318,7 @@
 
             
 
-            <code class="ruby">module NewsArticle</code>
+            <code class="ruby">require &#39;yaml&#39;</code>
           </li>
         </div>
       
@@ -208,7 +329,7 @@
 
             
 
-            <code class="ruby">  # Model for Article, article_data is an array of hash</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -219,7 +340,7 @@
 
             
 
-            <code class="ruby">  class Article</code>
+            <code class="ruby">COMPANY_YAML = &#39;spec/fixtures/company.yml&#39;</code>
           </li>
         </div>
       
@@ -230,45 +351,12 @@
 
             
 
-            <code class="ruby">    def initialize(article_data, data_source)</code>
+            <code class="ruby">COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="9">
-            
-            
-
-            
-
-            <code class="ruby">      @article = article_data</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
-            
-            
-
-            
-
-            <code class="ruby">      @data_source = data_source</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -279,35 +367,68 @@
         </div>
       
         <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">  # Web App</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  class App &lt; Roda</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="covered" data-hits="1" data-linenumber="13">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def title</code>
+            <code class="ruby">    plugin :render, engine: &#39;slim&#39;, views: &#39;app/views&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      @article.map { |hash| hash[&#39;title&#39;] }</code>
+            
+
+            <code class="ruby">    plugin :assets, css: &#39;style.css&#39;, path: &#39;app/views/assets&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">    plugin :halt</code>
           </li>
         </div>
       
@@ -329,7 +450,7 @@
 
             
 
-            <code class="ruby">    def url</code>
+            <code class="ruby">    route do |routing|</code>
           </li>
         </div>
       
@@ -340,7 +461,7 @@
 
             
 
-            <code class="ruby">      @article.map { |hash| hash[&#39;url&#39;] }</code>
+            <code class="ruby">      routing.assets # load CSS</code>
           </li>
         </div>
       
@@ -351,7 +472,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -362,18 +483,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      # GET /</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="21">
+            
             
 
             
 
-            <code class="ruby">    def publish</code>
+            <code class="ruby">      routing.root do</code>
           </li>
         </div>
       
@@ -384,18 +505,18 @@
 
             
 
-            <code class="ruby">      publishTime = @article.map { |hash| hash[&#39;publishedAt&#39;] }</code>
+            <code class="ruby">        view &#39;home&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="23">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
             
 
-            <code class="ruby">      Publish.new(publishTime)</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -406,29 +527,29 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="25">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="26">
+          <li class="missed" data-hits="0" data-linenumber="25">
             
             
 
             
 
-            <code class="ruby">    # def publish</code>
+            <code class="ruby">      routing.on &#39;target&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">        routing.is do</code>
           </li>
         </div>
       
@@ -439,23 +560,221 @@
 
             
 
-            <code class="ruby">    #   @publish ||= @data_source.publish(@article.map { |hash| hash[&#39;publishedAt&#39;] })</code>
+            <code class="ruby">          # POST /target/</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="missed" data-hits="0" data-linenumber="28">
             
             
 
             
 
-            <code class="ruby">    # end</code>
+            <code class="ruby">          routing.post do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="29">
+          <li class="missed" data-hits="0" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">            cmp_name = routing.params[&#39;company_name&#39;].downcase</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">            routing.halt 400 if COMPANY_LIST[0][cmp_name].nil?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">            routing.redirect &quot;target/#{cmp_name}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">        routing.on String do |company|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">          # GET /target/company</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">          routing.get do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">            target = GoogleNews::TargetMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">                     .new(GOOGLENEWS_TOKEN)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">                     .find(company)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby">            view &#39;target&#39;, locals: { target: target }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -466,7 +785,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="48">
             
             
 
@@ -481,12 +800,12 @@
 </div>
 
       
-        <div class="source_table" id="9fdc9fb4f14c0ddad37c42700c4a21890b9e3430">
+        <div class="source_table" id="b46f42be1d8643b99499ffcd1d1c94e2c3c8b361">
   <div class="header">
-    <h3>lib/google_news_api.rb</h3>
+    <h3>app/controllers/init.rb</h3>
     <h4>
-      <span class="red">
-  54.84%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -495,9 +814,9 @@
     
 
     <div class="t-line-summary">
-      <b>31</b> relevant lines.
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -536,7 +855,179 @@
 
             
 
-            <code class="ruby">require &#39;http&#39;</code>
+            <code class="ruby">Dir.glob(&quot;#{__dir__}/*.rb&quot;).each do |file|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="4">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  require file</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f47126a3bc0b142ba2a2d44f99cbb1e8b6b6a734">
+  <div class="header">
+    <h3>app/init.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">%w[models controllers].each do |folder|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="4">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  require_relative &quot;#{folder}/init.rb&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="890faadd038153e4b83df7403fce8f7d24d63206">
+  <div class="header">
+    <h3>app/models/entities/article.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>10</b> relevant lines.
+      <span class="green"><b>10</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;dry-types&#39;</code>
           </li>
         </div>
       
@@ -547,7 +1038,236 @@
 
             
 
-            <code class="ruby">require_relative &#39;article&#39;</code>
+            <code class="ruby">require &#39;dry-struct&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require_relative &#39;publish&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  module Entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">    # Domain entity for any article</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    class Article &lt; Dry::Struct</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      include Dry.Types</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      attribute :title,             Strict::String</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      attribute :url,               Strict::String</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      attribute :published_at,      Publish</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="04de48f83873841d64058257ff9a0c5ff1580e10">
+  <div class="header">
+    <h3>app/models/entities/publish.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>9</b> relevant lines.
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;dry-types&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;dry-struct&#39;</code>
           </li>
         </div>
       
@@ -558,7 +1278,7 @@
 
             
 
-            <code class="ruby">require_relative &#39;publish&#39;</code>
+            <code class="ruby">require &#39;date&#39;</code>
           </li>
         </div>
       
@@ -580,29 +1300,29 @@
 
             
 
-            <code class="ruby">module NewsArticle</code>
+            <code class="ruby">module PortfolioAdvisor</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">  # Library for Github Web API</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="1" data-linenumber="8">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  class GoogleNewsApi</code>
+            <code class="ruby">  module Entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
+            
+            
+
+            
+
+            <code class="ruby">    # Domain entity for publishing date</code>
           </li>
         </div>
       
@@ -613,51 +1333,51 @@
 
             
 
-            <code class="ruby">    API_GOOGLE_NEWS_ROOT = &#39;https://newsapi.org/v2/everything?&#39;</code>
+            <code class="ruby">    class Publish &lt; Dry::Struct</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
-            
-
-            <code class="ruby">    </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
+          <li class="covered" data-hits="1" data-linenumber="11">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def initialize(token)</code>
+            <code class="ruby">      include Dry.Types</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
             
 
-            <code class="ruby">      @gh_token = token</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
             
+
+            
+
+            <code class="ruby">      attribute :date, Strict::String</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      attribute :time, Strict::String</code>
           </li>
         </div>
       
@@ -668,925 +1388,12 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def article(topic, result_num)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">      # project_response = Request.new(REPOS_PATH, @gh_token)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby">      #                           .repo(username, project_name).parse</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
-            
-
-            <code class="ruby">      # Project.new(project_response, self)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">      article_data = Request.new(API_GOOGLE_NEWS_ROOT, @gh_token)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">                            .news(topic, result_num).parse</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="25">
-            
-            
-
-            
-
-            <code class="ruby">      Article.new(article_data[&#39;articles&#39;], self)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="26">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="27">
-            
-            
-
-            
-
-            <code class="ruby">      # article_req_url = gn_api_path(topic, result_num)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="28">
-            
-            
-
-            
-
-            <code class="ruby">      # article_data = call_gn_url(article_req_url).parse</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby">      # Article.new(article_data[&#39;articles&#39;], self)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="30">
-            
-            
-
-            
-
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="32">
-            
-            
-
-            
-
-            <code class="ruby">    # def publish(publish)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="33">
-            
-            
-
-            
-
-            <code class="ruby">    #   Publish.new(publish)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="34">
-            
-            
-
-            
-
-            <code class="ruby">    # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="35">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="36">
-            
-            
-
-            
-
-            <code class="ruby">    # private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="37">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="38">
-            
-            
-
-            
-
-            <code class="ruby">    # def gn_api_path(topic, result_num)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="39">
-            
-            
-
-            
-
-            <code class="ruby">    #   path = &quot;q=#{topic}&amp;from=2021-10-1&amp;to=2021-10-15&amp;pageSize=#{result_num}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="40">
-            
-            
-
-            
-
-            <code class="ruby">    #   &quot;#{API_GOOGLE_NEWS_ROOT}#{path}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="41">
-            
-            
-
-            
-
-            <code class="ruby">    # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="42">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
-            
-            
-
-            
-
-            <code class="ruby">    # def call_gn_url(url)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="44">
-            
-            
-
-            
-
-            <code class="ruby">    #   result =</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="45">
-            
-            
-
-            
-
-            <code class="ruby">    #     HTTP.headers(&#39;Accept&#39; =&gt; &#39;json&#39;,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="46">
-            
-            
-
-            
-
-            <code class="ruby">    #                   &#39;Authorization&#39; =&gt; &quot;token #{@gn_token}&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="47">
-            
-            
-
-            
-
-            <code class="ruby">    #         .get(url)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="48">
-            
-            
-
-            
-
-            <code class="ruby">    #   successful?(result) ? result : raise(HTTP_ERROR[result.code])</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="49">
-            
-            
-
-            
-
-            <code class="ruby">    # end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="50">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="51">
-            
-            
-
-            
-
-            <code class="ruby">    # Sends out HTTP requests to Github</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="52">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    class Request</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="53">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      def initialize(resource_root, token)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="54">
-            
-            
-
-            
-
-            <code class="ruby">        @resource_root = resource_root</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">        @token = token</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="56">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="57">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="58">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      def news(topic, result_num)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="59">
-            
-            
-
-            
-
-            <code class="ruby">        path = &quot;q=#{topic}&amp;from=2021-10-1&amp;to=2021-10-15&amp;pageSize=#{result_num}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="60">
-            
-            
-
-            
-
-            <code class="ruby">        get(@resource_root + path)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="61">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="62">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="63">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      def get(url)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="64">
-            
-            
-
-            
-
-            <code class="ruby">        http_response = HTTP.headers(</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
-            
-
-            <code class="ruby">          &#39;Accept&#39; =&gt; &#39;application/vnd.github.v3+json&#39;,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="66">
-            
-            
-
-            
-
-            <code class="ruby">          &#39;Authorization&#39; =&gt; &quot;token #{@token}&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
-            
-
-            <code class="ruby">        ).get(url)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="69">
-            
-            
-
-            
-
-            <code class="ruby">        Response.new(http_response).tap do |response|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="70">
-            
-            
-
-            
-
-            <code class="ruby">          raise(response.error) unless response.successful?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="72">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="73">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="74">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="75">
-            
-            
-
-            
-
-            <code class="ruby">    # Decorates HTTP responses from Github with success/error reporting</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="76">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    class  Response &lt; SimpleDelegator</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="77">
-            
-            
-
-            
-
-            <code class="ruby">      # :reek:IrresponsibleModule</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="78">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      BadRequest = Class.new(StandardError)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="79">
-            
-            
-
-            
-
-            <code class="ruby">      # :reek:IrresponsibleModule</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="80">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      Unauthorized = Class.new(StandardError)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="81">
-            
-            
-
-            
-
-            <code class="ruby">      # :reek:IrresponsibleModule~</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="82">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      NotFound = Class.new(StandardError)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="83">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="84">
-            
-            
-
-            
-
-            <code class="ruby">      HTTP_ERROR = {</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="85">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">        400 =&gt; Errors::BadRequest,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="86">
-            
-            
-
-            
-
-            <code class="ruby">        401 =&gt; Errors::Unauthorized,</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="87">
-            
-            
-
-            
-
-            <code class="ruby">        404 =&gt; Errors::NotFound</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="88">
-            
-            
-
-            
-
-            <code class="ruby">      }.freeze</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="89">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="90">
-            
-            
-
-            
-
-            <code class="ruby">      def successful?</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="91">
-            
-            
-
-            
-
-            <code class="ruby">        HTTP_ERROR.keys.include?(code) ? false : true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="92">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="93">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="94">
-            
-            
-
-            
-
-            <code class="ruby">      def error</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="95">
-            
-            
-
-            
-
-            <code class="ruby">        HTTP_ERROR[code]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="96">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="97">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="98">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="99">
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -1597,7 +1404,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="100">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -1607,83 +1414,17 @@
           </li>
         </div>
       
-        <div>
-          <li class="never" data-hits="" data-linenumber="101">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="102">
-            
-            
-
-            
-
-            <code class="ruby"># this is for testing</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="103">
-            
-            
-
-            
-
-            <code class="ruby"># config = YAML.safe_load(File.read(&#39;../config/secrets.yml&#39;))</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="104">
-            
-            
-
-            
-
-            <code class="ruby">#  GOOGLENEWS_TOKEN = config[&#39;GOOGLENEWS_TOKEN&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="105">
-            
-            
-
-            
-
-            <code class="ruby"># NewsArticle::GoogleNewsApi.new(GOOGLENEWS_TOKEN)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="106">
-            
-            
-
-            
-
-            <code class="ruby">#                                       .testing(TOPIC, RESULT_NUM)</code>
-          </li>
-        </div>
-      
     </ol>
   </pre>
 </div>
 
       
-        <div class="source_table" id="f7c138b886468774a2ff8046840f13eb63a7ce56">
+        <div class="source_table" id="350c53355842733d25cb041ce4acffa8cc04a813">
   <div class="header">
-    <h3>lib/publish.rb</h3>
+    <h3>app/models/entities/target.rb</h3>
     <h4>
-      <span class="red">
-  70.0%
+      <span class="green">
+  100.0%
 </span>
 
       lines covered
@@ -1692,9 +1433,9 @@
     
 
     <div class="t-line-summary">
-      <b>10</b> relevant lines.
-      <span class="green"><b>7</b> lines covered</span> and
-      <span class="red"><b>3</b> lines missed.</span>
+      <b>9</b> relevant lines.
+      <span class="green"><b>9</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
 
     
@@ -1712,6 +1453,235 @@
             
 
             <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;dry-types&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;dry-struct&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require_relative &#39;article&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  module Entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">    # Domain entity for any article</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="11">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    class Target &lt; Dry::Struct</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      include Dry.Types</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      attribute :company_name,      Strict::String</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      attribute :articles,          Strict::Array.of(Article)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="df8f4c897b771dc53be590f8cd2287eb39d89b26">
+  <div class="header">
+    <h3>app/models/gateways/google_news_api.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>33</b> relevant lines.
+      <span class="green"><b>33</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: false</code>
           </li>
         </div>
       
@@ -1744,7 +1714,7 @@
 
             
 
-            <code class="ruby">require_relative &#39;article&#39;</code>
+            <code class="ruby">require &#39;http&#39;</code>
           </li>
         </div>
       
@@ -1766,29 +1736,29 @@
 
             
 
-            <code class="ruby">module NewsArticle</code>
+            <code class="ruby">module PortfolioAdvisor</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
-            
-
-            <code class="ruby">  # Model for Publish</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
+          <li class="covered" data-hits="1" data-linenumber="7">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  class Publish</code>
+            <code class="ruby">  module  GoogleNews</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">    # Library for Google News Web API</code>
           </li>
         </div>
       
@@ -1799,29 +1769,29 @@
 
             
 
-            <code class="ruby">    def initialize(publish)</code>
+            <code class="ruby">    class Api</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">      @publish = publish.map { |date| DateTime.strptime(date, &#39;%Y-%m-%dT%H:%M:%S%z&#39;) }</code>
+            
+
+            <code class="ruby">      def initialize(token)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="11">
-            
-            
-
+          <li class="covered" data-hits="5" data-linenumber="11">
+            <span class="hits">5</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">        @gn_token = token</code>
           </li>
         </div>
       
@@ -1832,45 +1802,12 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    def date</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">      @publish.map { |info| info.strftime(&#39;%Y-%m-%d&#39;) }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -1881,24 +1818,57 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="17">
+          <li class="covered" data-hits="1" data-linenumber="14">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    def time</code>
+            <code class="ruby">      def article(topic, result_num = 15)</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="18">
+          <li class="covered" data-hits="5" data-linenumber="15">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        article_req_url = Request.new(@gn_token).gn_api_path(topic, result_num)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="16">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        Request.new(@gn_token).get(article_req_url).parse</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
             
 
-            <code class="ruby">      @publish.map { |info| info.strftime(&#39;%H:%M:%S&#39;) }</code>
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1909,12 +1879,551 @@
 
             
 
+            <code class="ruby">      # Sends out HTTP requests to Google News Api</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      class Request</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        API_GOOGLE_NEWS_EVERYTHING = &#39;https://newsapi.org/v2/everything?&#39;.freeze</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def initialize(token)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="24">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">          @api_key = token</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def gn_api_path(topic, result_num)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="28">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          today = Date.today</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="29">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          to = today.strftime(&#39;%Y-%m-%d&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="30">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          from = (today - 10).strftime(&#39;%Y-%m-%d&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="32">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          path = &quot;q=#{topic}&amp;from=#{from}&amp;to=#{to}&amp;pageSize=#{result_num}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="33">
+            
+            
+
+            
+
+            <code class="ruby">          # puts path</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="34">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          &quot;#{API_GOOGLE_NEWS_EVERYTHING}#{path}&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="37">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def get(url)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">          http_response =</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="39">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">            HTTP.headers(&#39;Accept&#39; =&gt; &#39;json&#39;,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">                         &#39;Authorization&#39; =&gt; &quot;token #{@api_key}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">                .get(url)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="43">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          Response.new(http_response).tap do |response|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="44">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">            raise(response.error) unless response.successful?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">          end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby">      # Decorates HTTP responses from NewsAPI with failure/success status</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      class Response &lt; SimpleDelegator</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="51">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        Unauthorized = Class.new(StandardError)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="52">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        NotFound = Class.new(StandardError)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        BadRequest = Class.new(StandardError)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
+            
+            
+
+            
+
+            <code class="ruby">        HTTP_ERROR = {</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="55">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">          400 =&gt; BadRequest,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby">          401 =&gt; Unauthorized,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="57">
+            
+            
+
+            
+
+            <code class="ruby">          404 =&gt; NotFound</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">        }.freeze</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="60">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def successful?</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="61">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">          !HTTP_ERROR.keys.include?(code)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="64">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def error</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="65">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">          HTTP_ERROR[code]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="66">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="67">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="68">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
+          <li class="never" data-hits="" data-linenumber="69">
             
             
 
@@ -1925,7 +2434,2248 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="70">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="7ce533ff8a8bb0e903385262de03b7ad6a829099">
+  <div class="header">
+    <h3>app/models/init.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">%w[entities mappers gateways].each do |folder|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="4">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">  Dir.glob(&quot;#{__dir__}/#{folder}/**/*.rb&quot;).each do |ruby_file|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="7" data-linenumber="5">
+            <span class="hits">7</span>
+            
+
+            
+
+            <code class="ruby">    require_relative ruby_file</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="eac5ad2010c3c5f49f3993a26afee9e114450169">
+  <div class="header">
+    <h3>app/models/mappers/article_mapper.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>23</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require_relative &#39;publish_mapper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  # Access article data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  module GoogleNews</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">    # Maps NewsAPI data to Article Entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    class ArticleMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def initialize</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">        # articles.map do |article|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">        #   build_entity(article)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">        # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def load_several(articles)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="17">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        articles.map do |article|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="18">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          ArticleMapper.build_entity(article)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def self.build_entity(article)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="23">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">        DataMapper.new(article).build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">      # Extracts specific parameters from data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      class DataMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def initialize(data)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="29">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @data = data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="30">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @publish_mapper = PublishMapper.new(@data[&#39;publishedAt&#39;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="34">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          PortfolioAdvisor::Entity::Article.new(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">            url: url,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">            published_at: published_at,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">            title: title</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">            # publish_date: publish_date,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby">            # publish_time: publish_time</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby">          )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="43">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="45">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def url</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">          # @data.map { |hash| hash[&#39;url&#39;] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="47">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @data[&#39;url&#39;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="50">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def published_at</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="51">
+            
+            
+
+            
+
+            <code class="ruby">          # publish_time = @data.map { |hash| hash[&#39;publishedAt&#39;] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="52">
+            
+            
+
+            
+
+            <code class="ruby">          # Publish.new(publish_time)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="53">
+            
+            
+
+            
+
+            <code class="ruby">          # PublishMapper.new(@data[&#39;publishedAt&#39;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="54">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @publish_mapper.build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="56">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="57">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def title</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">          # @data.map { |hash| hash[&#39;title&#39;] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="59">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @data[&#39;title&#39;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="61">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="62">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="63">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="64">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="379333b4c12ccb3adb0682611ca8aa3eb1f1928b">
+  <div class="header">
+    <h3>app/models/mappers/publish_mapper.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>18</b> relevant lines.
+      <span class="green"><b>18</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;date&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  # Provides access to contributor data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  module GoogleNews</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">    # Data Mapper: Github contributor -&gt; Member entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    class PublishMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def initialize(publish)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">        # @publish = publish.map { |date| DateTime.strptime(date, &#39;%Y-%m-%dT%H:%M:%S%z&#39;) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="12">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">        @publish = DateTime.strptime(publish, &#39;%Y-%m-%dT%H:%M:%S%z&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">        # self.build_entity(@publish)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="17">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">        DataMapper.new(@publish).build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby">      # Extracts entity specific elements from data structure</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      class DataMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def initialize(data)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="23">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @data = data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="27">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          Entity::Publish.new(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
+            <code class="ruby">            date: date,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">            time: time</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">          )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        private</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def date</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">          # @data.map { |info| info.strftime(&#39;%Y-%m-%d&#39;) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="37">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @data.strftime(&#39;%Y-%m-%d&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="39">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="40">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def time</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="41">
+            
+            
+
+            
+
+            <code class="ruby">          # @data.map { |info| info.strftime(&#39;%H:%M:%S&#39;) }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="45" data-linenumber="42">
+            <span class="hits">45</span>
+            
+
+            
+
+            <code class="ruby">          @data.strftime(&#39;%H:%M:%S&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="372a59643fb6426ca67063982273e8aa2211ba07">
+  <div class="header">
+    <h3>app/models/mappers/target_mapper.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>23</b> relevant lines.
+      <span class="green"><b>23</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: false</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require_relative &#39;article_mapper&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  module GoogleNews</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="7">
+            
+            
+
+            
+
+            <code class="ruby">    # Data Mapper: Github repo -&gt; Project entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    class TargetMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def initialize(gn_token, gateway_class = GoogleNews::Api)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="10">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @token = gn_token</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="11">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @gateway_class = gateway_class</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="12">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        @gateway = @gateway_class.new(@token)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def find(company)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="5" data-linenumber="16">
+            <span class="hits">5</span>
+            
+
+            
+
+            <code class="ruby">        data = @gateway.article(company)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="17">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        build_entity(company, data[&#39;articles&#39;])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      def build_entity(company, data)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="21">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">        DataMapper.new(company, data, @token, @gateway_class).build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">      # Extracts entity specific elements from data structure</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="25">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      class DataMapper</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="26">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def initialize(company, data, _token, _gateway_class)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="27">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">          @company_name = company</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="28">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">          @data = data</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="29">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">          @article_mapper = ArticleMapper.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="32">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def build_entity</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="33">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">          PortfolioAdvisor::Entity::Target.new(</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="34">
+            
+            
+
+            
+
+            <code class="ruby">            company_name: company_name,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="35">
+            
+            
+
+            
+
+            <code class="ruby">            articles: articles</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="36">
+            
+            
+
+            
+
+            <code class="ruby">          )</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="37">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="38">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        attr_reader :company_name</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="40">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="41">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        def articles</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="3" data-linenumber="42">
+            <span class="hits">3</span>
+            
+
+            
+
+            <code class="ruby">          @article_mapper.load_several(@data)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="713ebcc5e9eba59f6aa73eab08d90aa252205b80">
+  <div class="header">
+    <h3>config/environment.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;roda&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;yaml&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">module PortfolioAdvisor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">  # Configuration for the App</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  class App &lt; Roda</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    CONFIG = YAML.safe_load(File.read(&#39;config/secrets.yml&#39;))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    GOOGLENEWS_TOKEN = CONFIG[&#39;GOOGLENEWS_TOKEN&#39;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="10">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="39faa1a3dcfd4cc0eacdaa9c8c7d8269b5d33c4c">
+  <div class="header">
+    <h3>config/init.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>1</b> relevant lines.
+      <span class="green"><b>1</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require_relative &#39;environment&#39;</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="f71bdbd817f686ef819457e4eb1041d4e857ad63">
+  <div class="header">
+    <h3>init.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>2</b> relevant lines.
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="1">
+            
+            
+
+            
+
+            <code class="ruby"># frozen_string_literal: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="2">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">%w[config app].each do |folder|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="4">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  require_relative &quot;#{folder}/init&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="5">
             
             
 
