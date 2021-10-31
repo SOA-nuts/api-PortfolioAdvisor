@@ -1,3 +1,4 @@
 config/secrets.yml
 coverage/*
+coverage/index.html
 !coverage/.resultset.json
