@@ -1,10 +1,10 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require 'dry-types'
 require 'dry-struct'
 require 'date'
 
-module NewsArticle
+module PortfolioAdvisor
   module Entity
     # Domain entity for publishing date
     class Publish < Dry::Struct

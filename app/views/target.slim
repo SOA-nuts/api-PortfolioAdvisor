@@ -1,0 +1,24 @@
+.container
+  .row
+    h2
+      - company = "Company: #{target.company_name}"
+      span.target.name
+        = company
+  .container
+    .row
+      .col-md-12.col-sm-6
+        .row.top-buffer
+          - target.articles.each do |article|
+            .row
+              .col-sm-12
+                span.article.attribute
+                  = article.title
+            .row
+              .col-sm-12
+                a.project.detail href="#{article.url}" #{article.url}
+            .row
+              .col-sm-12
+                span.article.detail
+                  = article.published_at.date
+            .row
+              .col-md-12.blank-row  
