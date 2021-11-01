@@ -1,6 +1,7 @@
 # frozen_string_literal: false
 
-require_relative 'publish_mapper'
+# require_relative 'publish_mapper'
+require 'date'
 
 module PortfolioAdvisor
   # Access article data
@@ -35,27 +36,21 @@ module PortfolioAdvisor
             url: url,
             published_at: published_at,
             title: title
-            # publish_date: publish_date,
-            # publish_time: publish_time
           )
         end
 
         private
 
         def url
-          # @data.map { |hash| hash['url'] }
           @data['url']
         end
 
         def published_at
-          # publish_time = @data.map { |hash| hash['publishedAt'] }
-          # Publish.new(publish_time)
-          # PublishMapper.new(@data['publishedAt'])
-          @publish_mapper.build_entity
+          # @publish_mapper.build_entity
+          DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')
         end
 
         def title
-          # @data.map { |hash| hash['title'] }
           @data['title']
         end
       end

@@ -1,28 +1,17 @@
 # frozen_string_literal:true
 
 require_relative 'spec_helper'
+require_relative 'helpers/vcr_helper'
 
 describe 'Tests Google News API library' do
-  VCR.configure do |c|
-    c.cassette_library_dir = CASSETTES_FOLDER
-    c.hook_into :webmock
-
-    c.filter_sensitive_data('<SAFE_STRINGS>') { GOOGLENEWS_TOKEN }
-    c.filter_sensitive_data('<SAFE_STRINGS_ESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
-  end
-
   before do
-    VCR.insert_cassette CASSETTE_FILE,
-                        record: :new_episodes,
-                        match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to)]
-
-    #                     match_requests_on: %i[method uri headers]
-    # VCR.request_matchers.uri_without_param(:from, :to)
+    VcrHelper.configure_vcr_for_github
   end
 
   after do
-    VCR.eject_cassette
+    VcrHelper.eject_vcr
   end
+  
   describe 'News title' do
     it 'HAPPY: should provide correct news article attributes' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
