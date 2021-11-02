@@ -4,9 +4,9 @@ Application that give investors advices on  their portfolio
 
 ## Database 
 <pre>
-┌─────────────┐1       *┌─────────────┐\
-│   Target    ├─────────┤   Article   │\
-└─────────────┘         └─────────────┘\
+┌─────────────┐1       *┌─────────────┐
+│   Target    ├─────────┤   Article   │
+└─────────────┘         └─────────────┘
 </pre>
 ## Target
 
