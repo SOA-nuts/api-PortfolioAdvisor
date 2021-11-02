@@ -29,9 +29,8 @@ module PortfolioAdvisor
           to = today.strftime('%Y-%m-%d')
           from = (today - 10).strftime('%Y-%m-%d')
 
-          path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
-          # path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
-          #  puts path
+          path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
+          # path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
           "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
         end
 
