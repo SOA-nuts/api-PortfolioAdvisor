@@ -3,11 +3,11 @@
 Application that give investors advices on  their portfolio
 
 ## Database 
-
-┌─────────────┐1       *┌─────────────┐
-│   Target    ├─────────┤   Article   │
-└─────────────┘         └─────────────┘
-
+<pre>
+┌─────────────┐1       *┌─────────────┐\
+│   Target    ├─────────┤   Article   │\
+└─────────────┘         └─────────────┘\
+</pre>
 ## Target
 
 - compnay_name
