@@ -13,9 +13,9 @@ module PortfolioAdvisor
 
       attribute :title,             Strict::String
       attribute :url,               Strict::String
-      attribute :published_at,      Strict::DateTime # Publish
-      # attribute :publish_date, Strict::String
-      # attribute :publish_time, Strict::String
+      attribute :published_at,      Strict::DateTime
+      # attribute :published_date, Strict::String
+      # attribute :published_time, Strict::String
     end
   end
 end

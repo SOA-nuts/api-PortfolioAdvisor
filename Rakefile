@@ -28,7 +28,7 @@ namespace :db do
     require_relative 'config/environment' # load config info
     require_relative 'spec/helpers/database_helper'
 
-    def app() = CodePraise::App
+    def app() = PortfolioAdvisor::App
   end
 
   desc 'Run migrations'
@@ -55,8 +55,8 @@ namespace :db do
       return
     end
 
-    FileUtils.rm(CodePraise::App.config.DB_FILENAME)
-    puts "Deleted #{CodePraise::App.config.DB_FILENAME}"
+    FileUtils.rm(PortfolioAdvisor::App.config.DB_FILENAME)
+    puts "Deleted #{PortfolioAdvisor::App.config.DB_FILENAME}"
   end
 end
 

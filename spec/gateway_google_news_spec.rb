@@ -2,24 +2,29 @@
 
 require_relative 'spec_helper'
 require_relative 'helpers/vcr_helper'
+require 'date'
 
 describe 'Tests Google News API library' do
+  VcrHelper.setup_vcr
   before do
-    VcrHelper.configure_vcr_for_github
+    VcrHelper.configure_vcr_for_google_news
   end
 
   after do
     VcrHelper.eject_vcr
   end
   
-  describe 'News title' do
-    it 'HAPPY: should provide correct news article attributes' do
+  def get_date(timestamp)
+    DateTime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S%z')
+  end
+
+  describe 'Target info' do
+    it 'HAPPY: should provide correct target attributes' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
                .new(GOOGLENEWS_TOKEN)
                .find(TOPIC)
       _(target.company_name).must_equal TOPIC
-      _(target.articles[0].title).must_equal CORRECT['articles'][0]['title']
-      _(target.articles[0].url).must_equal CORRECT['articles'][0]['url']
+      _(target.articles.length).must_equal CORRECT['articles'].length
     end
 
     it 'SAD: should raise exception on incorrect project' do
@@ -38,20 +43,22 @@ describe 'Tests Google News API library' do
       end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::Unauthorized
     end
   end
-  describe 'Test Published Date of News' do
+
+  describe 'article information' do
     before do
-      @publish = PortfolioAdvisor::GoogleNews::TargetMapper
-                 .new(GOOGLENEWS_TOKEN)
-                 .find(TOPIC)
-                 .articles[0].published_at
+      target = PortfolioAdvisor::GoogleNews::TargetMapper
+               .new(GOOGLENEWS_TOKEN)
+               .find(TOPIC)
+      @article = target.articles[0]
     end
-    it 'HAPPY: should provide correct publishing time' do
-      _(@publish.time).wont_be_nil
-      _(@publish.time).must_equal CORRECT['articles'][0]['publishedAt'][-9...-1]
+    it 'HAPPY: should provide correct title' do
+      _(@article.title).wont_be_nil
+      _(@article.title).must_equal CORRECT['articles'][0]['title']
     end
-    it 'HAPPY: should provide correct publishing dates' do
-      _(@publish.date).wont_be_nil
-      _(@publish.date).must_equal CORRECT['articles'][0]['publishedAt'][0...10]
+    it 'HAPPY: should provide correct publish dates' do
+      _(@article.published_at).wont_be_nil
+      _(@article.published_at).must_equal get_date(CORRECT['articles'][0]['publishedAt'])
     end
   end
+
 end
