@@ -26,9 +26,9 @@ module PortfolioAdvisor
         routing.is do
           # POST /target/
           routing.post do
-            cmp_name = routing.params['company_name'].downcase
-            routing.halt 400 if COMPANY_LIST[0][cmp_name].nil?
-            routing.redirect "target/#{cmp_name}"
+            company = routing.params['company_name'].downcase
+            routing.halt 400 if COMPANY_LIST[0][company].nil?
+            routing.redirect "target/#{company}"
           end
         end
 

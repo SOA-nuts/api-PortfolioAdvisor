@@ -8,9 +8,6 @@ module PortfolioAdvisor
     # Maps NewsAPI data to Article Entity
     class ArticleMapper
       def initialize
-        # articles.map do |article|
-        #   build_entity(article)
-        # end
       end
 
       def load_several(articles)
@@ -27,7 +24,6 @@ module PortfolioAdvisor
       class DataMapper
         def initialize(data)
           @data = data
-          # @publish_mapper = PublishMapper.new(@data['publishedAt'])
           @publish_at = DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')
         end
 
@@ -56,7 +52,6 @@ module PortfolioAdvisor
         # end
         
         def published_at
-          # @publish_mapper.build_entity
           DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')
         end
 

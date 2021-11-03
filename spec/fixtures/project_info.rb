@@ -7,9 +7,6 @@ require 'date'
 config = YAML.safe_load(File.read('../../config/secrets.yml'))
 # search for specific topic e.g: business, BBC ...
 def gn_api_topic(topic)
-  # today = Date.today
-  # to = today.strftime('%Y-%m-%d')
-  # from = (today - 10).strftime('%Y-%m-%d')
   "https://newsapi.org/v2/everything?q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=15"
 end
 

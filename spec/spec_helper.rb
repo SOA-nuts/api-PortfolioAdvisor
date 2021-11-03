@@ -1,20 +1,5 @@
 # frozen_string_literal: true
 
-# require 'simplecov'
-# SimpleCov.start
-
-# require 'minitest/autorun'
-# require 'minitest/rg'
-# require 'yaml'
-# require 'vcr'
-# require 'webmock'
-# require 'date'
-# require_relative '../init'
-
-
-
-# frozen_string_literal: true
-
 ENV['RACK_ENV'] = 'test'
 
 require 'simplecov'
