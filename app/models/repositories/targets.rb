@@ -9,7 +9,7 @@ module PortfolioAdvisor
       end
 
       def self.find_company(company_name)
-        # SELECT * FROM `targets` 
+        # SELECT * FROM `targets`
         # WHERE ((`company_name` = 'company_name'))
         db_target = Database::TargetOrm
           .where(company_name: company_name)
@@ -19,11 +19,6 @@ module PortfolioAdvisor
 
       def self.find(entity)
         find_company(entity.company_name)
-      end
-
-      def self.find_company(company_name)
-        db_record = Database::TargetOrm.first(company_name: company_name)
-        rebuild_entity(db_record)
       end
 
       def self.create(entity)
@@ -40,8 +35,10 @@ module PortfolioAdvisor
           db_record.to_hash.merge(
             articles: Articles.rebuild_many(db_record.articles)
           )
-        )    
+        )
       end
+
+      # Helper to save target and its articles
       class PersistTarget
         def initialize(entity)
           @entity = entity
@@ -53,7 +50,6 @@ module PortfolioAdvisor
 
         def call
           create_target.tap do |db_target|
-
             @entity.articles.each do |article|
               db_target.add_article(Articles.db_find_or_create(article))
             end

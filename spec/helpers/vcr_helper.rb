@@ -5,8 +5,8 @@ require 'webmock'
 
 # Setting up VCR
 module VcrHelper
-  CASSETTES_FOLDER = 'spec/fixtures/cassettes'.freeze
-  GOOGLENEWS_CASSETTE = 'google_news_api'.freeze
+  CASSETTES_FOLDER = 'spec/fixtures/cassettes'
+  GOOGLENEWS_CASSETTE = 'google_news_api'
 
   def self.setup_vcr
     VCR.configure do |c|

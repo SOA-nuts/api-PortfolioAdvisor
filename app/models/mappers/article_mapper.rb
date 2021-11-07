@@ -7,8 +7,7 @@ module PortfolioAdvisor
   module GoogleNews
     # Maps NewsAPI data to Article Entity
     class ArticleMapper
-      def initialize
-      end
+      def initialize; end
 
       def load_several(articles)
         articles.map do |article|
@@ -50,7 +49,7 @@ module PortfolioAdvisor
         # def published_date
         #   # @publish_at.strftime('%Y-%m-%d')
         # end
-        
+
         def published_at
           DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')
         end

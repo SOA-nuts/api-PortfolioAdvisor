@@ -22,15 +22,15 @@ describe 'Integration Tests of GoogleNews API and Database' do
 
     it 'HAPPY: should be able to save target from GoogleNews to database' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
-      .new(GOOGLENEWS_TOKEN)
-      .find(TOPIC)
+        .new(GOOGLENEWS_TOKEN)
+        .find(TOPIC)
 
       rebuilt = PortfolioAdvisor::Repository::For.entity(target).create(target)
 
       target.articles.each do |article|
         puts article.title
       end
-      puts "zzzzzzzzzzzzz"
+      puts 'zzzzzzzzzzzzz'
       rebuilt.articles.each do |article|
         puts article.title
       end

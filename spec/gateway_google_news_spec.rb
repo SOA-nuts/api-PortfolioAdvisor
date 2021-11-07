@@ -13,7 +13,7 @@ describe 'Tests Google News API library' do
   after do
     VcrHelper.eject_vcr
   end
-  
+
   def get_date(timestamp)
     DateTime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S%z')
   end
@@ -21,8 +21,8 @@ describe 'Tests Google News API library' do
   describe 'Target info' do
     it 'HAPPY: should provide correct target attributes' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
-               .new(GOOGLENEWS_TOKEN)
-               .find(TOPIC)
+        .new(GOOGLENEWS_TOKEN)
+        .find(TOPIC)
       _(target.company_name).must_equal TOPIC
       _(target.articles.length).must_equal CORRECT['articles'].length
     end
@@ -47,8 +47,8 @@ describe 'Tests Google News API library' do
   describe 'article information' do
     before do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
-               .new(GOOGLENEWS_TOKEN)
-               .find(TOPIC)
+        .new(GOOGLENEWS_TOKEN)
+        .find(TOPIC)
       @article = target.articles[0]
     end
     it 'HAPPY: should provide correct title' do
@@ -60,5 +60,4 @@ describe 'Tests Google News API library' do
       _(@article.published_at).must_equal get_date(CORRECT['articles'][0]['publishedAt'])
     end
   end
-
 end

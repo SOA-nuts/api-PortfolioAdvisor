@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # frozen__string_literal: true
 
 module PortfolioAdvisor
@@ -12,10 +14,10 @@ module PortfolioAdvisor
         return nil unless db_record
 
         Entity::Article.new(
-          id:           db_record.id,
-          company_id:   db_record.company_id,
-          title:        db_record.title,
-          url:          db_record.url,
+          id: db_record.id,
+          company_id: db_record.company_id,
+          title: db_record.title,
+          url: db_record.url,
           published_at: DateTime.parse(db_record.published_at.to_s)
         )
       end

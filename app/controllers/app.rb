@@ -21,7 +21,7 @@ module PortfolioAdvisor
       routing.public
 
       # GET /
-      routing.root do # rubocop:disable Metrics/BlockLength
+      routing.root do
         targets = Repository::For.klass(Entity::Target).all
         view 'home', locals: { targets: targets }
       end
@@ -29,10 +29,10 @@ module PortfolioAdvisor
       routing.on 'target' do
         routing.is do
           # POST /target/
-           routing.post do
+          routing.post do
             company = routing.params['company_name'].downcase
             routing.halt 400 if COMPANY_LIST[0][company].nil?
-                
+
             # Get target from news api
             target = GoogleNews::TargetMapper
               .new(App.config.GOOGLENEWS_TOKEN)
@@ -46,12 +46,12 @@ module PortfolioAdvisor
           end
         end
 
-       routing.on String do |company|
+        routing.on String do |company|
           # GET /target/company
           routing.get do
-          # Get project from database
+            # Get project from database
             target = Repository::For.klass(Entity::Target)
-                     .find_company(company)
+              .find_company(company)
 
             view 'target', locals: { target: target }
           end
