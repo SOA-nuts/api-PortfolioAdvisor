@@ -25,12 +25,11 @@ module PortfolioAdvisor
         end
 
         def gn_api_path(topic, result_num)
-          today = Date.today
-          to = today.strftime('%Y-%m-%d')
-          from = (today - 10).strftime('%Y-%m-%d')
-
           path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
-          # the comment below is for vcr 
+          # the comment below is for vcr
+          # today = Date.today
+          # to = today.strftime('%Y-%m-%d')
+          # from = (today - 10).strftime('%Y-%m-%d')
           # path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
           "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
         end
@@ -39,7 +38,7 @@ module PortfolioAdvisor
           http_response =
             HTTP.headers('Accept' => 'json',
                          'Authorization' => "token #{@api_key}")
-                .get(url)
+              .get(url)
 
           Response.new(http_response).tap do |response|
             raise(response.error) unless response.successful?

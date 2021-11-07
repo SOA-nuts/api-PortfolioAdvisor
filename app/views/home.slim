@@ -16,3 +16,18 @@
         } Show Target
     .row
       .col-md-12.blank-row
+    - if targets.any?
+      table class="table table-hover" id="projects_table"
+        thead
+          tr
+            th Company
+            th Topics
+            th URL
+        tbody
+          - targets.each.with_index do |target, index|
+            
+              -target.articles.each do |article|
+                tr
+                  td{rowspan: target.articles.count} = target.company_name
+                  td=article.title 
+                  td=article.url
