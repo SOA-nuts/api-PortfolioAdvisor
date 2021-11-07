@@ -4,7 +4,7 @@ require_relative 'article_mapper'
 
 module PortfolioAdvisor
   module GoogleNews
-    # Data Mapper: Github repo -> Project entity
+    # Data Mapper: News repo -> Target entity
     class TargetMapper
       def initialize(gn_token, gateway_class = GoogleNews::Api)
         @token = gn_token

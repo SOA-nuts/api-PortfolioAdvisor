@@ -12,18 +12,17 @@ module PortfolioAdvisor
         # SELECT * FROM `targets` 
         # WHERE ((`company_name` = 'company_name'))
         db_target = Database::TargetOrm
-          .left_join(:articles, company_id: :id)
           .where(company_name: company_name)
           .first
         rebuild_entity(db_target)
       end
 
       def self.find(entity)
-        find_id(entity.id)
+        find_company(entity.company_name)
       end
 
-      def self.find_id(id)
-        db_record = Database::TargetOrm.first(id: id)
+      def self.find_company(company_name)
+        db_record = Database::TargetOrm.first(company_name: company_name)
         rebuild_entity(db_record)
       end
 

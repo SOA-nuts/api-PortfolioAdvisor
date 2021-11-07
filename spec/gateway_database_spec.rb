@@ -20,7 +20,7 @@ describe 'Integration Tests of GoogleNews API and Database' do
       DatabaseHelper.wipe_database
     end
 
-    it 'HAPPY: should be able to save target from Github to database' do
+    it 'HAPPY: should be able to save target from PortfolioAdvisor to database' do
         target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
         .find(TOPIC)

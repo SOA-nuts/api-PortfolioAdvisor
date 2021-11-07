@@ -34,7 +34,7 @@ module PortfolioAdvisor
             routing.halt 400 if COMPANY_LIST[0][company].nil?
                 
             # Get target from news api
-            target = Github::TargetMapper
+            target = GoogleNews::TargetMapper
               .new(App.config.GOOGLENEWS_TOKEN)
               .find(company)
 
@@ -51,7 +51,6 @@ module PortfolioAdvisor
           routing.get do
           # Get project from database
             target = Repository::For.klass(Entity::Target)
-                     .new(GOOGLENEWS_TOKEN)
                      .find_company(company)
 
             view 'target', locals: { target: target }
