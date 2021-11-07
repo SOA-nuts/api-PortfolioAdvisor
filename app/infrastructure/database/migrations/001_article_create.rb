@@ -8,8 +8,8 @@ Sequel.migration do
       primary_key :id
       foreign_key :company_id, :targets
 
-      String      :title, unique: true, null: false
-      String      :url
+      String      :title, null: false
+      String      :url, unique: true
 
       DateTime    :published_at
     end

@@ -12,7 +12,7 @@ module PortfolioAdvisor
       plugin :timestamps, update_on_create: true
 
       def self.find_or_create(article_info)
-        first(title: article_info[:title]) || create(article_info)
+        first(url: article_info[:url]) || create(article_info)
      end
     end
   end

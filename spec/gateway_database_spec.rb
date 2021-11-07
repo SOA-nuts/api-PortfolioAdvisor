@@ -8,7 +8,7 @@ describe 'Integration Tests of GoogleNews API and Database' do
   VcrHelper.setup_vcr
 
   before do
-    VcrHelper.configure_vcr_for_github
+    VcrHelper.configure_vcr_for_google_news
   end
 
   after do
@@ -20,12 +20,20 @@ describe 'Integration Tests of GoogleNews API and Database' do
       DatabaseHelper.wipe_database
     end
 
-    it 'HAPPY: should be able to save target from PortfolioAdvisor to database' do
-        target = PortfolioAdvisor::GoogleNews::TargetMapper
-        .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC)
+    it 'HAPPY: should be able to save target from GoogleNews to database' do
+      target = PortfolioAdvisor::GoogleNews::TargetMapper
+      .new(GOOGLENEWS_TOKEN)
+      .find(TOPIC)
 
       rebuilt = PortfolioAdvisor::Repository::For.entity(target).create(target)
+
+      target.articles.each do |article|
+        puts article.title
+      end
+      puts "zzzzzzzzzzzzz"
+      rebuilt.articles.each do |article|
+        puts article.title
+      end
 
       _(rebuilt.company_name).must_equal(target.company_name)
       _(rebuilt.articles.count).must_equal(target.articles.count)
@@ -35,7 +43,7 @@ describe 'Integration Tests of GoogleNews API and Database' do
           potential.title == article.title
         end
 
-        _(found.url).must_equal article.username
+        _(found.title).must_equal article.title
       end
     end
   end

@@ -27,7 +27,6 @@ module PortfolioAdvisor
       end
 
       def self.db_find_or_create(entity)
-        puts entity.title
         Database::ArticleOrm.find_or_create(entity.to_hash)
       end
     end
