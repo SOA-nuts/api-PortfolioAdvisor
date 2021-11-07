@@ -4,7 +4,7 @@ require_relative 'spec_helper'
 require_relative 'helpers/vcr_helper'
 require_relative 'helpers/database_helper'
 
-describe 'Integration Tests of Github API and Database' do
+describe 'Integration Tests of GoogleNews API and Database' do
   VcrHelper.setup_vcr
 
   before do
@@ -32,7 +32,7 @@ describe 'Integration Tests of Github API and Database' do
 
       target.articles.each do |article|
         found = rebuilt.articles.find do |potential|
-          potential.tilte == article.tilte
+          potential.title == article.title
         end
 
         _(found.url).must_equal article.username

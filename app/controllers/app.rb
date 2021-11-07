@@ -4,40 +4,56 @@ require 'roda'
 require 'slim'
 require 'yaml'
 
-COMPANY_YAML = 'spec/fixtures/company.yml'
+COMPANY_YAML = '/home/eavilez/Google/GoogleNewsAPI/spec/fixtures/company.yml'
 COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
 
 module PortfolioAdvisor
   # Web App
   class App < Roda
     plugin :render, engine: 'slim', views: 'app/views'
-    plugin :assets, css: 'style.css', path: 'app/views/assets'
+    plugin :public, root: 'app/views/public'
+    plugin :assets, path: 'app/views/assets',
+                    css: 'style.css', js: 'table_row_click.js'
     plugin :halt
 
     route do |routing|
       routing.assets # load CSS
+      routing.public
 
       # GET /
-      routing.root do
-        view 'home'
+      routing.root do # rubocop:disable Metrics/BlockLength
+        targets = Repository::For.klass(Entity::Target).all
+        view 'home', locals: { targets: targets }
       end
 
       routing.on 'target' do
         routing.is do
           # POST /target/
-          routing.post do
+           routing.post do
             company = routing.params['company_name'].downcase
             routing.halt 400 if COMPANY_LIST[0][company].nil?
-            routing.redirect "target/#{company}"
+          
+         
+         
+        
+          #  target = GoogleNews::TargetMapper
+           #   .new(App.config.GOOGLENEWS_TOKEN)
+            #  .find(company)
+
+            # Add target to database
+            Repository::For.entity(target).create(target)
+
+            # Redirect viewer target page
+            routing.redirect "target/#{target.company}"
           end
         end
 
-        routing.on String do |company|
+       routing.on String do |company|
           # GET /target/company
           routing.get do
             target = GoogleNews::TargetMapper
                      .new(GOOGLENEWS_TOKEN)
-                     .find(company)
+                     .find_company(company)
 
             view 'target', locals: { target: target }
           end
