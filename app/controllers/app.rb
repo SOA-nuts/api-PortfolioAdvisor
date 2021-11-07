@@ -4,7 +4,7 @@ require 'roda'
 require 'slim'
 require 'yaml'
 
-COMPANY_YAML = '/home/eavilez/Google/GoogleNewsAPI/spec/fixtures/company.yml'
+COMPANY_YAML = 'spec/fixtures/company.yml'
 COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
 
 module PortfolioAdvisor
@@ -32,26 +32,25 @@ module PortfolioAdvisor
            routing.post do
             company = routing.params['company_name'].downcase
             routing.halt 400 if COMPANY_LIST[0][company].nil?
-          
-         
-         
-        
-          #  target = GoogleNews::TargetMapper
-           #   .new(App.config.GOOGLENEWS_TOKEN)
-            #  .find(company)
+                
+            # Get target from news api
+            target = Github::TargetMapper
+              .new(App.config.GOOGLENEWS_TOKEN)
+              .find(company)
 
             # Add target to database
             Repository::For.entity(target).create(target)
 
             # Redirect viewer target page
-            routing.redirect "target/#{target.company}"
+            routing.redirect "target/#{company}"
           end
         end
 
        routing.on String do |company|
           # GET /target/company
           routing.get do
-            target = GoogleNews::TargetMapper
+          # Get project from database
+            target = Repository::For.klass(Entity::Target)
                      .new(GOOGLENEWS_TOKEN)
                      .find_company(company)
 

@@ -16,3 +16,17 @@
         } Show Target
     .row
       .col-md-12.blank-row
+    - if targets.any?
+      table class="table table-hover" id="projects_table"
+        thead
+          tr
+            th Owner
+            th Github URL
+            th Contributors
+        tbody
+          - targets.each.with_index do |target, index|
+            tr class="table-row project_row" data-href="target/#{target.company_name}"
+              td id='td_owner'
+                span class="project_table_owner" id="project[#{index}].owner"
+                  = target.company_name
+              

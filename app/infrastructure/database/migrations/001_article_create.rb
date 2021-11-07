@@ -11,7 +11,7 @@ Sequel.migration do
       String      :title, unique: true, null: false
       String      :url
 
-      DateTime :published_at
+      DateTime    :published_at
     end
   end
 end

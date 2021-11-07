@@ -8,8 +8,8 @@ module PortfolioAdvisor
     # Finds the right repository for an entity object or class
     module For
       ENTITY_REPOSITORY = {
-       PortfolioAdvisor::Entity::Article => Articles,
-        PortfolioAdvisor::Entity::Target => Targets
+        Entity::Article => Articles,
+        Entity::Target => Targets
       }.freeze
 
       def self.klass(entity_klass)
