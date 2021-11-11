@@ -33,13 +33,7 @@ module PortfolioAdvisor
             company = routing.params['company_name'].downcase
             routing.halt 400 if COMPANY_LIST[0][company].nil?
 
-            # Get target from news api
-            target = GoogleNews::TargetMapper
-              .new(App.config.GOOGLENEWS_TOKEN)
-              .find(company)
-
-            # Add target to database
-            Repository::For.entity(target).create(target)
+            build_entity(company)
 
             # Redirect viewer target page
             routing.redirect "target/#{company}"
@@ -53,10 +47,40 @@ module PortfolioAdvisor
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-            view 'target', locals: { target: target }
+            # Calculate score of the article
+            article_scores = Mapper::Score.new(target.articles).target_summary
+              
+            view 'target', locals: { target: target, article_scores: article_scores}
           end
         end
       end
     end
+
+    def build_entity(company)
+      #check last update: nil->nothing in DB
+      update_at = Repository::Target.get_update_at(company)
+
+      if update_at == Date.today
+        Repository::Target.find_company(company_name)
+      elsif update_at.nil?
+        # Get target from news api
+        target = GoogleNews::TargetMapper
+        .new(App.config.GOOGLENEWS_TOKEN)
+        .find(company, update_at)
+
+        # Add target to database
+        Repository::For.entity(target).create(target)
+      else
+        # Get target from news api
+        target = GoogleNews::TargetMapper
+        .new(App.config.GOOGLENEWS_TOKEN)
+        .find(company, update_at)
+
+        # Add articles to database
+        Repository::Target.find_company(company_name)
+        Repository::For.entity(target).update(target)
+      end
+    end
+
   end
 end

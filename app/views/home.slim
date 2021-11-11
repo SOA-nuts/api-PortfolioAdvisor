@@ -21,13 +21,16 @@
         thead
           tr
             th Company
-            th Topics
-            th URL
+            th Update At
+            / th Topics
+            / th URL
         tbody
           - targets.each.with_index do |target, index|
-            
-              -target.articles.each do |article|
-                tr
-                  td{rowspan: target.articles.count} = target.company_name
-                  td=article.title 
-                  td=article.url
+            tr
+              td = target.company_name
+              td = target.timestamp
+              / -target.articles.each do |article|
+              /   tr
+              /     td{rowspan: target.articles.count} = target.company_name
+              /     td=article.title 
+              /     td=article.url

@@ -8,9 +8,15 @@ module PortfolioAdvisor
         Database::TargetOrm.all.map { |db_target| rebuild_entity(db_target) }
       end
 
+      def self.get_update_at(company_name)
+        db_target = Database::TargetOrm
+        .where(company_name: company_name)
+        .first
+
+        db_target.timestamps
+      end
+
       def self.find_company(company_name)
-        # SELECT * FROM `targets`
-        # WHERE ((`company_name` = 'company_name'))
         db_target = Database::TargetOrm
           .where(company_name: company_name)
           .first
@@ -19,6 +25,11 @@ module PortfolioAdvisor
 
       def self.find(entity)
         find_company(entity.company_name)
+      end
+
+      def self.update(entity)
+        db_target = PersistTarget.new(entity).update
+        rebuild_entity(db_target)
       end
 
       def self.create(entity)
@@ -53,6 +64,12 @@ module PortfolioAdvisor
             @entity.articles.each do |article|
               db_target.add_article(Articles.db_find_or_create(article))
             end
+          end
+        end
+
+        def update
+          @entity.articles.each do |article|
+            db_target.add_article(Articles.db_find_or_create(article))
           end
         end
       end

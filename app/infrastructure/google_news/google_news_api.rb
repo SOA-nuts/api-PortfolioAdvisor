@@ -11,8 +11,8 @@ module PortfolioAdvisor
         @gn_token = token
       end
 
-      def article(topic, result_num = 15)
-        article_req_url = Request.new(@gn_token).gn_api_path(topic, result_num)
+      def article(company, update_at)
+        article_req_url = Request.new(@gn_token).gn_api_path(company, update_at)
         Request.new(@gn_token).get(article_req_url).parse
       end
 
@@ -24,13 +24,14 @@ module PortfolioAdvisor
           @api_key = token
         end
 
-        def gn_api_path(topic, result_num)
-          path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
+        def gn_api_path(company, update_at)
+          # path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
           # the comment below is for vcr
-          # today = Date.today
-          # to = today.strftime('%Y-%m-%d')
-          # from = (today - 10).strftime('%Y-%m-%d')
-          # path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
+          today = Date.today
+          result_num = [(today - update_at).to_i, 15].min
+          to = today.strftime('%Y-%m-%d')
+          from = (today - result_num).strftime('%Y-%m-%d')
+          path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
           "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
         end
 

@@ -13,6 +13,8 @@ module PortfolioAdvisor
 
       attribute :company_name,      Strict::String
       attribute :articles,          Strict::Array.of(Article)
+      # attribute :stock_symbol,      Strict::String
+      attribute :update_at,         Strict::DateTime
 
       def to_attr_hash
         to_hash.reject { |key, _| %i[articles].include? key }
