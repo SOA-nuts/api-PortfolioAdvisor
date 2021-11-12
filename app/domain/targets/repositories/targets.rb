@@ -13,14 +13,14 @@ module PortfolioAdvisor
         .where(company_name: company_name)
         .first
 
-        db_target.timestamps
+        db_target.nil? ? nil : db_target.updated_at
       end
 
       def self.find_company(company_name)
         db_target = Database::TargetOrm
           .where(company_name: company_name)
           .first
-        rebuild_entity(db_target)
+        # rebuild_entity(db_target)
       end
 
       def self.find(entity)
@@ -28,15 +28,16 @@ module PortfolioAdvisor
       end
 
       def self.update(entity)
-        db_target = PersistTarget.new(entity).update
-        rebuild_entity(db_target)
+        target = find(entity)
+        db_target = PersistTarget.new(entity).update(target)
+        # rebuild_entity(db_target)
       end
 
       def self.create(entity)
         raise 'Target already exists' if find(entity)
 
         db_target = PersistTarget.new(entity).call
-        rebuild_entity(db_target)
+        # rebuild_entity(db_target)
       end
 
       def self.rebuild_entity(db_record)
@@ -67,9 +68,9 @@ module PortfolioAdvisor
           end
         end
 
-        def update
+        def update(target)
           @entity.articles.each do |article|
-            db_target.add_article(Articles.db_find_or_create(article))
+            target.add_article(Articles.db_find_or_create(article))
           end
         end
       end

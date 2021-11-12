@@ -9,8 +9,8 @@ Sequel.migration do
       String :company_name, unique: true
       # String :stock_symbol
 
-      DateTime :created_at
-      DateTime :updated_at
+      # DateTime :created_at
+      Date :updated_at
     end
   end
 end

@@ -12,10 +12,7 @@ module PortfolioAdvisor
 
             def build_entity
                 Entity::ArticleScore.new(
-                    title: @article.title,
-                    url: @article.url,
-                    published_at: @article.published_at,
-                    content: @content
+                    @article, @content
                 )
             end
         end

@@ -32,7 +32,8 @@ module PortfolioAdvisor
         def build_entity
           PortfolioAdvisor::Entity::Target.new(
             company_name: company_name,
-            articles: articles
+            articles: articles,
+            updated_at: Date.today
           )
         end
 

@@ -28,10 +28,17 @@ module PortfolioAdvisor
           # path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
           # the comment below is for vcr
           today = Date.today
-          result_num = [(today - update_at).to_i, 15].min
+
+          if update_at.nil?
+            result_num = 15
+          else
+            result_num = [(today - update_at).to_i, 15].min
+          end
+
+          
           to = today.strftime('%Y-%m-%d')
           from = (today - result_num).strftime('%Y-%m-%d')
-          path = "q=#{topic}&from=#{from}&to=#{to}&pageSize=#{result_num}"
+          path = "q=#{company}&from=#{from}&to=#{to}&pageSize=#{result_num}"
           "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
         end
 

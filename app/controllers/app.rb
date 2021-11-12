@@ -20,7 +20,7 @@ module PortfolioAdvisor
       routing.assets # load CSS
       routing.public
 
-      # GET /
+      # GET 
       routing.root do
         targets = Repository::For.klass(Entity::Target).all
         view 'home', locals: { targets: targets }
@@ -48,39 +48,31 @@ module PortfolioAdvisor
               .find_company(company)
 
             # Calculate score of the article
-            article_scores = Mapper::Score.new(target.articles).target_summary
-              
-            view 'target', locals: { target: target, article_scores: article_scores}
+            target_scores = Mapper::Score.new(target).build_entity
+            view 'target', locals: { target: target, target_scores: target_scores}
           end
         end
       end
     end
 
     def build_entity(company)
-      #check last update: nil->nothing in DB
-      update_at = Repository::Target.get_update_at(company)
-
-      if update_at == Date.today
-        Repository::Target.find_company(company_name)
-      elsif update_at.nil?
+      update_at = Repository::Targets.get_update_at(company)
+      
+      if update_at != Date.today
         # Get target from news api
         target = GoogleNews::TargetMapper
         .new(App.config.GOOGLENEWS_TOKEN)
         .find(company, update_at)
-
-        # Add target to database
-        Repository::For.entity(target).create(target)
-      else
-        # Get target from news api
-        target = GoogleNews::TargetMapper
-        .new(App.config.GOOGLENEWS_TOKEN)
-        .find(company, update_at)
-
-        # Add articles to database
-        Repository::Target.find_company(company_name)
-        Repository::For.entity(target).update(target)
+        
+        if update_at.nil?
+          # Add target to database
+          Repository::For.entity(target).create(target)
+        else
+          # Add articles to database
+          Repository::For.entity(target).update(target)
+        end
       end
+    
     end
-
   end
 end

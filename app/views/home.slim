@@ -28,7 +28,7 @@
           - targets.each.with_index do |target, index|
             tr
               td = target.company_name
-              td = target.timestamp
+              td = target.updated_at
               / -target.articles.each do |article|
               /   tr
               /     td{rowspan: target.articles.count} = target.company_name
