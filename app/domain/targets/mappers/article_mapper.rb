@@ -2,6 +2,8 @@
 
 require 'date'
 
+require_relative 'content_mapper'
+
 module PortfolioAdvisor
   # Access article data
   module GoogleNews
@@ -24,6 +26,7 @@ module PortfolioAdvisor
         def initialize(data)
           @data = data
           @publish_at = DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')
+          
         end
 
         def build_entity
@@ -32,7 +35,8 @@ module PortfolioAdvisor
             # published_date: published_date,
             # published_time: published_time,
             published_at: published_at,
-            title: title
+            title: title,
+            score: score
           )
         end
 
@@ -40,6 +44,10 @@ module PortfolioAdvisor
 
         def url
           @data['url']
+        end
+
+        def score
+          ContentMapper.new(url).get_content
         end
 
         # def published_time

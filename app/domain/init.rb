@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-folders = %w[targets industry_analysis]
+folders = %w[targets]
 folders.each do |folder|
   require_relative "#{folder}/init"
 end

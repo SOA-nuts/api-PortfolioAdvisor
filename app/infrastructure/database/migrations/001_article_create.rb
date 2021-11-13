@@ -12,6 +12,7 @@ Sequel.migration do
       String      :url, unique: true
 
       DateTime    :published_at
+      Integer     :score
     end
   end
 end

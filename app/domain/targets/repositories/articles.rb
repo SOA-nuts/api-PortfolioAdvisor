@@ -18,7 +18,8 @@ module PortfolioAdvisor
           company_id: db_record.company_id,
           title: db_record.title,
           url: db_record.url,
-          published_at: DateTime.parse(db_record.published_at.to_s)
+          published_at: DateTime.parse(db_record.published_at.to_s),
+          score: db_record.score
         )
       end
 

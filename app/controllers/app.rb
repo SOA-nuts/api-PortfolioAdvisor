@@ -48,8 +48,8 @@ module PortfolioAdvisor
               .find_company(company)
 
             # Calculate score of the article
-            target_scores = Mapper::Score.new(target).build_entity
-            view 'target', locals: { target: target, target_scores: target_scores}
+            # target_scores = Mapper::Score.new(target).build_entity
+            view 'target', locals: { target: target}#, target_scores: target_scores}
           end
         end
       end

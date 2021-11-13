@@ -6,33 +6,33 @@
         = company
   .container
 
-    / .row
-    /   .col-md-12.col-sm-6
-    /     .row.top-buffer
-    /       - target.articles.each do |article|
-    /         .row
-    /           .col-sm-12
-    /             span.article.attribute
-    /               = article.title
-    /         .row
-    /           .col-sm-12
-    /             a.project.detail href="#{article.url}" #{article.url}
-    /         .row
-    /           .col-sm-12
-    /             span.article.detail
-    /               = article.published_at
-    /         .row
-    /           .col-md-12.blank-row  
+    .row
+      .col-md-12.col-sm-6
+        .row.top-buffer
+          - target.articles.each do |article|
+            .row
+              .col-sm-12
+                span.article.attribute
+                  = article.title
+            .row
+              .col-sm-12
+                a.project.detail href="#{article.url}" #{article.url}
+            .row
+              .col-sm-12
+                span.article.detail
+                  = article.score
+            .row
+              .col-md-12.blank-row  
 
-    table class="table table-hover" id="score_table"
-        thead
-          tr
-            th Article
-            th Score
-            / th Topics
-            / th URL
-        tbody
-          - target_scores.articles.each.with_index do |article, index|
-            tr
-              td = article.article.title
-              td = article.score
+    / table class="table table-hover" id="score_table"
+    /     thead
+    /       tr
+    /         th Article
+    /         th Score
+    /         / th Topics
+    /         / th URL
+    /     tbody
+    /       - target_scores.articles.each.with_index do |article, index|
+    /         tr
+    /           td = article.article.title
+    /           td = article.score
