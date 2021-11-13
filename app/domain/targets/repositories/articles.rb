@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # frozen__string_literal: true
 
 module PortfolioAdvisor

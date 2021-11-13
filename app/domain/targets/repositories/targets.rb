@@ -62,6 +62,8 @@ module PortfolioAdvisor
             @entity.articles.each do |article|
               db_target.add_article(Articles.db_find_or_create(article))
             end
+
+            db_target.add_analysis(Analyses.db_find_or_create(@entity))
           end
         end
 

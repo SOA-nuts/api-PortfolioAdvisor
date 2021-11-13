@@ -58,16 +58,18 @@ module PortfolioAdvisor
     def build_entity(company)
 
       company_record = Repository::Targets.find_company(company)
+
       if company_record.nil?
         target = GoogleNews::TargetMapper
         .new(App.config.GOOGLENEWS_TOKEN)
         .find(company, nil)
         Repository::For.entity(target).create(target)
+        
       elsif company_record.updated_at != Date.today
-          target = GoogleNews::TargetMapper
-          .new(App.config.GOOGLENEWS_TOKEN)
-          .find(company, company_record.updated_at)
-          Repository::For.entity(target).update(target)
+        target = GoogleNews::TargetMapper
+        .new(App.config.GOOGLENEWS_TOKEN)
+        .find(company, company_record.updated_at)
+        Repository::For.entity(target).update(target)
       end
       
       # if update_at != Date.today
