@@ -5,22 +5,21 @@ module PortfolioAdvisor
     # Repository for Target
     class Targets
       def self.all
-        Database::TargetOrm.all.map { |db_target| rebuild_entity(db_target) }
+        Database::TargetOrm.all#.map { |db_target| rebuild_entity(db_target) }
       end
 
-      def self.get_update_at(company_name)
-        db_target = Database::TargetOrm
-        .where(company_name: company_name)
-        .first
+      # def self.get_update_at(company_name)
+      #   db_target = Database::TargetOrm
+      #   .where(company_name: company_name)
+      #   .first
 
-        db_target.nil? ? nil : db_target.updated_at
-      end
+      #   db_target.nil? ? nil : db_target.updated_at
+      # end
 
       def self.find_company(company_name)
         db_target = Database::TargetOrm
           .where(company_name: company_name)
           .first
-        # rebuild_entity(db_target)
       end
 
       def self.find(entity)
@@ -30,25 +29,23 @@ module PortfolioAdvisor
       def self.update(entity)
         target = find(entity)
         db_target = PersistTarget.new(entity).update(target)
-        # rebuild_entity(db_target)
       end
 
       def self.create(entity)
         raise 'Target already exists' if find(entity)
 
         db_target = PersistTarget.new(entity).call
-        # rebuild_entity(db_target)
       end
 
-      def self.rebuild_entity(db_record)
-        return nil unless db_record
+      # def self.rebuild_entity(db_record)
+      #   return nil unless db_record
 
-        Entity::Target.new(
-          db_record.to_hash.merge(
-            articles: Articles.rebuild_many(db_record.articles)
-          )
-        )
-      end
+      #   Entity::Target.new(
+      #     db_record.to_hash.merge(
+      #       articles: Articles.rebuild_many(db_record.articles)
+      #     )
+      #   )
+      # end
 
       # Helper to save target and its articles
       class PersistTarget
@@ -69,6 +66,8 @@ module PortfolioAdvisor
         end
 
         def update(target)
+          Database::TargetOrm.update(updated_at: @entity.updated_at)
+
           @entity.articles.each do |article|
             target.add_article(Articles.db_find_or_create(article))
           end

@@ -34,7 +34,6 @@ module PortfolioAdvisor
           else
             result_num = [(today - update_at).to_i, 15].min
           end
-
           
           to = today.strftime('%Y-%m-%d')
           from = (today - result_num).strftime('%Y-%m-%d')

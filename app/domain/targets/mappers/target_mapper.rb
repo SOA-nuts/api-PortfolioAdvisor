@@ -12,8 +12,8 @@ module PortfolioAdvisor
         @gateway = @gateway_class.new(@token)
       end
 
-      def find(company, update_at)
-        data = @gateway.article(company, update_at)
+      def find(company, updated_at)
+        data = @gateway.article(company, updated_at)
         build_entity(company, data['articles'])
       end
 
