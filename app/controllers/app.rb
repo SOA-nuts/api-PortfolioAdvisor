@@ -22,8 +22,10 @@ module PortfolioAdvisor
 
       # GET 
       routing.root do
-        targets = Repository::For.klass(Entity::Target).all
-        view 'home', locals: { targets: targets }
+        # targets = Repository::For.klass(Entity::Target).all
+        # view 'home', locals: { targets: targets }
+        histories = Repository::Histories.all
+        view 'home', locals: { histories: histories }
       end
 
       routing.on 'target' do

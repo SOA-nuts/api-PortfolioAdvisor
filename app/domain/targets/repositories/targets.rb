@@ -57,21 +57,35 @@ module PortfolioAdvisor
           Database::TargetOrm.create(@entity.to_attr_hash)
         end
 
+        def create_history
+          Database::HistoryOrm.create(@entity.to_history_hash)
+        end
+
         def call
+          # company = Database::TargetOrm.create(@entity.to_attr_hash)
+          # create_history.tap do |db_history|
+          #   db_history.update(company: company)
+          # end
+
           create_target.tap do |db_target|
+            create_history.tap do |db_history|
+              db_history.update(company: db_target)
+            end
             @entity.articles.each do |article|
               db_target.add_article(Articles.db_find_or_create(article))
             end
-
-            db_target.add_analysis(Analyses.db_find_or_create(@entity))
           end
         end
 
         def update(target)
-          Database::TargetOrm.update(updated_at: @entity.updated_at)
+          company = Database::TargetOrm.update(updated_at: @entity.updated_at)
 
           @entity.articles.each do |article|
             target.add_article(Articles.db_find_or_create(article))
+          end
+
+          create_history.tap do |db_history|
+            db_history.update(company: company)
           end
         end
       end

@@ -33,7 +33,8 @@ module PortfolioAdvisor
           PortfolioAdvisor::Entity::Target.new(
             company_name: company_name,
             articles: articles,
-            updated_at: Date.today
+            updated_at: Date.today,
+            score: score
           )
         end
 
@@ -41,6 +42,10 @@ module PortfolioAdvisor
 
         def articles
           @article_mapper.load_several(@data)
+        end
+
+        def score
+          return 2 #todo
         end
       end
     end

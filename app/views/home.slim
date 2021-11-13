@@ -16,7 +16,7 @@
         } Show Target
     .row
       .col-md-12.blank-row
-    - if targets.any?
+    - if histories.any?
       table class="table table-hover" id="projects_table"
         thead
           tr
@@ -25,10 +25,10 @@
             / th Topics
             / th URL
         tbody
-          - targets.each.with_index do |target, index|
+          - histories.each.with_index do |target, index|
             tr
-              td = target.company_name
               td = target.updated_at
+              td = target.score
               / -target.articles.each do |article|
               /   tr
               /     td{rowspan: target.articles.count} = target.company_name

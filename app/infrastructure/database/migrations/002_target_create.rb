@@ -11,6 +11,7 @@ Sequel.migration do
 
       # DateTime :created_at
       Date :updated_at
+      Integer :score
     end
   end
 end

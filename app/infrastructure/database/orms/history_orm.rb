@@ -5,14 +5,14 @@ require 'sequel'
 module PortfolioAdvisor
   module Database
     # Object-Relational Mapper for articles
-    class AnalysisOrm < Sequel::Model(:analyses)
-      many_to_one :target,
+    class HistoryOrm < Sequel::Model(:histories)
+      many_to_one :company,
                   class: :'PortfolioAdvisor::Database::TargetOrm'
-
+                   
       plugin :timestamps, update_on_create: true
 
-      def self.find_or_create(analysis_info)
-        first(company_id: analysis_info[:company_id], analyzed_at: analysis_info[:analyzed_at]) || create(analysis_info)
+      def self.find_or_create(history)
+        first(company_id: history[:company_id], updated_at: history[:updated_at]) || create(history)
       end
     end
   end

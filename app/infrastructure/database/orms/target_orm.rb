@@ -10,8 +10,8 @@ module PortfolioAdvisor
                   class: :'PortfolioAdvisor::Database::ArticleOrm',
                   key: :company_id
 
-      one_to_many :analyses,
-                  class: :'PortfolioAdvisor::Database::AnalysisOrm',
+      one_to_many :histories,
+                  class: :'PortfolioAdvisor::Database::HistoryOrm',
                   key: :company_id
 
       plugin :timestamps, update_on_create: true, update: :updated_on
