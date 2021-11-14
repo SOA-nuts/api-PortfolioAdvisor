@@ -45,7 +45,8 @@ module PortfolioAdvisor
         end
 
         def score
-          return 2 #todo
+          #todo
+          return 2 
         end
       end
     end

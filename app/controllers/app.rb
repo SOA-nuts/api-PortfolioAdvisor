@@ -75,7 +75,6 @@ module PortfolioAdvisor
     def build_entity(company)
 
       company_record = Repository::Targets.find_company(company)
-      puts company_record.class
       if company_record.nil?
         target = GoogleNews::TargetMapper
         .new(App.config.GOOGLENEWS_TOKEN)

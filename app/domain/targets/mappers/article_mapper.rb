@@ -32,8 +32,6 @@ module PortfolioAdvisor
         def build_entity
           PortfolioAdvisor::Entity::Article.new(
             url: url,
-            # published_date: published_date,
-            # published_time: published_time,
             published_at: published_at,
             title: title,
             score: score
@@ -49,14 +47,6 @@ module PortfolioAdvisor
         def score
           ContentMapper.new(url).get_content
         end
-
-        # def published_time
-        #   @publish_at.strftime('%H:%M:%S')
-        # end
-
-        # def published_date
-        #   # @publish_at.strftime('%Y-%m-%d')
-        # end
 
         def published_at
           DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')

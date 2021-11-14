@@ -25,8 +25,6 @@ module PortfolioAdvisor
         end
 
         def gn_api_path(company, update_at)
-          # path = "q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=#{result_num}"
-          # the comment below is for vcr
           today = Date.today
 
           if update_at.nil?
