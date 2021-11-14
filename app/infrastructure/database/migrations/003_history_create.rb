@@ -4,11 +4,12 @@ require 'sequel'
 
 Sequel.migration do
   change do
-    create_table(:targets) do
+    create_table(:histories) do
       primary_key :id
-      String      :company_name, unique: true
-      Date        :updated_at
+      foreign_key :company_id, :targets
+
       Integer     :score
+      Date        :updated_at
     end
   end
 end

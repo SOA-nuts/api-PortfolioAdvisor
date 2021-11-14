@@ -17,17 +17,16 @@
     .row
       .col-md-12.blank-row
     - if targets.any?
-      table class="table table-hover" id="projects_table"
+      table class="table table-hover" id="histories_table"
         thead
           tr
             th Company
-            th Topics
-            th URL
+            th Update At
         tbody
           - targets.each.with_index do |target, index|
+            tr class="table-row" data-href="history/#{target.company_name}" id="history[#{index}].row"
+              td id='td_company'
+                span class="target_table_company" id="history[#{index}].company"
+                  = target.company_name
+              td = target.updated_at
             
-              -target.articles.each do |article|
-                tr
-                  td{rowspan: target.articles.count} = target.company_name
-                  td=article.title 
-                  td=article.url

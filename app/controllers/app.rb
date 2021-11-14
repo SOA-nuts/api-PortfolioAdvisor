@@ -20,7 +20,7 @@ module PortfolioAdvisor
       routing.assets # load CSS
       routing.public
 
-      # GET /
+      # GET 
       routing.root do
         targets = Repository::For.klass(Entity::Target).all
         view 'home', locals: { targets: targets }
@@ -33,13 +33,7 @@ module PortfolioAdvisor
             company = routing.params['company_name'].downcase
             routing.halt 400 if COMPANY_LIST[0][company].nil?
 
-            # Get target from news api
-            target = GoogleNews::TargetMapper
-              .new(App.config.GOOGLENEWS_TOKEN)
-              .find(company)
-
-            # Add target to database
-            Repository::For.entity(target).create(target)
+            build_entity(company)
 
             # Redirect viewer target page
             routing.redirect "target/#{company}"
@@ -53,9 +47,45 @@ module PortfolioAdvisor
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-            view 'target', locals: { target: target }
+            view 'target', locals: { target: target}
           end
         end
+      end
+
+      routing.on 'history' do
+        routing.is do
+          # POST /history/
+          routing.post do
+            # Redirect viewer history page
+            routing.redirect "history/#{company}"
+          end
+        end
+
+        routing.on String do |company|
+          # GET /history/company
+          routing.get do
+            # Get histories from database
+            histories = Repository::Histories.find_company(company)
+            view 'history', locals: {histories: histories, company: company}
+          end
+        end  
+      end
+    end
+
+    def build_entity(company)
+
+      company_record = Repository::Targets.find_company(company)
+      if company_record.nil?
+        target = GoogleNews::TargetMapper
+        .new(App.config.GOOGLENEWS_TOKEN)
+        .find(company, nil)
+        Repository::For.entity(target).create(target)
+        
+      elsif company_record.updated_at != Date.today
+        target = GoogleNews::TargetMapper
+        .new(App.config.GOOGLENEWS_TOKEN)
+        .find(company, company_record.updated_at)
+        Repository::For.entity(target).update(target)
       end
     end
   end

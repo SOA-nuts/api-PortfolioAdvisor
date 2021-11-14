@@ -8,6 +8,7 @@ GEM
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
+    date (3.2.0)
     docile (1.4.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -69,15 +70,23 @@ GEM
     minitest-rg (5.2.0)
       minitest (~> 5.0)
     nio4r (2.5.8)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
+    open-uri (0.2.0)
+      stringio
+      time
+      uri
     parser (3.0.2.0)
       ast (~> 2.4.1)
     path_expander (1.1.0)
+    pg (1.2.3)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
+    racc (1.6.0)
     rack (2.2.3)
     rainbow (3.0.0)
     rake (13.0.6)
@@ -109,13 +118,17 @@ GEM
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
     sqlite3 (1.4.2)
+    stringio (3.0.1)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
+    time (0.2.0)
+      date
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8)
     unicode-display_width (0.1.1)
+    uri (0.11.0)
     vcr (6.0.0)
     webmock (3.14.0)
       addressable (>= 2.8.0)
@@ -135,6 +148,9 @@ DEPENDENCIES
   http (~> 5.0)
   minitest (~> 5.0)
   minitest-rg (~> 5.0)
+  nokogiri
+  open-uri
+  pg
   pry
   puma (~> 5.5)
   rake
@@ -148,6 +164,9 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   vcr (~> 6.0)
   webmock (~> 3.0)
+
+RUBY VERSION
+   ruby 3.0.2p107
 
 BUNDLED WITH
    2.2.29
