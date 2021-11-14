@@ -15,8 +15,6 @@ module PortfolioAdvisor
       attribute :url,               Strict::String
       attribute :published_at,      Strict::DateTime
       attribute :score,             Strict::Integer
-      # attribute :published_date, Strict::String
-      # attribute :published_time, Strict::String
       def to_attr_hash
         to_hash.reject { |key, _| %i[title url published_at].include? key }
       end
