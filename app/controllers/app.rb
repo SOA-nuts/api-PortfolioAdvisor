@@ -47,34 +47,35 @@ module PortfolioAdvisor
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-            view 'target', locals: {target: target}
+            view 'target', locals: { target: target}
           end
         end
       end
 
       routing.on 'history' do
         routing.is do
-            # Redirect viewer target page
+          # POST /history/
+          routing.post do
+            # Redirect viewer history page
             routing.redirect "history/#{company}"
           end
         end
 
         routing.on String do |company|
-          # GET /target/company
+          # GET /history/company
           routing.get do
-            # Get project from database
+            # Get histories from database
             histories = Repository::Histories.find_company(company)
-
-            # view '', locals: {histories: histories}
+            view 'history', locals: {histories: histories, company: company}
           end
-        end
+        end  
       end
-    
+    end
 
     def build_entity(company)
 
       company_record = Repository::Targets.find_company(company)
-
+      puts company_record.class
       if company_record.nil?
         target = GoogleNews::TargetMapper
         .new(App.config.GOOGLENEWS_TOKEN)

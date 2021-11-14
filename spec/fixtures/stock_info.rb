@@ -13,8 +13,6 @@ def polygon_api_path(path)
 end
 
 def call_gn_url(token, url)
-    puts url
-    puts "#{token}"
     HTTP.headers('Accept' => 'json',
         'Authorization' => "apiKey #{token}").get(url)
 end

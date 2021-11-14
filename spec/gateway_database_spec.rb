@@ -30,7 +30,7 @@ describe 'Integration Tests of GoogleNews API and Database' do
       target.articles.each do |article|
         puts article.title
       end
-      puts 'zzzzzzzzzzzzz'
+
       rebuilt.articles.each do |article|
         puts article.title
       end

@@ -15,8 +15,8 @@ module PortfolioAdvisor
         def self.find_company(company_name)
           company_id =  Database::TargetOrm
                         .where(company_name: company_name)
-                        .first.company_id
-          puts company_id
+                        .first.id
+
           db_target = Database::HistoryOrm
             .where(company_id: company_id)
         end

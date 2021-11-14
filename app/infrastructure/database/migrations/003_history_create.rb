@@ -8,7 +8,7 @@ Sequel.migration do
       primary_key :id
       foreign_key :company_id, :targets
 
-      Integer      :score
+      Integer     :score
       Date        :updated_at
     end
   end

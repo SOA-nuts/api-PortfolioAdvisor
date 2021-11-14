@@ -3,18 +3,25 @@ html
   head
     meta charset="utf-8"
     title PortfolioAdvisor
-
+    
     / Bootstrap CSS and theme (United Theme)
     link{
       href="https://cdn.jsdelivr.net/npm/bootswatch@5.1.3/dist/minty/bootstrap.min.css"
       rel="stylesheet" 
     }
-
-    / Custom CSS
-    / link rel='stylesheet' href='/presentation/assets/css/style.css'
+    / fix favicon.ico errors
+    <link rel="shortcut icon" href="#">
+    / Custom Assets
     == assets(:css)
     == assets(:js, defer: true)
+    
   body
+    / JQuery
+    script{ 
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+      crossorigin="anonymous" 
+    }
     / Popper
     script{ 
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
