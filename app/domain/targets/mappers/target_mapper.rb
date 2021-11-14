@@ -12,8 +12,8 @@ module PortfolioAdvisor
         @gateway = @gateway_class.new(@token)
       end
 
-      def find(company)
-        data = @gateway.article(company)
+      def find(company, updated_at)
+        data = @gateway.article(company, updated_at)
         build_entity(company, data['articles'])
       end
 
@@ -32,7 +32,9 @@ module PortfolioAdvisor
         def build_entity
           PortfolioAdvisor::Entity::Target.new(
             company_name: company_name,
-            articles: articles
+            articles: articles,
+            updated_at: Date.today,
+            score: score
           )
         end
 
@@ -40,6 +42,10 @@ module PortfolioAdvisor
 
         def articles
           @article_mapper.load_several(@data)
+        end
+
+        def score
+          return 2 #todo
         end
       end
     end

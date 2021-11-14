@@ -14,6 +14,7 @@ module PortfolioAdvisor
       attribute :title,             Strict::String
       attribute :url,               Strict::String
       attribute :published_at,      Strict::DateTime
+      attribute :score,             Strict::Integer
       # attribute :published_date, Strict::String
       # attribute :published_time, Strict::String
       def to_attr_hash
