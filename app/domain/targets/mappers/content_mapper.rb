@@ -4,15 +4,15 @@ require_relative 'score_mapper'
 
 module PortfolioAdvisor
   module GoogleNews
-    # Data Mapper: News repo -> Target entity
     class ContentMapper
-      def initialize(url)#, gateway_class = Crawler::Api) #module Crawler and class Api
+      def initialize(url, gateway_class = Crawler::Api)
         @url = url
-        #@gateway = @gateway_class.new(@url)
+        @gateway_class = gateway_class
+        @gateway = @gateway_class.new(@url)
       end
 
       def get_content
-        content = "hello"#@gateway.crwal
+        content = @gateway.crawl
         get_score(content)
       end
 

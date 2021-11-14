@@ -53,7 +53,6 @@ module PortfolioAdvisor
       end
 
       routing.on 'history' do
-        puts "in app 56"
         routing.is do
             # Redirect viewer target page
             routing.redirect "history/#{company}"

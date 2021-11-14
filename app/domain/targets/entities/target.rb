@@ -13,8 +13,7 @@ module PortfolioAdvisor
 
       attribute :company_name,      Strict::String
       attribute :articles,          Strict::Array.of(Article)
-      # attribute :stock_symbol,      Strict::String
-      attribute :updated_at,         Strict::Date
+      attribute :updated_at,        Strict::Date
       attribute :score,             Strict::Integer
       
       def to_attr_hash
@@ -22,10 +21,6 @@ module PortfolioAdvisor
       end
 
       def to_history_hash
-        test = to_hash.reject { |key, _| %i[company_name articles].include? key }
-        test.each do |key, value|
-          puts "#{key}:#{value}"
-        end
         to_hash.reject { |key, _| %i[company_name articles].include? key }
       end
 
