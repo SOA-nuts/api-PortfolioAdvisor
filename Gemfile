@@ -49,3 +49,7 @@ group :development do
   gem 'reek'
   gem 'rubocop'
 end
+
+#Web Scraper
+gem 'nokogiri'
+gem 'open-uri'
