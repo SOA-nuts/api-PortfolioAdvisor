@@ -1,0 +1,22 @@
+require_relative 'spec_helper'
+URL='https://www.reuters.com/business/finance/bitcoin-edges-off-all-time-high-momentum-more-gains-this-year-seen-intact-2021-10-21/'
+CORRECT=YAML.safe_load(File.read('spec/fixtures/github_results.yml')
+describe 'Integration Tests of GoogleNews API and the Crawler' do
+  VcrHelper.setup_vcr
+
+  before do
+    VcrHelper.configure_vcr_for_google_news
+  end
+
+  after do
+    VcrHelper.eject_vcr
+  end
+
+    it 'HAPPY: should be correct URL' do
+      web_url = PortfolioAdvisor::Crawler::API
+        .new(URL).crawler   
+        _(web_url.url).must_equal       
+  
+    end
+  end
+end
