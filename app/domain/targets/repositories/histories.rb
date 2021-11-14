@@ -6,15 +6,22 @@ module PortfolioAdvisor
       class Histories
         def self.find_id(id)
           rebuild_entity Database::HistoryOrm.first(id: id)
-        
         end
+
         def self.all
           Database::HistoryOrm.all
         end
+
+        def self.find_company(company_name)
+          company_id =  Database::TargetOrm
+                        .where(company_name: company_name)
+                        .first.company_id
+          puts company_id
+          db_target = Database::HistoryOrm
+            .where(company_id: company_id)
+        end
         
         def self.db_find_or_create(entity)
-          # test = { company_name: "appel", updated_at: Date.today, score: 300 }
-          # puts test.class
           Database::HistoryOrm.find_or_create(entity)
         end
         

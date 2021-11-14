@@ -22,10 +22,8 @@ module PortfolioAdvisor
 
       # GET 
       routing.root do
-        # targets = Repository::For.klass(Entity::Target).all
-        # view 'home', locals: { targets: targets }
-        histories = Repository::Histories.all
-        view 'home', locals: { histories: histories }
+        targets = Repository::For.klass(Entity::Target).all
+        view 'home', locals: { targets: targets }
       end
 
       routing.on 'target' do
@@ -49,13 +47,30 @@ module PortfolioAdvisor
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-            # Calculate score of the article
-            # target_scores = Mapper::Score.new(target).build_entity
-            view 'target', locals: { target: target}#, target_scores: target_scores}
+            view 'target', locals: {target: target}
           end
         end
       end
-    end
+
+      routing.on 'history' do
+        puts "in app 56"
+        routing.is do
+            # Redirect viewer target page
+            routing.redirect "history/#{company}"
+          end
+        end
+
+        routing.on String do |company|
+          # GET /target/company
+          routing.get do
+            # Get project from database
+            histories = Repository::Histories.find_company(company)
+
+            # view '', locals: {histories: histories}
+          end
+        end
+      end
+    
 
     def build_entity(company)
 
@@ -73,22 +88,6 @@ module PortfolioAdvisor
         .find(company, company_record.updated_at)
         Repository::For.entity(target).update(target)
       end
-      
-      # if update_at != Date.today
-      #   # Get target from news api
-      #   target = GoogleNews::TargetMapper
-      #   .new(App.config.GOOGLENEWS_TOKEN)
-      #   .find(company, update_at)
-
-      #   if update_at.nil?
-      #     # Add target to database
-      #     Repository::For.entity(target).create(target)
-      #   else
-      #     # Add articles to database
-      #     Repository::For.entity(target).update(target)
-      #   end
-      # end
-    
     end
   end
 end

@@ -5,16 +5,8 @@ module PortfolioAdvisor
     # Repository for Target
     class Targets
       def self.all
-        Database::TargetOrm.all#.map { |db_target| rebuild_entity(db_target) }
+        Database::TargetOrm.all
       end
-
-      # def self.get_update_at(company_name)
-      #   db_target = Database::TargetOrm
-      #   .where(company_name: company_name)
-      #   .first
-
-      #   db_target.nil? ? nil : db_target.updated_at
-      # end
 
       def self.find_company(company_name)
         db_target = Database::TargetOrm
@@ -37,16 +29,6 @@ module PortfolioAdvisor
         db_target = PersistTarget.new(entity).call
       end
 
-      # def self.rebuild_entity(db_record)
-      #   return nil unless db_record
-
-      #   Entity::Target.new(
-      #     db_record.to_hash.merge(
-      #       articles: Articles.rebuild_many(db_record.articles)
-      #     )
-      #   )
-      # end
-
       # Helper to save target and its articles
       class PersistTarget
         def initialize(entity)
@@ -62,11 +44,6 @@ module PortfolioAdvisor
         end
 
         def call
-          # company = Database::TargetOrm.create(@entity.to_attr_hash)
-          # create_history.tap do |db_history|
-          #   db_history.update(company: company)
-          # end
-
           create_target.tap do |db_target|
             create_history.tap do |db_history|
               db_history.update(company: db_target)

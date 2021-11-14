@@ -4,7 +4,7 @@ require 'sequel'
 
 module PortfolioAdvisor
   module Database
-    # Object-Relational Mapper for articles
+    # Object-Relational Mapper for histories
     class HistoryOrm < Sequel::Model(:histories)
       many_to_one :company,
                   class: :'PortfolioAdvisor::Database::TargetOrm'
