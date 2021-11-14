@@ -1,0 +1,45 @@
+require 'nokogiri'
+require 'open-uri'
+require 'sanitize'
+require_relative 'google_news_api'
+
+
+
+
+
+
+
+# Fetch and parse HTML document
+#doc = Nokogiri::HTML5(URI.open('https://www.reuters.com/business/finance/bitcoin-edges-off-all-time-high-momentum-more-gains-this-year-seen-intact-2021-10-21/'))
+
+#puts doc.css('p').map(&:text)
+result=PortfolioAdvisor::GoogleNews::Api.new('6fe160fe96ce4c9e94926e333311861e').article("business",3)
+
+result2=result["articles"].each do |value|
+puts article_url=value["url"] 
+doc= Nokogiri::HTML(URI.open(article_url))
+#puts doc2=doc.xpath("//footer").to_html
+#puts doc3=doc2.strip
+
+
+
+
+
+#SANITIZE_FILTER = {
+ # :remove_contents => ['footer']
+#}
+#def sanitize_content(content)
+  # content = Sanitize.clean(content, SANITIZE_FILTER)
+ #end
+
+
+
+
+#puts doc.css('footer').map(&:text)
+
+#puts doc.css('body')..map(&:text) 
+
+ 
+
+end
+
