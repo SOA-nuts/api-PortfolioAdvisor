@@ -52,10 +52,13 @@ gem 'pry'
 group :development do
   gem 'flog'
   gem 'reek'
-  gem 'rubocop'
+  gem "rubocop"
 end
 
 #Web Scraper
 gem 'nokogiri'
 gem 'open-uri'
+
+#date
+gem "date", ">= 3.2.1"
 

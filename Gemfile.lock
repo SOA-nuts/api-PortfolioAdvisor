@@ -8,7 +8,7 @@ GEM
     concurrent-ruby (1.1.9)
     crack (0.4.5)
       rexml
-    date (3.2.0)
+    date (3.2.1)
     docile (1.4.0)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -100,11 +100,11 @@ GEM
     rerun (0.13.1)
       listen (~> 3.0)
     rexml (3.2.5)
-    roda (3.49.0)
+    roda (3.50.0)
       rack
     rubocop (0.7.2)
       rainbow (>= 1.1.4)
-    ruby_parser (3.18.0)
+    ruby_parser (3.18.1)
       sexp_processor (~> 4.16)
     sequel (5.50.0)
     sexp_processor (4.16.0)
@@ -139,6 +139,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  date (>= 3.2.1)
   dry-struct (~> 1.4)
   dry-types (~> 1.5)
   figaro (~> 1.2)
@@ -169,4 +170,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.29
+   2.2.31
