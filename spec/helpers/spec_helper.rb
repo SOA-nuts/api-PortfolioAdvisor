@@ -20,3 +20,7 @@ GOOGLENEWS_TOKEN = PortfolioAdvisor::App.config.GOOGLENEWS_TOKEN
 CORRECT = YAML.safe_load(File.read('spec/fixtures/apple_results.yml'))
 URL='https://www.wired.com/story/macbook-pro-ports-magsafe-design/'
 
+# Helper method for acceptance tests
+def homepage
+    PortfolioAdvisor::App.config.APP_HOST
+end

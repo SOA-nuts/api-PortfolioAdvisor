@@ -7,6 +7,7 @@ module DatabaseHelper
     PortfolioAdvisor::App.DB.run('PRAGMA foreign_keys = OFF')
     PortfolioAdvisor::Database::ArticleOrm.map(&:destroy)
     PortfolioAdvisor::Database::TargetOrm.map(&:destroy)
+    PortfolioAdvisor::Database::HistoryOrm.map(&:destroy)
     PortfolioAdvisor::App.DB.run('PRAGMA foreign_keys = ON')
   end
 end
