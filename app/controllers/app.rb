@@ -3,6 +3,7 @@
 require 'roda'
 require 'slim'
 require 'yaml'
+require 'slim/include'
 
 COMPANY_YAML = 'spec/fixtures/company.yml'
 COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
@@ -15,6 +16,10 @@ module PortfolioAdvisor
     plugin :assets, path: 'app/views/assets',
                     css: 'style.css', js: 'table_row_click.js'
     plugin :halt
+    plugin :flash
+    plugin :all_verbs # recognizes HTTP verbs beyond GET/POST (e.g., DELETE)
+
+    use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
     route do |routing|
       routing.assets # load CSS
@@ -22,7 +27,18 @@ module PortfolioAdvisor
 
       # GET 
       routing.root do
-        targets = Repository::For.klass(Entity::Target).all
+        # Get cookie viewer's previously seen projects
+        session[:watching] ||= []
+        
+        #targets = Repository::For.klass(Entity::Target).all
+        targets = Repository::For.klass(Entity::Target).find_companys(session[:watching])
+
+        session[:watching] = targets.map(&:company_name)
+
+        if targets.none?
+          flash.now[:notice] = 'Add a company to get started'
+        end
+
         view 'home', locals: { targets: targets }
       end
 
@@ -31,7 +47,13 @@ module PortfolioAdvisor
           # POST /target/
           routing.post do
             company = routing.params['company_name'].downcase
-            routing.halt 400 if COMPANY_LIST[0][company].nil?
+            if COMPANY_LIST[0][company].nil?
+              flash[:error] = 'Company not define in our search!'
+              response.status = 400
+              routing.redirect '/'
+            end
+
+            #routing.halt 400 if COMPANY_LIST[0][company].nil?
 
             build_entity(company)
 
@@ -76,17 +98,43 @@ module PortfolioAdvisor
 
       company_record = Repository::Targets.find_company(company)
 
-      if company_record.is_a? PortfolioAdvisor::Entity::Target  
-        target = GoogleNews::TargetMapper
-        .new(App.config.GOOGLENEWS_TOKEN)
-        .find(company, nil)
-        Repository::For.entity(target).create(target)
-        
+      if company_record.nil?
+        begin
+          target = GoogleNews::TargetMapper
+          .new(App.config.GOOGLENEWS_TOKEN)
+          .find(company, nil)
+        rescue StandardError
+          flash[:error] = 'Could not get target from newsapi.'
+          routing.redirect '/'
+        end
+
+        begin
+          Repository::For.entity(target).create(target)
+          rescue StandardError => err
+            puts err.backtrace.join("\n")
+            flash[:error] = 'Having trouble accessing the database'       
+        end
+
+        session[:watching].insert(0, target.company_name).uniq!
+
       elsif company_record.updated_at != Date.today
-        target = GoogleNews::TargetMapper
-        .new(App.config.GOOGLENEWS_TOKEN)
-        .find(company, company_record.updated_at)
-        Repository::For.entity(target).update(target)
+        begin
+          target = GoogleNews::TargetMapper
+          .new(App.config.GOOGLENEWS_TOKEN)
+          .find(company, company_record.updated_at)
+        rescue StandardError
+          flash[:error] = 'Could not get target from newsApi.'
+          routing.redirect '/'
+        end
+
+        begin
+          Repository::For.entity(target).update(target)
+          rescue StandardError => err
+            puts err.backtrace.join("\n")
+            flash[:error] = 'Having trouble accessing the database'
+        end
+
+        session[:watching].insert(0, company_record.company_name).uniq!
       end
     end
   end
