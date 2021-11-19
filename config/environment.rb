@@ -3,29 +3,22 @@
 require 'figaro'
 require 'roda'
 require 'sequel'
-require 'delegate'
-require 'yaml'
+require 'delegate' # needed until Rack 2.3 fixes delegateclass bug
 
-module CodePraise
+module PortfolioAdvisor
   # Environment-specific configuration
   class App < Roda
     plugin :environments
 
-    # rubocop:disable Lint/ConstantDefinitionInBlock
-    configure do
-      # Environment variables setup
-      Figaro.application = Figaro::Application.new(
-        environment: environment,
-        path: File.expand_path('config/secrets.yml')
-      )
-      Figaro.load
-      def self.config() = Figaro.env
-      
-      use Rack::Session::Cookie, secret: config.SESSION_SECRET
-      
-      configure :development, :test do
-        ENV['DATABASE_URL'] = "sqlite://#{config.DB_FILENAME}"
-      end
+    # Environment variables setup
+    Figaro.application = Figaro::Application.new(
+      environment: environment,
+      path: File.expand_path('config/secrets.yml')
+    )
+    Figaro.load
+    def self.config() = Figaro.env
+
+    use Rack::Session::Cookie, secret: config.SESSION_SECRET
 
     configure :development, :test do
       require 'pry'; # for breakpoints

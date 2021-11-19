@@ -51,6 +51,8 @@ namespace :db do
       return
     end
 
+    require_relative 'app/infrastructure/database/init'
+    require_relative 'spec/helpers/database_helper'
     DatabaseHelper.wipe_database
   end
 
