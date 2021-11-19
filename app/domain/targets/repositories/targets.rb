@@ -14,6 +14,12 @@ module PortfolioAdvisor
           .first
       end
 
+      def self.find_companys(company_names)
+        company_names.map do |company_name|
+          find_company(company_name)
+        end.compact
+      end
+
       def self.find(entity)
         find_company(entity.company_name)
       end
@@ -55,7 +61,7 @@ module PortfolioAdvisor
         end
 
         def update(target)
-          company = Database::TargetOrm.update(updated_at: @entity.updated_at)
+          company = target.update(updated_at: @entity.updated_at)
 
           @entity.articles.each do |article|
             target.add_article(Articles.db_find_or_create(article))
