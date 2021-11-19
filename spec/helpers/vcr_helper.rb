@@ -18,10 +18,15 @@ module VcrHelper
   end
 
   def self.configure_vcr_for_google_news
+    # VCR.configure do |c|
+    #   c.filter_sensitive_data('<GOOGLENEWS_TOKEN>') { GOOGLENEWS_TOKEN }
+    #   c.filter_sensitive_data('<GOOGLENEWS_TOKEN_ESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
+    # end
+
     VCR.insert_cassette(
       GOOGLENEWS_CASSETTE,
       record: :new_episodes,
-      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to, :pageSize)]
+      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to)]
     )
   end
 
