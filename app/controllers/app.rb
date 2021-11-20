@@ -25,19 +25,17 @@ module PortfolioAdvisor
       routing.assets # load CSS
       routing.public
 
-      # GET 
+      # GET
       routing.root do
         # Get cookie viewer's previously seen projects
         session[:watching] ||= []
-        
-        #targets = Repository::For.klass(Entity::Target).all
+
+        # targets = Repository::For.klass(Entity::Target).all
         targets = Repository::For.klass(Entity::Target).find_companys(session[:watching])
 
         session[:watching] = targets.map(&:company_name)
 
-        if targets.none?
-          flash.now[:notice] = 'Add a company to get started'
-        end
+        flash.now[:notice] = 'Add a company to get started' if targets.none?
 
         view 'home', locals: { targets: targets }
       end
@@ -53,7 +51,7 @@ module PortfolioAdvisor
               routing.redirect '/'
             end
 
-            #routing.halt 400 if COMPANY_LIST[0][company].nil?
+            # routing.halt 400 if COMPANY_LIST[0][company].nil?
 
             build_entity(company)
 
@@ -69,7 +67,7 @@ module PortfolioAdvisor
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-            view 'target', locals: { target: target}
+            view 'target', locals: { target: target }
           end
         end
       end
@@ -88,21 +86,20 @@ module PortfolioAdvisor
           routing.get do
             # Get histories from database
             histories = Repository::Histories.find_company(company)
-            view 'history', locals: {histories: histories, company: company}
+            view 'history', locals: { histories: histories, company: company }
           end
-        end  
+        end
       end
     end
 
     def build_entity(company)
-
       company_record = Repository::Targets.find_company(company)
 
       if company_record.nil?
         begin
           target = GoogleNews::TargetMapper
-          .new(App.config.GOOGLENEWS_TOKEN)
-          .find(company, nil)
+            .new(App.config.GOOGLENEWS_TOKEN)
+            .find(company, nil)
         rescue StandardError
           flash[:error] = 'Could not get target from newsapi.'
           routing.redirect '/'
@@ -110,9 +107,9 @@ module PortfolioAdvisor
 
         begin
           Repository::For.entity(target).create(target)
-          rescue StandardError => err
-            puts err.backtrace.join("\n")
-            flash[:error] = 'Having trouble accessing the database'       
+        rescue StandardError => e
+          puts e.backtrace.join("\n")
+          flash[:error] = 'Having trouble accessing the database'
         end
 
         session[:watching].insert(0, target.company_name).uniq!
@@ -120,8 +117,8 @@ module PortfolioAdvisor
       elsif company_record.updated_at != Date.today
         begin
           target = GoogleNews::TargetMapper
-          .new(App.config.GOOGLENEWS_TOKEN)
-          .find(company, company_record.updated_at)
+            .new(App.config.GOOGLENEWS_TOKEN)
+            .find(company, company_record.updated_at)
         rescue StandardError
           flash[:error] = 'Could not get target from newsApi.'
           routing.redirect '/'
@@ -129,9 +126,9 @@ module PortfolioAdvisor
 
         begin
           Repository::For.entity(target).update(target)
-          rescue StandardError => err
-            puts err.backtrace.join("\n")
-            flash[:error] = 'Having trouble accessing the database'
+        rescue StandardError => e
+          puts e.backtrace.join("\n")
+          flash[:error] = 'Having trouble accessing the database'
         end
 
         session[:watching].insert(0, company_record.company_name).uniq!

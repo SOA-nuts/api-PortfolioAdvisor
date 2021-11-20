@@ -42,8 +42,8 @@ group :test do
 
   gem 'headless', '~> 2.3'
   gem 'watir', '~> 7.0'
-  gem 'webdrivers', '~> 5.0'
   gem 'watir-webdriver'
+  gem 'webdrivers', '~> 5.0'
 end
 
 group :development do
@@ -57,13 +57,12 @@ gem 'pry'
 group :development do
   gem 'flog'
   gem 'reek'
-  gem "rubocop"
+  gem 'rubocop'
 end
 
-#Web Scraper
+# Web Scraper
 gem 'nokogiri'
 gem 'open-uri'
 
-#date
-gem "date", ">= 3.2.1"
-
+# date
+gem 'date', '>= 3.2.1'

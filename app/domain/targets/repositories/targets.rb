@@ -9,7 +9,7 @@ module PortfolioAdvisor
       end
 
       def self.find_company(company_name)
-        db_target = Database::TargetOrm
+        Database::TargetOrm
           .where(company_name: company_name)
           .first
       end
@@ -26,13 +26,13 @@ module PortfolioAdvisor
 
       def self.update(entity)
         target = find(entity)
-        db_target = PersistTarget.new(entity).update(target)
+        PersistTarget.new(entity).update(target)
       end
 
       def self.create(entity)
         raise 'Target already exists' if find(entity)
 
-        db_target = PersistTarget.new(entity).call
+        PersistTarget.new(entity).call
       end
 
       # Helper to save target and its articles

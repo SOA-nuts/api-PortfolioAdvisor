@@ -1,9 +1,10 @@
-# frozen_string_literal: false
+# frozen_string_literal: true
 
 require_relative 'score_mapper'
 
 module PortfolioAdvisor
   module GoogleNews
+    # Data Mapper: url -> call score mapper
     class ContentMapper
       def initialize(url, gateway_class = Crawler::Api)
         @url = url
@@ -11,7 +12,7 @@ module PortfolioAdvisor
         @gateway = @gateway_class.new(@url)
       end
 
-      def get_content
+      def crawl_content
         content = @gateway.crawl
         get_score(content)
       end
