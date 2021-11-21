@@ -12,7 +12,7 @@ module PortfolioAdvisor
   # Web App
   class App < Roda
     plugin :render, engine: 'slim', views: 'app/presentation/views_html'
-    # plugin :public, root: 'app/presentation/public'
+    plugin :public, root: 'app/presentation/public'
     plugin :assets, path: 'app/presentation/assets',
                     css: 'style.css', js: 'table_row_click.js'
     plugin :halt
@@ -64,7 +64,9 @@ module PortfolioAdvisor
             # Get company from database
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
-
+            
+              
+            session[:watching].insert(0, company).uniq!
             view 'target', locals: { target: target }
           end
         end
@@ -123,9 +125,7 @@ module PortfolioAdvisor
           puts e.backtrace.join("\n")
           flash[:error] = 'Having trouble accessing the database'
         end
-
-        session[:watching].insert(0, company).uniq!
-      end
+      
     end
   end
 end

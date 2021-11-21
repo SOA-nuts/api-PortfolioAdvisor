@@ -97,7 +97,7 @@ describe 'Acceptance Tests' do
       @browser.goto "http://localhost:9000/target/#{TOPIC}"
 
       # THEN: they should see the project details
-      _(@browser.h2.text).must_include TOPIC
+      _(@browser.h2(id: 'h2_company_name').text).must_include TOPIC
 
       article_columns = @browser.table(id: 'score_table').thead.ths
 
@@ -118,7 +118,7 @@ describe 'Acceptance Tests' do
       @browser.goto "http://localhost:9000/history/#{TOPIC}"
 
       # THEN: they should see the project details
-      _(@browser.h2.text).must_include TOPIC
+      _(@browser.h2(id: 'h2_company_name').text).must_include TOPIC
 
       article_columns = @browser.table(id: 'history_table').thead.ths
 
