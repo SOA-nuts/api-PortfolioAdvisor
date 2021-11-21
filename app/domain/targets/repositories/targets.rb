@@ -8,6 +8,7 @@ module PortfolioAdvisor
         Database::TargetOrm.all
       end
 
+      # Status to see if need to run gn api and api from date
       class TargetStatus
         def initialize(record)
           @record = record
@@ -18,22 +19,22 @@ module PortfolioAdvisor
         end
 
         def need_create?
-          record.nil?
+          @record.nil?
         end
 
         def need_update?
-          record.updated_at != Date.today
+          @record.updated_at != Date.today
         end
 
         def search_from
-          need_create? ? nil : record.updated_at
+          need_create? ? nil : @record.updated_at
         end
       end
 
       def self.check_status(company_name)
         record = Database::TargetOrm
-                  .where(company_name: company_name)
-                  .first
+          .where(company_name: company_name)
+          .first
         TargetStatus.new(record)
       end
 

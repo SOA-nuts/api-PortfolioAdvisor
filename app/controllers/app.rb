@@ -91,8 +91,10 @@ module PortfolioAdvisor
         end
       end
     end
-
+    # check different condition of api usage: create/ update/ do nothing
     class TargetCheck
+      attr_reader :status
+
       def initialize(company_name)
         @company_name = company_name
         @status = Repository::Targets.check_status(@company_name)
@@ -106,9 +108,8 @@ module PortfolioAdvisor
     end
 
     def build_entity(company, routing)
-      # company_record = Repository::Targets.find_company(company)
       check = TargetCheck.new(company)
-      if !check.status.up_to_date?
+      return if check.status.up_to_date?
         begin
           target = check.api_find
         rescue StandardError
@@ -123,48 +124,8 @@ module PortfolioAdvisor
           flash[:error] = 'Having trouble accessing the database'
         end
 
-        session[:watching].insert(0, @company_name).uniq!
+        session[:watching].insert(0, company).uniq!
       end
-
-      # company_record = Repository::Targets.find_company(company)
-      # if company_record.nil?
-      #   begin
-      #     target = GoogleNews::TargetMapper
-      #       .new(App.config.GOOGLENEWS_TOKEN)
-      #       .find(company, nil)
-      #   rescue StandardError
-      #     flash[:error] = 'Could not get target from newsapi.'
-      #     routing.redirect '/'
-      #   end
-
-      #   begin
-      #     Repository::For.entity(target).create(target)
-      #   rescue StandardError => e
-      #     puts e.backtrace.join("\n")
-      #     flash[:error] = 'Having trouble accessing the database'
-      #   end
-
-      #   session[:watching].insert(0, target.company_name).uniq!
-
-      # elsif company_record.updated_at != Date.today
-      #   begin
-      #     target = GoogleNews::TargetMapper
-      #       .new(App.config.GOOGLENEWS_TOKEN)
-      #       .find(company, company_record.updated_at)
-      #   rescue StandardError
-      #     flash[:error] = 'Could not get target from newsApi.'
-      #     routing.redirect '/'
-      #   end
-
-      #   begin
-      #     Repository::For.entity(target).update(target)
-      #   rescue StandardError => e
-      #     puts e.backtrace.join("\n")
-      #     flash[:error] = 'Having trouble accessing the database'
-      #   end
-
-      #   session[:watching].insert(0, company_record.company_name).uniq!
-      # end
     end
   end
 end
