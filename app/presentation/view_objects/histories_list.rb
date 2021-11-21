@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'history'
 
 module Views
@@ -9,14 +10,10 @@ module Views
       @company = company
     end
 
-    def company
-      @company
-    end
+    attr_reader :company
 
-    def each
-      @histories.each do |history|
-        yield history
-      end
+    def each(&block)
+      @histories.each(&block)
     end
 
     def any?

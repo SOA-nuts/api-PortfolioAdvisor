@@ -15,7 +15,7 @@ module PortfolioAdvisor
 
       def crawl
         if working_url?(url)
-          open_article = Nokogiri::HTML(URI.open(@url))
+          open_article = Nokogiri::HTML(URI.parse(@url).open)
           open_article.css('p').map(&:text)
         end
       rescue StandardError

@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 module Views
+  # View for a target entities
   class Target
-    def initialize(target,index=nil)
-      @target=target
-      @index=index
+    def initialize(target, index = nil)
+      @target = target
+      @index = index
     end
 
     def entity

@@ -9,10 +9,8 @@ module Views
       @targets = targets.map.with_index { |targ, i| Target.new(targ, i) }
     end
 
-    def each
-      @targets.each do |targ|
-        yield targ
-      end
+    def each(&block)
+      @targets.each(&block)
     end
 
     def any?

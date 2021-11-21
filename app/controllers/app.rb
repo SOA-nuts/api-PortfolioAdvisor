@@ -36,7 +36,7 @@ module PortfolioAdvisor
 
         flash.now[:notice] = 'Add a company to get started' if targets.none?
 
-        viewable_targets=Views::TargetsList.new(targets)
+        viewable_targets = Views::TargetsList.new(targets)
         view 'home', locals: { targets: viewable_targets }
       end
 
@@ -51,7 +51,7 @@ module PortfolioAdvisor
               routing.redirect '/'
             end
 
-            build_entity(company)
+            build_entity(company, routing)
 
             # Redirect viewer target page
             routing.redirect "target/#{company}"
@@ -64,7 +64,7 @@ module PortfolioAdvisor
             # Get company from database
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
-              
+
             view 'target', locals: { target: target }
           end
         end
@@ -85,21 +85,32 @@ module PortfolioAdvisor
             # Get histories from database
             histories = Repository::Histories.find_company(company)
 
-            viewable_histories=Views::HistoriesList::new(histories, company)
-            view 'history', locals: {histories: viewable_histories}
+            viewable_histories = Views::HistoriesList.new(histories, company)
+            view 'history', locals: { histories: viewable_histories }
           end
         end
       end
     end
 
-    def build_entity(company)
-      company_record = Repository::Targets.find_company(company)
+    class TargetCheck
+      def initialize(company_name)
+        @company_name = company_name
+        @status = Repository::Targets.check_status(@company_name)
+      end
 
-      if company_record.nil?
+      def api_find
+        GoogleNews::TargetMapper
+          .new(App.config.GOOGLENEWS_TOKEN)
+          .find(@company_name, @status.search_from)
+      end
+    end
+
+    def build_entity(company, routing)
+      # company_record = Repository::Targets.find_company(company)
+      check = TargetCheck.new(company)
+      if !check.status.up_to_date?
         begin
-          target = GoogleNews::TargetMapper
-            .new(App.config.GOOGLENEWS_TOKEN)
-            .find(company, nil)
+          target = check.api_find
         rescue StandardError
           flash[:error] = 'Could not get target from newsapi.'
           routing.redirect '/'
@@ -112,27 +123,48 @@ module PortfolioAdvisor
           flash[:error] = 'Having trouble accessing the database'
         end
 
-        session[:watching].insert(0, target.company_name).uniq!
-
-      elsif company_record.updated_at != Date.today
-        begin
-          target = GoogleNews::TargetMapper
-            .new(App.config.GOOGLENEWS_TOKEN)
-            .find(company, company_record.updated_at)
-        rescue StandardError
-          flash[:error] = 'Could not get target from newsApi.'
-          routing.redirect '/'
-        end
-
-        begin
-          Repository::For.entity(target).update(target)
-        rescue StandardError => e
-          puts e.backtrace.join("\n")
-          flash[:error] = 'Having trouble accessing the database'
-        end
-
-        session[:watching].insert(0, company_record.company_name).uniq!
+        session[:watching].insert(0, @company_name).uniq!
       end
+
+      # company_record = Repository::Targets.find_company(company)
+      # if company_record.nil?
+      #   begin
+      #     target = GoogleNews::TargetMapper
+      #       .new(App.config.GOOGLENEWS_TOKEN)
+      #       .find(company, nil)
+      #   rescue StandardError
+      #     flash[:error] = 'Could not get target from newsapi.'
+      #     routing.redirect '/'
+      #   end
+
+      #   begin
+      #     Repository::For.entity(target).create(target)
+      #   rescue StandardError => e
+      #     puts e.backtrace.join("\n")
+      #     flash[:error] = 'Having trouble accessing the database'
+      #   end
+
+      #   session[:watching].insert(0, target.company_name).uniq!
+
+      # elsif company_record.updated_at != Date.today
+      #   begin
+      #     target = GoogleNews::TargetMapper
+      #       .new(App.config.GOOGLENEWS_TOKEN)
+      #       .find(company, company_record.updated_at)
+      #   rescue StandardError
+      #     flash[:error] = 'Could not get target from newsApi.'
+      #     routing.redirect '/'
+      #   end
+
+      #   begin
+      #     Repository::For.entity(target).update(target)
+      #   rescue StandardError => e
+      #     puts e.backtrace.join("\n")
+      #     flash[:error] = 'Having trouble accessing the database'
+      #   end
+
+      #   session[:watching].insert(0, company_record.company_name).uniq!
+      # end
     end
   end
 end
