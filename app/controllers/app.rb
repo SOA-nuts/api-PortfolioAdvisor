@@ -23,7 +23,8 @@ module PortfolioAdvisor
       # GET 
       routing.root do
         targets = Repository::For.klass(Entity::Target).all
-        view 'home', locals: { targets: targets }
+        viewable_targets=Views::TargetsList.new(targets)
+        view 'home', locals: { targets: viewable_targets }
       end
 
       routing.on 'target' do
@@ -43,11 +44,13 @@ module PortfolioAdvisor
         routing.on String do |company|
           # GET /target/company
           routing.get do
-            # Get project from database
+            # Get company from database
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-            view 'target', locals: { target: target}
+           viewable_target=Views::Target.new(target)
+
+            view 'target', locals: { target: viewable_target }
           end
         end
       end
@@ -66,7 +69,9 @@ module PortfolioAdvisor
           routing.get do
             # Get histories from database
             histories = Repository::Histories.find_company(company)
-            view 'history', locals: {histories: histories, company: company}
+
+             viewable_histories=Views::HistoriesList::new(histories)
+            view 'history', locals: {histories: viewable_histories, company: company}
           end
         end  
       end

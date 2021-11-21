@@ -13,7 +13,7 @@
             th Article
             th Score
         tbody
-          - target.articles.each.with_index do |article, index|
+          - target.list_of_articles.each do |company|
             tr
-              td = article.title
-              td = article.score
+              td = company.related_article_title
+              td = company.related_article_title
