@@ -11,8 +11,8 @@ COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
 module PortfolioAdvisor
   # Web App
   class App < Roda
-    plugin :render, engine: 'slim', views: 'app/presentation/views_html'
-    plugin :public, root: 'app/presentation/public'
+    plugin :render, engine: 'slim', views: 'app/presentation/view_html'
+    # plugin :public, root: 'app/presentation/public'
     plugin :assets, path: 'app/presentation/assets',
                     css: 'style.css', js: 'table_row_click.js'
     plugin :halt
@@ -23,7 +23,7 @@ module PortfolioAdvisor
 
     route do |routing|
       routing.assets # load CSS
-      routing.public
+      # routing.public
 
       # GET
       routing.root do
@@ -39,6 +39,7 @@ module PortfolioAdvisor
 
         viewable_targets=Views::TargetsList.new(targets)
         view 'home', locals: { targets: viewable_targets }
+        # view 'home', locals: { targets: targets }
       end
 
       routing.on 'target' do
@@ -68,9 +69,9 @@ module PortfolioAdvisor
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
 
-           viewable_target=Views::Target.new(target)
+            # viewable_target=Views::Target.new(target)
 
-            view 'target', locals: { target: viewable_target }
+            view 'target', locals: { target: target }
           end
         end
       end
@@ -90,8 +91,8 @@ module PortfolioAdvisor
             # Get histories from database
             histories = Repository::Histories.find_company(company)
 
-             viewable_histories=Views::HistoriesList::new(histories)
-            view 'history', locals: {histories: viewable_histories, company: company}
+            viewable_histories=Views::HistoriesList::new(histories, company)
+            view 'history', locals: {histories: viewable_histories}
           end
         end
       end

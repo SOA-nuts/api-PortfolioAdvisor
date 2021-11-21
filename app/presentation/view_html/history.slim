@@ -1,9 +1,9 @@
 .container
   .row
     h2
-      - company = "Company: #{company}"
+      / - company = "Company: #{company}"
       span.target.name
-        = company
+        = histories.company
   .container
 
 
@@ -15,5 +15,5 @@
         tbody
           - histories.each do |history|
             tr
-              td = history.date_updated
-              td = history.rating
+              td = history.updated_at
+              td = history.score

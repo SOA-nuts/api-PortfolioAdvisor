@@ -29,3 +29,9 @@
                 span class="target_table_company" id="#{target.index_str}.company"
                   = target.company_name
               td = target.date_updated
+
+            / tr class="table-row" data-href="history/#{target.company_name}" id="history[#{index}].row"
+            /   td id='td_company'
+            /     span class="target_table_company" id="history[#{index}].company"
+            /       = target.company_name
+            /   td = target.updated_at

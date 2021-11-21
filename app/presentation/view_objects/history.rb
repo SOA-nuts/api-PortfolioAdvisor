@@ -1,19 +1,20 @@
 module Views
+   # View for a single history
     class History
-     def initialize(history,company)
+     def initialize(history)
         @history=history
-        @company=company
      end
+
      def entity
         @history
      end
-     def date_updated
+
+     def updated_at
         @history.updated_at
      end
-     def rating 
+
+     def score 
         @history.score
      end
-   
-    
-    end
+   end
 end

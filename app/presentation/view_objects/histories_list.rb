@@ -2,15 +2,20 @@
 require_relative 'history'
 
 module Views
-  # View for a list of history entities
+  # View for a list of history of a company
   class HistoriesList
-    def initialize(histories)
-      @histories = histories.map.with_index { |hist, i| History.new(hist, i) }
+    def initialize(histories, company)
+      @histories = histories.map { |history| History.new(history) }
+      @company = company
+    end
+
+    def company
+      @company
     end
 
     def each
-      @histories.each do |hist|
-        yield hist
+      @histories.each do |history|
+        yield history
       end
     end
 
