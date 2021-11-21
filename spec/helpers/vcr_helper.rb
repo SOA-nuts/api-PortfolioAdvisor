@@ -9,19 +9,18 @@ module VcrHelper
   GOOGLENEWS_CASSETTE = 'google_news_api'
 
   def self.setup_vcr
-    VCR.configure do |c|
-      c.cassette_library_dir = CASSETTES_FOLDER
-      c.hook_into :webmock
-      c.filter_sensitive_data('<GOOGLENEWS_TOKEN>') { GOOGLENEWS_TOKEN }
-      c.filter_sensitive_data('<GOOGLENEWS_TOKEN_ESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
+    VCR.configure do |vcr_config|
+      vcr_config.cassette_library_dir = CASSETTES_FOLDER
+      vcr_config.hook_into :webmock
+      vcr_config.ignore_localhost = true # for acceptance tests
     end
   end
 
   def self.configure_vcr_for_google_news
-    # VCR.configure do |c|
-    #   c.filter_sensitive_data('<GOOGLENEWS_TOKEN>') { GOOGLENEWS_TOKEN }
-    #   c.filter_sensitive_data('<GOOGLENEWS_TOKEN_ESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
-    # end
+    VCR.configure do |config|
+      config.filter_sensitive_data('<GOOGLENEWS_TOKEN>') { GOOGLENEWS_TOKEN }
+      config.filter_sensitive_data('<GITHUB_TOKEN_GOOGLENEWS_TOKEN_ESCESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
+    end
 
     VCR.insert_cassette(
       GOOGLENEWS_CASSETTE,

@@ -8,8 +8,38 @@ module PortfolioAdvisor
         Database::TargetOrm.all
       end
 
+      # Status to see if need to run gn api and api from date
+      class TargetStatus
+        def initialize(record)
+          @record = record
+        end
+
+        def up_to_date?
+          !need_create? and !need_update?
+        end
+
+        def need_create?
+          @record.nil?
+        end
+
+        def need_update?
+          @record.updated_at != Date.today
+        end
+
+        def search_from
+          need_create? ? nil : @record.updated_at
+        end
+      end
+
+      def self.check_status(company_name)
+        record = Database::TargetOrm
+          .where(company_name: company_name)
+          .first
+        TargetStatus.new(record)
+      end
+
       def self.find_company(company_name)
-        db_target = Database::TargetOrm
+        Database::TargetOrm
           .where(company_name: company_name)
           .first
       end
@@ -20,13 +50,13 @@ module PortfolioAdvisor
 
       def self.update(entity)
         target = find(entity)
-        db_target = PersistTarget.new(entity).update(target)
+        PersistTarget.new(entity).update(target)
       end
 
       def self.create(entity)
         raise 'Target already exists' if find(entity)
 
-        db_target = PersistTarget.new(entity).call
+        PersistTarget.new(entity).call
       end
 
       # Helper to save target and its articles

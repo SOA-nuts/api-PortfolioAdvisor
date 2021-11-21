@@ -29,7 +29,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.2'
 end
 
 # Testing
@@ -39,6 +39,10 @@ group :test do
   gem 'simplecov', '~> 0'
   gem 'vcr', '~> 6.0'
   gem 'webmock', '~> 3.0'
+
+  gem 'headless', '~> 2.3'
+  gem 'watir', '~> 7.0'
+  gem 'webdrivers', '~> 5.0'
 end
 
 group :development do
@@ -55,7 +59,9 @@ group :development do
   gem 'rubocop'
 end
 
-#Web Scraper
+# Web Scraper
 gem 'nokogiri'
 gem 'open-uri'
 
+# date
+gem 'date', '>= 3.2.1'

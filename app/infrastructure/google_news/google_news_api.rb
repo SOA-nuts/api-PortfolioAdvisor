@@ -25,23 +25,16 @@ module PortfolioAdvisor
         end
 
         def gn_api_path(company, update_at)
-          today = Date.today
+          result_num = update_at.nil? ? 15 : [(@today - update_at).to_i, 15].min
 
-          if update_at.nil?
-            result_num = 15
-          else
-            result_num = [(today - update_at).to_i, 15].min
-          end
-          
-          to = today.strftime('%Y-%m-%d')
-          from = (today - result_num).strftime('%Y-%m-%d')
-          path = "q=#{company}&from=#{from}&to=#{to}&pageSize=#{result_num}"
-          "#{API_GOOGLE_NEWS_EVERYTHING}#{path}"
+          to = @today.strftime('%Y-%m-%d')
+          from = (@today - result_num).strftime('%Y-%m-%d')
+          "#{API_GOOGLE_NEWS_EVERYTHING}q=#{company}&from=#{from}&to=#{to}&pageSize=#{result_num}"
         end
 
         def get(url)
           http_response =
-            HTTP.headers('Accept' => 'json',
+            HTTP.headers('Accept'        => 'json',
                          'Authorization' => "token #{@api_key}")
               .get(url)
 

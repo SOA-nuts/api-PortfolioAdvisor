@@ -8,4 +8,5 @@
       enabled: false
   exclude_paths:
     - _snippets
-    - lib/project_info.rb # one-time test fixture creator
+    - spec/fixtures/stock_info.rb # one-time test fixture creator
+    - spec/fixtures/project_info.rb # one-time test fixture creator
