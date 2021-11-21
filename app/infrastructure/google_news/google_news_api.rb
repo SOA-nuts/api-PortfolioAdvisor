@@ -22,6 +22,7 @@ module PortfolioAdvisor
 
         def initialize(token)
           @api_key = token
+          @today = Date.today
         end
 
         def gn_api_path(company, update_at)

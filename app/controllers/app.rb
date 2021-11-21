@@ -3,6 +3,7 @@
 require 'roda'
 require 'slim'
 require 'yaml'
+require 'slim/include'
 
 COMPANY_YAML = 'spec/fixtures/company.yml'
 COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
@@ -15,6 +16,10 @@ module PortfolioAdvisor
     plugin :assets, path: 'app/presentation/assets',
                     css: 'style.css', js: 'table_row_click.js'
     plugin :halt
+    plugin :flash
+    plugin :all_verbs # recognizes HTTP verbs beyond GET/POST (e.g., DELETE)
+
+    use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
     route do |routing|
       routing.assets # load CSS

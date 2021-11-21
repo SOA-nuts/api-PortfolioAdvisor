@@ -25,7 +25,7 @@ module VcrHelper
     VCR.insert_cassette(
       GOOGLENEWS_CASSETTE,
       record: :new_episodes,
-      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to)]
+      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to, :pageSize)]
     )
   end
 

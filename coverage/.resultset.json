@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/eavilez/Google/GoogleNewsAPI/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/init.rb": {
         "lines": [
           null,
           null,
@@ -1078,7 +1078,7 @@
           null
         ]
       },
-      "/home/eavilez/Google/GoogleNewsAPI/config/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
