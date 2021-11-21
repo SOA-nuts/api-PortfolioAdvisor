@@ -2,14 +2,14 @@
 
 module PortfolioAdvisor
   module GoogleNews
-    # Data Mapper: News repo -> Target entity
+    # Data Mapper: content -> score
     class ScoreMapper
       def initialize(content)
         @content = content
       end
 
       def analyze_content
-        return 10
+        10
       end
     end
   end

@@ -1,0 +1,19 @@
+.container
+  .row
+    h2
+      - company = "Company: #{target.company_name}"
+      span.target.name
+        = company
+  .container
+
+
+    table.table id="score_table"
+        thead
+          tr
+            th Article
+            th Score
+        tbody
+          - target.articles.each.with_index do |article, index|
+            tr
+              td = article.title
+              td = article.score
