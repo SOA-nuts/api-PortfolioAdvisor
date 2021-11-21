@@ -1,0 +1,19 @@
+.container
+  .row
+    h2
+      - company = "Company: #{target.company_name}"
+      span.target.name
+        = company
+  .container
+
+
+    table class="table table-hover" id="score_table"
+        thead
+          tr
+            th Article
+            th Score
+        tbody
+          - target.list_of_articles.each do |company|
+            tr
+              td = company.related_article_title
+              td = company.related_article_title
