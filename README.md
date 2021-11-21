@@ -24,7 +24,7 @@ Each company will search 15 article at a time, then it will sum each article's s
 </pre>
 <pre>
 ┌─────────────┐1       *┌─────────────┐
-│   Target    ├─────────┤   Analysis  │
+│   Target    ├─────────┤  Histories  │
 └─────────────┘         └─────────────┘
 </pre>
 

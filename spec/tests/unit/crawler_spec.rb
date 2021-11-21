@@ -1,7 +1,7 @@
 # frozen_string_literal:true
 
-require_relative 'spec_helper'
-require_relative 'helpers/vcr_helper'
+require_relative '../../helpers/spec_helper'
+require_relative '../../helpers/vcr_helper'
 
 describe 'Integration Tests of GoogleNews API and the Crawler' do
   VcrHelper.setup_vcr
@@ -13,15 +13,11 @@ describe 'Integration Tests of GoogleNews API and the Crawler' do
   after do
     VcrHelper.eject_vcr
   end
-  
+
   it 'BAD: should be bad request' do
     _(proc do
       PortfolioAdvisor::Crawler::Api
-      .new("https://no.such.domain").crawl
-    end).must_raise "NotFound"
+      .new('https://no.such.domain').crawl
+    end).must_raise 'NotFound'
   end
 end
- 
-
-
-
