@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/init.rb": {
         "lines": [
           null,
           null,
@@ -10,14 +10,14 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/config/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/config/init.rb": {
         "lines": [
           null,
           null,
           1
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/config/environment.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -54,7 +54,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/init.rb": {
         "lines": [
           null,
           null,
@@ -63,7 +63,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/init.rb": {
         "lines": [
           null,
           null,
@@ -73,7 +73,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/init.rb": {
         "lines": [
           null,
           null,
@@ -85,7 +85,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/entities/article.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/entities/article.rb": {
         "lines": [
           null,
           null,
@@ -111,7 +111,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/entities/target.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/entities/target.rb": {
         "lines": [
           null,
           null,
@@ -143,7 +143,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/mappers/article_mapper.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/mappers/article_mapper.rb": {
         "lines": [
           null,
           null,
@@ -207,7 +207,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/mappers/content_mapper.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/mappers/content_mapper.rb": {
         "lines": [
           null,
           null,
@@ -236,7 +236,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/mappers/score_mapper.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/mappers/score_mapper.rb": {
         "lines": [
           null,
           null,
@@ -256,7 +256,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/mappers/target_mapper.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/mappers/target_mapper.rb": {
         "lines": [
           null,
           null,
@@ -314,7 +314,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/repositories/articles.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/repositories/articles.rb": {
         "lines": [
           null,
           null,
@@ -353,7 +353,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/repositories/for.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -381,7 +381,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/repositories/targets.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/repositories/targets.rb": {
         "lines": [
           null,
           null,
@@ -492,7 +492,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/repositories/histories.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/repositories/histories.rb": {
         "lines": [
           null,
           null,
@@ -525,7 +525,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/domain/targets/repositories/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/domain/targets/repositories/init.rb": {
         "lines": [
           null,
           null,
@@ -534,7 +534,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/init.rb": {
         "lines": [
           null,
           null,
@@ -544,7 +544,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/google_news/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/google_news/init.rb": {
         "lines": [
           null,
           null,
@@ -553,7 +553,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/google_news/google_news_api.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/google_news/google_news_api.rb": {
         "lines": [
           null,
           null,
@@ -626,7 +626,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/crawler/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/crawler/init.rb": {
         "lines": [
           null,
           null,
@@ -635,7 +635,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/crawler/crawler.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/crawler/crawler.rb": {
         "lines": [
           null,
           null,
@@ -671,7 +671,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/database/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/database/init.rb": {
         "lines": [
           null,
           null,
@@ -681,7 +681,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/database/orms/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/database/orms/init.rb": {
         "lines": [
           null,
           null,
@@ -690,7 +690,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/database/orms/article_orm.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/database/orms/article_orm.rb": {
         "lines": [
           null,
           null,
@@ -713,7 +713,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/database/orms/history_orm.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/database/orms/history_orm.rb": {
         "lines": [
           null,
           null,
@@ -736,7 +736,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/infrastructure/database/orms/target_orm.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/infrastructure/database/orms/target_orm.rb": {
         "lines": [
           null,
           null,
@@ -760,7 +760,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/controllers/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/controllers/init.rb": {
         "lines": [
           null,
           null,
@@ -769,7 +769,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/controllers/app.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -904,7 +904,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/presentation/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/presentation/init.rb": {
         "lines": [
           null,
           null,
@@ -914,7 +914,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/presentation/view_objects/init.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/presentation/view_objects/init.rb": {
         "lines": [
           null,
           null,
@@ -923,7 +923,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/presentation/view_objects/histories_list.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/presentation/view_objects/histories_list.rb": {
         "lines": [
           null,
           null,
@@ -950,7 +950,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/presentation/view_objects/history.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/presentation/view_objects/history.rb": {
         "lines": [
           null,
           null,
@@ -976,7 +976,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/presentation/view_objects/target.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/presentation/view_objects/target.rb": {
         "lines": [
           null,
           null,
@@ -1015,7 +1015,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/app/presentation/view_objects/targets_list.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/app/presentation/view_objects/targets_list.rb": {
         "lines": [
           null,
           null,
@@ -1039,7 +1039,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/spec/helpers/vcr_helper.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -1078,7 +1078,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/spec/helpers/database_helper.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -1095,7 +1095,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/spec/tests/unit/crawler_spec.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/spec/tests/unit/crawler_spec.rb": {
         "lines": [
           null,
           null,
@@ -1122,7 +1122,7 @@
           null
         ]
       },
-      "/mnt/c/Users/蔡琮鎰/Desktop/GoogleNewsAPI/spec/tests/unit/gateway_google_news_spec.rb": {
+      "/mnt/c/Users/user/Desktop/VS workspace/ruby/PortfolioAdvisor/spec/tests/unit/gateway_google_news_spec.rb": {
         "lines": [
           null,
           null,
@@ -1190,6 +1190,6 @@
         ]
       }
     },
-    "timestamp": 1637486061
+    "timestamp": 1637502132
   }
 }
