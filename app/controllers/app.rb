@@ -120,7 +120,11 @@ module PortfolioAdvisor
         end
 
         begin
-          Repository::For.entity(target).create(target)
+          if check.status.need_create?
+            Repository::For.entity(target).create(target)
+          else
+            Repository::For.entity(target).update(target)
+          end
         rescue StandardError => e
           puts e.backtrace.join("\n")
           flash[:error] = 'Having trouble accessing the database'
