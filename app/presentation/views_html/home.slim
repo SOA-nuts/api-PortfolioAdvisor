@@ -6,7 +6,7 @@
       .col-md-8.col-sm-6
         input { 
           type='text' name='company_name'
-          id='url_input' class="form-control"
+          id='company_name_input' class="form-control"
           placeholder="e.g. Apple"
         }
       .col-md-2.col-sm-3
@@ -23,10 +23,9 @@
             th Company
             th Update At
         tbody
-          - targets.each.with_index do |target, index|
-            tr class="table-row" data-href="history/#{target.company_name}" id="history[#{index}].row"
+          - targets.each do |target|
+            tr class="table-row" data-href=target.advisor_link id="#{target.index_str}.row"
               td id='td_company'
-                span class="target_table_company" id="history[#{index}].company"
+                span class="target_table_company" id="#{target.index_str}.company"
                   = target.company_name
-              td = target.updated_at
-            
+              td = target.date_updated

@@ -11,7 +11,7 @@ COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
 module PortfolioAdvisor
   # Web App
   class App < Roda
-    plugin :render, engine: 'slim', views: 'app/presentation/view_html'
+    plugin :render, engine: 'slim', views: 'app/presentation/views_html'
     # plugin :public, root: 'app/presentation/public'
     plugin :assets, path: 'app/presentation/assets',
                     css: 'style.css', js: 'table_row_click.js'
@@ -30,7 +30,6 @@ module PortfolioAdvisor
         # Get cookie viewer's previously seen projects
         session[:watching] ||= []
 
-        # targets = Repository::For.klass(Entity::Target).all
         targets = Repository::For.klass(Entity::Target).find_companys(session[:watching])
 
         session[:watching] = targets.map(&:company_name)
@@ -39,7 +38,6 @@ module PortfolioAdvisor
 
         viewable_targets=Views::TargetsList.new(targets)
         view 'home', locals: { targets: viewable_targets }
-        # view 'home', locals: { targets: targets }
       end
 
       routing.on 'target' do
@@ -52,8 +50,6 @@ module PortfolioAdvisor
               response.status = 400
               routing.redirect '/'
             end
-
-            # routing.halt 400 if COMPANY_LIST[0][company].nil?
 
             build_entity(company)
 
@@ -68,9 +64,7 @@ module PortfolioAdvisor
             # Get company from database
             target = Repository::For.klass(Entity::Target)
               .find_company(company)
-
-            # viewable_target=Views::Target.new(target)
-
+              
             view 'target', locals: { target: target }
           end
         end
