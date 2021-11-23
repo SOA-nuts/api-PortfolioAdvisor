@@ -31,7 +31,7 @@ describe 'Acceptance Tests' do
 
         # THEN: user should see basic headers, no projects and a welcome message
         _(@browser.h1(id: 'main_header').text).must_equal 'PortfolioAdvisor'
-        _(@browser.text_field(id: 'url_input').present?).must_equal true
+        _(@browser.text_field(id: 'company_name_input').present?).must_equal true
         _(@browser.button(id: 'company-form-submit').present?).must_equal true
         _(@browser.table(id: 'histories_table').exists?).must_equal false
 
@@ -61,7 +61,7 @@ describe 'Acceptance Tests' do
 
         # WHEN: they add a project URL and submit
         good_target = TOPIC
-        @browser.text_field(id: 'url_input').set(good_target)
+        @browser.text_field(id: 'company_name_input').set(good_target)
         @browser.button(id: 'company-form-submit').click
 
         # THEN: they should find themselves on the project's page
@@ -74,7 +74,7 @@ describe 'Acceptance Tests' do
 
         # WHEN: they request a project with an invalid URL
         bad_url = 'foobar'
-        @browser.text_field(id: 'url_input').set(bad_url)
+        @browser.text_field(id: 'company_name_input').set(bad_url)
         @browser.button(id: 'company-form-submit').click
 
         # THEN: they should see a warning message
@@ -86,18 +86,15 @@ describe 'Acceptance Tests' do
 
   describe 'Target Page' do
     it '(HAPPY) should see project content if project exists' do
-      # GIVEN: a project exists
-      target = PortfolioAdvisor::GoogleNews::TargetMapper
-        .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC, Date.today)
+      @browser.goto homepage
 
-      PortfolioAdvisor::Repository::For.entity(target).create(target)
+      # WHEN: they add a project URL and submit
+      good_target = TOPIC
+      @browser.text_field(id: 'company_name_input').set(good_target)
+      @browser.button(id: 'company-form-submit').click
 
-      # WHEN: user goes directly to the project page
-      @browser.goto "http://localhost:9000/target/#{TOPIC}"
-
-      # THEN: they should see the project details
-      _(@browser.h2(id: 'h2_company_name').text).must_include TOPIC
+      # THEN: they should redirect to target page and see the project details
+      _(@browser.h2.text).must_include TOPIC
 
       article_columns = @browser.table(id: 'score_table').thead.ths
 
@@ -118,7 +115,7 @@ describe 'Acceptance Tests' do
       @browser.goto "http://localhost:9000/history/#{TOPIC}"
 
       # THEN: they should see the project details
-      _(@browser.h2(id: 'h2_company_name').text).must_include TOPIC
+      _(@browser.h2.text).must_include TOPIC
 
       article_columns = @browser.table(id: 'history_table').thead.ths
 

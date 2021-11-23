@@ -1,9 +1,11 @@
 .container
   .row
-    h2
-      - company = "Company: #{target.company_name}"
+    h2 id='sub_header'
+      / - company = "Company: #{target.company_name}"
       span.target.name
-        = company
+        = target.company_name
+      / span.target.name
+      /   = histories.company
   .container
 
 
@@ -13,7 +15,7 @@
             th Article
             th Score
         tbody
-          - target.articles.each.with_index do |article, index|
+          - target.articles.each do |article, index|
             tr
               td = article.title
               td = article.score

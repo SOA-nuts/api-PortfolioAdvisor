@@ -13,7 +13,7 @@ module PortfolioAdvisor
       end
 
       def crawl_content
-        content = @gateway.crawl
+        content = "hi"#@gateway.crawl
         get_score(content)
       end
 
