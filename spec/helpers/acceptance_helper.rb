@@ -1,14 +1,11 @@
 # frozen_string_literal: true
 
-ENV['RACK_ENV'] = 'test'
+ENV['RACK_ENV'] = 'app_test'
 
-require_relative '../../helpers/spec_helper'
-require_relative '../../helpers/database_helper'
-require_relative '../../helpers/vcr_helper'
-
-require 'headless'
+# require 'headless'
 require 'webdrivers/chromedriver'
-require 'webdrivers'
 require 'watir'
 require 'page-object'
-# require 'watir-webdriver'
+
+require_relative 'spec_helper.rb'
+require_relative 'database_helper.rb'

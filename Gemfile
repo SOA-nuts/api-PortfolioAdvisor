@@ -44,7 +44,6 @@ group :test do
   gem 'watir', '~> 7.0'
   gem 'webdrivers', '~> 5.0'
   gem 'page-object'
- gem 'chromedriver-helper', '~> 1.0'
 end
 
 group :development do

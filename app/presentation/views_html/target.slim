@@ -1,6 +1,6 @@
 .container
   .row
-    h2 id='sub_header'
+    h2 id='target_name'
       / - company = "Company: #{target.company_name}"
       span.target.name
         = target.company_name
@@ -16,6 +16,6 @@
             th Score
         tbody
           - target.articles.each do |article, index|
-            tr
+            tr id='article_row'
               td = article.title
               td = article.score

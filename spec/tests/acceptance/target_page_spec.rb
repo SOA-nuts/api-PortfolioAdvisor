@@ -1,19 +1,37 @@
 # frozen_string_literal: true
 
-describe 'Target Page' do
-    it '(HAPPY) should see project content if project exists' do
-        visit TargetPage do |page|
+require_relative '../../helpers/acceptance_helper'
+require_relative 'pages/target_page'
+require_relative 'pages/home_page'
 
-      # WHEN: they add a project URL and submit
+describe 'Targetpage Acceptance Tests' do
+  include PageObject::PageFactory
+  before do
+    DatabaseHelper.wipe_database
+    options = Selenium::WebDriver::Chrome::Options.new
+    options.add_argument('--headless')
+    @browser = Watir::Browser.new :chrome, options: options
+  end
+
+  after do
+    @browser.close
+    # @headless.destroy
+  end
+  it '(HAPPY) should see target content if target exists' do
+    # GIVEN: user has requested and created a target
+    visit HomePage do |page|
       good_target = TOPIC
-      page.company_name_input.set(good_target)
-      page.show_target_button.click
+      page.add_new_target(good_target)
+    end
 
-      # THEN: they should redirect to target page and see the project details
-      _(page.display_company_name.text).must_include TOPIC
+    # WHEN: they add a target and submit
+    visit(TargetPage, using_params: {target_name: TOPIC}) do |page|
 
-      article_columns = page.article_scores_table.organize_articles_header
+      # THEN: they should see the target details
+      _(page.target_title).must_equal TOPIC
+      _(page.articles_table_element.present?).must_equal true
 
-      _(article_columns.count).must_equal 2
+      _(page.articles.count).must_equal 15
     end
   end
+end
