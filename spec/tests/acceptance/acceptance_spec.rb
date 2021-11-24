@@ -5,8 +5,8 @@ require_relative '../../helpers/database_helper'
 require_relative '../../helpers/vcr_helper'
 
 require 'headless'
-require 'webdrivers/chromedriver'
-require 'webdrivers'
+#require 'webdrivers/chromedriver'
+#require 'webdrivers'
 require 'watir'
 # require 'watir-webdriver'
 
@@ -27,17 +27,18 @@ describe 'Acceptance Tests' do
     describe 'Visit Home page' do
       it '(HAPPY) should not see histories if none created' do
         # GIVEN: user is on the home page without any projects
-        @browser.goto homepage
+        # WHEN: they visit the home page
+        visit HomePage do |page|
 
         # THEN: user should see basic headers, no projects and a welcome message
-        _(@browser.h1(id: 'main_header').text).must_equal 'PortfolioAdvisor'
-        _(@browser.text_field(id: 'company_name_input').present?).must_equal true
-        _(@browser.button(id: 'company-form-submit').present?).must_equal true
-        _(@browser.table(id: 'histories_table').exists?).must_equal false
+        _(page.title_heading.text).must_equal 'PortfolioAdvisor'
+        _(page.company_name_input).present?).must_equal true
+        _(page.show_target_button).present?).must_equal true
+        _(page.histories_table).exists?).must_equal false
 
-        _(@browser.div(id: 'flash_bar_success').present?).must_equal true
-        _(@browser.div(id: 'flash_bar_success').text.downcase).must_include 'start'
-      end
+        _(page.success_message).present?).must_equal true
+        _(page.success_message).text.downcase).must_include 'start'
+    
 
       it '(HAPPY) should not see histories they did not request' do
         # GIVEN: a project exists in the database but GoogleNews has not requested it
@@ -45,7 +46,8 @@ describe 'Acceptance Tests' do
           .new(GOOGLENEWS_TOKEN)
           .find(TOPIC, Date.today)
         PortfolioAdvisor::Repository::For.entity(target).create(target)
-
+      end
+    
         # WHEN: user goes to the homepage
         @browser.goto homepage
 
@@ -57,7 +59,7 @@ describe 'Acceptance Tests' do
     describe 'Add History' do
       it '(HAPPY) should be able to request a company' do
         # GIVEN: user is on the home page without any projects
-        @browser.goto homepage
+        @visit HomePage do |page|
 
         # WHEN: they add a project URL and submit
         good_target = TOPIC

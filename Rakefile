@@ -20,7 +20,7 @@ end
 desc 'Run acceptance tests'
 task :spec_accept do
   puts 'NOTE: run app in test environment in another process'
-  sh 'ruby spec/tests/acceptance/acceptance_spec.rb'
+  sh 'ruby spec/tests/acceptance/home_page_spec.rb'
 end
 
 desc 'Keep restarting web app upon changes'
