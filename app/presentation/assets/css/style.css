@@ -12,7 +12,12 @@ h1 {
   .table-row {
     cursor: pointer;
   }
-  
+
+  .td-score {
+    text-align: center; 
+    vertical-align: middle;
+  }
+
   .posting.body {
     font-size: 1.2em;
   }

@@ -77,3 +77,6 @@ gem 'open-uri'
 
 # date
 gem 'date', '>= 3.2.1'
+
+# text mining
+gem 'textmood'

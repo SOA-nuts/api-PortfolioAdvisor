@@ -12,7 +12,7 @@ module Views
       @target
     end
 
-    def advisor_link
+    def history_link
       "history/#{company_name}"
     end
 
