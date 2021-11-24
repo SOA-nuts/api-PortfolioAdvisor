@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative 'score_mapper'
-
 module PortfolioAdvisor
   module GoogleNews
     # Data Mapper: url -> call score mapper
@@ -12,14 +10,28 @@ module PortfolioAdvisor
         @gateway = @gateway_class.new(@url)
       end
 
-      def crawl_content
-        content = "hi"#@gateway.crawl
-        get_score(content)
+      def build_entity(content)
+        DataMapper.new(content).build_entity
       end
 
-      def get_score(content)
-        ScoreMapper.new(content).analyze_content
+      def crawl_content
+        content = @gateway.crawl
+        build_entity(content)
+      end
+
+    end
+
+    class DataMapper
+      def initialize(content)
+        @content = content
+      end
+
+      def build_entity
+        Entity::Content.new(
+          content: @content
+        )
       end
     end
+
   end
 end
