@@ -29,7 +29,7 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '~> 1.2'
+ # gem 'pg', '~> 1.2'
 end
 
 # Testing
@@ -43,6 +43,7 @@ group :test do
   gem 'headless', '~> 2.3'
   gem 'watir', '~> 7.0'
   gem 'webdrivers', '~> 5.0'
+  gem 'page-object'
 end
 
 group :development do
