@@ -24,7 +24,7 @@
             th Update At
         tbody
           - targets.each do |target|
-            tr class="table-row" data-href=target.advisor_link id="#{target.index_str}.row"
+            tr class="table-row" data-href=target.history_link id="#{target.index_str}.row"
               td id='td_company'
                 span class="target_table_company" id="#{target.index_str}.company"
                   = target.company_name
