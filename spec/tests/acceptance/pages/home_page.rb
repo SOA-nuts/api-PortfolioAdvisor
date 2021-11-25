@@ -11,7 +11,7 @@ class HomePage
 
   h1(:title_heading, id: 'main_header')
   text_field(:company_name_input, id: 'company_name_input')
-  button(:show_target_button, id: 'company_form_submit')
+  button(:add_button, id: 'company_form_submit')
   table(:histories_table, id: 'histories_table')
 
   indexed_property(
@@ -24,7 +24,7 @@ class HomePage
 
   def add_new_target(company_name)
     self.company_name_input = company_name
-    self.show_target_button
+    self.add_button
   end
   
 end

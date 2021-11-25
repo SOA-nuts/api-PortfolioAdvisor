@@ -15,7 +15,7 @@ module PortfolioAdvisor
 
         def score
           tm = TextMood.new(language: "en", normalize_score: true)
-          tm.analyze(@content)
+          tm.analyze(@content).to_i
         end
     end
   end
