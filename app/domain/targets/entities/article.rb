@@ -4,6 +4,8 @@ require 'dry-types'
 require 'dry-struct'
 require 'date'
 
+require_relative 'content'
+
 module PortfolioAdvisor
   module Entity
     # Domain entity for any article

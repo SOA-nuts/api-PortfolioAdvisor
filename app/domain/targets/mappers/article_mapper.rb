@@ -26,6 +26,7 @@ module PortfolioAdvisor
         def initialize(data)
           @data = data
           @publish_at = DateTime.strptime(@data['publishedAt'], '%Y-%m-%dT%H:%M:%S%z')
+          @content_mapper = ContentMapper.new(@data['url'])
         end
 
         def build_entity
@@ -43,8 +44,8 @@ module PortfolioAdvisor
           @data['url']
         end
 
-        def score
-          ContentMapper.new(url).crawl_content
+        def score         
+          @content_mapper.crawl_content.score
         end
 
         def published_at

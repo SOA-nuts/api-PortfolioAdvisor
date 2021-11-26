@@ -1,9 +1,9 @@
 .container
   .row
-    h2
-      - company = "Company: #{target.company_name}"
-      span.target.name
-        = company
+    h2 id='target_name' class="h2-red"
+      a.text-underline-hover href="/history/#{target.company_name}"
+        = target.company_name
+
   .container
 
 
@@ -13,7 +13,7 @@
             th Article
             th Score
         tbody
-          - target.articles.each.with_index do |article, index|
-            tr
+          - target.articles.each do |article, index|
+            tr id='article_row' class="article_table_row" data-href=article.url
               td = article.title
-              td = article.score
+              td class="td-score" = article.score
