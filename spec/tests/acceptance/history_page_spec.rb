@@ -2,6 +2,7 @@
 
 require_relative '../../helpers/acceptance_helper'
 require_relative 'pages/history_page'
+require_relative 'pages/home_page'
 
 describe 'Historypage Acceptance Tests' do
   include PageObject::PageFactory
@@ -18,11 +19,16 @@ describe 'Historypage Acceptance Tests' do
   end
   it '(HAPPY) should see history content if history exists' do
     # GIVEN: a target exists
-    target = PortfolioAdvisor::GoogleNews::TargetMapper
-      .new(GOOGLENEWS_TOKEN)
-      .find(TOPIC, Date.today)
+    # target = PortfolioAdvisor::GoogleNews::TargetMapper
+    #   .new(GOOGLENEWS_TOKEN)
+    #   .find(TOPIC, nil)
 
-    PortfolioAdvisor::Repository::For.entity(target).create(target)
+    # PortfolioAdvisor::Repository::For.entity(target).create(target)
+
+    visit HomePage do |page|
+      good_target = TOPIC
+      page.add_new_target(good_target)
+    end
 
     # WHEN: user goes directly to the history page
     visit(HistoryPage, using_params: {target_name: TOPIC}) do |page|

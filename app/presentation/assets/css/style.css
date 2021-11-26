@@ -13,6 +13,10 @@ h1 {
     cursor: pointer;
   }
 
+  .article_table_row {
+    cursor: pointer;
+  }
+
   .td-score {
     text-align: center; 
     vertical-align: middle;

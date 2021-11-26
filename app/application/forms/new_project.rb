@@ -15,7 +15,7 @@ module PortfolioAdvisor
 
       rule(:company_name) do
         if check_valid(value)
-          key.failure('is an invalid address for a company')
+          key.failure('is a not define company.')
         end
       end
 

@@ -25,7 +25,7 @@ describe 'Homepage  Acceptance Tests' do
         # THEN: user should see basic headers, no targets and a welcome message
         _(page.title_heading).must_equal 'PortfolioAdvisor'
         _(page.company_name_input_element.present?).must_equal true
-        _(page.show_target_button_element.present?).must_equal true
+        _(page.add_button_element.present?).must_equal true
         _(page.histories_table_element.exists?).must_equal false
 
         _(page.success_message_element.present?).must_equal true
@@ -47,7 +47,7 @@ describe 'Homepage  Acceptance Tests' do
     end
   end
 
-  describe 'Add History' do
+  describe 'Add Target' do
     it '(HAPPY) should be able to request a company' do
       # GIVEN: user is on the home page without any targets
       visit HomePage do |page|
@@ -55,7 +55,6 @@ describe 'Homepage  Acceptance Tests' do
         # WHEN: they add a targets URL and submit
         good_target = TOPIC
         page.add_new_target(good_target)
-
         # THEN: they should find themselves on the target's page
         @browser.url.include? TOPIC
       end

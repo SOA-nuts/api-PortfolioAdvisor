@@ -5,19 +5,18 @@ require 'slim'
 require 'yaml'
 require 'slim/include'
 
-COMPANY_YAML = 'spec/fixtures/company.yml'
-COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
-
 module PortfolioAdvisor
   # Web App
   class App < Roda
+
+    plugin :halt
+    plugin :flash
+    plugin :all_verbs # recognizes HTTP verbs beyond GET/POST (e.g., DELETE)
     plugin :render, engine: 'slim', views: 'app/presentation/views_html'
     plugin :public, root: 'app/presentation/public'
     plugin :assets, path: 'app/presentation/assets',
                     css: 'style.css', js: 'table_row_click.js'
-    plugin :halt
-    plugin :flash
-    plugin :all_verbs # recognizes HTTP verbs beyond GET/POST (e.g., DELETE)
+    
 
     use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
@@ -27,16 +26,23 @@ module PortfolioAdvisor
 
       # GET
       routing.root do
-        # Get cookie viewer's previously seen projects
+        # Get cookie viewer's previously seen targets
         session[:watching] ||= []
+        result = Service::ListTargets.new.call(session[:watching])
 
-        targets = Repository::For.klass(Entity::Target).find_companys(session[:watching])
+        if result.failure?
+          flash[:error] = result.failure
+          viewable_targets = []
+        else
+          targets = result.value!
+          if targets.none?
+            flash.now[:notice] = 'Add a company to get started'
+          end
 
-        session[:watching] = targets.map(&:company_name)
+          session[:watching] = targets.map(&:company_name)
+          viewable_targets = Views::TargetsList.new(targets)
+        end
 
-        flash.now[:notice] = 'Add a company to get started' if targets.none?
-
-        viewable_targets = Views::TargetsList.new(targets)
         view 'home', locals: { targets: viewable_targets }
       end
 
@@ -44,30 +50,41 @@ module PortfolioAdvisor
         routing.is do
           # POST /target/
           routing.post do
-            company = routing.params['company_name'].downcase
-            if COMPANY_LIST[0][company].nil?
-              flash[:error] = 'Company not define in our search!'
-              response.status = 400
+            target_request = Forms::NewTarget.new.call(routing.params)
+            target_made = Service::AddTarget.new.call(target_request)
+
+            if target_made.failure?
+              flash[:error] = target_made.failure
               routing.redirect '/'
             end
 
-            build_entity(company, routing)
-
+            target = target_made.value!
+            session[:watching].insert(0, target.company_name).uniq!
+            #f lash[:notice] = 'target added to your list'
             # Redirect viewer target page
-            routing.redirect "target/#{company}"
+            routing.redirect "target/#{target.company_name}"
+
           end
         end
 
         routing.on String do |company|
           # GET /target/company
           routing.get do
-            # Get company from database
-            target = Repository::For.klass(Entity::Target)
-              .find_company(company)
+
+            session[:watching] ||= []
+
+            result = Service::ResultTarget.new.call(
+              watched_list: session[:watching],
+              requested: company
+            )
             
-              
-            session[:watching].insert(0, company).uniq!
-            view 'target', locals: { target: target }
+            if result.failure?
+              flash[:error] = result.failure
+              routing.redirect '/'
+            end
+
+            result = result.value!
+            view 'target', locals: { target: result[:target] }
           end
         end
       end
@@ -85,51 +102,23 @@ module PortfolioAdvisor
           # GET /history/company
           routing.get do
             # Get histories from database
-            histories = Repository::Histories.find_company(company)
+            session[:watching] ||= []
+            result = Service::ResultHistory.new.call(
+              watched_list: session[:watching],
+              requested: company
+            )
+            
+            if result.failure?
+              flash[:error] = result.failure
+              routing.redirect '/'
+            end
 
-            viewable_histories = Views::HistoriesList.new(histories, company)
+            result = result.value!
+            viewable_histories = Views::HistoriesList.new(result[:history], company)
             view 'history', locals: { histories: viewable_histories }
           end
         end
       end
-    end
-    # check different condition of api usage: create/ update/ do nothing
-    class TargetCheck
-      attr_reader :status
-
-      def initialize(company_name)
-        @company_name = company_name
-        @status = Repository::Targets.check_status(@company_name)
-      end
-
-      def api_find
-        GoogleNews::TargetMapper
-          .new(App.config.GOOGLENEWS_TOKEN)
-          .find(@company_name, @status.search_from)
-      end
-    end
-
-    def build_entity(company, routing)
-      check = TargetCheck.new(company)
-      return if check.status.up_to_date?
-        begin
-          target = check.api_find
-        rescue StandardError
-          flash[:error] = 'Could not get target from newsapi.'
-          routing.redirect '/'
-        end
-
-        begin
-          if check.status.need_create?
-            Repository::For.entity(target).create(target)
-          else
-            Repository::For.entity(target).update(target)
-          end
-        rescue StandardError => e
-          puts e.backtrace.join("\n")
-          flash[:error] = 'Having trouble accessing the database'
-        end
-      
     end
   end
 end
