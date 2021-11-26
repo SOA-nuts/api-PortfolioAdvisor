@@ -19,12 +19,6 @@ describe 'Historypage Acceptance Tests' do
   end
   it '(HAPPY) should see history content if history exists' do
     # GIVEN: a target exists
-    # target = PortfolioAdvisor::GoogleNews::TargetMapper
-    #   .new(GOOGLENEWS_TOKEN)
-    #   .find(TOPIC, nil)
-
-    # PortfolioAdvisor::Repository::For.entity(target).create(target)
-
     visit HomePage do |page|
       good_target = TOPIC
       page.add_new_target(good_target)
