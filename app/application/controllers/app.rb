@@ -60,7 +60,7 @@ module PortfolioAdvisor
 
             target = target_made.value!
             session[:watching].insert(0, target.company_name).uniq!
-            #f lash[:notice] = 'target added to your list'
+            #flash[:notice] = 'target added to your list'
             # Redirect viewer target page
             routing.redirect "target/#{target.company_name}"
 
