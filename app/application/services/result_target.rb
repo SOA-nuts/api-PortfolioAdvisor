@@ -23,7 +23,7 @@ module PortfolioAdvisor
                 input[:articles] = input[:target].articles
 
                 if input[:target]
-                    Response::TargetArticleScore.new(input[:target])
+                    Response::TargetArticleScore.new(input[:company_name], input[:updated_at], input[:score], input[:articles])
                     .then do |analysis|
                       Success(Response::ApiResult.new(status: :ok, message: analysis))
                     end
