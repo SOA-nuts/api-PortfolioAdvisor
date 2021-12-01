@@ -50,7 +50,7 @@ module PortfolioAdvisor
 
         # following are support methods that other services could use
         def target_in_database(input)
-            Repository::Targets.find_company(input[:company_name])
+            Repository::Targets.find_company(input[:requested].company_name)
         end
 
         def target_update_from_news(target)

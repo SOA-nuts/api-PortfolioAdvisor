@@ -35,7 +35,7 @@ module PortfolioAdvisor
             # GET /target/{company_name}
             routing.get do
               path_request = Request::TargetPath.new(
-                company_name, request
+                company, request
               )
 
               result = Service::ResultTarget.new.call(requested: path_request)
