@@ -15,11 +15,14 @@ module PortfolioAdvisor
             NO_HISTORY_ERR = 'History not found'
             DB_ERR = 'Having trouble accessing the database'
 
-            def retrieve_remote_target(input)
-                input[:history] = Repository::Histories.find_company(input[:requested])
+            def retrieve_remote_history(input)
+                input[:histories] = Repository::Histories.find_company(input[:requested].company_name)
 
-                if input[:history]
-                    Success(input)
+                if input[:histories]
+                    Response::TargetArticleScore.new(input[:histories])
+                    .then do |show|
+                      Success(Response::ApiResult.new(status: :ok, message: show))
+                    end
                 else
                     Failure(Response::ApiResult.new(status: :not_found, message: NO_HISTORY_ERR))
                 end

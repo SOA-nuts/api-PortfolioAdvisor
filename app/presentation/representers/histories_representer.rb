@@ -12,7 +12,7 @@ module PortfolioAdvisor
     class HistoriesList < Roar::Decorator
       include Roar::JSON
 
-      collection :historys, extend: Representer::History,
+      collection :histories, extend: Representer::History,
                             class: Representer::OpenStructWithLinks
     end
   end

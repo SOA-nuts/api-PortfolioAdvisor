@@ -17,6 +17,7 @@ module PortfolioAdvisor
 
       # Expects list of movies in input[:list_request]
       def validate_list(input)
+        puts input[:list_request]
         list_request = input[:list_request].call
         if list_request.success?
           Success(input.merge(list: list_request.value!))

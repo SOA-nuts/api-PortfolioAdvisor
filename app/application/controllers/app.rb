@@ -86,23 +86,25 @@ module PortfolioAdvisor
         end
 
         routing.on 'history' do 
-          # GET /history/{company_name}
-          routing.get do
-            path_request = Request::HistoryPath.new(
-              company_name, request
-            )
+          routing.on String do |company|
+            # GET /history/{company_name}
+            routing.get do
+              path_request = Request::HistoryPath.new(
+                company, request
+              )
 
-            result = Service::ResultHistory.new.call(requested: path_request)
+              result = Service::ResultHistory.new.call(requested: path_request)
 
-            if result.failure?
-              failed = Representer::HttpResponse.new(result.failure)
-              routing.halt failed.http_status_code, failed.to_json
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::HistoriesList.new(result.value!.message).to_json
             end
-
-            http_response = Representer::HttpResponse.new(result.value!)
-            response.status = http_response.http_status_code
-
-            Representer::HistoriesList.new(result.value!.message).to_json
           end
         end
       end

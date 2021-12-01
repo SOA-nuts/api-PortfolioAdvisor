@@ -20,13 +20,7 @@ module PortfolioAdvisor
       collection :articles, extend: Representer::Article, class: OpenStruct
 
       link :self do
-        "#{App.config.API_HOST}/api/v1/history/#{target_name}"
-      end
-
-      private
-
-      def target_name
-        represented.name
+        "#{App.config.API_HOST}/api/v1/history/#{company_name}"
       end
     end
   end
