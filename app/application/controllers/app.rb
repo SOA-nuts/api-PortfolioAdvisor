@@ -60,6 +60,7 @@ module PortfolioAdvisor
                 routing.halt failed.http_status_code, failed.to_json
               end
 
+
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
             end

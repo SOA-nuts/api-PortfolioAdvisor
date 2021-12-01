@@ -43,7 +43,10 @@ module PortfolioAdvisor
                 else
                     input[:local_target]
                 end
-            Success(Response::ApiResult.new(status: :created, message: target))
+            Response::Target.new(target)
+            .then { |list| Response::ApiResult.new(status: :ok, message: list) }
+            .then { |result| Success(result) }
+            
         rescue StandardError => error
             puts error.backtrace.join("\n")
             Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
