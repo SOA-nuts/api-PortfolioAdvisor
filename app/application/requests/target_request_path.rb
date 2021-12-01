@@ -2,7 +2,7 @@
 
 module PortfolioAdvisor
     module Request
-      # Application value for the path of a requested project
+      # Application value for the path of a requested taregt
       class TargetPath
         def initialize(company_name, request)
           @company_name = company_name

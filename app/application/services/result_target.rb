@@ -19,7 +19,7 @@ module PortfolioAdvisor
                 input[:target] = Repository::For.klass(Entity::Target).find_company(input[:requested])
 
 
-                if input[:project]
+                if input[:target]
                     Success(input)
                 else
                     Failure(Response::ApiResult.new(status: :not_found, message: NO_TARGET_ERR))

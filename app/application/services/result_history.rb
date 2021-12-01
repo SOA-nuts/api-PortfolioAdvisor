@@ -18,7 +18,7 @@ module PortfolioAdvisor
             def retrieve_remote_target(input)
                 input[:history] = Repository::Histories.find_company(input[:requested])
 
-                if input[:project]
+                if input[:history]
                     Success(input)
                 else
                     Failure(Response::ApiResult.new(status: :not_found, message: NO_HISTORY_ERR))

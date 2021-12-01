@@ -39,7 +39,7 @@ module PortfolioAdvisor
         Base64.urlsafe_encode64(list.to_json)
       end
 
-      # Use in tests to create a ProjectList object from a list
+      # Use in tests to create a TargetList object from a list
       def self.to_request(list)
         EncodedTargetList.new('list' => to_encoded(list))
       end

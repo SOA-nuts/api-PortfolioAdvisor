@@ -64,7 +64,6 @@ module PortfolioAdvisor
 
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
-              Representer::Target.new(result.value!.message).to_json
             end
           end
 

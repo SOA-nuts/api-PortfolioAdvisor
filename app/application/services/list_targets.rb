@@ -5,11 +5,11 @@ require 'dry/transaction'
 module PortfolioAdvisor
   module Service
     # Retrieves array of all listed project entities
-    class ListProjects
+    class ListTargets
       include Dry::Transaction
 
       step :validate_list
-      step :retrieve_projects
+      step :retrieve_taregts
 
       private
 
@@ -25,7 +25,7 @@ module PortfolioAdvisor
         end
       end
 
-      def retrieve_projects(input)
+      def retrieve_taregts(input)
         Repository::For.klass(Entity::Target).find_companys(input[:list])
           .then { |targets| Response::TargetsList.new(targets) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
