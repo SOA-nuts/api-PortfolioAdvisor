@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 require 'roda'
-require 'slim'
-require 'yaml'
-require 'slim/include'
 
 module PortfolioAdvisor
   # Web App
@@ -11,114 +8,107 @@ module PortfolioAdvisor
 
     plugin :halt
     plugin :flash
-    plugin :all_verbs # recognizes HTTP verbs beyond GET/POST (e.g., DELETE)
-    plugin :render, engine: 'slim', views: 'app/presentation/views_html'
-    plugin :public, root: 'app/presentation/public'
-    plugin :assets, path: 'app/presentation/assets',
-                    css: 'style.css', js: 'table_row_click.js'
+    plugin :all_verbs # allows DELETE and other HTTP verbs beyond GET/POST
+    use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
     
 
     use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
     route do |routing|
-      routing.assets # load CSS
-      # routing.public
+      response['Content-Type'] = 'application/json'
 
       # GET
       routing.root do
-        # Get cookie viewer's previously seen targets
-        session[:watching] ||= []
-        result = Service::ListTargets.new.call(session[:watching])
+        message = "PortfolioAdvisor API v1 at /api/v1/ in #{App.environment} mode"
 
-        if result.failure?
-          flash[:error] = result.failure
-          viewable_targets = []
-        else
-          targets = result.value!
-          if targets.none?
-            flash.now[:notice] = 'Add a company to get started'
-          end
+        result_response = Representer::HttpResponse.new(
+          Response::ApiResult.new(status: :ok, message: message)
+        )
 
-          session[:watching] = targets.map(&:company_name)
-          viewable_targets = Views::TargetsList.new(targets)
-        end
-
-        view 'home', locals: { targets: viewable_targets }
+        response.status = result_response.http_status_code
+        result_response.to_json
       end
 
-      routing.on 'target' do
-        routing.is do
-          # POST /target/
-          routing.post do
-            target_request = Forms::NewTarget.new.call(routing.params)
-            target_made = Service::AddTarget.new.call(target_request)
+      routing.on 'api/v1' do
+        routing.on 'target' do
+          routing.on String do |company|
+            # GET /target/{company_name}
+            routing.get do
+              path_request = Request::TargetPath.new(
+                company, request
+              )
 
-            if target_made.failure?
-              flash[:error] = target_made.failure
-              routing.redirect '/'
+              result = Service::ResultTarget.new.call(requested: path_request)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+              
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::Target.new(result.value!.message).to_json
             end
 
-            target = target_made.value!
-            session[:watching].insert(0, target.company_name).uniq!
-            #flash[:notice] = 'target added to your list'
-            # Redirect viewer target page
-            routing.redirect "target/#{target.company_name}"
+            # POST /target/{company_name}
+            routing.post do
+              result = Service::AddTarget.new.call(company_name: company)
+              
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
 
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::Target.new(result.value!.message).to_json
+            end
+          end
+
+          routing.is do
+            # GET /target?list={base64_json_array_of_company_names}
+            routing.get do
+              list_req = Request::EncodedTargetList.new(routing.params)
+              result = Service::ListTargets.new.call(list_request: list_req)
+
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+              Representer::TargetsList.new(result.value!.message).to_json
+            end
           end
         end
 
-        routing.on String do |company|
-          # GET /target/company
-          routing.get do
+        routing.on 'history' do 
+          routing.on String do |company|
+            # GET /history/{company_name}
+            routing.get do
+              path_request = Request::HistoryPath.new(
+                company, request
+              )
 
-            session[:watching] ||= []
+              result = Service::ResultHistory.new.call(requested: path_request)
 
-            result = Service::ResultTarget.new.call(
-              watched_list: session[:watching],
-              requested: company
-            )
-            
-            if result.failure?
-              flash[:error] = result.failure
-              routing.redirect '/'
+              if result.failure?
+                failed = Representer::HttpResponse.new(result.failure)
+                routing.halt failed.http_status_code, failed.to_json
+              end
+
+              http_response = Representer::HttpResponse.new(result.value!)
+              response.status = http_response.http_status_code
+
+              Representer::HistoriesList.new(result.value!.message).to_json
             end
-
-            result = result.value!
-            view 'target', locals: { target: result[:target] }
-          end
-        end
-      end
-
-      routing.on 'history' do
-        routing.is do
-          # POST /history/
-          routing.post do
-            # Redirect viewer history page
-            routing.redirect "history/#{company}"
-          end
-        end
-
-        routing.on String do |company|
-          # GET /history/company
-          routing.get do
-            # Get histories from database
-            session[:watching] ||= []
-            result = Service::ResultHistory.new.call(
-              watched_list: session[:watching],
-              requested: company
-            )
-            
-            if result.failure?
-              flash[:error] = result.failure
-              routing.redirect '/'
-            end
-
-            result = result.value!
-            viewable_histories = Views::HistoriesList.new(result[:history], company)
-            view 'history', locals: { histories: viewable_histories }
           end
         end
       end
     end
+    # rubocop:enable Metrics/BlockLength
   end
 end

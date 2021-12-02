@@ -8,26 +8,20 @@ module PortfolioAdvisor
     class AddTarget
         include Dry::Transaction
 
-        step :parse_target
         step :find_target
         step :store_target
 
         private
 
-        def parse_target(input)
-            if input.success?
-                #set input[:company_name]
-                Success(company_name: input[:company_name])
-            else
-                Failure("URL #{input.errors.messages.first}")
-            end
-        end
+        DB_ERR_MSG = 'Having trouble accessing the database'
+        GN_NOT_FOUND_MSG = 'Could not find related articels of the compnay on Google News'
 
         def find_target(input)
             if (target = target_in_database(input))
                 #not need update
                 if(target.updated_at ==  Date.today)
                     input[:local_target] = target
+
                 #need update
                 else
                     input[:update_target] = target_update_from_news(target)
@@ -37,7 +31,7 @@ module PortfolioAdvisor
             end
             Success(input)
         rescue StandardError => error
-            Failure(error.to_s)
+            Failure(Response::ApiResult.new(status: :not_support, message: error.to_s))
         end
 
         def store_target(input)
@@ -49,10 +43,12 @@ module PortfolioAdvisor
                 else
                     input[:local_target]
                 end
-            Success(target)
+            
+            Success(Response::ApiResult.new(status: :created, message: target))
+            
         rescue StandardError => error
             puts error.backtrace.join("\n")
-            Failure('Having trouble accessing the database')
+            Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
         end
 
         # following are support methods that other services could use
@@ -63,13 +59,13 @@ module PortfolioAdvisor
         def target_update_from_news(target)
             GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(target.company_name, target.updated_at)
         rescue StandardError
-            raise 'Could not get target from newsApi.'
+            raise GN_NOT_FOUND_MSG
         end
 
         def target_from_news(input)
             GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], nil)
         rescue StandardError
-            raise 'Could not get target from newsApi.'
+            raise GN_NOT_FOUND_MSG
         end
     end
   end

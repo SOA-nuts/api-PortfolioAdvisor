@@ -8,24 +8,26 @@ module PortfolioAdvisor
         class ResultHistory
             include Dry::Transaction
 
-            step :ensure_watched_history
             step :retrieve_remote_history
 
             private
 
-            def ensure_watched_history(input)
-                if input[:watched_list].include? input[:requested]
-                    Success(input)
-                else
-                    Failure('Please first request this target to be added to your list')
-                end
-            end
+            NO_HISTORY_ERR = 'History not found'
+            DB_ERR = 'Having trouble accessing the database'
 
             def retrieve_remote_history(input)
-                input[:history] = Repository::Histories.find_company(input[:requested])
-                input[:history] ? Success(input) : Failure('History not found')
+                input[:histories] = Repository::Histories.find_company(input[:requested].company_name)
+
+                if input[:histories]
+                    Response::HistoryScore.new(input[:histories])
+                    .then do |show|
+                      Success(Response::ApiResult.new(status: :ok, message: show))
+                    end
+                else
+                    Failure(Response::ApiResult.new(status: :not_found, message: NO_HISTORY_ERR))
+                end
             rescue StandardError
-                Failure('Having trouble accessing the database')
+                Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR))
             end
         end
     end
