@@ -16,8 +16,12 @@ module PortfolioAdvisor
 
       # Use in API to parse incoming list requests
       def call
+        # puts JSON.parse(decode(@params['list'])).class
+        
         Success(
-          JSON.parse(decode(@params['list']))
+          # JSON.parse(decode(@params['list']))
+          decode(@params['list'])
+          # @params['list']
         )
       rescue StandardError
         Failure(
@@ -30,7 +34,9 @@ module PortfolioAdvisor
 
       # Decode params
       def decode(param)
-        Base64.urlsafe_decode64(param)
+        ary = []
+        ary << param
+        # Base64.urlsafe_decode64(param)
       end
 
       # Client App will encode params to send as a string

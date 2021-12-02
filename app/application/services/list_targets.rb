@@ -17,7 +17,6 @@ module PortfolioAdvisor
 
       # Expects list of movies in input[:list_request]
       def validate_list(input)
-        puts input[:list_request]
         list_request = input[:list_request].call
         if list_request.success?
           Success(input.merge(list: list_request.value!))
@@ -27,7 +26,7 @@ module PortfolioAdvisor
       end
 
       def retrieve_taregts(input)
-        Repository::For.klass(Entity::Target).find_companys(input[:list])
+        test = Repository::For.klass(Entity::Target).find_companys(input[:list])
           .then { |targets| Response::TargetsList.new(targets) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
           .then { |result| Success(result) }

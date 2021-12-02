@@ -68,7 +68,7 @@ module PortfolioAdvisor
           end
 
           routing.is do
-            # GET /targets?list={base64_json_array_of_company_names}
+            # GET /target?list={base64_json_array_of_company_names}
             routing.get do
               list_req = Request::EncodedTargetList.new(routing.params)
               result = Service::ListTargets.new.call(list_request: list_req)

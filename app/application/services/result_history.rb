@@ -19,7 +19,7 @@ module PortfolioAdvisor
                 input[:histories] = Repository::Histories.find_company(input[:requested].company_name)
 
                 if input[:histories]
-                    Response::TargetArticleScore.new(input[:histories])
+                    Response::HistoryScore.new(input[:histories])
                     .then do |show|
                       Success(Response::ApiResult.new(status: :ok, message: show))
                     end

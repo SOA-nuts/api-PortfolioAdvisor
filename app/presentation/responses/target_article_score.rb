@@ -3,6 +3,6 @@
 module PortfolioAdvisor
   module Response
     # Scores for articles of target
-    HistoryScore = Struct.new(:histories)
+    TargetArticleScore = Struct.new(:company_name, :updated_at, :score, :articles)
   end
 end

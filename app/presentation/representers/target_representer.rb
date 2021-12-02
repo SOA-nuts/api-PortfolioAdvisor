@@ -22,6 +22,10 @@ module PortfolioAdvisor
       link :self do
         "#{App.config.API_HOST}/api/v1/history/#{company_name}"
       end
+
+      def company_name
+        represented.company_name
+      end
     end
   end
 end
