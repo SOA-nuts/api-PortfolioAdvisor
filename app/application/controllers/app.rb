@@ -44,7 +44,8 @@ module PortfolioAdvisor
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
               end
-
+              
+              puts result.value!
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
 
@@ -53,10 +54,8 @@ module PortfolioAdvisor
 
             # POST /target/{company_name}
             routing.post do
-              result = Service::AddTarget.new.call(
-                company_name: company
-              )
-
+              result = Service::AddTarget.new.call(company_name: company)
+              
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
@@ -64,6 +63,8 @@ module PortfolioAdvisor
 
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
+
+              Representer::Target.new(result.value!.message).to_json
             end
           end
 

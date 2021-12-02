@@ -17,7 +17,7 @@ module PortfolioAdvisor
       ApiResult = Struct.new(:status, :message) do
         def initialize(status:, message:)
           raise(ArgumentError, 'Invalid status') unless CODES.include? status
-  
+
           super(status, message)
         end
       end

@@ -21,6 +21,7 @@ module PortfolioAdvisor
                 #not need update
                 if(target.updated_at ==  Date.today)
                     input[:local_target] = target
+
                 #need update
                 else
                     input[:update_target] = target_update_from_news(target)
@@ -30,7 +31,7 @@ module PortfolioAdvisor
             end
             Success(input)
         rescue StandardError => error
-            Failure(Response::ApiResult.new(status: :not_support, message: e.to_s))
+            Failure(Response::ApiResult.new(status: :not_support, message: error.to_s))
         end
 
         def store_target(input)
@@ -42,7 +43,9 @@ module PortfolioAdvisor
                 else
                     input[:local_target]
                 end
-                Success(Response::ApiResult.new(status: :created, message: target))
+            
+            Success(Response::ApiResult.new(status: :created, message: target))
+            
         rescue StandardError => error
             puts error.backtrace.join("\n")
             Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
@@ -50,7 +53,7 @@ module PortfolioAdvisor
 
         # following are support methods that other services could use
         def target_in_database(input)
-            Repository::Targets.find_company(input[:requested].company_name)
+            Repository::Targets.find_company(input[:company_name])
         end
 
         def target_update_from_news(target)
