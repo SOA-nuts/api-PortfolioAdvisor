@@ -16,12 +16,9 @@ module PortfolioAdvisor
 
       # Use in API to parse incoming list requests
       def call
-        # puts JSON.parse(decode(@params['list'])).class
-        
         Success(
-          # JSON.parse(decode(@params['list']))
+          #JSON.parse(decode(@params['list']))
           decode(@params['list'])
-          # @params['list']
         )
       rescue StandardError
         Failure(
