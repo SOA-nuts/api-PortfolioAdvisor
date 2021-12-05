@@ -94,24 +94,23 @@ describe 'Test API routes' do
       target = targets.first
       _(target['company_name']).must_equal TOPIC
       _(target['score']).must_equal 2
-      # vcr record at "2021-12-04"
-      _(target['updated_at']).must_equal "2021-12-04"
+      # first record should be the newest 
+      _(target['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
 
-    it 'should return empty lists if none found' do
+    it 'should return empty lists if not found' do
       list = ['djsafildafs;d']
       encoded_list = PortfolioAdvisor::Request::EncodedTargetList.to_encoded(list)
 
       get "/api/v1/target?list=#{encoded_list}"
       _(last_response.status).must_equal 200
-
       response = JSON.parse(last_response.body)
       targets = response['targets']
       _(targets).must_be_kind_of Array
       _(targets.count).must_equal 0
     end
 
-    it 'should return error if not list provided' do
+    it 'should return error if no list provided' do
       get '/api/v1/target'
       _(last_response.status).must_equal 400
 
@@ -127,34 +126,21 @@ describe 'Test API routes' do
 
       get "/api/v1/history/#{TOPIC}"
       _(last_response.status).must_equal 200
-
       response = JSON.parse(last_response.body)
       histories = response['histories']
       _(histories.count).must_equal 1
       history = histories.first
       _(history['score']).must_equal 2
-      # vcr record at "2021-12-04"
-      _(history['updated_at']).must_equal "2021-12-04"
+      # first record should be the newest 
+      _(history['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
   end
 
-  it 'should return empty histories list if none found' do
+  it 'should return empty histories list if not found' do
     get "/api/v1/history/WTFFFFEMMM"
 
     _(last_response.status).must_equal 500
-
     response = JSON.parse(last_response.body)
-    histories = response['histories']
-    _(histories).must_be_kind_of Array
-    _(histories.count).must_equal 0
-  end
-
-  it 'should return error if not list provided' do
-    get '/api/v1/history'
-    _(last_response.status).must_equal 404
-
-    puts last_response
-    response = JSON.parse(last_response.body)
-    _(response['message']).must_include 'list'
+    _(response['message']).must_include 'trouble'
   end
 end

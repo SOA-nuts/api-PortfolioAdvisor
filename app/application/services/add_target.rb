@@ -2,6 +2,9 @@
 
 require 'dry/transaction'
 
+COMPANY_YAML = 'spec/fixtures/company.yml'
+COMPANY_LIST = YAML.safe_load(File.read(COMPANY_YAML))
+
 module PortfolioAdvisor
   module Service
     # Transaction to store target from NEWS API to database
@@ -63,7 +66,11 @@ module PortfolioAdvisor
         end
 
         def target_from_news(input)
-            GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], nil)
+            if COMPANY_LIST[0][input[:company_name]].nil?
+                Failure(Response::ApiResult.new(status: :not_found, message: GN_NOT_FOUND_MSG))
+            else
+                GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], nil)
+            end
         rescue StandardError
             raise GN_NOT_FOUND_MSG
         end

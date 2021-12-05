@@ -92,9 +92,7 @@ module PortfolioAdvisor
               path_request = Request::HistoryPath.new(
                 company, request
               )
-
               result = Service::ResultHistory.new.call(requested: path_request)
-
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
@@ -103,6 +101,7 @@ module PortfolioAdvisor
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
 
+              
               Representer::HistoriesList.new(result.value!.message).to_json
             end
           end
