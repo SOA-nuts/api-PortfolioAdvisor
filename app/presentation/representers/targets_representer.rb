@@ -13,7 +13,7 @@ module PortfolioAdvisor
       include Roar::JSON
 
       collection :targets, extend: Representer::Target,
-                            class: Representer::OpenStructWithLinks
+                           class: Representer::OpenStructWithLinks
     end
   end
 end

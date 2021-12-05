@@ -56,7 +56,7 @@ describe 'Test API routes' do
       post 'api/v1/target/0u9awfh4'
 
       _(last_response.status).must_equal 404
-      
+
       response = JSON.parse(last_response.body)
       _(response['message']).must_include 'not'
     end
@@ -82,7 +82,7 @@ describe 'Test API routes' do
     it 'should successfully return target lists' do
       PortfolioAdvisor::Service::AddTarget.new.call(company_name: TOPIC)
 
-      list = ["#{TOPIC}"]
+      list = [TOPIC.to_s]
       encoded_list = PortfolioAdvisor::Request::EncodedTargetList.to_encoded(list)
 
       get "/api/v1/target?list=#{encoded_list}"
@@ -94,7 +94,7 @@ describe 'Test API routes' do
       target = targets.first
       _(target['company_name']).must_equal TOPIC
       _(target['score']).must_equal 2
-      # first record should be the newest 
+      # first record should be the newest
       _(target['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
 
@@ -123,7 +123,6 @@ describe 'Test API routes' do
     it 'should successfully return histories list' do
       PortfolioAdvisor::Service::AddTarget.new.call(company_name: TOPIC)
 
-
       get "/api/v1/history/#{TOPIC}"
       _(last_response.status).must_equal 200
       response = JSON.parse(last_response.body)
@@ -131,13 +130,13 @@ describe 'Test API routes' do
       _(histories.count).must_equal 1
       history = histories.first
       _(history['score']).must_equal 2
-      # first record should be the newest 
+      # first record should be the newest
       _(history['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
   end
 
   it 'should return empty histories list if not found' do
-    get "/api/v1/history/WTFFFFEMMM"
+    get '/api/v1/history/WTFFFFEMMM'
 
     _(last_response.status).must_equal 500
     response = JSON.parse(last_response.body)

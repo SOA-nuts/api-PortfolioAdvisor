@@ -18,7 +18,7 @@ module PortfolioAdvisor
       def call
         Success(
           JSON.parse(decode(@params['list']))
-          #decode(@params['list'])
+          # decode(@params['list'])
         )
       rescue StandardError
         Failure(

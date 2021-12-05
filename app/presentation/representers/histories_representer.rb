@@ -13,7 +13,7 @@ module PortfolioAdvisor
       include Roar::JSON
 
       collection :histories, extend: Representer::History,
-                            class: Representer::OpenStructWithLinks
+                             class: Representer::OpenStructWithLinks
     end
   end
 end

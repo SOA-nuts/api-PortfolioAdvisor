@@ -5,12 +5,10 @@ require 'roda'
 module PortfolioAdvisor
   # Web App
   class App < Roda
-
     plugin :halt
     plugin :flash
     plugin :all_verbs # allows DELETE and other HTTP verbs beyond GET/POST
     use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
-    
 
     use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
@@ -44,7 +42,7 @@ module PortfolioAdvisor
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
               end
-              
+
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
 
@@ -54,7 +52,7 @@ module PortfolioAdvisor
             # POST /target/{company_name}
             routing.post do
               result = Service::AddTarget.new.call(company_name: company)
-              
+
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json
@@ -85,7 +83,7 @@ module PortfolioAdvisor
           end
         end
 
-        routing.on 'history' do 
+        routing.on 'history' do
           routing.on String do |company|
             # GET /history/{company_name}
             routing.get do
@@ -101,13 +99,11 @@ module PortfolioAdvisor
               http_response = Representer::HttpResponse.new(result.value!)
               response.status = http_response.http_status_code
 
-              
               Representer::HistoriesList.new(result.value!.message).to_json
             end
           end
         end
       end
     end
-    # rubocop:enable Metrics/BlockLength
   end
 end

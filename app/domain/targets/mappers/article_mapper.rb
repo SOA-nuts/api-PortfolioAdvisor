@@ -44,7 +44,7 @@ module PortfolioAdvisor
           @data['url']
         end
 
-        def score         
+        def score
           @content_mapper.crawl_content.score
         end
 

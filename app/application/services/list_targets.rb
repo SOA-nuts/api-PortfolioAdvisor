@@ -26,7 +26,7 @@ module PortfolioAdvisor
       end
 
       def retrieve_taregts(input)
-        test = Repository::For.klass(Entity::Target).find_companys(input[:list])
+        Repository::For.klass(Entity::Target).find_companys(input[:list])
           .then { |targets| Response::TargetsList.new(targets) }
           .then { |list| Response::ApiResult.new(status: :ok, message: list) }
           .then { |result| Success(result) }
