@@ -17,6 +17,7 @@ task :respec do
   sh "rerun -c 'rake spec' --ignore 'coverage/*'"
 end
 
+# NOTE: run `rake run:test` in another process
 desc 'Run acceptance tests'
 Rake::TestTask.new(:spec_accept) do |t|
   t.pattern = 'spec/tests/acceptance/*_spec.rb'

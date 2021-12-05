@@ -18,9 +18,9 @@ module PortfolioAdvisor
         content = @gateway.crawl
         build_entity(content)
       end
-
     end
 
+    # Extracts specific parameters from data
     class DataMapper
       def initialize(content)
         @content = content
@@ -32,6 +32,5 @@ module PortfolioAdvisor
         )
       end
     end
-
   end
 end

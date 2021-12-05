@@ -27,7 +27,7 @@ describe 'Tests Google News API library' do
       _(target.articles.length).must_equal CORRECT['articles'].length
     end
 
-    it 'SAD: should raise exception on incorrect project' do
+    it 'SAD: should raise exception on incorrect target' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
