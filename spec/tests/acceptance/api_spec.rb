@@ -140,18 +140,7 @@ describe 'Test API routes' do
     get "/api/v1/history/WTFFFFEMMM"
 
     _(last_response.status).must_equal 500
-
     response = JSON.parse(last_response.body)
-    histories = response['histories']
-    _(histories).must_be_kind_of Array
-    _(histories.count).must_equal 0
-  end
-
-  it 'should return error if no list provided' do
-    get '/api/v1/history'
-    _(last_response.status).must_equal 404
-
-    response = JSON.parse(last_response.body)
-    _(response['message']).must_include 'list'
+    _(response['message']).must_include 'trouble'
   end
 end

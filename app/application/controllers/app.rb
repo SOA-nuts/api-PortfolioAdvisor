@@ -92,7 +92,6 @@ module PortfolioAdvisor
               path_request = Request::HistoryPath.new(
                 company, request
               )
-
               result = Service::ResultHistory.new.call(requested: path_request)
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
