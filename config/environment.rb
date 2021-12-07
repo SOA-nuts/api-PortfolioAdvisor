@@ -18,13 +18,19 @@ module PortfolioAdvisor
     Figaro.load
     def self.config() = Figaro.env
 
-    use Rack::Session::Cookie, secret: config.SESSION_SECRET
-
-    configure :development, :test do
+    configure :development, :test , :app_test do
       require 'pry'; # for breakpoints
+      puts "db file should be at: #{ENV['DB_FILENAME']}"
       ENV['DATABASE_URL'] = "sqlite://#{config.DB_FILENAME}"
+      puts "connecting to: #{ENV['DATABASE_URL']}"
     end
 
+    configure :app_test do
+      require_relative '../spec/helpers/vcr_helper'
+      VcrHelper.setup_vcr
+      VcrHelper.configure_vcr_for_github(recording: :none)
+    end
+    
     # Database Setup
     DB = Sequel.connect(ENV['DATABASE_URL'])
     # deliberately :reek:UncommunicativeMethodName calling method DB
