@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/init.rb": {
         "lines": [
           null,
           null,
@@ -10,14 +10,14 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/config/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/config/init.rb": {
         "lines": [
           null,
           null,
           1
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/config/environment.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -40,10 +40,16 @@
           1,
           null,
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           1,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
           null,
           null,
@@ -54,7 +60,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/init.rb": {
         "lines": [
           null,
           null,
@@ -63,7 +69,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/init.rb": {
         "lines": [
           null,
           null,
@@ -73,7 +79,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/init.rb": {
         "lines": [
           null,
           null,
@@ -85,7 +91,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/entities/article.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/entities/article.rb": {
         "lines": [
           null,
           null,
@@ -113,7 +119,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/entities/content.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/entities/content.rb": {
         "lines": [
           null,
           null,
@@ -139,7 +145,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/entities/target.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/entities/target.rb": {
         "lines": [
           null,
           null,
@@ -171,7 +177,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/mappers/article_mapper.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/mappers/article_mapper.rb": {
         "lines": [
           null,
           null,
@@ -236,7 +242,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/mappers/content_mapper.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/mappers/content_mapper.rb": {
         "lines": [
           null,
           null,
@@ -276,7 +282,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/mappers/target_mapper.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/mappers/target_mapper.rb": {
         "lines": [
           null,
           null,
@@ -334,7 +340,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/articles.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/articles.rb": {
         "lines": [
           null,
           null,
@@ -373,7 +379,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/for.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/for.rb": {
         "lines": [
           null,
           null,
@@ -401,7 +407,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/targets.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/targets.rb": {
         "lines": [
           null,
           null,
@@ -489,7 +495,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/histories.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/histories.rb": {
         "lines": [
           null,
           null,
@@ -522,7 +528,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/domain/targets/repositories/init.rb": {
         "lines": [
           null,
           null,
@@ -531,7 +537,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/init.rb": {
         "lines": [
           null,
           null,
@@ -541,7 +547,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/google_news/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/google_news/init.rb": {
         "lines": [
           null,
           null,
@@ -550,7 +556,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/google_news/google_news_api.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/google_news/google_news_api.rb": {
         "lines": [
           null,
           null,
@@ -623,7 +629,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/crawler/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/crawler/init.rb": {
         "lines": [
           null,
           null,
@@ -632,7 +638,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/crawler/crawler.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/crawler/crawler.rb": {
         "lines": [
           null,
           null,
@@ -668,7 +674,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/init.rb": {
         "lines": [
           null,
           null,
@@ -678,7 +684,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/init.rb": {
         "lines": [
           null,
           null,
@@ -687,7 +693,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/article_orm.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/article_orm.rb": {
         "lines": [
           null,
           null,
@@ -710,7 +716,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/history_orm.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/history_orm.rb": {
         "lines": [
           null,
           null,
@@ -733,7 +739,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/target_orm.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/infrastructure/database/orms/target_orm.rb": {
         "lines": [
           null,
           null,
@@ -757,7 +763,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/init.rb": {
         "lines": [
           null,
           null,
@@ -767,7 +773,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/init.rb": {
         "lines": [
           null,
           null,
@@ -776,7 +782,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/api_result.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/api_result.rb": {
         "lines": [
           null,
           null,
@@ -805,7 +811,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/history_score.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/history_score.rb": {
         "lines": [
           null,
           null,
@@ -817,7 +823,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/target_article_score.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/target_article_score.rb": {
         "lines": [
           null,
           null,
@@ -829,7 +835,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/targets_list.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/responses/targets_list.rb": {
         "lines": [
           null,
           null,
@@ -841,7 +847,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/init.rb": {
         "lines": [
           null,
           null,
@@ -850,7 +856,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/article_representer.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/article_representer.rb": {
         "lines": [
           null,
           null,
@@ -871,7 +877,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/histories_representer.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/histories_representer.rb": {
         "lines": [
           null,
           null,
@@ -894,7 +900,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/openstruct_with_links.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/openstruct_with_links.rb": {
         "lines": [
           null,
           null,
@@ -908,7 +914,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/history_representer.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/history_representer.rb": {
         "lines": [
           null,
           null,
@@ -931,7 +937,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/http_response_representer.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/http_response_representer.rb": {
         "lines": [
           null,
           null,
@@ -974,7 +980,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/target_representer.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/target_representer.rb": {
         "lines": [
           null,
           null,
@@ -1009,7 +1015,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/targets_representer.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/presentation/representers/targets_representer.rb": {
         "lines": [
           null,
           null,
@@ -1032,7 +1038,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/init.rb": {
         "lines": [
           null,
           null,
@@ -1042,7 +1048,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/init.rb": {
         "lines": [
           null,
           null,
@@ -1051,7 +1057,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/history_request_path.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/history_request_path.rb": {
         "lines": [
           null,
           null,
@@ -1071,7 +1077,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/target_list.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/target_list.rb": {
         "lines": [
           null,
           null,
@@ -1126,7 +1132,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/target_request_path.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/requests/target_request_path.rb": {
         "lines": [
           null,
           null,
@@ -1146,7 +1152,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/init.rb": {
         "lines": [
           null,
           null,
@@ -1155,7 +1161,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/add_target.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/add_target.rb": {
         "lines": [
           null,
           null,
@@ -1237,7 +1243,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/list_targets.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/list_targets.rb": {
         "lines": [
           null,
           null,
@@ -1281,7 +1287,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/result_history.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/result_history.rb": {
         "lines": [
           null,
           null,
@@ -1319,7 +1325,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/result_target.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/services/result_target.rb": {
         "lines": [
           null,
           null,
@@ -1362,7 +1368,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/controllers/init.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/controllers/init.rb": {
         "lines": [
           null,
           null,
@@ -1371,7 +1377,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/app/application/controllers/app.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/app/application/controllers/app.rb": {
         "lines": [
           null,
           null,
@@ -1484,7 +1490,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/spec/helpers/vcr_helper.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/spec/helpers/vcr_helper.rb": {
         "lines": [
           null,
           null,
@@ -1523,7 +1529,7 @@
           null
         ]
       },
-      "/mnt/d/SOA/PortfolioAdvisor/api-PortfolioAdvisor/spec/helpers/database_helper.rb": {
+      "/mnt/c/Users/蔡琮鎰/Desktop/PortfolioAdvisor/api-PortfolioAdvisor/spec/helpers/database_helper.rb": {
         "lines": [
           null,
           null,
@@ -1541,6 +1547,6 @@
         ]
       }
     },
-    "timestamp": 1638676014
+    "timestamp": 1638879575
   }
 }
