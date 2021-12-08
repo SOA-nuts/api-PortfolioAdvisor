@@ -70,7 +70,7 @@ end
 
 # Web Scraper
 gem 'nokogiri'
-gem 'open-uri'
+#gem 'open-uri'
 
 # date
 gem 'date', '>= 3.2.1'

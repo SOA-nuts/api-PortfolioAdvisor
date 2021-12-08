@@ -6,7 +6,7 @@ name: API continuous integration
 on:
   # Triggers the workflow for main branch on git push
   push:
-    branches: [develop]
+    branches: [master]
   # Triggers workflow for or any branch on pull requests
   pull_request:
     branches:
@@ -42,7 +42,7 @@ jobs:
 
       - name: Run all specs
         env: # define secrets in Github project -> settings -> secrets
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GOOGLENEWS_TOKEN: ${{ secrets.GH_TOKEN }}
           DB_FILENAME: ${{ secrets.DB_FILENAME }}
           REPOSTORE_PATH: ${{ secrets.REPOSTORE_PATH }}
           API_HOST: ${{ secrets.API_HOST }}
