@@ -18,7 +18,6 @@ module PortfolioAdvisor
       # GET
       routing.root do
         message = "PortfolioAdvisor API v1 at /api/v1/ in #{App.environment} mode"
-        puts "hi"
         result_response = Representer::HttpResponse.new(
           Response::ApiResult.new(status: :ok, message: message)
         )
