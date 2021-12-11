@@ -3,5 +3,6 @@ coverage/*
 !coverage/.resultset.json
 *.db
 _snippets/
+_cache/
 .bundle/
 .rake_tasks~
