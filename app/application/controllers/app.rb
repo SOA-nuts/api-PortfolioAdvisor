@@ -6,7 +6,7 @@ module PortfolioAdvisor
   # Web App
   class App < Roda
     plugin :halt
-    plugin :flash
+    plugin :caching
     plugin :all_verbs # allows DELETE and other HTTP verbs beyond GET/POST
     use Rack::MethodOverride # for other HTTP verbs (with plugin all_verbs)
 
@@ -18,7 +18,6 @@ module PortfolioAdvisor
       # GET
       routing.root do
         message = "PortfolioAdvisor API v1 at /api/v1/ in #{App.environment} mode"
-
         result_response = Representer::HttpResponse.new(
           Response::ApiResult.new(status: :ok, message: message)
         )
@@ -32,6 +31,8 @@ module PortfolioAdvisor
           routing.on String do |company|
             # GET /target/{company_name}
             routing.get do
+              response.cache_control public: true, max_age: 60
+
               path_request = Request::TargetPath.new(
                 company, request
               )

@@ -23,6 +23,11 @@ gem 'dry-monads', '~> 1.4'
 gem 'dry-transaction', '~> 0.13'
 gem 'dry-validation', '~> 1.7'
 
+# Caching
+gem 'rack-cache', '~> 1.13'
+gem 'redis', '~> 4.5'
+gem 'redis-rack-cache', '~> 2.2'
+
 # DOMAIN LAYER
 # Validation
 gem 'dry-struct', '~> 1.4'
@@ -70,7 +75,7 @@ end
 
 # Web Scraper
 gem 'nokogiri'
-#gem 'open-uri'
+# gem 'open-uri'
 
 # date
 gem 'date', '>= 3.2.1'
