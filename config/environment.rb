@@ -20,7 +20,7 @@ module PortfolioAdvisor
     Figaro.load
     def self.config() = Figaro.env
 
-    configure :development, :test , :app_test do
+    configure :development, :test, :app_test do
       require 'pry'; # for breakpoints
       ENV['DATABASE_URL'] = "sqlite://#{config.DB_FILENAME}"
     end
@@ -37,8 +37,8 @@ module PortfolioAdvisor
 
       use Rack::Cache,
           verbose: true,
-          metastore: config.REDISCLOUD_URL + '/0/metastore',
-          entitystore: config.REDISCLOUD_URL + '/0/entitystore'
+          metastore: "#{config.REDISCLOUD_URL}/0/metastore",
+          entitystore: "#{config.REDISCLOUD_URL}/0/entitystore"
     end
 
     configure :app_test do
@@ -46,7 +46,7 @@ module PortfolioAdvisor
       VcrHelper.setup_vcr
       VcrHelper.configure_vcr_for_github(recording: :none)
     end
-    
+
     # Database Setup
     DB = Sequel.connect(ENV['DATABASE_URL'])
     # deliberately :reek:UncommunicativeMethodName calling method DB

@@ -32,7 +32,7 @@ module PortfolioAdvisor
             # GET /target/{company_name}
             routing.get do
               response.cache_control public: true, max_age: 60
-              
+
               path_request = Request::TargetPath.new(
                 company, request
               )
