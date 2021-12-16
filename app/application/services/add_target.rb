@@ -17,6 +17,7 @@ module PortfolioAdvisor
       private
 
       DB_ERR_MSG = 'Having trouble accessing the database'
+      NOT_SUPPORT_MSG = 'this compnay is not on our supporting list'
       GN_NOT_FOUND_MSG = 'Could not find related articels of the compnay on Google News'
 
       def find_target(input)
@@ -66,7 +67,7 @@ module PortfolioAdvisor
 
       def target_from_news(input)
         if COMPANY_LIST[0][input[:company_name]].nil?
-          Failure(Response::ApiResult.new(status: :not_found, message: GN_NOT_FOUND_MSG))
+          Failure(Response::ApiResult.new(status: :not_found, message: NOT_SUPPORT_MSG))
         else
           GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], nil)
         end
