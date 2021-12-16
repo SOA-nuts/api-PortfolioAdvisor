@@ -26,6 +26,9 @@ describe 'Add Target Service Integration Test' do
         .new(GOOGLENEWS_TOKEN)
         .find(TOPIC, nil)
 
+      # target1 = PortfolioAdvisor::GoogleNews::TargetMapper
+      #   .new(GOOGLENEWS_TOKEN)
+      #   .find(TOPIC, nil)
       # WHEN: the service is called with the request form object
       target_made = PortfolioAdvisor::Service::AddTarget.new.call(
         company_name: TOPIC
@@ -47,9 +50,10 @@ describe 'Add Target Service Integration Test' do
 
       target.articles.each do |article|
         found = rebuilt.articles.find do |potential|
-          potential.title == article.title
+          potential.url == article.url
         end
 
+        _(found.title).must_equal article.title
         _(found.score).must_equal article.score
       end
     end
@@ -80,9 +84,10 @@ describe 'Add Target Service Integration Test' do
 
       db_target.articles.each do |article|
         found = rebuilt.articles.find do |potential|
-          potential.title == article.title
+          potential.url == article.url
         end
 
+        _(found.title).must_equal article.title
         _(found.score).must_equal article.score
       end
     end
@@ -90,7 +95,7 @@ describe 'Add Target Service Integration Test' do
     it 'SAD: should gracefully fail for non-existent taregt details' do
       # WHEN: the service is called with non-existent target details
       target_made = PortfolioAdvisor::Service::AddTarget.new.call(
-        company_name: 'haha'
+        company_name: 'bad_company_name'
       )
 
       # THEN: the service should report failure with an error message
