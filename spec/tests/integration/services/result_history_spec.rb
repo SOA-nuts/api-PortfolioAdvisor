@@ -10,7 +10,7 @@ describe 'AppraiseProject Service Integration Test' do
   VcrHelper.setup_vcr
 
   before do
-    VcrHelper.configure_vcr_for_github(recording: :none)
+    VcrHelper.configure_vcr_for_google_news(recording: :none)
   end
 
   after do

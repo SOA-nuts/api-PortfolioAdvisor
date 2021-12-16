@@ -10,7 +10,7 @@ describe 'List Target Service Integration Test' do
   VcrHelper.setup_vcr
 
   before do
-    VcrHelper.configure_vcr_for_github(recording: :none)
+    VcrHelper.configure_vcr_for_google_news(recording: :none)
   end
 
   after do
@@ -31,7 +31,7 @@ describe 'List Target Service Integration Test' do
         .create(gn_target)
 
       # WHEN: we request a list of all watched projects
-      list_request = PortfolioAdvisor::Request::EncodedProjectList
+      list_request = PortfolioAdvisor::Request::EncodedTargetList
         .to_request([TOPIC])
 
       result = PortfolioAdvisor::Service::ListTargets
@@ -40,7 +40,7 @@ describe 'List Target Service Integration Test' do
       # THEN: we should see our project in the resulting list
       _(result.success?).must_equal true
       list = result.value!.message
-      _(list.projects).must_include db_target
+      _(list.targets).must_include db_target
     end
 
     it 'HAPPY: should not return targets that are not being watched' do
@@ -60,7 +60,7 @@ describe 'List Target Service Integration Test' do
       # THEN: it should return an empty list
       _(result.success?).must_equal true
       list = result.value!.message
-      _(list.projects).must_equal []
+      _(list.targets).must_equal []
     end
 
     it 'SAD: should not watched targets if they are not loaded' do
@@ -77,7 +77,7 @@ describe 'List Target Service Integration Test' do
       # THEN: it should return an empty list
       _(result.success?).must_equal true
       list = result.value!.message
-      _(list.projects).must_equal []
+      _(list.targets).must_equal []
     end
   end
 end

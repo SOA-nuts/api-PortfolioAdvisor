@@ -10,7 +10,7 @@ describe 'AppraiseProject Service Integration Test' do
   VcrHelper.setup_vcr
 
   before do
-    VcrHelper.configure_vcr_for_github(recording: :none)
+    VcrHelper.configure_vcr_for_google_news(recording: :none)
   end
 
   after do
@@ -39,9 +39,8 @@ describe 'AppraiseProject Service Integration Test' do
       ).value!.message
 
       # THEN: we should get an analized result
-      target = result[:target]
-      _(target).must_be_kind_of PortfolioAdvisor::Entity::Target
-      _(target.articles.count).must_equal 15
+      _(result.company_name).must_equal TOPIC
+      _(result.articles.count).must_equal 15
     end
 
     it 'SAD: should not give analize for non-existent target' do

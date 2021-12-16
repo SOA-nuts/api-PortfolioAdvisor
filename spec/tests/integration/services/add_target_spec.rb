@@ -70,7 +70,7 @@ describe 'Add Target Service Integration Test' do
 
       # ..and find the same target that was already in the database
       rebuilt = target_made.value!.message
-      _(rebuilt.id).must_equal(db_project.id)
+      _(rebuilt.id).must_equal(db_target.id)
 
       # ..and provide a target entity with the right details
       _(rebuilt.company_name).must_equal(db_target.company_name)
