@@ -29,7 +29,7 @@ module PortfolioAdvisor
             Success(Response::ApiResult.new(status: :ok, message: analysis))
           end
         else
-          Failure(Response::ApiResult.new(status: :not_found, message: NO_TARGET_ERR))
+          Failure(Response::ApiResult.new(status: :not_support, message: NO_TARGET_ERR))
         end
       rescue StandardError
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR))

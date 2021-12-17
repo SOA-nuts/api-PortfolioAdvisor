@@ -21,11 +21,13 @@ module VcrHelper
       config.filter_sensitive_data('<GOOGLENEWS_TOKEN>') { GOOGLENEWS_TOKEN }
       config.filter_sensitive_data('<GITHUB_TOKEN_GOOGLENEWS_TOKEN_ESCESC>') { CGI.escape(GOOGLENEWS_TOKEN) }
     end
-
+    
     VCR.insert_cassette(
       GOOGLENEWS_CASSETTE,
       record: recording,
-      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to, :pageSize)]
+      match_requests_on: [:method,
+         :headers, VCR.request_matchers.uri_without_param(:from, :to, :pageSize)],
+      allow_playback_repeats: true
     )
   end
 
