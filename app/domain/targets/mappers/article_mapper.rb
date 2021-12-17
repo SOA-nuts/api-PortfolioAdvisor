@@ -11,10 +11,19 @@ module PortfolioAdvisor
     class ArticleMapper
       def initialize; end
 
+      # Without concurrency
       def load_several(articles)
         articles.map do |article|
           ArticleMapper.build_entity(article)
         end
+      end
+
+      # With concurrency
+      def load_several_concurrently(articles)
+        articles.map do |article|
+          Concurrent::Promise
+            .execute { ArticleMapper.build_entity(article) }
+        end.map(&:value)
       end
 
       def self.build_entity(article)

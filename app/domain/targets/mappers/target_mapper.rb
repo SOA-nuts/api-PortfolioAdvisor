@@ -1,5 +1,7 @@
 # frozen_string_literal: false
 
+require 'concurrent'
+
 require_relative 'article_mapper'
 
 module PortfolioAdvisor
@@ -41,7 +43,7 @@ module PortfolioAdvisor
         attr_reader :company_name
 
         def articles
-          @article_mapper.load_several(@data)
+          @article_mapper.load_several_concurrently(@data)
         end
 
         def score
