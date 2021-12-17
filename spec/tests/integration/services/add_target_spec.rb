@@ -26,9 +26,6 @@ describe 'Add Target Service Integration Test' do
         .new(GOOGLENEWS_TOKEN)
         .find(TOPIC, nil)
 
-      # target1 = PortfolioAdvisor::GoogleNews::TargetMapper
-      #   .new(GOOGLENEWS_TOKEN)
-      #   .find(TOPIC, nil)
       # WHEN: the service is called with the request form object
       target_made = PortfolioAdvisor::Service::AddTarget.new.call(
         company_name: TOPIC
