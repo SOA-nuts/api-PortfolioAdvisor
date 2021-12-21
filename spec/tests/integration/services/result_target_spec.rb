@@ -26,7 +26,7 @@ describe 'AppraiseProject Service Integration Test' do
       # GIVEN: a valid project that exists locally
       gn_target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC, nil)
+        .find(TOPIC)
       PortfolioAdvisor::Repository::For.entity(gn_target).create(gn_target)
 
       # WHEN: we request to analyze the target

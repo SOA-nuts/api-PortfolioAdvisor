@@ -26,7 +26,7 @@ describe 'List Target Service Integration Test' do
       # GIVEN: a valid project exists locally and is being watched
       gn_target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC, nil)
+        .find(TOPIC)
       db_target = PortfolioAdvisor::Repository::For.entity(gn_target)
         .create(gn_target)
 
@@ -47,7 +47,7 @@ describe 'List Target Service Integration Test' do
       # GIVEN: a valid target exists locally but is not being watched
       gn_target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC, nil)
+        .find(TOPIC)
       PortfolioAdvisor::Repository::For.entity(gn_target)
         .create(gn_target)
 

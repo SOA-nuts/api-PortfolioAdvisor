@@ -60,7 +60,7 @@ module PortfolioAdvisor
       end
 
       def target_update_from_news(target)
-        GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(target.company_name, target.updated_at)
+        GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(target.company_name)
       rescue StandardError
         raise GN_NOT_FOUND_MSG
       end
@@ -69,7 +69,7 @@ module PortfolioAdvisor
         if COMPANY_LIST[0][input[:company_name]].nil?
           Failure(Response::ApiResult.new(status: :not_found, message: NOT_SUPPORT_MSG))
         else
-          GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], nil)
+          GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name])
         end
       rescue StandardError => e
         raise GN_NOT_FOUND_MSG
