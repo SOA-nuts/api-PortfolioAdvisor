@@ -11,8 +11,8 @@ module PortfolioAdvisor
         @gn_token = token
       end
 
-      def article(company, update_at)
-        article_req_url = Request.new(@gn_token).gn_api_path(company, update_at)
+      def article(company)
+        article_req_url = Request.new(@gn_token).gn_api_path(company)
         Request.new(@gn_token).get(article_req_url).parse
       end
 
@@ -25,12 +25,9 @@ module PortfolioAdvisor
           @today = Date.today
         end
 
-        def gn_api_path(company, update_at)
-          result_num = update_at.nil? ? 15 : [(@today - update_at).to_i, 15].min
-
-          to = @today.strftime('%Y-%m-%d')
-          from = (@today - result_num).strftime('%Y-%m-%d')
-          "#{API_GOOGLE_NEWS_EVERYTHING}q=#{company}&from=#{from}&to=#{to}&pageSize=#{result_num}"
+        def gn_api_path(company)
+          time = @today.strftime('%Y-%m-%d')
+          "#{API_GOOGLE_NEWS_EVERYTHING}q=#{company}&from=#{time}&to=#{time}&pageSize=15&language=en"
         end
 
         def get(url)

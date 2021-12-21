@@ -22,7 +22,7 @@ describe 'Tests Google News API library' do
     it 'HAPPY: should provide correct target attributes' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC, nil)
+        .find(TOPIC)
       _(target.company_name).must_equal TOPIC
       _(target.articles.length).must_equal CORRECT['articles'].length
     end
@@ -31,7 +31,7 @@ describe 'Tests Google News API library' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find('', nil)
+        .find('')
       end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::BadRequest
     end
 
@@ -39,7 +39,7 @@ describe 'Tests Google News API library' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
         .new('BAD_TOKEN')
-        .find(TOPIC, nil)
+        .find(TOPIC)
       end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::Unauthorized
     end
   end
@@ -48,7 +48,7 @@ describe 'Tests Google News API library' do
     before do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC, nil)
+        .find(TOPIC)
       @article = target.articles[0]
     end
     it 'HAPPY: should provide correct title' do

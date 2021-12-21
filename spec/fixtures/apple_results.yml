@@ -1,220 +1,233 @@
 ---
 articles:
 - source:
-    id: wired
-    name: Wired
-  author: Lauren Goode
-  title: Apple Finally Remembered What Makes Laptops Great
-  description: To build a MacBook Pro for the future, the company has gone back to
-    what worked in the past.
-  url: https://www.wired.com/story/macbook-pro-ports-magsafe-design/
-  urlToImage: https://media.wired.com/photos/616dcf0aebb034bbe8bec69f/191:100/w_1280,c_limit/Gear-What-Makes-Laptops-Great.jpg
-  publishedAt: '2021-10-18T22:04:54Z'
-  content: The reintroduction of a MagSafe magnetic charging port, a staple in older
-    Macs, is especially welcome if you tend to be clumsy and trip over your charging
-    cables; MagSafe mostly ensures the cable rel… [+3279 chars]
-- source:
-    id: the-verge
-    name: The Verge
-  author: Chaim Gartenberg
-  title: Listen to the sick Mac sound effect song that Apple opened its keynote with
-  description: Apple kicked off its MacBook Pro keynote with an original track by
-    musician A. G. Cook called “Start Up,” which features remixed sound effects from
-    classic and current Apple hardware.
-  url: https://www.theverge.com/tldr/2021/10/18/22733238/start-up-ag-cook-apple-event-song-sound-effects-mac-ipod-hardware
-  urlToImage: https://cdn.vox-cdn.com/thumbor/dLrBEYwKtLsh7olD-b2m-wB9Ue8=/34x0:2364x1220/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22936837/Screen_Shot_2021_10_18_at_5.41.07_PM.png
-  publishedAt: '2021-10-18T22:07:00Z'
-  content: 'Apple kicked off its MacBook Pro keynote a little differently today: with
-    a sweet remix of classic Apple sound effects from the past 45 years of the company’s
-    history, created by artist A. G. Cook — … [+1422 chars]'
-- source:
-    id: engadget
-    name: Engadget
-  author: Kris Holt
-  title: "'NBA 2K22 Arcade Edition' hits Apple Arcade on October 19th"
-  description: "NBA 2K22 Arcade Edition is one of several games that's bound for Apple
-    Arcade\r\n in the coming weeks. The follow-up to NBA 2K21, which is also available
-    on Apple's game subscription service, includes a new mode called The Association.
-    You can become the genera…"
-  url: https://www.engadget.com/apple-arcade-nba-2-k-22-arcade-edition-tiny-wings-141053090.html
-  urlToImage: https://s.yimg.com/os/creatr-uploaded-images/2021-10/8ccde650-2c2c-11ec-bbfb-cd4d34b6f843
-  publishedAt: '2021-10-13T14:10:53Z'
-  content: "NBA 2K22 Arcade Edition is one of several games that's bound for Apple
-    Arcade\r\n in the coming weeks. The follow-up to NBA 2K21, which is also available
-    on Apple's game subscription service, includes … [+1338 chars]"
-- source:
-    id: engadget
-    name: Engadget
-  author: Igor Bonifacic
-  title: Here's everything Apple announced at its fall Mac event
-  description: "On Monday, Apple held its second and likely last hardware event of
-    the fall. “Unleashed” saw the company spend about an hour talking about updates
-    to its Mac and Music product lineups. After the by-the-numbers affair that was
-    the iPhone 13 event\r\n, Monday’s p…"
-  url: https://www.engadget.com/apple-mac-event-2021-highlights-194601228.html
-  urlToImage: https://s.yimg.com/os/creatr-uploaded-images/2021-10/1a161250-304a-11ec-b45b-58ad2b13e5bc
-  publishedAt: '2021-10-18T19:46:01Z'
-  content: On Monday, Apple held its second and likely last hardware event of the
-    fall. Unleashed saw the company spend about an hour talking about updates to its
-    Mac and Music product lineups. After the by-the… [+3326 chars]
+    id: reuters
+    name: Reuters
+  author:
+  title: Digital maps provider MapmyIndia set to rise 51.5% in market debut - Reuters
+  description: Shares of MapmyIndia <a href="https://www.reuters.com/companies/CEIF.NS"
+    target="_blank">(CEIF.NS)</a>, which powers Apple Inc's <a href="https://www.reuters.com/companies/AAPL.O"
+    target="_blank">(AAPL.O)</a> maps in the country, were set to open at a 51.5%
+    p…
+  url: https://www.reuters.com/world/india/digital-maps-provider-mapmyindia-set-rise-515-market-debut-2021-12-21/
+  urlToImage: https://www.reuters.com/pf/resources/images/reuters/reuters-default.png?d=66
+  publishedAt: '2021-12-21T04:40:00Z'
+  content: BENGALURU, Dec 21 (Reuters) - Shares of MapmyIndia (CEIF.NS), which powers
+    Apple Inc's (AAPL.O) maps in the country, were set to open at a 51.5% premium
+    in their market debut on Tuesday, after a bump… [+340 chars]
 - source:
     id:
-    name: Blogspot.com
-  author: noreply@blogger.com (Unknown)
-  title: Watch Apple’s ‘Unleashed’ event live right here
-  description: Apple is set to announce new hardware today. The company is holding
-    a (virtual) keynote at 10 AM PT (1 PM in New York, 6 PM in London, 7 PM in Paris).
-    And you’ll be able to watch the event right here as the company is streaming it
-    live.Rumor has it that the c…
-  url: https://techncruncher.blogspot.com/2021/10/watch-apples-unleashed-event-live-right.html
-  urlToImage: https://blogger.googleusercontent.com/img/a/AVvXsEjS-w1clUYu9ViLllYkQ78XEK8McbryI5iCuI33EkH4XfgL6SYRSNKZwLYZxDykSK7G2v0d2K3ocoQN1JQRlvDD7oiZGgB8jecHMa1abPt1Z0SsRylLy_mGdniYM9Rn_mQChfYlEiZTcf03wyC5YQtREP2v3bQE1HeGZT0_H87qzHp758RPWoa89Zj8sQ=w1200-h630-p-k-no-nu
-  publishedAt: '2021-10-18T10:26:00Z'
-  content: Apple is set to announce new hardware today. The company is holding a (virtual)
-    keynote at 10 AM PT (1 PM in New York, 6 PM in London, 7 PM in Paris). And you’ll
-    be able to watch the event right here… [+1153 chars]
+    name: 9to5Mac
+  author: Filipe Espósito
+  title: Apple expands 3D landmarks on Apple Maps to Philadelphia
+  description: One of the new features of iOS 15 is a 3D experience for Apple Maps,
+    which brings detailed landmarks of major cities in three dimensions. As expected,
+    Apple is now expanding the 3D landmarks in Apple Maps to Philadelphia following
+    a recent expansion to Washin…
+  url: https://9to5mac.com/2021/12/20/apple-expands-3d-landmarks-on-apple-maps-to-philadelphia/
+  urlToImage: https://i1.wp.com/9to5mac.com/wp-content/uploads/sites/6/2021/12/3D-landmarks-Apple-Maps-Philadelphia.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1
+  publishedAt: '2021-12-21T02:14:54Z'
+  content: One of the new features of iOS 15 is a 3D experience for Apple Maps, which
+    brings detailed landmarks of major cities in three dimensions. As expected, Apple
+    is now expanding the 3D landmarks in Apple… [+1583 chars]
 - source:
     id:
-    name: Blogspot.com
-  author: noreply@blogger.com (Unknown)
-  title: The Apple Watch Series 7 officially ditches the hidden diagnostic port
-  description: The Apple Watch’s diagnostic port has been a mysterious part of the
-    wearable lineup since its first model, but the new Series 7 officially ditches
-    the six-pin port entirely.First noted by MacRumors, the lack of a port can be
-    seen when you remove the bottom st…
-  url: https://techncruncher.blogspot.com/2021/10/the-apple-watch-series-7-officially.html
-  urlToImage: https://blogger.googleusercontent.com/img/a/AVvXsEjTsjJYNnOUU4Bq6966EhD0uAcFF0qinm0VR_EURGxpMrG7J4vWZ4KQc1Tv7bTTiMjDy91_q-VQ_3Wa2gsCdxSQkwmCkiinsxCFX4hsxTlg-3kkjBKyLeeJLfhkpgvWS34jMsxw2vnpnSqs4qa-C44UjTrhrpSa7tBYdVuEPb74GDa8stUuA1Bk9i8k9g=w1200-h630-p-k-no-nu
-  publishedAt: '2021-10-14T11:30:00Z'
-  content: "The Apple Watch’s diagnostic port has been a mysterious part of the wearable
-    lineup since its first model, but the new Series 7 officially ditches the six-pin
-    port entirely.\r\nFirst noted by MacRumors… [+1634 chars]"
-- source:
-    id: the-verge
-    name: The Verge
-  author: Dieter Bohn
-  title: 'Apple Watch Series 7 review: time and time again'
-  description: It’s good, but if your Apple Watch is fine, you’re good, too.
-  url: https://www.theverge.com/22722533/apple-watch-series-7-review-screen-watchos-features
-  urlToImage: https://cdn.vox-cdn.com/thumbor/jO3XOGtd6YX1iE7O4Z0j_4njDKo=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22908906/vpavic_211006_4796_0061.jpg
-  publishedAt: '2021-10-13T13:00:00Z'
-  content: If you buy something from a Verge link, Vox Media may earn a commission.
-    See our ethics statement.The most important questions to ask about the new Apple
-    Watch Series 7 arent about the Apple Watch Se… [+10699 chars]
+    name: The Guardian
+  author: Samuel Gibbs Consumer technology editor
+  title: 'Virtual Christmas: how to use technology to still have fun'
+  description: From video calls to group movies and multiplayer games, here are some
+    ideas to make a remote Christmas more funWith Omicron spreading in the UK the
+    potential for disruptions to Christmas plans are high, whether you’re limiting
+    your contacts or have been force…
+  url: https://amp.theguardian.com/technology/2021/dec/21/virtual-christmas-how-to-use-technology-to-still-have-fun
+  urlToImage: https://i.guim.co.uk/img/media/a1f4d9015834d201b5853ac5725e9f32b145edf7/0_120_5275_3165/master/5275.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=7f486209f6cb6de0661ce5ad60e24db7
+  publishedAt: '2021-12-21T07:00:06Z'
+  content: With Omicron spreading in the UK the potential for disruptions to Christmas
+    plans are high, whether youre limiting your contacts or have been forced to isolate.
+    But the fact you cant meet in person d… [+6271 chars]
 - source:
     id:
-    name: Blogspot.com
-  author: noreply@blogger.com (Unknown)
-  title: Apple activist reportedly fired after deleting files on work device
-  description: "Janneke Parrish, an Austin-based employee who worked on Apple Maps,
-    is a leader of #AppleToo.\r\nAn Apple program manager who posted anonymous stories
-    of discrimination against employees at the tech giant has reportedly been canned. Janneke
-    Parrish, an Austin-b…"
-  url: https://techncruncher.blogspot.com/2021/10/apple-activist-reportedly-fired-after.html
-  urlToImage: https://blogger.googleusercontent.com/img/a/AVvXsEgky37UIB4c3WmmeKe-ACVU6NAyZ_29ioSIXVO9fqOt4Ko7NC_Lam0c8hdJs12oiHmijNmM7eFZcHS3verB3-K_8dBSaQuLZdite4OEkQ0gG4MNf1S8ThUEj6MLZqbeg6g_UW_C4zP5svQ1cwoi6p7jvwF26IAW2r04A3zZzVow8GvCVWyoKarTdaRP6Q=w1200-h630-p-k-no-nu
-  publishedAt: '2021-10-17T09:12:00Z'
-  content: "Janneke Parrish, an Austin-based employee who worked on Apple Maps, is
-    a leader of #AppleToo.\r\nAn Apple program manager who posted anonymous stories
-    of discrimination against employees at the tech gi… [+792 chars]"
+    name: 9to5Mac
+  author: Filipe Espósito
+  title: Apple stops signing iOS 15.1.1, blocking downgrade from iOS 15.2
+  description: Following the release of iOS 15.2 to all users last week, Apple today
+    stopped signing iOS 15.1.1 for iPhone 13 models and iOS 15.1 for older iPhone
+    models. This means that users who updated their devices to iOS 15.2 can no longer
+    downgrade to iOS 15.1.1 or iO…
+  url: https://9to5mac.com/2021/12/20/apple-stops-signing-ios-15-1-1-blocking-downgrade-from-ios-15-2/
+  urlToImage: https://i1.wp.com/9to5mac.com/wp-content/uploads/sites/6/2021/10/iOS-15.1.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1
+  publishedAt: '2021-12-21T03:58:19Z'
+  content: Following the release of iOS 15.2 to all users last week, Apple today stopped
+    signing iOS 15.1.1 for iPhone 13 models and iOS 15.1 for older iPhone models.
+    This means that users who updated their dev… [+1283 chars]
 - source:
     id:
-    name: Blogspot.com
-  author: noreply@blogger.com (Unknown)
-  title: Apple releases iOS 15.0.2 with some Find My fixes
-  description: Apple released iOS 15.0.2 on Monday, and it has some important bug
-    fixes, including a couple specific to Find My. For the iPad and iPhone, it also
-    fixes a security flaw that Apple says may already be under attack, so update ASAP.
-    Credited to an anonymous rese…
-  url: https://techncruncher.blogspot.com/2021/10/apple-releases-ios-1502-with-some-find.html
-  urlToImage: https://blogger.googleusercontent.com/img/a/AVvXsEiAl2P-xRgdjp9ZAqqrOnmE_YVNTfyp3Dn2cUg5BdmfFXdbqsvKtv6EnUIi4_YRJbU299LopV7SoDzGlbH3rZW97ygzVAeTwqp0Ih-NLY6mMzoDsaA4mcgMBE5vkjh6uPP8l8EUJq3qGm53zwwrKkZ_ks2j5XsTpm5IgkXuHhNCpdykJCN3kioKk3KmCg=w1200-h630-p-k-no-nu
-  publishedAt: '2021-10-11T19:27:00Z'
-  content: Apple released iOS 15.0.2 on Monday, and it has some important bug fixes,
-    including a couple specific to Find My. For the iPad and iPhone, it also fixes
-    a security flaw that Apple says may already be… [+1740 chars]
-- source:
-    id: the-verge
-    name: The Verge
-  author: Jon Porter
-  title: Apple announces October 18th event after months of Mac rumors
-  description: Apple’s next big event will take place on October 18th, according to
-    invites it sent out today. The company is widely expected to launch a pair of
-    new MacBooks, a Mac Mini, and a pair of third-generation AirPods.
-  url: https://www.theverge.com/2021/10/12/22722112/apple-october-2021-event-rumors-macbook-mac-mini-airpods-m1x
-  urlToImage: https://cdn.vox-cdn.com/thumbor/iE5kHD496F7anPwRiwX43Ol6tD4=/0x78:1424x824/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22920858/image__7_.jpg
-  publishedAt: '2021-10-12T16:10:44Z'
-  content: "New MacBooks, a Mac Mini, and AirPods are anticipated\r\nApple October
-    18th event invitation\r\nImage: Apple\r\nApples next hardware event will take
-    place on October 18th, according to invites it sent out … [+1708 chars]"
-- source:
-    id: the-verge
-    name: The Verge
-  author: Jay Peters
-  title: Apple releases iOS 15.0.2 with some Find My fixes
-  description: Apple released iOS 15.0.2 on Monday, and it has some important bug
-    fixes, including a couple specific to Find My. The company released iPadOS 15.0.2
-    and watchOS 8.0.1 as well.
-  url: https://www.theverge.com/2021/10/11/22721014/apple-ios-ipados-15-0-2-find-my-fixes-watchos-8-0-1
-  urlToImage: https://cdn.vox-cdn.com/thumbor/1MHeGlyH2FIzzg7btOeiSTuOxBA=/0x146:2040x1214/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/22864032/cgartenberg_210917_4762_0003.jpg
-  publishedAt: '2021-10-11T17:32:39Z'
-  content: "watchOS 8.0.1 is out, too\r\nPhoto by Chaim Gartenberg / The Verge\r\nApple
-    released iOS 15.0.2 on Monday, and it has some important bug fixes, including
-    a couple specific to Find My. On my iPhone 12 Min… [+1477 chars]"
-- source:
-    id: engadget
-    name: Engadget
-  author: Devindra Hardawar
-  title: 'Engadget Podcast: Diving into the Apple Watch Series 7 and Twitch''s big
-    hack'
-  description: This week, Cherlynn and Devindra chat about what to expect from Apple’s
-    upcoming event (new MacBooks, baby!), as well as all of the other launch shindigs
-    from Google, Samsung and Sony. Cherlynn also tells all about her Apple Watch Series
-    7 review, and why she…
-  url: https://www.engadget.com/engadget-podcast-apple-watch-series-7-macbook-twitch-hack-123000091.html
-  urlToImage: https://s.yimg.com/os/creatr-uploaded-images/2020-05/f43b53b0-909f-11ea-87fd-d8d721459924
-  publishedAt: '2021-10-15T12:30:00Z'
-  content: This week, Cherlynn and Devindra chat about what to expect from Apples
-    upcoming event (new MacBooks, baby!), as well as all of the other launch shindigs
-    from Google, Samsung and Sony. Cherlynn also t… [+743 chars]
-- source:
-    id: engadget
-    name: Engadget
-  author: Jon Fingas
-  title: Ecobee’s smart thermostat now supports Siri voice control
-  description: Apple promised that Siri would reach third-party devices back at WWDC,
-    and now it's clear just what that will look like. Ecobee has started rolling out
-    an update that brings Siri to the SmartThermostat. You'll need a HomePod mini
-    to serve as a hub, but you'll…
-  url: https://www.engadget.com/ecobee-smartthermostat-siri-support-130028757.html
-  urlToImage: https://s.yimg.com/os/creatr-uploaded-images/2021-10/18e829e0-27a8-11ec-bff8-34b4722f1adc
-  publishedAt: '2021-10-12T13:00:28Z'
-  content: Apple promised that Siri would reach third-party devices back at WWDC,
-    and now it's clear just what that will look like. Ecobee has started rolling out
-    an update that brings Siri to the SmartThermost… [+763 chars]
+    name: Boing Boing
+  author: Boing Boing's Shop
+  title: Start 2022 with this $59 training that will jumpstart a career as an IT professional
+  description: The average salary of IT personnel is over $91,000 a year. And job
+    prospects are expected to rise by 13 percent before 2030. Considering those numbers,
+    anyone who doesn't feel fulfilled or secure in their career should take a long,
+    hard look at a pivot to inf…
+  url: https://boingboing.net/2021/12/20/start-2022-with-this-59-training-that-will-jumpstart-a-career-as-an-it-professional.html
+  urlToImage: https://i0.wp.com/boingboing.net/wp-content/uploads/2021/12/sale_309565_article_image.jpg?fit=1200%2C800&ssl=1
+  publishedAt: '2021-12-21T05:57:00Z'
+  content: The average salary of IT personnel is over $91,000 a year. And job prospects
+    are expected to rise by 13 percent before 2030. Considering those numbers, anyone
+    who doesn't feel fulfilled or secure in … [+2131 chars]
 - source:
     id:
-    name: Lifehacker.com
-  author: Jake Peterson
-  title: Download Your iPhone's Latest Security Update ASAP
-  description: When you know there aren’t many new features to be found, ignoring
-    software update notifications in favor of doing literally anything else can be
-    all too easy. We’re here to implore you to update this latest one, however, since
-    Apple’s latest software is esse…
-  url: https://lifehacker.com/download-your-iphones-latest-security-update-asap-1847845362
-  urlToImage: https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/10e1a87a87d6d21619d7d5f240a1ef09.jpg
-  publishedAt: '2021-10-12T14:00:00Z'
-  content: When you know there arent many new features to be found, ignoring software
-    update notifications in favor of doing literally anything else can be all too
-    easy. Were here to implore you to update this … [+2688 chars]
+    name: iMore
+  author: Joe Wituschek
+  title: Apple nearly doubled its market share with the HomePod mini
+  description: |-
+    What you need to know
+
+
+    Apple has doubled its share of the smart speaker market.
+    The release of the HomePod mini is driving Apple's performance.
+
+
+    The HomePod mini is doing what the HomePod couldn't.
+
+    Apple's HomePod mini is doing better than probably anyone …
+  url: https://www.imore.com/apple-nearly-doubled-its-market-share-homepod-mini
+  urlToImage: https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2021/01/homepod-mini-siri.jpg
+  publishedAt: '2021-12-21T00:08:44Z'
+  content: "Apple's HomePod mini is doing better than probably anyone thought.\r\nAccording
+    to new data from Strategy Analytics, Apple nearly doubled its share of the smart
+    speaker market with its tiny smart speak… [+2051 chars]"
+- source:
+    id: reuters
+    name: Reuters
+  author:
+  title: 'Analysis: Malaysia''s labour abuse allegations a risk to export growth model
+    - Reuters'
+  description: Malaysia's government and companies must address mounting allegations
+    of workplace abuse of migrant labourers who fuel the country's economy, or face
+    risks to its export-reliant growth model, experts warn.
+  url: https://www.reuters.com/markets/commodities/malaysias-labour-abuse-allegations-risk-export-growth-model-2021-12-21/
+  urlToImage: https://www.reuters.com/resizer/YXBGew4C0liZjFMHmKBBxiBLxbs=/1200x628/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/OV4O5QVWKJLGLPHUXH6AZ273Q4.jpg
+  publishedAt: '2021-12-21T01:28:00Z'
+  content: KUALA LUMPUR, Dec 21 (Reuters) - Malaysia's government and companies must
+    address mounting allegations of workplace abuse of migrant labourers who fuel
+    the country's economy, or face risks to its exp… [+6697 chars]
 - source:
     id:
-    name: Blogspot.com
-  author: noreply@blogger.com (Unknown)
-  title: Apple announces October 18th event after months of Mac rumors
-  description: Apple’s next hardware event will take place on October 18th, according
-    to invites it sent out today. The company is widely expected to use its second
-    fall event to launch a pair of new MacBooks, a redesigned higher-end Mac Mini,
-    and possibly a pair of third-g…
-  url: https://techncruncher.blogspot.com/2021/10/apple-announces-october-18th-event.html
-  urlToImage: https://blogger.googleusercontent.com/img/a/AVvXsEgQkrogAqPOJ-kztZUANLXe5T4yrUX2oUexnWa4FTHwjrdLwB_DTsMhitjc1JTD59z0z3djD6o9YggTyRviw6io8nHeCzHDQRyZ0W7lnktOlrSU0U3M8sDc67T7jxGJiZD9CQwsjQIKHkS7aMH7oGWC9nQ58xYS0RvgJsEpIAPwlB5f7z7KdI-z1hdGNA=w1200-h630-p-k-no-nu
-  publishedAt: '2021-10-12T18:45:00Z'
-  content: Apple’s next hardware event will take place on October 18th, according
-    to invites it sent out today. The company is widely expected to use its second
-    fall event to launch a pair of new MacBooks, a re… [+1933 chars]
+    name: 9to5Mac
+  author: Filipe Espósito
+  title: TikTok testing new way to let users repost content on the social network
+  description: The popular social network TikTok is known for its viral short videos,
+    but it has never offered an easy way to let users repost content to others. Now
+    it seems that this is about to change as TikTok has been testing a new “Repost”
+    button for users to share Ti…
+  url: https://9to5mac.com/2021/12/20/tiktok-testing-new-way-to-let-users-repost-content-on-the-social-network/
+  urlToImage: https://i2.wp.com/9to5mac.com/wp-content/uploads/sites/6/2021/12/TikTok.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1
+  publishedAt: '2021-12-21T00:43:42Z'
+  content: The popular social network TikTok is known for its viral short videos,
+    but it has never offered an easy way to let users repost content to others. Now
+    it seems that this is about to change as TikTok … [+1308 chars]
+- source:
+    id:
+    name: Techmeme.com
+  author:
+  title: MaymyIndia, which provides mapping data to Apple, Amazon, and others, rises
+    53% on market debut, opening at $20.88 per share after listing at $13.64 (Moneycontrol)
+  description: |-
+    Moneycontrol:
+    MaymyIndia, which provides mapping data to Apple, Amazon, and others, rises 53% on market debut, opening at $20.88 per share after listing at $13.64  —  CE Info Systems, popularly known for its brand MapmyIndia, made a strong debut on the bourse…
+  url: https://www.techmeme.com/211221/p3
+  urlToImage: https://images.moneycontrol.com/static-mcnews/2017/05/BSE_Sensex_Markets_Stock_market_Dalal_street1-770x433.jpg
+  publishedAt: '2021-12-21T06:45:01Z'
+  content: "CB Insights Newsletter\r\n724,948 subscribers get our free newsletter
+    to stay a step ahead on technology trends, venture capital, startups, and the
+    industries of tomorrow."
+- source:
+    id: bloomberg
+    name: Bloomberg
+  author: Saritha Rai
+  title: MapmyIndia Shares Soar 54% in First Day of Trading After IPO
+  description: The stock of MapmyIndia, a digital mapping company that works with
+    Apple Inc. and Amazon.com Inc., surged more than 50% on the first day of trading
+    after the startup’s initial public offering.
+  url: https://www.bloomberg.com/news/articles/2021-12-21/mapmyindia-shares-soar-54-in-first-day-of-trading-after-ipo
+  urlToImage: https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ie39bbsCwQ3Q/v0/1200x800.jpg
+  publishedAt: '2021-12-21T04:45:27Z'
+  content: "The stock of \r\nMapmyIndia, a digital mapping company that works with
+    \r\nApple Inc. and \r\nAmazon.com Inc., surged more than 50% on the first day
+    of trading after the startups initial public offering. \r… [+129 chars]"
+- source:
+    id:
+    name: Forbes
+  author: "Anthony Karcz, Senior Contributor, \n Anthony Karcz, Senior Contributor\n
+    https://www.forbes.com/sites/anthonykarcz/"
+  title: Apple Gives Testers A Mystery Gift With iOS 15.3 Public Beta 1
+  description: What's in iOS 15.3? Apple doesn't seem all that interested in letting
+    beta testers know.
+  url: https://www.forbes.com/sites/anthonykarcz/2021/12/20/apple-gives-testers-a-mystery-gift-with-ios-153-public-beta-1/
+  urlToImage: https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F61c1199a33a68fb73416cc45%2F0x0.jpg
+  publishedAt: '2021-12-21T00:03:30Z'
+  content: "iOS 15.3 Public Beta 1\r\nAnthony Karcz\r\nLast week was a weird one for
+    beta testers. iOS 15.2 was released as expected and then, the end of the week
+    came and went without any sign of the next beta cycl… [+2800 chars]"
+- source:
+    id:
+    name: Ubergizmo
+  author: Tyler Lee
+  title: Apple Silicon To Be Upgraded On An 18 Month Cycle
+  description: Apple first announced the Apple Silicon chipset series in 2020, and
+    then they launched the M1 towards the end of last year. However, many who expected
+    to see the M2 this year were instead greeted with a souped up version of the M1
+    in the form of the M1 Max an…
+  url: https://www.ubergizmo.com/2021/12/apple-silicon-upgrade-18-month-cycle/
+  urlToImage: https://i0.wp.com/cdnssl.ubergizmo.com/wp-content/uploads/2021/10/Apple_M1-Pro-M1-Max_M1-Max_10182021.jpg
+  publishedAt: '2021-12-21T03:35:40Z'
+  content: Apple first announced the Apple Silicon chipset series in 2020, and then
+    they launched the M1 towards the end of last year. However, many who expected
+    to see the M2 this year were instead greeted wit… [+1193 chars]
+- source:
+    id:
+    name: iphonehacks.com
+  author: Rajesh Pandey
+  title: Apple Stops Signing iOS 15.1 and iOS 15.1.1, Downgrading from iOS 15.2 No
+    Longer Possible
+  description: Following the release of iOS 15.2 last week, Apple has stopped signing
+    iOS 15.1.1 and iOS 15.1/iPadOS 15.1 for all compatible iPhones and iPads. This
+    means it is no longer possible to downgrade your iPhone or iPad back to iOS 15.1/iOS
+    15.1.1 from iOS 15.2 unl…
+  url: https://www.iphonehacks.com/2021/12/apple-stops-signing-ios-15-1-1.html
+  urlToImage: https://www.iphonehacks.com/wp-content/uploads/2021/09/ios-15-features.jpg
+  publishedAt: '2021-12-21T03:40:52Z'
+  content: Following the release of iOS 15.2 last week, Apple has stopped signing
+    iOS 15.1.1 and iOS 15.1/iPadOS 15.1 for all compatible iPhones and iPads. This
+    means it is no longer possible to downgrade your … [+1266 chars]
+- source:
+    id:
+    name: Ubergizmo
+  author: Tyler Lee
+  title: Apple Could Be Looking To Develop A 15-inch iPad
+  description: Remember back in the day when Apple’s iPads would top out at around
+    9-inches in size? Then Apple introduced the iPad Pro with its 12.9-inch display,
+    which felt massive at the time given that Apple also had 13-inch laptops , but
+    many got used to the larger dis…
+  url: https://www.ubergizmo.com/2021/12/apple-could-develop-15-inch-ipad/
+  urlToImage: https://i0.wp.com/cdnssl.ubergizmo.com/wp-content/uploads/2021/04/apple_ipad-pro-spring21_hero_04202021.jpg
+  publishedAt: '2021-12-21T00:57:32Z'
+  content: Remember back in the day when Apple’s iPads would top out at around 9-inches
+    in size? Then Apple introduced the iPad Pro with its 12.9-inch display, which
+    felt massive at the time given that Apple al… [+1175 chars]
+- source:
+    id:
+    name: Ubergizmo
+  author: Tyler Lee
+  title: HomePod Mini Helped Apple Double Its Smart Speaker Market Share
+  description: Apple was kind of late to the smart speaker game when they launched
+    the HomePod, allowing companies like Amazon and Google to pretty much snap up
+    the majority of the market share. However, it did not help that the original HomePod
+    was kind of a flop. With its…
+  url: https://www.ubergizmo.com/2021/12/homepod-mini-double-smart-speaker-market/
+  urlToImage: https://i0.wp.com/cdnssl.ubergizmo.com/wp-content/uploads/2020/10/Apple_homepod-mini-white-iphone-pairing_10132020.jpg
+  publishedAt: '2021-12-21T01:59:17Z'
+  content: Apple was kind of late to the smart speaker game when they launched the
+    HomePod, allowing companies like Amazon and Google to pretty much snap up the
+    majority of the market share. However, it did not… [+1364 chars]
