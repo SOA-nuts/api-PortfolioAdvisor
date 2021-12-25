@@ -17,46 +17,22 @@ describe 'Tests Yahoo Finance API library' do
     DateTime.strptime(timestamp, '%Y-%m-%dT%H:%M:%S%z')
   end
 
-  describe 'Target info' do
-    it 'HAPPY: should provide correct target attributes' do
-      target = PortfolioAdvisor::GoogleNews::TargetMapper
-        .new(GOOGLENEWS_TOKEN, YAHOO_TOKEN)
-        .find(COMPANY_NAME, nil, COMPANY_SYMBOL)
-      # _(target.company_name).must_equal COMPANY_NAME
-      _(target.bench_price).must_equal CORRECT_FINANCE['targetMedianPrice']['raw']
+  describe 'Finance info' do
+    it 'HAPPY: should provide correct symbol' do
+      summary = PortfolioAdvisor::YahooFinance::FinanceMapper
+        .new(YAHOO_TOKEN)
+        .find(COMPANY_SYMBOL)
+      _(summary.bench_price).must_equal CORRECT_FINANCE['financialData']['targetMedianPrice']['raw']
+      _(summary.market_price).must_equal CORRECT_FINANCE['financialData']['currentPrice']['raw']
+      _(summary.grow_score).must_equal CORRECT_FINANCE['financialData']['revenueGrowth']['raw']
     end
 
-    # it 'SAD: should raise exception on incorrect target' do
-    #   _(proc do
-    #     PortfolioAdvisor::GoogleNews::TargetMapper
-    #     .new(GOOGLENEWS_TOKEN)
-    #     .find('', nil)
-    #   end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::BadRequest
-    # end
-
-    # it 'SAD: should raise exception when unauthorized' do
-    #   _(proc do
-    #     PortfolioAdvisor::GoogleNews::TargetMapper
-    #     .new('BAD_TOKEN')
-    #     .find(TOPIC, nil)
-    #   end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::Unauthorized
-    # end
+    it 'SAD: should raise exception on incorrect target' do
+      _(proc do
+        PortfolioAdvisor::YahooFinance::FinanceMapper
+        .new(YAHOO_TOKEN)
+        .find('')
+      end).must_raise PortfolioAdvisor::YahooFinance::Api::Response::NotFound
+    end
   end
-
-  # describe 'article information' do
-  #   before do
-  #     target = PortfolioAdvisor::GoogleNews::TargetMapper
-  #       .new(GOOGLENEWS_TOKEN)
-  #       .find(TOPIC, nil)
-  #     @article = target.articles[0]
-  #   end
-  #   it 'HAPPY: should provide correct title' do
-  #     _(@article.title).wont_be_nil
-  #     _(@article.title).must_equal CORRECT['articles'][0]['title']
-  #   end
-  #   it 'HAPPY: should provide correct publish dates' do
-  #     _(@article.published_at).wont_be_nil
-  #     _(@article.published_at).must_equal get_date(CORRECT['articles'][0]['publishedAt'])
-  #   end
-  # end
 end

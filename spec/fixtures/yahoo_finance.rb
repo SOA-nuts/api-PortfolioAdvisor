@@ -25,5 +25,5 @@ yahoo_response[yahoo_url] = call_yahoo_url(yahoo_token, yahoo_url)
 report = yahoo_response[yahoo_url].parse
 
 # puts report['quoteSummary']['result']
-yahoo_results['financialData'] = report['quoteSummary']['result']
+yahoo_results['financialData'] = report['quoteSummary']['result'][0]['financialData']
 File.write('AAPL_summary.yml', yahoo_results.to_yaml)

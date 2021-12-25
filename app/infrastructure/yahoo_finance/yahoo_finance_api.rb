@@ -47,10 +47,12 @@ module PortfolioAdvisor
         Unauthorized = Class.new(StandardError)
         NotFound = Class.new(StandardError)
         BadRequest = Class.new(StandardError)
+        NotAcceptable = Class.new(StandardError)
         HTTP_ERROR = {
           400 => BadRequest,
           401 => Unauthorized,
-          404 => NotFound
+          404 => NotFound,
+          406 => NotAcceptable
         }.freeze
 
         def successful?
