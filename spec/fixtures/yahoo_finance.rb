@@ -17,16 +17,13 @@ def call_yahoo_url(token, url)
 end
 
 yahoo_response = {}
+yahoo_results = {}
 
 # try some business request
 yahoo_url = yahoofinance_api_path('AAPL?modules=financialData')
 yahoo_response[yahoo_url] = call_yahoo_url(yahoo_token, yahoo_url)
 report = yahoo_response[yahoo_url].parse
 
-# report.each do |key, value|
-#   puts "#{key}: #{value}"
-# end
-
-puts report['quoteSummary'][0]
-# gn_results['articles'] = project['articles']
-# File.write('apple_results.yml', gn_results.to_yaml)
+# puts report['quoteSummary']['result']
+yahoo_results['financialData'] = report['quoteSummary']['result']
+File.write('AAPL_summary.yml', yahoo_results.to_yaml)

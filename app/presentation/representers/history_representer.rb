@@ -13,7 +13,7 @@ module PortfolioAdvisor
       include Roar::Decorator::HypermediaConsumer
 
       property :updated_at
-      property :score
+      property :article_score
     end
   end
 end

@@ -7,6 +7,7 @@ require 'webmock'
 module VcrHelper
   CASSETTES_FOLDER = 'spec/fixtures/cassettes'
   GOOGLENEWS_CASSETTE = 'google_news_api'
+  YAHOO_CASSETTE = 'yahoo_finance_api'
 
   def self.setup_vcr
     VCR.configure do |vcr_config|
@@ -25,7 +26,22 @@ module VcrHelper
     VCR.insert_cassette(
       GOOGLENEWS_CASSETTE,
       record: recording,
-      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to, :pageSize)]
+      match_requests_on: [:method, :headers, VCR.request_matchers.uri_without_param(:from, :to, :pageSize)],
+      allow_playback_repeats: true
+    )
+  end
+
+  def self.configure_vcr_for_yahoo_finance(recording: :new_episodes)
+    VCR.configure do |config|
+      config.filter_sensitive_data('<YAHOO_TOKEN>') { YAHOO_TOKEN }
+      config.filter_sensitive_data('<GITHUB_TOKEN_YAHOO_TOKEN_ESCESC>') { CGI.escape(YAHOO_TOKEN) }
+    end
+
+    VCR.insert_cassette(
+      YAHOO_CASSETTE,
+      record: recording,
+      match_requests_on: %i[method uri headers],
+      allow_playback_repeats: true
     )
   end
 

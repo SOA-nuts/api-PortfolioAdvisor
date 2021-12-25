@@ -14,7 +14,10 @@ module PortfolioAdvisor
       attribute :company_name,      Strict::String
       attribute :articles,          Strict::Array.of(Article)
       attribute :updated_at,        Strict::Date
-      attribute :score,             Strict::Integer
+      attribute :article_score,     Strict::Float
+      attribute :bench_price,       Strict::Float
+      attribute :grow_score,        Strict::Float  
+      attribute :market_price,      Strict::Float
 
       def to_attr_hash
         to_hash.reject { |key, _| %i[articles].include? key }

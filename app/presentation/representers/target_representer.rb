@@ -16,7 +16,7 @@ module PortfolioAdvisor
 
       property :company_name
       property :updated_at
-      property :score
+      property :article_score
       collection :articles, extend: Representer::Article, class: OpenStruct
 
       link :self do

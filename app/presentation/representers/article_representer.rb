@@ -11,7 +11,7 @@ module PortfolioAdvisor
       property :title
       property :url
       property :published_at
-      property :score
+      property :article_score
     end
   end
 end
