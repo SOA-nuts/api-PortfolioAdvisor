@@ -29,6 +29,7 @@ module PortfolioAdvisor
           @company_name = company
           @data = data
           @article_mapper = ArticleMapper.new
+          @article_score = 0
         end
 
         def build_entity
@@ -36,19 +37,27 @@ module PortfolioAdvisor
             company_name: company_name,
             articles: articles,
             updated_at: Date.today,
-            score: score
+            score: @article_score
           )
         end
 
         attr_reader :company_name
 
         def articles
-          @article_mapper.load_several_concurrently(@data)
+          sum = 0
+          article_num = 0
+          puts @data
+          articless = @article_mapper.load_several(@data)
+          articless.each do |article|
+            sum = sum + article.score
+            article_num += 1
+          end
+          @article_score = sum/article_num 
+          articless
         end
 
         def score
-          # todo
-          2
+          10
         end
       end
     end
