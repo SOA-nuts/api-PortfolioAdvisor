@@ -8,10 +8,11 @@ Sequel.migration do
       primary_key :id
       foreign_key :company_id, :targets
 
-      Float       :article_score
+      Date        :updated_at
       Float       :market_price
-      Float       :bench_price
-      Float       :grow_score
+      Float       :long_advice_price
+      Float       :mid_advice_price
+      Float       :short_advice_price
     end
   end
 end

@@ -38,7 +38,6 @@ module PortfolioAdvisor
 
       def self.create(entity)
         raise 'Target already exists' if find(entity)
-
         PersistTarget.new(entity).call
       end
 
@@ -63,6 +62,7 @@ module PortfolioAdvisor
             end
             @entity.articles.each do |article|
               db_target.add_article(Articles.db_find_or_create(article))
+              Articles.db_find_or_create(article)
             end
           end
         end

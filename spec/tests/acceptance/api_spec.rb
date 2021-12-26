@@ -53,7 +53,7 @@ describe 'Test API routes' do
     end
 
     it 'should report error for invalid targets' do
-      post 'api/v1/target/0u9awfh4'
+      post 'api/v1/target/BadCompanyName'
 
       _(last_response.status).must_equal 404
 
@@ -93,13 +93,13 @@ describe 'Test API routes' do
       _(targets.count).must_equal 1
       target = targets.first
       _(target['company_name']).must_equal COMPANY_NAME
-      _(target['article_score']).must_equal 2
+      _(target['market_price']).must_equal CORRECT_FINANCE['financialData']['currentPrice']['raw']
       # first record should be the newest
       _(target['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
 
     it 'should return empty lists if not found' do
-      list = ['djsafildafs;d']
+      list = ['BadCompanyName']
       encoded_list = PortfolioAdvisor::Request::EncodedTargetList.to_encoded(list)
 
       get "/api/v1/target?list=#{encoded_list}"
@@ -129,17 +129,16 @@ describe 'Test API routes' do
       histories = response['histories']
       _(histories.count).must_equal 1
       history = histories.first
-      _(history['article_score']).must_equal 2
-      # first record should be the newest
+      # first record should be the latest
       _(history['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
-  end
 
-  it 'should return empty histories list if not found' do
-    get '/api/v1/history/WTFFFFEMMM'
+    it 'should return empty histories list if not found' do
+      get '/api/v1/history/BadCompanyName'
 
-    _(last_response.status).must_equal 500
-    response = JSON.parse(last_response.body)
-    _(response['message']).must_include 'trouble'
+      _(last_response.status).must_equal 500
+      response = JSON.parse(last_response.body)
+      _(response['message']).must_include 'trouble'
+    end
   end
 end

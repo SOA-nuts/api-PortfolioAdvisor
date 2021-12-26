@@ -27,32 +27,34 @@ module PortfolioAdvisor
       class DataMapper
         def initialize(company, data, token, company_symbol)
           @company_name = company
-          @data = data
-          @article_mapper = ArticleMapper.new
+          @articles = ArticleMapper.new.load_several(data)
           @finance_data = PortfolioAdvisor::YahooFinance::FinanceMapper.new(token).find(company_symbol)
         end
 
         def build_entity
+          @article_score = article_score
+          @bench_price =  bench_price
+          @grow_score =  grow_score
+
           PortfolioAdvisor::Entity::Target.new(
             company_name: company_name,
-            articles: articles,
             updated_at: Date.today,
-            article_score: article_score,
-            bench_price: bench_price,
+            articles: articles,
             market_price: market_price,
-            grow_score: grow_score
+            long_advice_price: advice_price(0.02, 0.18),
+            mid_advice_price: advice_price(0.1, 0.1),
+            short_advice_price: advice_price(0.18, 0.2)
           )
         end
 
-        attr_reader :company_name
-
-        def articles
-          @article_mapper.load_several(@data)
-        end
+        attr_reader :company_name, :articles
 
         def article_score
-          # todo
-          2.0
+          @articles.map { |article| article.score }.sum / @articles.size / 100
+        end
+
+        def grow_score
+          @finance_data.grow_score
         end
 
         def bench_price
@@ -63,10 +65,9 @@ module PortfolioAdvisor
           @finance_data.market_price
         end
 
-        def grow_score
-          @finance_data.grow_score
+        def advice_price(article_weight, grow_weight)
+          @bench_price*(1+(@article_score*article_weight)+(@grow_score*grow_weight))
         end
-
       end
     end
   end

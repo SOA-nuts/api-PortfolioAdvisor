@@ -8,10 +8,10 @@ Sequel.migration do
       primary_key :id
       String      :company_name, unique: true
       Date        :updated_at
-      Float       :article_score
       Float       :market_price
-      Float       :bench_price
-      Float       :grow_score
+      Float       :long_advice_price
+      Float       :mid_advice_price
+      Float       :short_advice_price
     end
   end
 end
