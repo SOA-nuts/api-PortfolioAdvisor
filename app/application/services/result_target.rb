@@ -24,10 +24,10 @@ module PortfolioAdvisor
         input[:long_advice_price] = input[:target].long_advice_price
         input[:mid_advice_price] = input[:target].mid_advice_price
         input[:short_advice_price] = input[:target].short_advice_price
-
+        
         if input[:target]
           Response::TargetArticleScore.new(input[:company_name], input[:updated_at], input[:articles],
-                                            input[:market_price], input[:long_advice_price], input[:mid_advice_price], input[:short_advice_price])
+                                           input[:market_price], input[:long_advice_price], input[:mid_advice_price], input[:short_advice_price])
             .then do |analysis|
             Success(Response::ApiResult.new(status: :ok, message: analysis))
           end

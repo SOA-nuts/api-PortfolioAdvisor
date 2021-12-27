@@ -34,7 +34,7 @@ module PortfolioAdvisor
             #   .get(url)
             HTTP.headers(
               'x-api-key' => @api_key
-              ).get(url)
+            ).get(url)
 
           Response.new(http_response).tap do |response|
             raise(response.error) unless response.successful?

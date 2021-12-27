@@ -21,7 +21,7 @@ describe 'Tests Google News API library' do
   describe 'Target info' do
     it 'HAPPY: should provide correct target attributes' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
-        .new(GOOGLENEWS_TOKEN, YAHOO_TOKEN)
+        .new(GOOGLENEWS_TOKEN)
         .find(COMPANY_NAME, nil, COMPANY_SYMBOL)
       _(target.company_name).must_equal COMPANY_NAME
       _(target.articles.length).must_equal CORRECT_ARTICLE['articles'].length
@@ -30,7 +30,7 @@ describe 'Tests Google News API library' do
     it 'SAD: should raise exception on incorrect target' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
-        .new(GOOGLENEWS_TOKEN, YAHOO_TOKEN)
+        .new(GOOGLENEWS_TOKEN)
         .find('', nil, COMPANY_SYMBOL)
       end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::BadRequest
     end
@@ -38,7 +38,7 @@ describe 'Tests Google News API library' do
     it 'SAD: should raise exception when unauthorized' do
       _(proc do
         PortfolioAdvisor::GoogleNews::TargetMapper
-        .new('BAD_TOKEN', YAHOO_TOKEN)
+        .new('BAD_TOKEN')
         .find(COMPANY_NAME, nil, COMPANY_SYMBOL)
       end).must_raise PortfolioAdvisor::GoogleNews::Api::Response::Unauthorized
     end
@@ -47,7 +47,7 @@ describe 'Tests Google News API library' do
   describe 'article information' do
     before do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
-        .new(GOOGLENEWS_TOKEN, YAHOO_TOKEN)
+        .new(GOOGLENEWS_TOKEN)
         .find(COMPANY_NAME, nil, COMPANY_SYMBOL)
       @article = target.articles[0]
     end

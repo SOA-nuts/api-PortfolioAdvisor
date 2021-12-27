@@ -6,35 +6,33 @@ module PortfolioAdvisor
   module GoogleNews
     # Data Mapper: News repo -> Target entity
     class TargetMapper
-      def initialize(gn_token, yahoo_token, gateway_class = GoogleNews::Api)
-        @gn_token = gn_token
+      def initialize(gn_token, gateway_class = GoogleNews::Api)
+        @token = gn_token
         @gateway_class = gateway_class
-        @gateway = @gateway_class.new(@gn_token)
-
-        @finance_token = yahoo_token
+        @gateway = @gateway_class.new(@token)
       end
 
       def find(company, updated_at, company_symbol)
         data = @gateway.article(company, updated_at)
-        build_entity(company, data['articles'], @finance_token, company_symbol)
+        build_entity(company, data['articles'], company_symbol)
       end
 
-      def build_entity(company, data, token, company_symbol)
-        DataMapper.new(company, data, token, company_symbol).build_entity
+      def build_entity(company, data, company_symbol)
+        DataMapper.new(company, data, company_symbol).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(company, data, token, company_symbol)
+        def initialize(company, data, company_symbol)
           @company_name = company
           @articles = ArticleMapper.new.load_several(data)
-          @finance_data = PortfolioAdvisor::YahooFinance::FinanceMapper.new(token).find(company_symbol)
+          @finance_data = PortfolioAdvisor::YahooFinance::FinanceMapper.new(App.config.YAHOO_TOKEN).find(company_symbol)
         end
 
         def build_entity
           @article_score = article_score
-          @bench_price =  bench_price
-          @grow_score =  grow_score
+          @bench_price = bench_price
+          @grow_score = grow_score
 
           PortfolioAdvisor::Entity::Target.new(
             company_name: company_name,
@@ -50,7 +48,7 @@ module PortfolioAdvisor
         attr_reader :company_name, :articles
 
         def article_score
-          @articles.map { |article| article.score }.sum / @articles.size / 100
+          @articles.map(&:score).sum / @articles.size / 100
         end
 
         def grow_score
@@ -66,7 +64,7 @@ module PortfolioAdvisor
         end
 
         def advice_price(article_weight, grow_weight)
-          @bench_price*(1+(@article_score*article_weight)+(@grow_score*grow_weight))
+          @bench_price * (1 + (@article_score * article_weight) + (@grow_score * grow_weight))
         end
       end
     end

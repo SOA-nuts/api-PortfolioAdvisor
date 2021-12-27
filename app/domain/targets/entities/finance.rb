@@ -10,7 +10,7 @@ module PortfolioAdvisor
       include Dry.Types
 
       attribute :bench_price,       Strict::Float
-      attribute :grow_score,        Strict::Float  
+      attribute :grow_score,        Strict::Float
       attribute :market_price,      Strict::Float
 
       def to_attr_hash

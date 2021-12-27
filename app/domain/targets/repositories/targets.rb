@@ -38,6 +38,7 @@ module PortfolioAdvisor
 
       def self.create(entity)
         raise 'Target already exists' if find(entity)
+
         PersistTarget.new(entity).call
       end
 
@@ -77,6 +78,8 @@ module PortfolioAdvisor
           create_history.tap do |db_history|
             db_history.update(company: company)
           end
+
+          company
         end
       end
     end
