@@ -19,12 +19,15 @@ module PortfolioAdvisor
         input[:target] = Repository::For.klass(Entity::Target).find_company(input[:requested].company_name)
         input[:company_name] = input[:target].company_name
         input[:updated_at] = input[:target].updated_at
-        input[:score] = input[:target].score
         input[:articles] = input[:target].articles
-
+        input[:market_price] = input[:target].market_price
+        input[:long_advice_price] = input[:target].long_advice_price
+        input[:mid_advice_price] = input[:target].mid_advice_price
+        input[:short_advice_price] = input[:target].short_advice_price
+        
         if input[:target]
-          Response::TargetArticleScore.new(input[:company_name], input[:updated_at], input[:score],
-                                           input[:articles])
+          Response::TargetArticleScore.new(input[:company_name], input[:updated_at], input[:articles],
+                                           input[:market_price], input[:long_advice_price], input[:mid_advice_price], input[:short_advice_price])
             .then do |analysis|
             Success(Response::ApiResult.new(status: :ok, message: analysis))
           end

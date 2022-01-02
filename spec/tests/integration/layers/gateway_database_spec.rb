@@ -9,9 +9,11 @@ describe 'Integration Tests of GoogleNews API and Database' do
 
   before do
     VcrHelper.configure_vcr_for_google_news
+    VcrHelper.configure_vcr_for_yahoo_finance
   end
 
   after do
+    VcrHelper.eject_vcr
     VcrHelper.eject_vcr
   end
 
@@ -23,7 +25,7 @@ describe 'Integration Tests of GoogleNews API and Database' do
     it 'HAPPY: should be able to save target from GoogleNews to database' do
       target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC)
+        .find(COMPANY_NAME, Date.today, COMPANY_SYMBOL)
 
       rebuilt = PortfolioAdvisor::Repository::For.entity(target).create(target)
 

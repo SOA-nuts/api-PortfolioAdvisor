@@ -1,0 +1,94 @@
+---
+financialData:
+  maxAge: 86400
+  currentPrice:
+    raw: 176.28
+    fmt: '176.28'
+  targetHighPrice:
+    raw: 210.0
+    fmt: '210.00'
+  targetLowPrice:
+    raw: 128.01
+    fmt: '128.01'
+  targetMeanPrice:
+    raw: 174.22
+    fmt: '174.22'
+  targetMedianPrice:
+    raw: 172.0
+    fmt: '172.00'
+  recommendationMean:
+    raw: 1.8
+    fmt: '1.80'
+  recommendationKey: buy
+  numberOfAnalystOpinions:
+    raw: 42
+    fmt: '42'
+    longFmt: '42'
+  totalCash:
+    raw: 62639001600
+    fmt: 62.64B
+    longFmt: '62,639,001,600'
+  totalCashPerShare:
+    raw: 3.818
+    fmt: '3.82'
+  ebitda:
+    raw: 120233000960
+    fmt: 120.23B
+    longFmt: '120,233,000,960'
+  totalDebt:
+    raw: 136521998336
+    fmt: 136.52B
+    longFmt: '136,521,998,336'
+  quickRatio:
+    raw: 0.91
+    fmt: '0.91'
+  currentRatio:
+    raw: 1.075
+    fmt: '1.08'
+  totalRevenue:
+    raw: 365817004032
+    fmt: 365.82B
+    longFmt: '365,817,004,032'
+  debtToEquity:
+    raw: 216.392
+    fmt: '216.39'
+  revenuePerShare:
+    raw: 21.904
+    fmt: '21.90'
+  returnOnAssets:
+    raw: 0.20179
+    fmt: 20.18%
+  returnOnEquity:
+    raw: 1.47443
+    fmt: 147.44%
+  grossProfits:
+    raw: 152836000000
+    fmt: 152.84B
+    longFmt: '152,836,000,000'
+  freeCashflow:
+    raw: 73295003648
+    fmt: 73.3B
+    longFmt: '73,295,003,648'
+  operatingCashflow:
+    raw: 104037998592
+    fmt: 104.04B
+    longFmt: '104,037,998,592'
+  earningsGrowth:
+    raw: 0.662
+    fmt: 66.20%
+  revenueGrowth:
+    raw: 0.288
+    fmt: 28.80%
+  grossMargins:
+    raw: 0.41779
+    fmt: 41.78%
+  ebitdaMargins:
+    raw: 0.32867
+    fmt: 32.87%
+  operatingMargins:
+    raw: 0.29782
+    fmt: 29.78%
+  profitMargins:
+    raw: 0.25882
+    fmt: 25.88%
+  financialCurrency: USD

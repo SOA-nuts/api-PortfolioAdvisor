@@ -47,7 +47,6 @@ module PortfolioAdvisor
           else
             input[:local_target]
           end
-
         Success(Response::ApiResult.new(status: :created, message: target))
       rescue StandardError => e
         puts "#{e.inspect}\\n#{e.backtrace}"
@@ -59,17 +58,19 @@ module PortfolioAdvisor
         Repository::Targets.find_company(input[:company_name])
       end
 
-      def target_update_from_news(target)
-        GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(target.company_name)
+      def target_update_from_news(input)
+        symbol = COMPANY_LIST[0][input[:company_name]]
+        GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], input[:updated_at], symbol)
       rescue StandardError
         raise GN_NOT_FOUND_MSG
       end
 
       def target_from_news(input)
-        if COMPANY_LIST[0][input[:company_name]].nil?
-          Failure(Response::ApiResult.new(status: :not_found, message: NOT_SUPPORT_MSG))
+        symbol = COMPANY_LIST[0][input[:company_name]]
+        if symbol.nil?
+          Failure(Response::ApiResult.new(status: :not_found, message: GN_NOT_FOUND_MSG))
         else
-          GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name])
+          GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], nil, symbol)
         end
       rescue StandardError => e
         raise GN_NOT_FOUND_MSG

@@ -16,7 +16,10 @@ module PortfolioAdvisor
 
       property :company_name
       property :updated_at
-      property :score
+      property :market_price
+      property :long_advice_price
+      property :mid_advice_price
+      property :short_advice_price
       collection :articles, extend: Representer::Article, class: OpenStruct
 
       link :self do
