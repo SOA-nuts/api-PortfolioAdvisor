@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../../../helpers/spec_helper.rb'
-require_relative '../../../helpers/vcr_helper.rb'
-require_relative '../../../helpers/database_helper.rb'
+require_relative '../../../helpers/spec_helper'
+require_relative '../../../helpers/vcr_helper'
+require_relative '../../../helpers/database_helper'
 
 require 'ostruct'
 
@@ -11,9 +11,11 @@ describe 'List Target Service Integration Test' do
 
   before do
     VcrHelper.configure_vcr_for_google_news(recording: :none)
+    VcrHelper.configure_vcr_for_yahoo_finance(recording: :none)
   end
 
   after do
+    VcrHelper.eject_vcr
     VcrHelper.eject_vcr
   end
 
@@ -26,13 +28,14 @@ describe 'List Target Service Integration Test' do
       # GIVEN: a valid project exists locally and is being watched
       gn_target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC)
+        .find(COMPANY_NAME, COMPANY_SYMBOL)
+
       db_target = PortfolioAdvisor::Repository::For.entity(gn_target)
         .create(gn_target)
 
       # WHEN: we request a list of all watched projects
       list_request = PortfolioAdvisor::Request::EncodedTargetList
-        .to_request([TOPIC])
+        .to_request([COMPANY_NAME])
 
       result = PortfolioAdvisor::Service::ListTargets
         .new.call(list_request: list_request)
@@ -47,7 +50,7 @@ describe 'List Target Service Integration Test' do
       # GIVEN: a valid target exists locally but is not being watched
       gn_target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC)
+        .find(COMPANY_NAME, COMPANY_SYMBOL)
       PortfolioAdvisor::Repository::For.entity(gn_target)
         .create(gn_target)
 
@@ -66,7 +69,7 @@ describe 'List Target Service Integration Test' do
     it 'SAD: should not watched targets if they are not loaded' do
       # GIVEN: we are watching a project that does not exist locally
       list_request = PortfolioAdvisor::Request::EncodedTargetList.to_request(
-        [TOPIC]
+        [COMPANY_NAME]
       )
 
       # WHEN: we request a list of all watched targets

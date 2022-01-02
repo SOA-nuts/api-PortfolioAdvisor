@@ -1,17 +1,19 @@
 # frozen_string_literal: true
 
-require_relative '../../../helpers/spec_helper.rb'
-require_relative '../../../helpers/vcr_helper.rb'
-require_relative '../../../helpers/database_helper.rb'
+require_relative '../../../helpers/spec_helper'
+require_relative '../../../helpers/vcr_helper'
+require_relative '../../../helpers/database_helper'
 
 describe 'Add Target Service Integration Test' do
   VcrHelper.setup_vcr
 
   before do
     VcrHelper.configure_vcr_for_google_news(recording: :none)
+    VcrHelper.configure_vcr_for_yahoo_finance(recording: :none)
   end
 
   after do
+    VcrHelper.eject_vcr
     VcrHelper.eject_vcr
   end
 
@@ -21,14 +23,14 @@ describe 'Add Target Service Integration Test' do
     end
 
     it 'HAPPY: should be able to save target from GoogleNews to database' do
-      # GIVEN: a valid TOPIC request for a company in the serving list:
+      # GIVEN: a valid company name request for a company in the serving list:
       target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC)
+        .find(COMPANY_NAME, COMPANY_SYMBOL)
 
       # WHEN: the service is called with the request form object
       target_made = PortfolioAdvisor::Service::AddTarget.new.call(
-        company_name: TOPIC
+        company_name: COMPANY_NAME
       )
 
       # THEN: the result should report success..
@@ -42,7 +44,10 @@ describe 'Add Target Service Integration Test' do
 
       _(rebuilt.company_name).must_equal(target.company_name)
       _(rebuilt.updated_at).must_equal(target.updated_at)
-      _(rebuilt.score).must_equal(target.score)
+      _(rebuilt.market_price).must_equal(target.market_price)
+      _(rebuilt.long_advice_price).must_equal(target.long_advice_price)
+      _(rebuilt.mid_advice_price).must_equal(target.mid_advice_price)
+      _(rebuilt.short_advice_price).must_equal(target.short_advice_price)
       _(rebuilt.articles.count).must_equal(target.articles.count)
 
       target.articles.each do |article|
@@ -58,12 +63,12 @@ describe 'Add Target Service Integration Test' do
     it 'HAPPY: should find and return existing target in database' do
       # GIVEN: a valid url request for a project already in the database:
       db_target = PortfolioAdvisor::Service::AddTarget.new.call(
-        company_name: TOPIC
+        company_name: COMPANY_NAME
       ).value!.message
 
       # WHEN: the service is called with the request form object
       target_made = PortfolioAdvisor::Service::AddTarget.new.call(
-        company_name: TOPIC
+        company_name: COMPANY_NAME
       )
 
       # THEN: the result should report success..
@@ -76,7 +81,10 @@ describe 'Add Target Service Integration Test' do
       # ..and provide a target entity with the right details
       _(rebuilt.company_name).must_equal(db_target.company_name)
       _(rebuilt.updated_at).must_equal(db_target.updated_at)
-      _(rebuilt.score).must_equal(db_target.score)
+      _(rebuilt.market_price).must_equal(db_target.market_price)
+      _(rebuilt.long_advice_price).must_equal(db_target.long_advice_price)
+      _(rebuilt.mid_advice_price).must_equal(db_target.mid_advice_price)
+      _(rebuilt.short_advice_price).must_equal(db_target.short_advice_price)
       _(rebuilt.articles.count).must_equal(db_target.articles.count)
 
       db_target.articles.each do |article|

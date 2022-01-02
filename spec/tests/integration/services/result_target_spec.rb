@@ -26,12 +26,12 @@ describe 'AppraiseProject Service Integration Test' do
       # GIVEN: a valid project that exists locally
       gn_target = PortfolioAdvisor::GoogleNews::TargetMapper
         .new(GOOGLENEWS_TOKEN)
-        .find(TOPIC)
+        .find(COMPANY_NAME, COMPANY_SYMBOL)
       PortfolioAdvisor::Repository::For.entity(gn_target).create(gn_target)
 
       # WHEN: we request to analyze the target
       request = OpenStruct.new(
-        company_name: TOPIC
+        company_name: COMPANY_NAME
       )
 
       result = PortfolioAdvisor::Service::ResultTarget.new.call(
@@ -39,7 +39,7 @@ describe 'AppraiseProject Service Integration Test' do
       ).value!.message
 
       # THEN: we should get an analized result
-      _(result.company_name).must_equal TOPIC
+      _(result.company_name).must_equal COMPANY_NAME
       _(result.articles.count).must_equal 15
     end
 
@@ -48,7 +48,7 @@ describe 'AppraiseProject Service Integration Test' do
 
       # WHEN: we request to analyze the target
       request = OpenStruct.new(
-        company_name: TOPIC
+        company_name: COMPANY_NAME
       )
 
       result = PortfolioAdvisor::Service::ResultTarget.new.call(
