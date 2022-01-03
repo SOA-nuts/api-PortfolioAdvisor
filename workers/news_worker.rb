@@ -40,11 +40,15 @@ module NewsAdd
       job.report(AddMonitor.starting_percent)
       if(job.need_update)
         update_target = PortfolioAdvisor::GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(job.company_name, job.symbol)
+        job.report(AddMonitor.storing_percent)
         PortfolioAdvisor::Repository::For.entity(update_target).update(update_target)
+        job.report(AddMonitor.finished_percent)
       else
         #create new one
         new_target = PortfolioAdvisor::GoogleNews::TargetMapper.new(Worker.config.GOOGLENEWS_TOKEN).find(job.company_name, job.symbol)
+        job.report(AddMonitor.storing_percent)
         PortfolioAdvisor::Repository::For.entity(new_target).create(new_target)
+        job.report(AddMonitor.finished_percent)
       end
 
       # Keep sending finished status to any latecoming subscribers

@@ -55,7 +55,7 @@ module PortfolioAdvisor
               request_id = [request.env, request.path, Time.now.to_f].hash
 
               result = Service::AddTarget.new.call(
-                company_name: company, 
+                company_name: company.downcase, 
                 request_id: request_id,
                 config: App.config
               )

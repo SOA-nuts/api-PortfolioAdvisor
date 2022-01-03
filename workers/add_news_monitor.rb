@@ -5,16 +5,16 @@ module NewsAdd
   module AddMonitor
     ADD_PROGRESS = {
       'STARTED'   => 15,
-      'Adding'   => 30,
-      'remote'    => 70,
-      'Receiving' => 85,
-      'Resolving' => 95,
-      'Checking'  => 100,
+      'storing'   => 50,
       'FINISHED'  => 100
     }.freeze
 
     def self.starting_percent
       ADD_PROGRESS['STARTED'].to_s
+    end
+
+    def self.storing_percent
+      ADD_PROGRESS['storing'].to_s
     end
 
     def self.finished_percent

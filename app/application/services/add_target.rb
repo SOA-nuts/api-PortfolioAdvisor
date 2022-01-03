@@ -11,21 +11,31 @@ module PortfolioAdvisor
     class AddTarget
       include Dry::Transaction
 
+      step :identify_target
       step :find_target
       step :return_target
 
       private
 
+      INVALID_MSG = "Invalid company name"
       DB_ERR_MSG = 'Having trouble accessing the database'
       NOT_SUPPORT_MSG = 'this company is not on our supporting list'
       GN_NOT_FOUND_MSG = 'Could not find related articles of the company on Google News'
       PROCESSING_MSG = 'Adding the project'
 
+      def identify_target(input)
+        if COMPANY_LIST[0][input[:company_name].downcase].nil? 
+          Failure(Response::ApiResult.new(status: :internal_error, message: INVALID_MSG))
+        else
+          Success(input)
+        end
+      end
+
       def find_target(input)
         if (target = target_in_database(input))
           # no need update
-          Success(input)
-          if(target.updated_at == Date.today)
+          return Success(input)
+          if(target.updated_at != Date.today)
             #need update
             input[:need_update] = true
           end
@@ -49,7 +59,8 @@ module PortfolioAdvisor
       end
 
       def return_target(input)
-        target = target_in_database(input[:company_name])
+        target = target_in_database(input)
+        Success(Response::ApiResult.new(status: :created, message: target))
       rescue StandardError => e
         print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))

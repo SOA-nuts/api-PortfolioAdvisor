@@ -27,7 +27,7 @@ module PortfolioAdvisor
       class DataMapper
         def initialize(company, data, company_symbol)
           @company_name = company
-          @articles = ArticleMapper.new.load_several(data)
+          @articles = ArticleMapper.new.load_several_concurrently(data)
           @finance_data = PortfolioAdvisor::YahooFinance::FinanceMapper.new(App.config.YAHOO_TOKEN).find(company_symbol)
         end
 

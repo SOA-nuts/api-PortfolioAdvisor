@@ -7,7 +7,7 @@ require 'delegate' # needed until Rack 2.3 fixes delegateclass bug
 require 'rack/cache'
 require 'redis-rack-cache'
 
-module PorfolioAdvisor
+module PortfolioAdvisor
   # Environment-specific configuration
   class App < Roda
     plugin :environments
