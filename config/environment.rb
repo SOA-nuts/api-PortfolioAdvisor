@@ -7,7 +7,7 @@ require 'delegate' # needed until Rack 2.3 fixes delegateclass bug
 require 'rack/cache'
 require 'redis-rack-cache'
 
-module PortfolioAdvisor
+module PorfolioAdvisor
   # Environment-specific configuration
   class App < Roda
     plugin :environments
@@ -20,7 +20,7 @@ module PortfolioAdvisor
     Figaro.load
     def self.config() = Figaro.env
 
-    configure :development, :test, :app_test do
+    configure :development, :test , :app_test do
       require 'pry'; # for breakpoints
       ENV['DATABASE_URL'] = "sqlite://#{config.DB_FILENAME}"
     end
@@ -33,18 +33,19 @@ module PortfolioAdvisor
     end
 
     configure :production do
+      puts 'RUNNING IN PRODUCTION MODE'
       # Set DATABASE_URL environment variable on production platform
 
       use Rack::Cache,
           verbose: true,
-          metastore: "#{config.REDISCLOUD_URL}/0/metastore",
-          entitystore: "#{config.REDISCLOUD_URL}/0/entitystore"
+          metastore: config.REDISCLOUD_URL + '/0/metastore',
+          entitystore: config.REDISCLOUD_URL + '/0/entitystore'
     end
 
     configure :app_test do
       require_relative '../spec/helpers/vcr_helper'
       VcrHelper.setup_vcr
-      VcrHelper.configure_vcr_for_github(recording: :none)
+      VcrHelper.configure_vcr_for_google_news(recording: :none)
     end
 
     # Database Setup

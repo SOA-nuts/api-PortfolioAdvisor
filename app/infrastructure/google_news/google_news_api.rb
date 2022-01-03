@@ -27,7 +27,7 @@ module PortfolioAdvisor
 
         def gn_api_path(company)
           time = @today.strftime('%Y-%m-%d')
-          "#{API_GOOGLE_NEWS_EVERYTHING}q=#{company}&from=#{time}&to=#{time}&pageSize=15&language=en"
+          "#{API_GOOGLE_NEWS_EVERYTHING}q=#{company}&from=2021-12-20&to=#{time}&pageSize=15&language=en"
         end
 
         def get(url)

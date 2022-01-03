@@ -52,8 +52,14 @@ module PortfolioAdvisor
 
             # POST /target/{company_name}
             routing.post do
-              result = Service::AddTarget.new.call(company_name: company)
+              request_id = [request.env, request.path, Time.now.to_f].hash
 
+              result = Service::AddTarget.new.call(
+                company_name: company, 
+                request_id: request_id,
+                config: App.config
+              )
+              
               if result.failure?
                 failed = Representer::HttpResponse.new(result.failure)
                 routing.halt failed.http_status_code, failed.to_json

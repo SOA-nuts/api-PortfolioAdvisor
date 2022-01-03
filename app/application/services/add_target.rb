@@ -12,44 +12,46 @@ module PortfolioAdvisor
       include Dry::Transaction
 
       step :find_target
-      step :store_target
+      step :return_target
 
       private
 
       DB_ERR_MSG = 'Having trouble accessing the database'
       NOT_SUPPORT_MSG = 'this company is not on our supporting list'
       GN_NOT_FOUND_MSG = 'Could not find related articles of the company on Google News'
+      PROCESSING_MSG = 'Adding the project'
 
       def find_target(input)
         if (target = target_in_database(input))
-          # not need update
-          if target.updated_at == Date.today
-            input[:local_target] = target
-
-          # need update
-          else
-            input[:update_target] = target_update_from_news(target)
+          # no need update
+          Success(input)
+          if(target.updated_at == Date.today)
+            #need update
+            input[:need_update] = true
           end
         else
-          input[:remote_target] = target_from_news(input)
+          #need create instead of update
+          input[:need_update] = false
         end
-        Success(input)
+
+        input[:symbol] = COMPANY_LIST[0][input[:company_name]]
+
+        Messaging::Queue.new(App.config.CLONE_QUEUE_URL, App.config)
+          .send(add_target_request_json(input))
+
+        Failure(Response::ApiResult.new(
+          status: :processing,
+          message: { request_id: input[:request_id], msg: PROCESSING_MSG }
+        ))
       rescue StandardError => e
+        print_error(e)
         Failure(Response::ApiResult.new(status: :not_support, message: e.to_s))
       end
 
-      def store_target(input)
-        target =
-          if (new_target = input[:remote_target])
-            Repository::For.entity(new_target).create(new_target)
-          elsif (update_target = input[:update_target])
-            Repository::For.entity(update_target).update(update_target)
-          else
-            input[:local_target]
-          end
-        Success(Response::ApiResult.new(status: :created, message: target))
+      def return_target(input)
+        target = target_in_database(input[:company_name])
       rescue StandardError => e
-        puts "#{e.inspect}\\n#{e.backtrace}"
+        print_error(e)
         Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
       end
 
@@ -73,7 +75,18 @@ module PortfolioAdvisor
           GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], symbol)
         end
       rescue StandardError => e
+        print_error(e)
         raise GN_NOT_FOUND_MSG
+      end
+
+      def add_target_request_json(input)
+        Response::NewsRequest.new(input[:company_name], input[:need_update], input[:symbol], input[:request_id])
+          .then { Representer::NewsRequest.new(_1) }
+          .then(&:to_json)
+      end
+
+      def print_error(error)
+        puts [error.inspect, error.backtrace].flatten.join("\n")
       end
     end
   end

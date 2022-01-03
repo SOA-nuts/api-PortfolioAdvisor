@@ -54,7 +54,7 @@ module PortfolioAdvisor
         end
 
         def score
-          @content_mapper.crawl_content.score
+          10
         end
 
         def published_at

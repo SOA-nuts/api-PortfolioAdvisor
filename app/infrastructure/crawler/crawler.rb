@@ -18,7 +18,8 @@ module PortfolioAdvisor
           open_article = Nokogiri::HTML(URI.parse(@url).open)
           open_article.css('p').map(&:text)
         end
-      rescue StandardError
+      rescue StandardError => error
+        puts [error.inspect, error.backtrace].flatten.join("\n")
         raise 'NotFound'
       end
 
