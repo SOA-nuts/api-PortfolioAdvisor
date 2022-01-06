@@ -11,31 +11,37 @@ module PortfolioAdvisor
     class AddTarget
       include Dry::Transaction
 
+      step :identify_target
       step :find_target
-      step :store_target
+      #step :store_target
 
       private
 
+      INVALID_MSG = "Invalid company name"
       DB_ERR_MSG = 'Having trouble accessing the database'
       NOT_SUPPORT_MSG = 'this company is not on our supporting list'
       GN_NOT_FOUND_MSG = 'Could not find related articles of the company on Google News'
 
-      def find_target(input)
-        if (target = target_in_database(input))
-          # not need update
-          if target.updated_at == Date.today
-            input[:local_target] = target
-
-          # need update
-          else
-            input[:update_target] = target_update_from_news(target)
-          end
+      def identify_target(input)
+        if COMPANY_LIST[0][input[:company_name].downcase].nil? 
+          Failure(Response::ApiResult.new(status: :internal_error, message: INVALID_MSG))
         else
-          input[:remote_target] = target_from_news(input)
+          Success(input)
         end
-        Success(input)
-      rescue StandardError => e
-        Failure(Response::ApiResult.new(status: :not_support, message: e.to_s))
+      end
+
+      def find_target(input)
+        target = target_in_database(input)
+
+        input[:symbol] = COMPANY_LIST[0][input[:company_name]]
+
+        Messaging::Queue.new(App.config.ADD_QUEUE_URL, App.config)
+          .send(add_target_request_json(input))
+
+        Success(Response::ApiResult.new(status: :created, message: target))
+      rescue StandardError => error
+        print_error(error)
+        Failure(Response::ApiResult.new(status: :not_support, message: error.to_s))
       end
 
       def store_target(input)
@@ -74,6 +80,16 @@ module PortfolioAdvisor
         end
       rescue StandardError => e
         raise GN_NOT_FOUND_MSG
+      end
+
+      def print_error(error)
+        puts [error.inspect, error.backtrace].flatten.join("\n")
+      end
+
+      def add_target_request_json(input)
+        Response::SearchRequest.new(input[:company_name], input[:request_id])
+          .then { Representer::SearchRequest.new(_1) }
+          .then(&:to_json)
       end
     end
   end
