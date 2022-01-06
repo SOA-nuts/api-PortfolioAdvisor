@@ -16,10 +16,9 @@ module PortfolioAdvisor
 
       property :company_name
       property :updated_at
-      property :market_price
-      property :long_advice_price
-      property :mid_advice_price
-      property :short_advice_price
+      property :long_term_advice
+      property :mid_term_advice
+      property :short_term_advice
       collection :articles, extend: Representer::Article, class: OpenStruct
 
       link :self do

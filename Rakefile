@@ -9,6 +9,7 @@ end
 desc 'Run unit and integration tests'
 Rake::TestTask.new(:spec) do |t|
   t.pattern = 'spec/tests/**/*_spec.rb'
+  # t.pattern = 'spec/tests/integration/services/*_spec.rb'
   t.warning = false
 end
 
@@ -20,7 +21,7 @@ end
 # NOTE: run `rake run:test` in another process
 desc 'Run acceptance tests'
 Rake::TestTask.new(:spec_accept) do |t|
-  t.pattern = 'spec/tests/acceptance/*_spec.rb'
+  t.pattern = 'spec/tests/acceptance/add_target_spec.rb'
   t.warning = false
 end
 

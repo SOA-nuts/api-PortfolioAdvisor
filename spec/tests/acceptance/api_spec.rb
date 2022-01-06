@@ -93,7 +93,9 @@ describe 'Test API routes' do
       _(targets.count).must_equal 1
       target = targets.first
       _(target['company_name']).must_equal COMPANY_NAME
-      _(target['market_price']).must_equal CORRECT_FINANCE['financialData']['currentPrice']['raw']
+      _(target['long_term_advice']).must_be_kind_of String
+      _(target['mid_term_advice']).must_be_kind_of String
+      _(target['short_term_advice']).must_be_kind_of String
       # first record should be the newest
       _(target['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end

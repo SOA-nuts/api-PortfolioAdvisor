@@ -34,9 +34,7 @@ describe 'Add Target Service Integration Test' do
       )
 
       # THEN: the result should report success..
-      if target_made.failure?
-        puts target_made.failure
-      end
+      puts target_made.failure if target_made.failure?
       _(target_made.success?).must_equal true
 
       # ..and provide a target entity with the right details
@@ -44,10 +42,9 @@ describe 'Add Target Service Integration Test' do
 
       _(rebuilt.company_name).must_equal(target.company_name)
       _(rebuilt.updated_at).must_equal(target.updated_at)
-      _(rebuilt.market_price).must_equal(target.market_price)
-      _(rebuilt.long_advice_price).must_equal(target.long_advice_price)
-      _(rebuilt.mid_advice_price).must_equal(target.mid_advice_price)
-      _(rebuilt.short_advice_price).must_equal(target.short_advice_price)
+      _(rebuilt.long_term_advice).must_equal(target.long_term_advice)
+      _(rebuilt.mid_term_advice).must_equal(target.mid_term_advice)
+      _(rebuilt.short_term_advice).must_equal(target.short_term_advice)
       _(rebuilt.articles.count).must_equal(target.articles.count)
 
       target.articles.each do |article|
@@ -81,10 +78,9 @@ describe 'Add Target Service Integration Test' do
       # ..and provide a target entity with the right details
       _(rebuilt.company_name).must_equal(db_target.company_name)
       _(rebuilt.updated_at).must_equal(db_target.updated_at)
-      _(rebuilt.market_price).must_equal(db_target.market_price)
-      _(rebuilt.long_advice_price).must_equal(db_target.long_advice_price)
-      _(rebuilt.mid_advice_price).must_equal(db_target.mid_advice_price)
-      _(rebuilt.short_advice_price).must_equal(db_target.short_advice_price)
+      _(rebuilt.long_term_advice).must_equal(db_target.long_term_advice)
+      _(rebuilt.mid_term_advice).must_equal(db_target.mid_term_advice)
+      _(rebuilt.short_term_advice).must_equal(db_target.short_term_advice)
       _(rebuilt.articles.count).must_equal(db_target.articles.count)
 
       db_target.articles.each do |article|
