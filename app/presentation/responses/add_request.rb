@@ -2,6 +2,6 @@
 
 module PortfolioAdvisor
     module Response
-        NewsRequest = Struct.new :company_name, :id
+        SearchRequest = Struct.new :company_name, :id
     end
   end

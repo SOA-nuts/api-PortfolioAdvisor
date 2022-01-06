@@ -87,8 +87,8 @@ module PortfolioAdvisor
       end
 
       def add_target_request_json(input)
-        Response::NewsRequest.new(input[:company_name], input[:request_id])
-          .then { Representer::NewsRequest.new(_1) }
+        Response::SearchRequest.new(input[:company_name], input[:request_id])
+          .then { Representer::SearchRequest.new(_1) }
           .then(&:to_json)
       end
     end

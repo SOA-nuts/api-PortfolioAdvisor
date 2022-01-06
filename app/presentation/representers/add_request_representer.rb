@@ -7,7 +7,7 @@ require 'roar/json'
 module PortfolioAdvisor
   module Representer
     # Representer object for target clone requests
-    class NewsRequest < Roar::Decorator
+    class SearchRequest < Roar::Decorator
       include Roar::JSON
 
       property :company_name
