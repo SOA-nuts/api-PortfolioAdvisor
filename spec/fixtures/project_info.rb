@@ -7,7 +7,7 @@ require 'date'
 config = YAML.safe_load(File.read('../../config/secrets.yml'))
 # search for specific topic e.g: business, BBC ...
 def gn_api_topic(topic)
-  "https://newsapi.org/v2/everything?q=#{topic}&from=2021-10-10&to=2021-10-20&pageSize=15"
+  "https://newsapi.org/v2/everything?q=#{topic}&from=2021-12-21&to=2021-12-21&pageSize=15&language=en"
 end
 
 def call_gn_url(config, url)

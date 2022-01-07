@@ -24,6 +24,19 @@ module PortfolioAdvisor
 
         response.status = result_response.http_status_code
         result_response.to_json
+
+        # recommnad list
+        # list_req = Request::EncodedTargetList.new(routing.params)
+        # result = Service::ListTargets.new.call(list_request: list_req)
+
+        # if result.failure?
+        #   failed = Representer::HttpResponse.new(result.failure)
+        #   routing.halt failed.http_status_code, failed.to_json
+        # end
+
+        # http_response = Representer::HttpResponse.new(result.value!)
+        # response.status = http_response.http_status_code
+        # Representer::TargetsList.new(result.value!.message).to_json
       end
 
       routing.on 'api/v1' do

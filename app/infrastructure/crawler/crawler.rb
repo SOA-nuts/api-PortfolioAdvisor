@@ -14,7 +14,7 @@ module PortfolioAdvisor
       end
 
       def crawl
-        if working_url?(url)
+        if working_url?
           open_article = Nokogiri::HTML(URI.parse(@url).open)
           open_article.css('p').map(&:text)
         end
@@ -22,8 +22,8 @@ module PortfolioAdvisor
         raise 'NotFound'
       end
 
-      def working_url?(url_str)
-        uri = URI(url_str)
+      def working_url?
+        uri = URI(@url)
         res = Net::HTTP.get_response(uri)
         res.is_a?(Net::HTTPSuccess)
       end

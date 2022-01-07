@@ -14,41 +14,80 @@ module PortfolioAdvisor
         @gateway = @gateway_class.new(@token)
       end
 
-      def find(company, updated_at)
-        data = @gateway.article(company, updated_at)
-        build_entity(company, data['articles'])
+      def find(company, company_symbol)
+        data = @gateway.article(company)
+        build_entity(company, data['articles'], company_symbol)
       end
 
-      def build_entity(company, data)
-        DataMapper.new(company, data, @token, @gateway_class).build_entity
+      def build_entity(company, data, company_symbol)
+        DataMapper.new(company, data, company_symbol).build_entity
       end
 
       # Extracts entity specific elements from data structure
       class DataMapper
-        def initialize(company, data, _token, _gateway_class)
+        def initialize(company, data, company_symbol)
           @company_name = company
-          @data = data
-          @article_mapper = ArticleMapper.new
+          @articles = ArticleMapper.new.load_several(data)
+          @finance_data = PortfolioAdvisor::YahooFinance::FinanceMapper.new(App.config.YAHOO_TOKEN).find(company_symbol)
         end
 
         def build_entity
+          @article_score = article_score
+          @bench_price = bench_price
+          @grow_score = grow_score
+          @long_advice_price = advice_price(0.02, 0.18)
+          @mid_advice_price = advice_price(0.1, 0.1)
+          @short_advice_price = advice_price(0.18, 0.2)
+
           PortfolioAdvisor::Entity::Target.new(
             company_name: company_name,
-            articles: articles,
             updated_at: Date.today,
-            score: score
+            articles: articles,
+            market_price: market_price,
+            long_advice_price: @long_advice_price,
+            mid_advice_price: @mid_advice_price,
+            short_advice_price: @short_advice_price,
+            long_term_advice: advice(@long_advice_price),
+            mid_term_advice: advice(@mid_advice_price),
+            short_term_advice: advice(@short_advice_price)
           )
         end
 
-        attr_reader :company_name
+        attr_reader :company_name, :articles
 
-        def articles
-          @article_mapper.load_several_concurrently(@data)
+        def article_score
+          @articles.map(&:score).sum / @articles.size / 100
         end
 
-        def score
-          # todo
-          2
+        def grow_score
+          @finance_data.grow_score
+        end
+
+        def bench_price
+          @finance_data.bench_price
+        end
+
+        def market_price
+          @finance_data.market_price
+        end
+
+        def advice_price(article_weight, grow_weight)
+          @bench_price * (1 + (@article_score * article_weight) + (@grow_score * grow_weight))
+        end
+
+        def advice(advice_price)
+          percent =  market_price / advice_price
+          if percent < 0.85
+            'excellent'
+          elsif percent < 0.95
+            'good'
+          elsif percent < 1.05
+            'fair'
+          elsif percent < 1.15
+            'poor'
+          else
+            'bad'
+          end
         end
       end
     end

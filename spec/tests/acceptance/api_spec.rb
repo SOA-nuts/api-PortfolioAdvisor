@@ -36,13 +36,13 @@ describe 'Test API routes' do
 
   describe 'Add targets route' do
     it 'should be able to add a target' do
-      post "api/v1/target/#{TOPIC}"
+      post "api/v1/target/#{COMPANY_NAME}"
 
       _(last_response.status).must_equal 201
 
       target = JSON.parse(last_response.body)
 
-      _(target['company_name']).must_equal TOPIC
+      _(target['company_name']).must_equal COMPANY_NAME
       _(target['articles'].count).must_equal 15
 
       proj = PortfolioAdvisor::Representer::Target.new(
@@ -53,7 +53,7 @@ describe 'Test API routes' do
     end
 
     it 'should report error for invalid targets' do
-      post 'api/v1/target/0u9awfh4'
+      post 'api/v1/target/BadCompanyName'
 
       _(last_response.status).must_equal 404
 
@@ -62,13 +62,13 @@ describe 'Test API routes' do
     end
 
     it 'should be able to get a target' do
-      PortfolioAdvisor::Service::AddTarget.new.call(company_name: TOPIC)
-      get "api/v1/target/#{TOPIC}"
+      PortfolioAdvisor::Service::AddTarget.new.call(company_name: COMPANY_NAME)
+      get "api/v1/target/#{COMPANY_NAME}"
 
       _(last_response.status).must_equal 200
 
       target = JSON.parse last_response.body
-      _(target['company_name']).must_equal TOPIC
+      _(target['company_name']).must_equal COMPANY_NAME
       _(target['articles'].count).must_equal 15
 
       proj = PortfolioAdvisor::Representer::Target.new(
@@ -80,9 +80,9 @@ describe 'Test API routes' do
 
   describe 'Get targets list' do
     it 'should successfully return target lists' do
-      PortfolioAdvisor::Service::AddTarget.new.call(company_name: TOPIC)
+      PortfolioAdvisor::Service::AddTarget.new.call(company_name: COMPANY_NAME)
 
-      list = [TOPIC.to_s]
+      list = [COMPANY_NAME.to_s]
       encoded_list = PortfolioAdvisor::Request::EncodedTargetList.to_encoded(list)
 
       get "/api/v1/target?list=#{encoded_list}"
@@ -92,14 +92,16 @@ describe 'Test API routes' do
       targets = response['targets']
       _(targets.count).must_equal 1
       target = targets.first
-      _(target['company_name']).must_equal TOPIC
-      _(target['score']).must_equal 2
+      _(target['company_name']).must_equal COMPANY_NAME
+      _(target['long_term_advice']).must_be_kind_of String
+      _(target['mid_term_advice']).must_be_kind_of String
+      _(target['short_term_advice']).must_be_kind_of String
       # first record should be the newest
       _(target['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
 
     it 'should return empty lists if not found' do
-      list = ['djsafildafs;d']
+      list = ['BadCompanyName']
       encoded_list = PortfolioAdvisor::Request::EncodedTargetList.to_encoded(list)
 
       get "/api/v1/target?list=#{encoded_list}"
@@ -121,25 +123,24 @@ describe 'Test API routes' do
 
   describe 'get histories list' do
     it 'should successfully return histories list' do
-      PortfolioAdvisor::Service::AddTarget.new.call(company_name: TOPIC)
+      PortfolioAdvisor::Service::AddTarget.new.call(company_name: COMPANY_NAME)
 
-      get "/api/v1/history/#{TOPIC}"
+      get "/api/v1/history/#{COMPANY_NAME}"
       _(last_response.status).must_equal 200
       response = JSON.parse(last_response.body)
       histories = response['histories']
       _(histories.count).must_equal 1
       history = histories.first
-      _(history['score']).must_equal 2
-      # first record should be the newest
+      # first record should be the latest
       _(history['updated_at']).must_equal Date.today.strftime('%Y-%m-%d')
     end
-  end
 
-  it 'should return empty histories list if not found' do
-    get '/api/v1/history/WTFFFFEMMM'
+    it 'should return empty histories list if not found' do
+      get '/api/v1/history/BadCompanyName'
 
-    _(last_response.status).must_equal 500
-    response = JSON.parse(last_response.body)
-    _(response['message']).must_include 'trouble'
+      _(last_response.status).must_equal 500
+      response = JSON.parse(last_response.body)
+      _(response['message']).must_include 'trouble'
+    end
   end
 end

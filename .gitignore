@@ -6,3 +6,4 @@ _snippets/
 _cache/
 .bundle/
 .rake_tasks~
+.vs

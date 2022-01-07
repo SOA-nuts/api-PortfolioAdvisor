@@ -8,7 +8,10 @@ Sequel.migration do
       primary_key :id
       String      :company_name, unique: true
       Date        :updated_at
-      Integer     :score
+
+      String      :long_term_advice
+      String      :mid_term_advice
+      String      :short_term_advice
     end
   end
 end

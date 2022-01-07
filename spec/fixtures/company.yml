@@ -1,6 +1,12 @@
 ---
-- apple:     AAPL
+- google:    GOOGL
+  apple:     AAPL
   microsoft: MSFT     
-  google:    GOOGL 
   amazon:    AMZN
-  meta:      META 
+  tesla:     TSLA
+  netflix:   NFLX
+  adobe:     ADBE
+  nike:      NKE
+  paypal:    PYPL
+  qualcomm:  QCOM
+  

@@ -63,6 +63,7 @@ module PortfolioAdvisor
             end
             @entity.articles.each do |article|
               db_target.add_article(Articles.db_find_or_create(article))
+              Articles.db_find_or_create(article)
             end
           end
         end
@@ -77,6 +78,8 @@ module PortfolioAdvisor
           create_history.tap do |db_history|
             db_history.update(company: company)
           end
+
+          company
         end
       end
     end
