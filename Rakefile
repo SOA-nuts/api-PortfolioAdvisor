@@ -130,7 +130,7 @@ namespace :queues do
   task :config do
     require 'aws-sdk-sqs'
     require_relative 'config/environment' # load config info
-    @api = CodePraise::App
+    @api = PortfolioAdvisor::App
     @sqs = Aws::SQS::Client.new(
       access_key_id: @api.config.AWS_ACCESS_KEY_ID,
       secret_access_key: @api.config.AWS_SECRET_ACCESS_KEY,
