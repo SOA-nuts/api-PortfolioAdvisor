@@ -44,43 +44,43 @@ module PortfolioAdvisor
         Failure(Response::ApiResult.new(status: :not_support, message: error.to_s))
       end
 
-      def store_target(input)
-        target =
-          if (new_target = input[:remote_target])
-            Repository::For.entity(new_target).create(new_target)
-          elsif (update_target = input[:update_target])
-            Repository::For.entity(update_target).update(update_target)
-          else
-            input[:local_target]
-          end
-        Success(Response::ApiResult.new(status: :created, message: target))
-      rescue StandardError => e
-        puts "#{e.inspect}\\n#{e.backtrace}"
-        Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
-      end
+      # def store_target(input)
+      #   target =
+      #     if (new_target = input[:remote_target])
+      #       Repository::For.entity(new_target).create(new_target)
+      #     elsif (update_target = input[:update_target])
+      #       Repository::For.entity(update_target).update(update_target)
+      #     else
+      #       input[:local_target]
+      #     end
+      #   Success(Response::ApiResult.new(status: :created, message: target))
+      # rescue StandardError => e
+      #   puts "#{e.inspect}\\n#{e.backtrace}"
+      #   Failure(Response::ApiResult.new(status: :internal_error, message: DB_ERR_MSG))
+      # end
 
       # following are support methods that other services could use
       def target_in_database(input)
         Repository::Targets.find_company(input[:company_name])
       end
 
-      def target_update_from_news(input)
-        symbol = COMPANY_LIST[0][input[:company_name]]
-        GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], symbol)
-      rescue StandardError
-        raise GN_NOT_FOUND_MSG
-      end
+      # def target_update_from_news(input)
+      #   symbol = COMPANY_LIST[0][input[:company_name]]
+      #   GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], symbol)
+      # rescue StandardError
+      #   raise GN_NOT_FOUND_MSG
+      # end
 
-      def target_from_news(input)
-        symbol = COMPANY_LIST[0][input[:company_name]]
-        if symbol.nil?
-          Failure(Response::ApiResult.new(status: :not_found, message: GN_NOT_FOUND_MSG))
-        else
-          GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], symbol)
-        end
-      rescue StandardError => e
-        raise GN_NOT_FOUND_MSG
-      end
+      # def target_from_news(input)
+      #   symbol = COMPANY_LIST[0][input[:company_name]]
+      #   if symbol.nil?
+      #     Failure(Response::ApiResult.new(status: :not_found, message: GN_NOT_FOUND_MSG))
+      #   else
+      #     GoogleNews::TargetMapper.new(App.config.GOOGLENEWS_TOKEN).find(input[:company_name], symbol)
+      #   end
+      # rescue StandardError => e
+      #   raise GN_NOT_FOUND_MSG
+      # end
 
       def print_error(error)
         puts [error.inspect, error.backtrace].flatten.join("\n")
