@@ -16,17 +16,10 @@ module PortfolioAdvisor
       DB_ERR = 'Having trouble accessing the database'
 
       def retrieve_remote_target(input)
-        input[:target] = Repository::For.klass(Entity::Target).find_company(input[:requested].company_name)
-        input[:company_name] = input[:target].company_name
-        input[:updated_at] = input[:target].updated_at
-        input[:articles] = input[:target].articles
-        input[:long_term_advice] = input[:target].long_term_advice
-        input[:mid_term_advice] = input[:target].mid_term_advice
-        input[:short_term_advice] = input[:target].short_term_advice
-
-        if input[:target]
-          Response::TargetArticleScore.new(input[:company_name], input[:updated_at], input[:articles],
-                                           input[:long_term_advice], input[:mid_term_advice], input[:short_term_advice])
+        if (input[:target] = Repository::For.klass(Entity::Target).find_company(input[:requested].company_name))
+          Response::TargetArticleScore.new(input[:target].company_name, input[:target].updated_at,
+                                           input[:target].articles, input[:target].long_term_advice,
+                                           input[:target].mid_term_advice, input[:target].short_term_advice)
             .then do |analysis|
             Success(Response::ApiResult.new(status: :ok, message: analysis))
           end
