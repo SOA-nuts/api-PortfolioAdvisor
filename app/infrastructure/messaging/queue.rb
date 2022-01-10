@@ -9,7 +9,7 @@ module PortfolioAdvisor
     class Queue
       IDLE_TIMEOUT = 5 # seconds
 
-      def initialize(queue_url, config)
+      def initialize(queue_url, _config)
         @queue_url = queue_url
         sqs = Aws::SQS::Client.new(
           access_key_id: App.config.AWS_ACCESS_KEY_ID,

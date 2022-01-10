@@ -18,7 +18,6 @@ module PortfolioAdvisor
       def call
         Success(
           JSON.parse(decode(@params['list']))
-          # decode(@params['list'])
         )
       rescue StandardError
         Failure(
@@ -31,8 +30,6 @@ module PortfolioAdvisor
 
       # Decode params
       def decode(param)
-        # ary = []
-        # ary << param
         Base64.urlsafe_decode64(param)
       end
 

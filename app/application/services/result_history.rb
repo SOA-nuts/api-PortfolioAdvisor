@@ -16,9 +16,7 @@ module PortfolioAdvisor
       DB_ERR = 'Having trouble accessing the database'
 
       def retrieve_remote_history(input)
-        input[:histories] = Repository::Histories.find_company(input[:requested].company_name)
-
-        if input[:histories]
+        if (input[:histories] = Repository::Histories.find_company(input[:requested].company_name))
           Response::HistoryScore.new(input[:histories])
             .then do |show|
             Success(Response::ApiResult.new(status: :ok, message: show))
